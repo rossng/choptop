@@ -15,30 +15,26 @@ class ChopTop:
         self.sensor_1.start()
         time.sleep(0.5)
         frame_time_millis = int((1 / 80) * 1000)
-        self.old_stdout = sys.stdout
         timestr = time.strftime("%Y%m%d-%H%M%S")
         timestr = timestr + '.log'
         self.log_file = open(timestr, "w")
-        sys.stdout = self.log_file
+        self.period = 1.0 / 10
         self.scheduler = sched.scheduler(time.time, time.sleep)
-        self.scheduler.enter(10, 1, self.update, (self,))
+        self.scheduler.enter(self.period, 1, self.update, ())
         try:
             self.scheduler.run()
         except:
             GPIO.cleanup()
             self.log_file.close()
-            sys.stdout = self.old_stdout
 
     def update(self):
         self.sensor_1.update()
         # get weights for each sensor
         if self.sensor_1.buffer.count > 0:
-            weight = sensor_1.buffer.pop()
-            print weight
-            print ", "
-            print int(round(time.time() * 1000))
+            weight = self.sensor_1.buffer.pop()
+            self.log_file.write(str(weight) + "," + str(int(round(time.time() * 1000))))
         self.finger_position = calculatePosition([weight])
-        self.scheduler.enter(10, 1, self.update, (self,))
+        self.scheduler.enter(self.period, 1, self.update, ())
 
 
 def calculatePosition(weights):
