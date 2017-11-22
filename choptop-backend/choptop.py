@@ -21,7 +21,7 @@ class ChopTop:
         self.log_file = open(timestr, "w")
         sys.stdout = self.log_file
         self.scheduler = sched.scheduler(time.time, time.sleep)
-        self.scheduler.enter(10, 1, update, (self, sc))
+        self.scheduler.enter(10, 1, update, (self))
         self.scheduler.run()
 
 def update(self, sc):
@@ -34,8 +34,7 @@ def update(self, sc):
             print ", "
             print int(round(time.time() * 1000))
         self.finger_position = calculatePosition([weight])
-        self.scheduler.enter(10, 1, update, (self, sc))
-        self.scheduler.run()
+        self.scheduler.enter(10, 1, update, (self))
     except:
         GPIO.cleanup()
         self.log_file.close()
