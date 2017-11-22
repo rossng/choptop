@@ -25,7 +25,7 @@ class ChopTop:
 					weight = sensor_1.buffer.pop()
 				print weight,
 				print ", ",
-				print int(round(time.time() * 1000)))
+				print int(round(time.time() * 1000))
 				self.finger_position = calculatePosition([weight])
 
 				frame_time = int(round(time.time() * 1000)) - frame_start
