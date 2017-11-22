@@ -1,6 +1,7 @@
 import threading
 import Queue
 from hx711 import HX711
+
 class Sensor:
     def __init__(self, dout, pd_sck):
         load_sensor = HX711(dout, pd_sck)
@@ -19,12 +20,14 @@ class Sensor:
     def stop(self):
         self.thread.join()
         self.load_sensor.power_down()
-        
+
     def getWeight(self):
         return self.load_sensor.get_weight(1)
     
     def collectStream(self):
-        while True:
-            weight = self.load_sensor.get_weight(1)
-            self.queue.put(weight)
-
+        try:
+            while True:
+                weight = self.load_sensor.get_weight(1)
+                self.queue.put(weight)
+        except(KeyboardInterrupt, SystemExit):
+            GPIO.cleanup() 
