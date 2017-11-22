@@ -30,6 +30,6 @@ class Sensor:
             while True:
                 weight = self.load_sensor.get_weight(1)
                 self.buffer.appendleft(weight)
-        except(KeyboardInterrupt, SystemExit):
+        except:
             self.load_sensor.power_down()
             GPIO.cleanup() 
