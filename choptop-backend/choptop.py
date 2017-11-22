@@ -1,5 +1,6 @@
 from sensor import Sensor
 import Queue
+import time
 
 class ChopTop:
     def __init__(self):
@@ -13,6 +14,7 @@ class ChopTop:
             print weight
             self.finger_position = calculatePosition([weight])
             print sensor_1.queue.qsize()
+            time.sleep(0.001)
 
 def calculatePosition(weights):
     return (0,0)
