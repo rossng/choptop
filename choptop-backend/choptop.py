@@ -19,7 +19,7 @@ class ChopTop:
         timestr = time.strftime("%Y%m%d-%H%M%S")
         timestr = timestr + '.log'
         self.log_file = open(timestr, "w")
-        sys.stdout = log_file
+        sys.stdout = self.log_file
         self.scheduler = sched.scheduler(time.time, time.sleep)
         self.scheduler.enter(10, 1, update, (self, sc))
         self.scheduler.run()
