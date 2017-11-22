@@ -1,6 +1,7 @@
 import threading
-import Queue
+from collections import deque
 from hx711 import HX711
+import RPi.GPIO as GPIO
 
 class Sensor:
     def __init__(self, dout, pd_sck):
@@ -13,7 +14,7 @@ class Sensor:
         self.load_sensor = load_sensor
 
     def start(self):
-        self.queue = Queue.Queue()
+        self.buffer = deque([], maxlen=10)
         self.thread = threading.Thread(target = self.collectStream)
         self.thread.start()
 
@@ -28,6 +29,7 @@ class Sensor:
         try:
             while True:
                 weight = self.load_sensor.get_weight(1)
-                self.queue.put(weight)
+                self.buffer.appendleft(weight)
         except(KeyboardInterrupt, SystemExit):
+            self.load_sensor.power_down()
             GPIO.cleanup() 
