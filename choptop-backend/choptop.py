@@ -11,6 +11,7 @@ class ChopTop:
         time.sleep(0.5)
         try:
             while True:
+                sensor_1.update()
                 #get weights for each sensor
                 if sensor_1.buffer.count > 0:
                     weight = sensor_1.buffer.pop()

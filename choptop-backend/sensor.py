@@ -15,8 +15,8 @@ class Sensor:
 
     def start(self):
         self.buffer = deque([], maxlen=10)
-        self.thread = threading.Thread(target = self.collectStream)
-        self.thread.start()
+        #self.thread = threading.Thread(target = self.collectStream)
+        #self.thread.start()
 
     def stop(self):
         self.thread.join()
@@ -25,6 +25,10 @@ class Sensor:
     def getWeight(self):
         return self.load_sensor.get_weight(1)
     
+    def update(self):
+        weight = self.load_sensor.get_weight(1)
+        self.buffer.appendleft(weight)
+
     def collectStream(self):
         try:
             while True:
