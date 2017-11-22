@@ -16,6 +16,10 @@ class Sensor:
         self.thread = threading.Thread(target = self.collectStream)
         self.thread.start()
 
+    def stop(self):
+        self.thread.join()
+        self.load_sensor.power_down()
+        
     def getWeight(self):
         return self.load_sensor.get_weight(1)
     
