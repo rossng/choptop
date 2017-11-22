@@ -12,6 +12,7 @@ class ChopTop:
             weight = sensor_1.queue.get()
             print weight
             self.finger_position = calculatePosition([weight])
+            print sensor_1.queue.qsize()
 
 def calculatePosition(weights):
     return (0,0)
