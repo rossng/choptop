@@ -1,11 +1,25 @@
 from sensor import Sensor
+import Queue
+
+class ChopTop:
+    def __init__(self):
+        self.finger_position = (0,0)
+    def main(self):
+        sensor_1 = Sensor(20, 21)
+        sensor_1.start()
+        while True:
+            #get weights for each sensor
+            weight = sensor_1.queue.get()
+            print weight
+            self.finger_position = calculatePosition([weight])
+
+def calculatePosition(weights):
+    return (0,0)
+
 def main():
     # my code here
-    sensor_1 = Sensor(20, 21)
-
-    while True:
-        weight = sensor_1.get_weight()
-        print weight
+    choptop = ChopTop()
+    choptop.main()
 
 if __name__ == "__main__":
     main()
