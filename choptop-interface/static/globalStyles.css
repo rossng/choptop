@@ -1,0 +1,27 @@
+body, html{
+	height:100%;
+	padding:0;
+	margin:0;
+	width:800px;
+	height:480px;
+	/*overflow:hidden;*/
+}
+
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	
+	/*background:red;*/
+
+}
+
+
+.verticalCenter{
+	  height:100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+}

@@ -5,6 +5,8 @@ import App from './App'
 
 Vue.config.productionTip = false
 
+require('../static/globalStyles.css')
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
