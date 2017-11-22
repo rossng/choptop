@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <NavButton direction="up" :pressed="upPressed"/>
-    <NavButton direction="left" :pressed="leftPressed"/>
+    <NavButton direction="up" :pressed="latestUpdate.upPressed"/>
+    <NavButton direction="left" :pressed="latestUpdate.leftPressed"/>
     <div id="main">
       <WelcomeToChopTop/>
     </div>
-    <NavButton direction="right" :pressed="rightPressed"/>
-    <NavButton direction="down" :pressed="downPressed"/>
+    <NavButton direction="right" :pressed="latestUpdate.rightPressed"/>
+    <NavButton direction="down" :pressed="latestUpdate.downPressed"/>
     <button v-on:click="leftPressed = !leftPressed">toggleLeft</button>
   </div>
 
@@ -26,15 +26,15 @@ export default {
   data (){
     return {
       //button presses
-      leftPressed : true,
-      rightPressed : false,
-      upPressed : false,
-      downPressed: false,
+      // leftPressed : true,
+      // rightPressed : false,
+      // upPressed : false,
+      // downPressed: false,
 
 
       //data fetching from server
-      error:"",
-      latestUpdate: null
+      error: null,
+      latestUpdate: {}
 
 
 
@@ -53,14 +53,14 @@ export default {
       this.error = this.update = null
       this.loading = true
       // replace `getupdate` with your data fetching util / API wrapper
-      $.get("http://localhost:8432", (err, update) => {
-        this.loading = false
-        if (err) {
-          this.error = err.toString()
-        } else {
-          this.latestUpdate = update
-        }
-      })
+      // $.get("http://localhost:8432", (update, err) => {
+      //   this.loading = false
+      //   if (err.toString() != "success") {
+      //     this.error = err.toString()
+      //   } else {
+      //     this.latestUpdate = update
+      //   }
+      // })
     }
   }
 
