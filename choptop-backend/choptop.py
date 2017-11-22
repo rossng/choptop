@@ -30,7 +30,6 @@ class ChopTop:
                 if frame_time_millis > frame_time:
                     time.sleep(frame_time_millis - frame_time)
 				#print "something"
-			
 			sys.stdout = old_stdout
 			log_file.close()
 
