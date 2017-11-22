@@ -1,5 +1,6 @@
 import threading
 import Queue
+from hx711 import HX711
 class Sensor:
     def __init__(self, dout, pd_sck):
         load_sensor = HX711(dout, pd_sck)
