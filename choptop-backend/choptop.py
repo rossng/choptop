@@ -12,6 +12,11 @@ class ChopTop:
         time.sleep(0.5)
         frame_time_millis = int((1/80)*1000)
         try:
+			old_stdout = sys.stdout
+			timestr = time.strftime("%Y%m%d-%H%M%S")
+			timestr = timestr + '.log'
+			log_file = open(timestr,"w")
+			sys.stdout = log_file
             while True:
                 frame_start = int(round(time.time() * 1000))
                 sensor_1.update()
@@ -24,12 +29,8 @@ class ChopTop:
                 frame_time = int(round(time.time() * 1000)) - frame_start
                 if frame_time_millis > frame_time:
                     time.sleep(frame_time_millis - frame_time)
-           	old_stdout = sys.stdout
-           	timestr = time.strftime("%Y%m%d-%H%M%S")
-           	timestr = timestr + '.log'
-			log_file = open(timestr,"w")
-			sys.stdout = log_file
-			print "something"
+				#print "something"
+			
 			sys.stdout = old_stdout
 			log_file.close()
 
