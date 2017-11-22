@@ -12,7 +12,7 @@ class Sensor:
         self.load_sensor = load_sensor
 
     def start(self):
-        self.queue = Queue()
+        self.queue = Queue.Queue()
         self.thread = threading.Thread(target = self.collectStream)
         self.thread.start()
 
