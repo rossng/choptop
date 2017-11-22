@@ -1,0 +1,82 @@
+<template>
+	<div :class="getClass()">
+		{{direction}} button:
+		{{pressed}}
+	</div>
+</template>
+
+<script>
+	export default {
+	  name: 'nav-button',
+	  props: ['pressed', 'direction'],
+	  watch: { 
+	  	pressed : function(newVal, oldVal){
+	  		console.log('Pressed for ' + this.direction + ' changed: ', newVal, ' | was: ', oldVal)
+	  	}
+	  },
+
+	  data () {
+	    return {
+	    	pressStart: 0,
+	      
+	    }
+	  },
+
+	  methods: {
+	  	getClass : function(){
+	  		return "nav-button " + "nav-button-" + this.direction + " pressed-" + this.pressed
+	  	}
+	  },
+
+
+	}
+</script>
+
+
+
+<style scoped>
+
+	@keyframes buttonPress {
+    0%   {background-color: green;}
+    70%  {background-color: orange;}
+    95% {background-color: red;}
+    100%{background-color: green;}
+}
+
+	.nav-button{
+		border:1px solid red;
+	}
+
+	.nav-button-up{
+
+	}
+
+	.nav-button-left{
+		display:inline-block;
+		height:100%;
+		width:20px;
+		float:left;
+	}
+
+	.nav-button-right{
+		display:inline-block;
+		height:100%;
+		width:20px;
+		float:left;
+	}
+
+	.nav-button-down{
+		clear:both;
+	}
+
+	.pressed-true{
+		animation-name: buttonPress;
+    	animation-duration: 2s;
+    	background-color: green;
+	}
+
+	.pressed-false{
+		background:green;
+		background:white;
+	}
+</style>
