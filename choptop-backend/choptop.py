@@ -17,7 +17,7 @@ class ChopTop:
         frame_time_millis = int((1 / 80) * 1000)
         timestr = time.strftime("%Y%m%d-%H%M%S")
         timestr = timestr + '.log'
-        self.log_file = open(timestr, "w")
+        self.log_file = open("logs/" +timestr, "w")
         self.period = 1.0 / 10
         self.scheduler = sched.scheduler(time.time, time.sleep)
         self.scheduler.enter(self.period, 1, self.update, ())
