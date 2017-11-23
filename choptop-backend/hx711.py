@@ -53,7 +53,7 @@ class HX711:
     def read(self):
         while not self.is_ready():
             #print("WAITING")
-            pass
+            time.sleep(0)
 
         dataBits = [self.createBoolList(), self.createBoolList(), self.createBoolList()]
         dataBytes = [0x0] * 4
