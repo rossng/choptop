@@ -1,50 +1,71 @@
+from flask import Flask
 from sensor import Sensor
 import RPi.GPIO as GPIO
 import time
 import sched
-import sys
+import matplotlib
+#matplotlib.use('GTK')
+import matplotlib.pyplot as plt
+import numpy as np
+app = Flask(__name__)
 
 
 class ChopTop:
-
     def __init__(self):
+        self.scheduler = sched.scheduler(time.time, time.sleep)
+        self.period = 1.0 / 10
+        timestr = time.strftime("%Y%m%d-%H%M%S") + '.log'
+        self.log_file = open("logs/" + timestr, "w")
+        self.sensors = []
+        self.sensors.append(Sensor(5, 6))
+        self.sensors.append(Sensor(7, 8))  # placeholder pins
+        self.sensors.append(Sensor(9, 10))
+        self.sensors.append(Sensor(20, 21))
         self.finger_position = (0, 0)
+        #self.fig=plt.gcf()
+        #self.fig.show()
+        self.weights = np.array([0,0,0,0])
+        #plt.axis([0, 1, 0, 1])
+        #plt.ion()
 
     def start(self):
-        self.sensor_1 = Sensor(20, 21)
-        self.sensor_1.start()
-        time.sleep(0.5)
-        frame_time_millis = int((1 / 80) * 1000)
-        timestr = time.strftime("%Y%m%d-%H%M%S")
-        timestr = timestr + '.log'
-        self.log_file = open("logs/" +timestr, "w")
-        self.period = 1.0 / 10
-        self.scheduler = sched.scheduler(time.time, time.sleep)
         self.scheduler.enter(self.period, 1, self.update, ())
         try:
             self.scheduler.run()
-        except:
+        except KeyboardInterrupt:
             GPIO.cleanup()
             self.log_file.close()
 
     def update(self):
-        self.sensor_1.update()
+        logtext = ""
         # get weights for each sensor
-        if self.sensor_1.buffer.count > 0:
-            weight = self.sensor_1.buffer.pop()
-            self.log_file.write(str(weight) + "," + str(int(round(time.time() * 1000))))
-        self.finger_position = calculatePosition([weight])
+        for i, sensor in enumerate(self.sensors):
+            weight = sensor.get_weight()
+            self.weights[i] = weight
+            #logtext += str(weight) + ","
+
+        if np.sum(self.weights):
+            x = clamp(float(self.weights[1] + self.weights[2]) / np.sum(self.weights), 0, 1)
+            y = clamp(float(self.weights[2] + self.weights[3]) / np.sum(self.weights), 0, 1)
+            self.finger_position = (x, y)
+            #plt.scatter(x, y)
+            #self.fig.canvas.draw()
+        print str(self.finger_position)
+        #self.log_file.write(logtext + str(int(round(time.time() * 1000))) + '\n')
         self.scheduler.enter(self.period, 1, self.update, ())
 
 
-def calculatePosition(weights):
-    return (0, 0)
+def clamp(n, minn, maxn):
+    return max(min(maxn, n), minn)
 
 
 def main():
     # my code here
     choptop = ChopTop()
+    # app = Flask(__name__)
+    # app.config['ChopTop'] = choptop
     choptop.start()
+
 
 if __name__ == "__main__":
     main()
