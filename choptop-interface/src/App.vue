@@ -3,7 +3,8 @@
     <NavButton direction="up" :pressed="latestUpdate.upPressed"/>
     <NavButton direction="left" :pressed="latestUpdate.leftPressed"/>
     <div id="main">
-      <WelcomeToChopTop/>
+      <WelcomeToChopTop v-if="shouldShowWelcome()"/>
+      <RecipeListing v-if="shouldShowRecipeListing()" :recipes="recipe" />
     </div>
     <NavButton direction="right" :pressed="latestUpdate.rightPressed"/>
     <NavButton direction="down" :pressed="latestUpdate.downPressed"/>
@@ -15,21 +16,26 @@
 <script>
 import WelcomeToChopTop from './components/WelcomeToChopTop'
 import NavButton from './components/NavButton'
+import RecipeListing from './components/RecipeListing'
+
+
+
+// import recipes json file
+import Recipes from './recipes.json'
 
 export default {
   name: 'app',
   components: {
     WelcomeToChopTop,
-    NavButton
+    NavButton,
+    RecipeListing
   },
 
   data (){
     return {
-      //button presses
-      // leftPressed : true,
-      // rightPressed : false,
-      // upPressed : false,
-      // downPressed: false,
+      currentScreen:"recipeListing",
+      recipe: Recipes,
+
 
 
       //data fetching from server
@@ -61,6 +67,13 @@ export default {
       //     this.latestUpdate = update
       //   }
       // })
+    },
+    shouldShowWelcome: function() {
+      return this.currentScreen === "welcome"
+
+    },
+    shouldShowRecipeListing: function(){
+      return this.currentScreen === "recipeListing"
     }
   }
 
