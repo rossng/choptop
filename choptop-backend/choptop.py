@@ -3,9 +3,7 @@ from sensor import Sensor
 import RPi.GPIO as GPIO
 import time
 import sched
-import matplotlib
-#matplotlib.use('GTK')
-import matplotlib.pyplot as plt
+from plotter import Plotter
 import numpy as np
 app = Flask(__name__)
 
@@ -13,23 +11,24 @@ app = Flask(__name__)
 class ChopTop:
     def __init__(self):
         self.scheduler = sched.scheduler(time.time, time.sleep)
-        self.period = 1.0 / 10
+        self.period = 1.0 / 60
         timestr = time.strftime("%Y%m%d-%H%M%S") + '.log'
         self.log_file = open("logs/" + timestr, "w")
         self.sensors = []
-        self.sensors.append(Sensor(5, 6))
-        self.sensors.append(Sensor(7, 8))  # placeholder pins
-        self.sensors.append(Sensor(9, 10))
-        self.sensors.append(Sensor(20, 21))
+        self.sensors.append(Sensor(5, 6, -0.3737, 0))
+        self.sensors.append(Sensor(7, 8, -0.5563, -1))  # placeholder pins
+        self.sensors.append(Sensor(9, 10, 1, 0))
+        #self.sensors.append(Sensor(20, 21, 1, 0))
         self.finger_position = (0, 0)
-        #self.fig=plt.gcf()
-        #self.fig.show()
-        self.weights = np.array([0,0,0,0])
-        #plt.axis([0, 1, 0, 1])
-        #plt.ion()
+        #self.plotter = Plotter()
+        self.weights = np.array([0,0,0])
+
 
     def start(self):
-        self.scheduler.enter(self.period, 1, self.update, ())
+        for sensor in self.sensors:
+            sensor.start()
+
+        self.scheduler.enter(0, 1, self.update, ())
         try:
             self.scheduler.run()
         except KeyboardInterrupt:
@@ -45,12 +44,12 @@ class ChopTop:
             #logtext += str(weight) + ","
 
         if np.sum(self.weights):
-            x = clamp(float(self.weights[1] + self.weights[2]) / np.sum(self.weights), 0, 1)
-            y = clamp(float(self.weights[2] + self.weights[3]) / np.sum(self.weights), 0, 1)
+            x = clamp(float(self.weights[0] + self.weights[1]) / np.sum(self.weights), 0, 1)
+            y = clamp(float(self.weights[1] + self.weights[2]) / np.sum(self.weights), 0, 1)
             self.finger_position = (x, y)
-            #plt.scatter(x, y)
-            #self.fig.canvas.draw()
+            #self.plotter.queue.put(self.finger_position)
         print str(self.finger_position)
+        #print str(self.weights)
         #self.log_file.write(logtext + str(int(round(time.time() * 1000))) + '\n')
         self.scheduler.enter(self.period, 1, self.update, ())
 
