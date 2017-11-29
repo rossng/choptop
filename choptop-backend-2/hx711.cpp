@@ -4,9 +4,12 @@
 #include <algorithm>
 #include <thread>
 #include <iostream>
+#include <signal.h>
+#include <vector>
 #include "hx711.h"
-
+using std::thread;
 float sensor_inputs[] = {0f, 0f, 0f, 0f};
+std::vector<thread> threads;
 
 HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup) :
 	mGainBits(1),
@@ -124,6 +127,13 @@ float HX711::getScale(){
 	return this->mScale;
 }
 
+void graceful_shutdown(sig_t s){
+    for(auto t : threads){
+        t.join();
+    }
+    exit(1);
+}
+
 void getReadings(int clk, int data, int index){
     HX711 sensor(clk, data, 0);
     sensor.tare();
@@ -134,14 +144,12 @@ void getReadings(int clk, int data, int index){
 }
 
 int main(){
-
-    
-
-    std::thread sensor_a(getReadings, 6, 5, 0);     
-    std::thread sensor_b(getReadings, 8, 7, 1);
-	std::thread sensor_c(getReadings, 10, 9, 2);
-	std::thread sensor_d(getReadings, 21, 20, 3);
-
+    thread sensor_a(getReadings, 6, 5, 0);     
+    thread sensor_b(getReadings, 8, 7, 1);
+	thread sensor_c(getReadings, 10, 9, 2);
+    thread sensor_d(getReadings, 21, 20, 3);
+    threads = {sensor_a, sensor_b, sensor_c, sensor_d};
+    signal(SIGINT, graceful_shutdown)
     float weights[] = {0f, 0f, 0f, 0f};
 	while(true){
         float total = 0;
