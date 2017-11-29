@@ -29,7 +29,7 @@ public:
 	int32_t read();
 	int32_t readAverage(uint8_t times = 10);
 	int32_t getRawValue(uint8_t times = 10);
-	float getUnits(uint8_t times = 10);
+	float getUnits(uint8_t times = 1);
 	void tare(uint8_t times = 10);
 	void setScale(float scale);
 	void setOffset(int32_t offset);

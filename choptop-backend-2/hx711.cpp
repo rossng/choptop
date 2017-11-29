@@ -15,7 +15,7 @@ HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup) :
 }
 
 void HX711::initialize(uint8_t skipSetup){
-	if((!skipSetup) && wiringPiSetup() == -1){
+	if((!skipSetup) && wiringPiSetupGpio() == -1){
 		printf("initialization failed");
 	}
 	pinMode(mClockPin, OUTPUT);
@@ -121,7 +121,7 @@ float HX711::getScale(){
 }
 
 int main(){
-	HX711 sensor(7, 0, 0);
+	HX711 sensor(6, 5, 0);
 	sensor.tare();
 	sensor.setScale(16000);
 	while(true){
