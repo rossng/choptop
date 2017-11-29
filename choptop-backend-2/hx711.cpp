@@ -1,146 +1,131 @@
+#include <stdio.h>
+#include <inttypes.h>
 #include <wiringPi.h>
-#include <wiringShift.h>
-#include <thread>
-#include <wiringSerial.h>
-#include <iostream>
+
 #include "hx711.h"
 
-HX711::HX711(char dout, char pd_sck, char gain) {
-	begin(dout, pd_sck, gain);
+HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup) :
+	mGainBits(1),
+	mScale(1.0f),
+	mOffset(0),
+	mClockPin(clockPin),
+	mDataPin(dataPin)
+{
+	this->initialize(skipSetup);
 }
 
-HX711::HX711() {
+void HX711::initialize(uint8_t skipSetup){
+	if((!skipSetup) && wiringPiSetup() == -1){
+		printf("initialization failed");
+	}
+	pinMode(mClockPin, OUTPUT);
+	pinMode(mDataPin, INPUT);
 }
 
-HX711::~HX711() {
+bool HX711::isReady(){
+	return digitalRead(mDataPin) == LOW;
 }
 
-void HX711::begin(char dout, char pd_sck, char gain) {
-	PD_SCK = pd_sck;
-	DOUT = dout;
-
-	pinMode(PD_SCK, OUTPUT);
-	pinMode(DOUT, INPUT);
-
-	set_gain(gain);
-}
-
-bool HX711::is_ready() {
-	return digitalRead(DOUT) == LOW;
-}
-
-void HX711::set_gain(char gain) {
-	switch (gain) {
-		case 128:		// channel A, gain factor 128
-			GAIN = 1;
-			break;
-		case 64:		// channel A, gain factor 64
-			GAIN = 3;
-			break;
-		case 32:		// channel B, gain factor 32
-			GAIN = 2;
-			break;
+void HX711::setGain(uint8_t gain){
+	switch(gain){
+		case GAIN_128:
+			this->mGainBits = 1;
+		break;
+		case GAIN_64:
+			this->mGainBits = 3;
+		break;
+		case GAIN_32:
+			this->mGainBits = 2;
+		break;
+		default:
+			//invalid gain, ignore
+		break;
 	}
 
-	digitalWrite(PD_SCK, LOW);
+	digitalWrite(mClockPin, LOW);
 	read();
 }
 
-long HX711::read() {
+int32_t HX711::read() {
 	// wait for the chip to become ready
-	while (!is_ready()) {
-		// Will do nothing on Arduino but prevent resets of ESP8266 (Watchdog Issue)
-		std::this_thread::yield();
-	}
+	while (!this->isReady());
 
-	unsigned long value = 0;
-	uint8_t data[3] = { 0 };
-	uint8_t filler = 0x00;
-
+	int32_t data = 0;
 	// pulse the clock pin 24 times to read the data
-	data[2] = shiftIn(DOUT, PD_SCK, MSBFIRST);
-	data[1] = shiftIn(DOUT, PD_SCK, MSBFIRST);
-	data[0] = shiftIn(DOUT, PD_SCK, MSBFIRST);
+	for(uint8_t i = 24; i--;){
+		digitalWrite(mClockPin, HIGH);
+
+		digitalRead(mDataPin);
+		data |= (digitalRead(mDataPin) << i);
+
+		digitalWrite(mClockPin, LOW);
+	}
 
 	// set the channel and the gain factor for the next reading using the clock pin
-	for (unsigned int i = 0; i < GAIN; i++) {
-		digitalWrite(PD_SCK, HIGH);
-		digitalWrite(PD_SCK, LOW);
+	for (int i = 0; i < mGainBits; i++) {
+		digitalWrite(mClockPin, HIGH);
+		digitalWrite(mClockPin, LOW);
 	}
 
-	// Replicate the most significant bit to pad out a 32-bit signed integer
-	if (data[2] & 0x80) {
-		filler = 0xFF;
-	} else {
-		filler = 0x00;
+	if(data & 0x800000){
+		data |= (long) ~0xffffff;
 	}
 
-	// Construct a 32-bit signed integer
-	value = ( static_cast<unsigned long>(filler) << 24
-			| static_cast<unsigned long>(data[2]) << 16
-			| static_cast<unsigned long>(data[1]) << 8
-			| static_cast<unsigned long>(data[0]) );
-
-	return static_cast<long>(value);
+	return data;
 }
 
-long HX711::read_average(char times) {
-	long sum = 0;
-	for (char i = 0; i < times; i++) {
+int32_t HX711::readAverage(uint8_t times) {
+	int64_t sum = 0;
+	for (uint8_t i = 0; i < times; i++) {
 		sum += read();
-		std::this_thread::yield();
 	}
 	return sum / times;
 }
 
-double HX711::get_value(char times) {
-	return read_average(times) - OFFSET;
+int32_t HX711::getRawValue(uint8_t times) {
+	return readAverage(times) - mOffset;
 }
 
-float HX711::get_units(char times) {
-	return get_value(times) / SCALE;
+float HX711::getUnits(uint8_t times) {
+	return getRawValue(times) / mScale;
 }
 
-void HX711::tare(char times) {
-	double sum = read_average(times);
-	set_offset(sum);
+void HX711::tare(uint8_t times) {
+	uint64_t sum = readAverage(times);
+	setOffset(sum);
 }
 
-void HX711::set_scale(float scale) {
-	SCALE = scale;
+void HX711::setScale(float scale) {
+	mScale = scale;
 }
 
-float HX711::get_scale() {
-	return SCALE;
+void HX711::setOffset(int32_t offset) {
+	mOffset = offset;
 }
 
-void HX711::set_offset(long offset) {
-	OFFSET = offset;
+void HX711::powerDown() {
+	digitalWrite(mClockPin, LOW);
+	digitalWrite(mClockPin, HIGH);
 }
 
-long HX711::get_offset() {
-	return OFFSET;
+void HX711::powerUp() {
+	digitalWrite(mClockPin, LOW);
 }
 
-void HX711::power_down() {
-	digitalWrite(PD_SCK, LOW);
-	digitalWrite(PD_SCK, HIGH);
+int32_t HX711::getOffset(){
+	return this->mOffset;
 }
 
-void HX711::power_up() {
-	digitalWrite(PD_SCK, LOW);
+float HX711::getScale(){
+	return this->mScale;
 }
 
 int main(){
-    wiringPiSetup();
-    HX711 scale(5, 6);  
-    std::cout << scale.read() << std::endl;
-    scale.tare();
-
-    while(true){
-        scale.power_up();
-        std::cout << scale.get_units(10) << std::endl;
-        scale.power_down();
-    }
-    return 0;
+	HX711 sensor(7, 0, 0);
+	sensor.tare();
+	sensor.setScale(16000);
+	while(true){
+		printf("%f\n", sensor.getUnits());
+	}
 }
+
