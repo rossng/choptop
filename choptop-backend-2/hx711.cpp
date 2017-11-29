@@ -132,7 +132,19 @@ void HX711::power_up() {
 }
 
 int main(){
-    wiringPiSetup();    
+    if ((fd = serialOpen ("/dev/ttyAMA0", 38400)) < 0)
+    {
+      fprintf (stderr, "Unable to open serial device: %s\n", strerror (errno)) ;
+      return 1 ;
+  }
+    wiringPiSetup();
+
+    
+  if (wiringPiSetup () == -1)
+  {
+    fprintf (stdout, "Unable to start wiringPi: %s\n", strerror (errno)) ;
+    return 1 ;
+}
     HX711 scale(5, 6);  
     scale.tare();
 
