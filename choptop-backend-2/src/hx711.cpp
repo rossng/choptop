@@ -1,16 +1,14 @@
-#include <stdio.h>
-#include <inttypes.h>
+#ifdef IS_RPI
+
+#include <cstdio>
+#include <cinttypes>
 #include <wiringPi.h>
 #include <algorithm>
 #include <thread>
 #include <iostream>
-#include <signal.h>
+#include <csignal>
 #include <vector>
 #include "hx711.h"
-
-using std::thread;
-float sensor_inputs[] = {0.0f, 0.0f, 0.0f, 0.0f};
-thread threads[4];
 
 HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup) :
         mGainBits(1),
@@ -74,6 +72,7 @@ int32_t HX711::read() {
         digitalWrite(mClockPin, LOW);
     }
 
+    // Sign-extend 24-bit integer to 32 bits
     if (data & 0x800000) {
         data |= (long) ~0xffffff;
     }
@@ -127,43 +126,4 @@ float HX711::getScale() {
     return this->mScale;
 }
 
-void graceful_shutdown(sig_t s) {
-    for (int i = 0; i < 4; i++) {
-        threads[i].join();
-    }
-    exit(1);
-}
-
-void getReadings(int clk, int data, int index) {
-    HX711 sensor(clk, data, 0);
-    sensor.tare();
-    sensor.setScale(16000);
-    while (true) {
-        sensor_inputs[index] = sensor.getUnits();
-    }
-}
-
-float clamp(float n, float hi, float lo) {
-    return std::min(std::max(n, lo), hi);
-}
-
-int main() {
-    threads[0] = thread(getReadings, 6, 5, 0);
-    threads[1] = thread(getReadings, 8, 7, 1);
-    threads[2] = thread(getReadings, 10, 9, 2);
-    threads[3] = thread(getReadings, 21, 20, 3);
-
-    //signal(SIGINT, graceful_shutdown);
-    float weights[] = {0.0f, 0.0f, 0.0f, 0.0f};
-    while (true) {
-        float total = 0;
-        for (int i = 0; i < 4; i++) {
-            weights[i] = sensor_inputs[i];
-            total += weights[i];
-        }
-        float x = clamp((weights[0] + weights[1]) / total, 0.0, 1.0f);
-        float y = clamp((weights[1] + weights[2]) / total, 0.0, 1.0f);
-        std::cout << x << "," << y << std::endl;
-    }
-}
-
+#endif
