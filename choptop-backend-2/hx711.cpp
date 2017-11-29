@@ -151,8 +151,12 @@ int main(){
     thread sensor_a(getReadings, 6, 5, 0);     
     thread sensor_b(getReadings, 8, 7, 1);
 	thread sensor_c(getReadings, 10, 9, 2);
-    thread sensor_d(getReadings, 21, 20, 3);
-    threads = {sensor_a, sensor_b, sensor_c, sensor_d};
+	thread sensor_d(getReadings, 21, 20, 3);
+	threads[0] = sensor_a;
+	threads[1] = sensor_b;
+	threads[2] = sensor_c;
+	threads[3] = sensor_d;
+	
     signal(SIGINT, graceful_shutdown);
     float weights[] = {0.0f, 0.0f, 0.0f, 0.0f};
 	while(true){
