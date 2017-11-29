@@ -8,8 +8,8 @@
 #include <vector>
 #include "hx711.h"
 using std::thread;
-float sensor_inputs[] = {0f, 0f, 0f, 0f};
-std::vector<thread> threads;
+float sensor_inputs[] = {0.0f, 0.0f, 0.0f, 0.0f};
+thread threads[4];
 
 HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup) :
 	mGainBits(1),
@@ -128,8 +128,8 @@ float HX711::getScale(){
 }
 
 void graceful_shutdown(sig_t s){
-    for(auto t : threads){
-        t.join();
+    for(int i=0; i < 4; i++){
+        threads[i].join();
     }
     exit(1);
 }
@@ -150,15 +150,15 @@ int main(){
     thread sensor_d(getReadings, 21, 20, 3);
     threads = {sensor_a, sensor_b, sensor_c, sensor_d};
     signal(SIGINT, graceful_shutdown)
-    float weights[] = {0f, 0f, 0f, 0f};
+    float weights[] = {0.0f, 0.0f, 0.0f, 0.0f};
 	while(true){
         float total = 0;
         for(int i=0; i<4; i++){
             weights[i] = sensor_inputs[i];
             total += weights[i];
         }
-        float x = std::clamp((weights[0] + weights[1]) / total, 0f, 1f);
-        float y = std::clamp((weights[1] + weights[2]) / total, 0f, 1f);
+        float x = std::clamp((weights[0] + weights[1]) / total, 0.0, 1.0f);
+        float y = std::clamp((weights[1] + weights[2]) / total, 0.0, 1.0f);
         std::cout << x << "," << y << std::endl;
 	}
 }
