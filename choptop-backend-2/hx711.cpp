@@ -1,9 +1,11 @@
 #include <wiringPi.h>
 #include <wiringShift.h>
 #include <thread>
+#include <wiringSerial.h>
+#include <iostream>
 #include "hx711.h"
 
-HX711::HX711(byte dout, byte pd_sck, byte gain) {
+HX711::HX711(char dout, char pd_sck, char gain) {
 	begin(dout, pd_sck, gain);
 }
 
@@ -13,7 +15,7 @@ HX711::HX711() {
 HX711::~HX711() {
 }
 
-void HX711::begin(byte dout, byte pd_sck, byte gain) {
+void HX711::begin(char dout, char pd_sck, char gain) {
 	PD_SCK = pd_sck;
 	DOUT = dout;
 
@@ -27,7 +29,7 @@ bool HX711::is_ready() {
 	return digitalRead(DOUT) == LOW;
 }
 
-void HX711::set_gain(byte gain) {
+void HX711::set_gain(char gain) {
 	switch (gain) {
 		case 128:		// channel A, gain factor 128
 			GAIN = 1;
@@ -82,24 +84,24 @@ long HX711::read() {
 	return static_cast<long>(value);
 }
 
-long HX711::read_average(byte times) {
+long HX711::read_average(char times) {
 	long sum = 0;
-	for (byte i = 0; i < times; i++) {
+	for (char i = 0; i < times; i++) {
 		sum += read();
 		std::this_thread::yield();
 	}
 	return sum / times;
 }
 
-double HX711::get_value(byte times) {
+double HX711::get_value(char times) {
 	return read_average(times) - OFFSET;
 }
 
-float HX711::get_units(byte times) {
+float HX711::get_units(char times) {
 	return get_value(times) / SCALE;
 }
 
-void HX711::tare(byte times) {
+void HX711::tare(char times) {
 	double sum = read_average(times);
 	set_offset(sum);
 }
@@ -127,4 +129,17 @@ void HX711::power_down() {
 
 void HX711::power_up() {
 	digitalWrite(PD_SCK, LOW);
+}
+
+int main(){
+    wiringPiSetup();    
+    HX711 scale(5, 6);  
+    scale.tare();
+
+    while(true){
+        scale.power_up();
+        std::cout << scale.get_units(10) << std::endl;
+        scale.power_down();
+    }
+    return 0;
 }
