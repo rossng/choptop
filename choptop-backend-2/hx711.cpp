@@ -148,14 +148,10 @@ float clamp(float n, float hi, float lo){
 }
 
 int main(){
-    thread sensor_a(getReadings, 6, 5, 0);     
-    thread sensor_b(getReadings, 8, 7, 1);
-	thread sensor_c(getReadings, 10, 9, 2);
-	thread sensor_d(getReadings, 21, 20, 3);
-	threads[0] = sensor_a;
-	threads[1] = sensor_b;
-	threads[2] = sensor_c;
-	threads[3] = sensor_d;
+    threads[0] = thread(getReadings, 6, 5, 0);     
+    threads[1] = thread(getReadings, 8, 7, 1);
+	threads[2] = thread(getReadings, 10, 9, 2);
+	threads[3] = thread(getReadings, 21, 20, 3);
 	
     signal(SIGINT, graceful_shutdown);
     float weights[] = {0.0f, 0.0f, 0.0f, 0.0f};
