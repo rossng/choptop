@@ -143,13 +143,17 @@ void getReadings(int clk, int data, int index){
     }
 }
 
+float clamp(float n, float hi, float lo){
+	return std::min(std::max(n, lo), hi);
+}
+
 int main(){
     thread sensor_a(getReadings, 6, 5, 0);     
     thread sensor_b(getReadings, 8, 7, 1);
 	thread sensor_c(getReadings, 10, 9, 2);
     thread sensor_d(getReadings, 21, 20, 3);
     threads = {sensor_a, sensor_b, sensor_c, sensor_d};
-    signal(SIGINT, graceful_shutdown)
+    signal(SIGINT, graceful_shutdown);
     float weights[] = {0.0f, 0.0f, 0.0f, 0.0f};
 	while(true){
         float total = 0;
@@ -157,8 +161,8 @@ int main(){
             weights[i] = sensor_inputs[i];
             total += weights[i];
         }
-        float x = std::clamp((weights[0] + weights[1]) / total, 0.0, 1.0f);
-        float y = std::clamp((weights[1] + weights[2]) / total, 0.0, 1.0f);
+        float x = clamp((weights[0] + weights[1]) / total, 0.0, 1.0f);
+        float y = clamp((weights[1] + weights[2]) / total, 0.0, 1.0f);
         std::cout << x << "," << y << std::endl;
 	}
 }
