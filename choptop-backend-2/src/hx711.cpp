@@ -24,10 +24,10 @@ void HX711::initialize(uint8_t skipSetup) {
     if ((!skipSetup) && wiringPiSetupGpio() == -1) {
         printf("initialization failed");
     }
-    wiringPiMutex_->lock();
+    wiringPiMutex_.lock();
     pinMode(clockPin_, OUTPUT);
     pinMode(dataPin_, INPUT);
-    wiringPiMutex_->unlock();
+    wiringPiMutex_.unlock();
 }
 
 bool HX711::isReady() {
