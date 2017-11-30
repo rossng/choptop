@@ -10,6 +10,7 @@ using namespace std;
 float sensor_inputs[] = {0.0f, 0.0f, 0.0f, 0.0f};
 thread threads[4];
 std::atomic<bool> executing(true);
+std::mutex wiringPiMutex;
 
 void gracefulShutdown(int s) {
     executing = false;
@@ -21,7 +22,7 @@ void gracefulShutdown(int s) {
 }
 
 void getReadings(uint8_t clk, uint8_t data, int index) {
-    HX711 sensor(clk, data, 0);
+    HX711 sensor(clk, data, 0, wiringPiMutex);
     sensor.tare();
     sensor.setScale(16000);
     while (executing) {
@@ -90,6 +91,7 @@ int main(int argc, char** argv) {
     signal(SIGABRT, gracefulShutdown);
 
     if (app.got_subcommand("print")) {
+        printf("Printing values\n");
         printValues(print_sensors, print_xpos, print_ypos);
     }
 }

@@ -9,12 +9,13 @@
 #include <vector>
 #include "hx711.h"
 
-HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup) :
-        mGainBits(1),
-        mScale(1.0f),
-        mOffset(0),
-        mClockPin(clockPin),
-        mDataPin(dataPin),
+HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup, std::mutex &wiringPiMutex) :
+        gainBits_(1),
+        scale_(1.0f),
+        offset_(0),
+        clockPin_(clockPin),
+        dataPin_(dataPin),
+        wiringPiMutex_(wiringPiMutex),
         gen(0),
         dis(0, 16777215) {
     this->initialize(skipSetup);
@@ -43,11 +44,11 @@ int32_t HX711::readAverage(uint8_t times) {
 }
 
 int32_t HX711::getRawValue(uint8_t times) {
-    return readAverage(times) - mOffset;
+    return readAverage(times) - offset_;
 }
 
 float HX711::getUnits(uint8_t times) {
-    return getRawValue(times) / mScale;
+    return getRawValue(times) / scale_;
 }
 
 void HX711::tare(uint8_t times) {
@@ -56,11 +57,11 @@ void HX711::tare(uint8_t times) {
 }
 
 void HX711::setScale(float scale) {
-    mScale = scale;
+    scale_ = scale;
 }
 
 void HX711::setOffset(int32_t offset) {
-    mOffset = offset;
+    offset_ = offset;
 }
 
 void HX711::powerDown() {
@@ -70,11 +71,11 @@ void HX711::powerUp() {
 }
 
 int32_t HX711::getOffset() {
-    return this->mOffset;
+    return this->offset_;
 }
 
 float HX711::getScale() {
-    return this->mScale;
+    return this->scale_;
 }
 
 #endif

@@ -2,6 +2,7 @@
 
 #include <cinttypes>
 #include <random>
+#include <mutex>
 
 //channel A, gain 128
 #define GAIN_128 128
@@ -14,12 +15,13 @@
 
 class HX711 {
 private:
-    uint8_t mGainBits;
-    float mScale;
-    int32_t mOffset;
+    uint8_t gainBits_;
+    float scale_;
+    int32_t offset_;
 
-    uint8_t mClockPin;
-    uint8_t mDataPin;
+    uint8_t clockPin_;
+    uint8_t dataPin_;
+    std::mutex &wiringPiMutex_;
 
 #ifndef IS_RPI
     std::mt19937 gen;
@@ -27,7 +29,7 @@ private:
 #endif
 
 public:
-    HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup);
+    HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup, std::mutex &wiringPiMutex);
 
     void initialize(uint8_t skipSetup);
 
