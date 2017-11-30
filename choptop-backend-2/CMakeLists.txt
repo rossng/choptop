@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.7)
-project(choptop_backend_2)
+project(choptop)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -10,11 +10,12 @@ set(SOURCE_FILES
         src/hx711.cpp
         src/hx711.h src/main.cpp src/hx711_mock.cpp)
 
-add_executable(choptop_backend_2 ${SOURCE_FILES})
+add_executable(choptop ${SOURCE_FILES})
 
-target_link_libraries(choptop_backend_2 Threads::Threads)
+target_link_libraries(choptop Threads::Threads)
 
 if (IS_RPI)
     find_library(wiringPi_LIB wiringPi)
-    target_link_libraries(choptop_backend_2 ${wiringPi_LIB})
+    target_link_libraries(choptop ${wiringPi_LIB})
+    target_compile_definitions(choptop PRIVATE IS_RPI=1)
 endif()
