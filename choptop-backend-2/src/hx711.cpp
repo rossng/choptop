@@ -1,3 +1,4 @@
+//#define IS_RPI
 #ifdef IS_RPI
 
 #include <cstdio>
@@ -21,10 +22,10 @@ HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup, std::mutex &w
 }
 
 void HX711::initialize(uint8_t skipSetup) {
+    wiringPiMutex_.lock();
     if ((!skipSetup) && wiringPiSetupGpio() == -1) {
         printf("initialization failed");
     }
-    wiringPiMutex_.lock();
     pinMode(clockPin_, OUTPUT);
     pinMode(dataPin_, INPUT);
     wiringPiMutex_.unlock();
