@@ -18,6 +18,12 @@ import WelcomeToChopTop from './components/WelcomeToChopTop'
 import NavButton from './components/NavButton'
 import RecipeListing from './components/RecipeListing'
 
+import VueWebsocket from 'vue-native-websocket'
+
+import Vue from 'vue'
+
+Vue.use(VueWebsocket, "ws://localhost:8765");
+
 
 
 // import recipes json file
@@ -58,6 +64,7 @@ export default {
     fetchData () {
       this.error = this.update = null
       this.loading = true
+      this.$options.sockets.onmessage = (data) => console.log(data)
       // replace `getupdate` with your data fetching util / API wrapper
       // $.get("http://localhost:8432", (update, err) => {
       //   this.loading = false
@@ -75,7 +82,39 @@ export default {
     shouldShowRecipeListing: function(){
       return this.currentScreen === "recipeListing"
     }
-  }
+  },
+  socket: {
+      // Prefix for event names
+      // prefix: "/counter/",
+      
+      // If you set `namespace`, it will create a new socket connection to the namespace instead of `/`
+      // namespace: "/counter",
+
+      events: {
+
+        // Similar as this.$socket.on("changed", (msg) => { ... });
+        // If you set `prefix` to `/counter/`, the event name will be `/counter/changed`
+        //
+        changed(msg) {
+          console.log("Something changed: " + msg);
+        },
+        
+         // common socket.io events
+        connect() {
+          console.log("Websocket connected to " + this.$socket.nsp);
+        },
+
+        disconnect() {
+          console.log("Websocket disconnected from " + this.$socket.nsp);
+        },
+
+        error(err) {
+          console.error("Websocket error!", err);
+        }
+        
+
+      }
+    }
 
 
 

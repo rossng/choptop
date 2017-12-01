@@ -2,7 +2,6 @@
 	<div class="ff">
 		<div v-for="(rec, index)  in recipes">
 			<RecipeOverview :recipe="rec" :selected="index == selectedRecipeIndex"/>
-
 		</div>
 	</div>
 </template>
