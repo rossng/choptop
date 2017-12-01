@@ -5,6 +5,8 @@ import time
 import sched
 from plotter import Plotter
 import numpy as np
+import asyncio
+import websockets
 app = Flask(__name__)
 
 
@@ -23,8 +25,16 @@ class ChopTop:
         #self.plotter = Plotter()
         self.weights = np.array([0,0,0])
 
+    async def hello(uri):
+        async with websockets.connect(uri) as websocket:
+            await websocket.send("Hello world!")
+
 
     def start(self):
+
+        asyncio.get_event_loop().run_until_complete(
+                hello('ws://localhost:8765'))
+
         for sensor in self.sensors:
             sensor.start()
 
@@ -48,7 +58,7 @@ class ChopTop:
             y = clamp(float(self.weights[1] + self.weights[2]) / np.sum(self.weights), 0, 1)
             self.finger_position = (x, y)
             #self.plotter.queue.put(self.finger_position)
-        print str(self.finger_position)
+        print(str(self.finger_position))
         #print str(self.weights)
         #self.log_file.write(logtext + str(int(round(time.time() * 1000))) + '\n')
         self.scheduler.enter(self.period, 1, self.update, ())
