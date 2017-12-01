@@ -87,7 +87,7 @@
 			"calories":1400,
 			"ingredients":[
 				{
-				"name":"onion (medium)",
+				"name":"medium onion",
 				"quantity": [1,185], 
 				"units":["each","g"]
 				},

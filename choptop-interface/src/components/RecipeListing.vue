@@ -1,7 +1,7 @@
 <template>
 	<div class="ff">
 		<div v-for="(rec, index)  in recipes">
-			<RecipeOverview :recipe="rec" :selected="index == selectedRecipeIndex"/>
+			<RecipeOverview :recipe="rec" :hovered="index == hoveredRecipeIndex" :selected="index == hoveredRecipeIndex && selected"/>
 		</div>
 	</div>
 </template>
@@ -19,7 +19,8 @@
 		props: ['recipes'],
 		data () {
 			return {
-				selectedRecipeIndex: 0,
+				hoveredRecipeIndex: 0,
+				selected: true
 			  
 			}
 		}
