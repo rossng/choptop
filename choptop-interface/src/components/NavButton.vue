@@ -44,7 +44,8 @@
 }
 
 	.nav-button{
-		border:1px solid red;
+		border:3px solid #004a63;
+		color:white;
 	}
 
 	.nav-button-up{

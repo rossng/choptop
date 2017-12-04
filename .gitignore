@@ -1,3 +1,5 @@
 node_modules/
 choptop-backend/logs/
 .idea/
+
+\.DS_Store

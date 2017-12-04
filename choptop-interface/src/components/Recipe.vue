@@ -12,7 +12,7 @@
 			Method
 		</div>
 		<h2>Difficulty: {{recipe.difficulty}}</h2>
-		<h2>Time: {{recipe.time}} minutes</h2>
+		<h3>Time: {{recipe.time}} minutes</h3>
 	</div>
 </template>
 
@@ -43,12 +43,12 @@
 	}
 
 	.recipe{
-		border:1px black solid;
+		border:1px #004a63 solid;
 		margin:10px;
 	}
 
 	.recipeOverview.selected{
-		background:lightblue;
+		background:#68b4b2;
 	}
 	
 </style>

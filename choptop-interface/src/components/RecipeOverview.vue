@@ -7,6 +7,8 @@
 		</div>
 		<div v-if="selected">
 			<h1>{{recipe.title}}</h1>
+			<h2>Difficulty: {{recipe.difficulty}}</h2>
+			<h2>Time: {{recipe.time}} minutes</h2>
 
 			<div id="ingredients">
 				Ingredients
@@ -66,6 +68,7 @@
 	  		//this code isn't nice, sorry
 	  		var text = "";
 	  		if(ingredient.units.length == 2){
+	  			// 
 	  			if(ingredient.units[0] == "each"){
 	  				var quantity = ingredient.quantity[0]
 	  				text += quantity + " "
@@ -73,8 +76,17 @@
 	  				if(quantity > 1 && ingredient.name[ingredient.name.length -1] != s){
 	  					text += "s" //pluralise names
 	  				}
+	  				text += " ("+ingredient.quantity[1]+ " " + ingredient.units[1]+") "
+	  			}
+	  		}else {
+	  			if (ingredient.units == "each"){
+	  				var quantity = ingredient.quantity[0]
+	  				text += quantity + " "
+	  				text += ingredient.name
 	  			}else{
-
+	  				var quantity = ingredient.quantity[0]
+	  				text += quantity + " " + ingredient.units+" "
+	  				text += ingredient.name
 	  			}
 	  		}
 	  		return text
@@ -96,11 +108,11 @@
 	}
 
 	.recipeOverview.hovered{
-		background:lightblue;
+		background:lightgray;
 	}
 
 	.recipeOverview.selected{
-		background: green;
+		background: #68b4b2;
 	}
 	
 </style>

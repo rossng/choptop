@@ -118,6 +118,7 @@
 </script>
 
 <style>
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -126,6 +127,7 @@
     color: #2c3e50;
     height: 100%;
     width: 100%;
+    background: #026967;
     /*overflow:hidden;*/
   }
 
@@ -134,5 +136,8 @@
     height: 460px;
     float: left;
     display: inline-block;
+    background: #f2b74b;
   }
+
+
 </style>
