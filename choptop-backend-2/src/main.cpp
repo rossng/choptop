@@ -34,7 +34,7 @@ float clamp(float n, float hi, float lo) {
     return std::min(std::max(n, lo), hi);
 }
 
-void printValues(vector<int> sensors, bool xpos, bool ypos) {
+void printValues(vector<int> sensors, bool total_weight, bool xpos, bool ypos) {
     threads[0] = thread(getReadings, 6, 5, 0, 443.7, std::ref(wiringPiMutex));
     threads[1] = thread(getReadings, 8, 7, 1, 453.3, std::ref(wiringPiMutex));
     threads[2] = thread(getReadings, 10, 9, 2, 422.2, std::ref(wiringPiMutex));
@@ -54,6 +54,10 @@ void printValues(vector<int> sensors, bool xpos, bool ypos) {
 
         for (const auto sensor : sensors) {
             printf("Sensor %d: %.2f\n", sensor, weights[sensor]);
+        }
+
+        if (total_weight) {
+            printf("%.2fg\n", total);
         }
 
         if (xpos) {
@@ -78,8 +82,9 @@ int main(int argc, char** argv) {
     auto print = app.add_subcommand("print", "Print a stream of values from Choptop");
 
     vector<int> print_sensors;
-    bool print_xpos, print_ypos;
+    bool print_total_weight, print_xpos, print_ypos;
     print->add_option("--sensors", print_sensors, "Sensors to be printed");
+    print->add_flag("--total-weight", print_total_weight, "Print total weight");
     print->add_flag("--xpos", print_xpos, "Print x position");
     print->add_flag("--ypos", print_ypos, "Print y position");
 
@@ -92,6 +97,6 @@ int main(int argc, char** argv) {
 
     if (app.got_subcommand("print")) {
         printf("Printing values\n");
-        printValues(print_sensors, print_xpos, print_ypos);
+        printValues(print_sensors, print_total_weight, print_xpos, print_ypos);
     }
 }
