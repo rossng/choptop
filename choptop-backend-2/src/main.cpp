@@ -8,7 +8,7 @@
 using namespace std;
 
 float sensor_inputs[] = {0.0f, 0.0f, 0.0f, 0.0f};
-thread threads[4];
+std::vector<thread> threads;
 std::atomic<bool> executing(true);
 std::mutex wiringPiMutex;
 
@@ -35,13 +35,23 @@ float clamp(float n, float hi, float lo) {
 }
 
 void printValues(vector<int> sensors, bool total_weight, bool xpos, bool ypos) {
-    threads[0] = thread(getReadings, 6, 5, 0, 443.7, std::ref(wiringPiMutex));
-    threads[1] = thread(getReadings, 8, 7, 1, 453.3, std::ref(wiringPiMutex));
-    threads[2] = thread(getReadings, 10, 9, 2, 422.2, std::ref(wiringPiMutex));
-    threads[3] = thread(getReadings, 21, 20, 3, 411.3, std::ref(wiringPiMutex));
+    // Spin up a thread to read from each of the requested sensors (TODO: abstract this)
+    if (std::find(sensors.begin(), sensors.end(), 0) != sensors.end()) {
+        threads.emplace_back(getReadings, 6, 5, 0, 443.7, std::ref(wiringPiMutex));
+    }
+    if (std::find(sensors.begin(), sensors.end(), 1) != sensors.end()) {
+        threads.emplace_back(getReadings, 8, 7, 1, 453.3, std::ref(wiringPiMutex));
+    }
+    if (std::find(sensors.begin(), sensors.end(), 2) != sensors.end()) {
+        threads.emplace_back(getReadings, 10, 9, 2, 422.2, std::ref(wiringPiMutex));
+    }
+    if (std::find(sensors.begin(), sensors.end(), 3) != sensors.end()) {
+        threads.emplace_back(getReadings, 21, 20, 3, 411.3, std::ref(wiringPiMutex));
+    }
 
+    // Collect data from each sensor (TODO: clean up)
     //signal(SIGINT, gracefulShutdown);
-    float weights[] = {0.0f, 0.0f, 0.0f, 0.0f};
+    std::vector<float> weights(sensors.size(), 0.0);
     while (executing) {
         float total = 0;
         for (int i = 0; i < 4; i++) {
