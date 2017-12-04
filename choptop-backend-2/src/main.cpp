@@ -51,7 +51,7 @@ void printValues(vector<int> sensors, bool total_weight, bool xpos, bool ypos) {
 
     // Collect data from each sensor (TODO: clean up)
     //signal(SIGINT, gracefulShutdown);
-    std::vector<float> weights(sensors.size(), 0.0);
+    std::vector<float> weights(4, 0.0);
     while (executing) {
         float total = 0;
         for (int i = 0; i < 4; i++) {
