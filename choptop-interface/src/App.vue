@@ -22,7 +22,12 @@ import VueWebsocket from 'vue-native-websocket'
 
 import Vue from 'vue'
 
-Vue.use(VueWebsocket, "ws://localhost:8765");
+Vue.use(VueWebsocket, "ws://localhost:8765", { 
+    format: 'json',
+    reconnection: true, // (Boolean) whether to reconnect automatically (false)
+    reconnectionAttempts: 10000, // (Number) number of reconnection attempts before giving up (Infinity),
+    reconnectionDelay: 3000, // (Number) how long to initially wait before attempting a new (1000)
+  });
 
 
 
@@ -41,11 +46,7 @@ export default {
     return {
       currentScreen:"recipeListing",
       recipe: Recipes,
-
-
-
-      //data fetching from server
-      error: null,
+      //data fetched from server
       latestUpdate: {}
 
 
@@ -56,24 +57,14 @@ export default {
   created () {
     // fetch the data when the view is created and the data is
     // already being observed
-    this.fetchData()
+    this.setupFetchData()
   },
 
 
   methods: {
-    fetchData () {
-      this.error = this.update = null
-      this.loading = true
-      this.$options.sockets.onmessage = (data) => console.log(data)
-      // replace `getupdate` with your data fetching util / API wrapper
-      // $.get("http://localhost:8432", (update, err) => {
-      //   this.loading = false
-      //   if (err.toString() != "success") {
-      //     this.error = err.toString()
-      //   } else {
-      //     this.latestUpdate = update
-      //   }
-      // })
+    setupFetchData () {
+      //results from websocket connection
+      this.$options.sockets.onmessage = this.handleNewData
     },
     shouldShowWelcome: function() {
       return this.currentScreen === "welcome"
@@ -81,44 +72,14 @@ export default {
     },
     shouldShowRecipeListing: function(){
       return this.currentScreen === "recipeListing"
+    },
+
+    handleNewData(msg){
+      var data = msg.data
+      console.log(data)
+      this.latestUpdate = JSON.parse(data)
     }
-  },
-  socket: {
-      // Prefix for event names
-      // prefix: "/counter/",
-      
-      // If you set `namespace`, it will create a new socket connection to the namespace instead of `/`
-      // namespace: "/counter",
-
-      events: {
-
-        // Similar as this.$socket.on("changed", (msg) => { ... });
-        // If you set `prefix` to `/counter/`, the event name will be `/counter/changed`
-        //
-        changed(msg) {
-          console.log("Something changed: " + msg);
-        },
-        
-         // common socket.io events
-        connect() {
-          console.log("Websocket connected to " + this.$socket.nsp);
-        },
-
-        disconnect() {
-          console.log("Websocket disconnected from " + this.$socket.nsp);
-        },
-
-        error(err) {
-          console.error("Websocket error!", err);
-        }
-        
-
-      }
-    }
-
-
-
-
+  }
 }
 </script>
 
