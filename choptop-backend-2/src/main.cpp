@@ -21,9 +21,10 @@ void gracefulShutdown(int s) {
     exit(1);
 }
 
-void getReadings(uint8_t clk, uint8_t data, int index, std::mutex &mutex) {
+void getReadings(uint8_t clk, uint8_t data, int index, float scale, std::mutex &mutex) {
     HX711 sensor(clk, data, 0, mutex);
     sensor.tare();
+    sensor.setScale(scale);
     sensor.setScale(16000);
     while (executing) {
         sensor_inputs[index] = sensor.getUnits();
@@ -35,10 +36,10 @@ float clamp(float n, float hi, float lo) {
 }
 
 void printValues(vector<int> sensors, bool xpos, bool ypos) {
-    threads[0] = thread(getReadings, 6, 5, 0, std::ref(wiringPiMutex));
-    threads[1] = thread(getReadings, 8, 7, 1, std::ref(wiringPiMutex));
-    threads[2] = thread(getReadings, 10, 9, 2, std::ref(wiringPiMutex));
-    threads[3] = thread(getReadings, 21, 20, 3, std::ref(wiringPiMutex));
+    threads[0] = thread(getReadings, 6, 5, 0, 36.06, std::ref(wiringPiMutex));
+    threads[1] = thread(getReadings, 8, 7, 1, 35.3, std::ref(wiringPiMutex));
+    threads[2] = thread(getReadings, 10, 9, 2, 37.9, std::ref(wiringPiMutex));
+    threads[3] = thread(getReadings, 21, 20, 3, 38.9, std::ref(wiringPiMutex));
 
     //signal(SIGINT, gracefulShutdown);
     float weights[] = {0.0f, 0.0f, 0.0f, 0.0f};
