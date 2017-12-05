@@ -7,8 +7,7 @@ using namespace std;
 
 LoadCellReader::LoadCellReader(shared_ptr<HX711> hx711) :
         hx711_(std::move(hx711)), raw_output_(1024), smoothed_output_(1024), load_cell_data_(1024),
-        producer_thread_(nullptr), consumer_thread_(nullptr), producing_(false), consuming_(false)
-{
+        producer_thread_(nullptr), consumer_thread_(nullptr), producing_(false), consuming_(false) {
 
 }
 
@@ -47,7 +46,9 @@ void LoadCellReader::stopConsuming() {
 
 void LoadCellReader::consume() {
     while (consuming_) {
-        // TODO
+        load_cell_data_.consume_one([&](float f) {
+            raw_output_.push(f);
+        });
     }
 }
 

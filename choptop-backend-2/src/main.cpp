@@ -16,14 +16,14 @@ std::vector<thread> threads;
 std::atomic<bool> executing(true);
 mutex wiring_pi_mutex;
 
-std::map<int, LoadCellReader> load_cell_readers;
+std::map<int, shared_ptr<LoadCellReader>> load_cell_readers;
 
 void gracefulShutdown(int s) {
     executing = false;
 
     for (auto &load_cell_reader : load_cell_readers) {
-        load_cell_reader.second.stopProducing();
-        load_cell_reader.second.stopConsuming();
+        load_cell_reader.second->stopProducing();
+        load_cell_reader.second->stopConsuming();
     }
     exit(1);
 }
@@ -42,27 +42,34 @@ shared_ptr<HX711> makeHX711(uint8_t clk, uint8_t data, float scale, mutex &wirin
 void printValues(vector<int> enable_sensors, const vector<int> &print_sensors, bool total_weight, bool xpos, bool ypos) {
     // Spin up a thread to read from each of the requested sensors (TODO: abstract this)
     if (std::find(enable_sensors.begin(), enable_sensors.end(), 0) != enable_sensors.end()) {
-        load_cell_readers.emplace(0, makeHX711(6, 5, 443.7, wiring_pi_mutex));
+        load_cell_readers[0] = make_shared<LoadCellReader>(makeHX711(6, 5, 443.7, wiring_pi_mutex));
     }
     if (std::find(enable_sensors.begin(), enable_sensors.end(), 1) != enable_sensors.end()) {
-        load_cell_readers.emplace(1, makeHX711(8, 7, 453.3, wiring_pi_mutex));
+        load_cell_readers[1] = make_shared<LoadCellReader>(makeHX711(8, 7, 453.3, wiring_pi_mutex));
     }
     if (std::find(enable_sensors.begin(), enable_sensors.end(), 2) != enable_sensors.end()) {
-        load_cell_readers.emplace(2, makeHX711(10, 9, 422.2, wiring_pi_mutex));
+        load_cell_readers[2] = make_shared<LoadCellReader>(makeHX711(10, 9, 422.2, wiring_pi_mutex));
     }
     if (std::find(enable_sensors.begin(), enable_sensors.end(), 3) != enable_sensors.end()) {
-        load_cell_readers.emplace(3, makeHX711(21, 20, 411.3, wiring_pi_mutex));
+        load_cell_readers[3] = make_shared<LoadCellReader>(makeHX711(21, 20, 411.3, wiring_pi_mutex));
     }
 
     for (auto &load_cell_reader : load_cell_readers) {
-        load_cell_reader.second.startProducing();
-        load_cell_reader.second.startConsuming();
+        load_cell_reader.second->startProducing();
+        load_cell_reader.second->startConsuming();
     }
 
+    while (true) {
+        for (auto sensor : enable_sensors) {
+            load_cell_readers[sensor]->raw_output_.consume_one([sensor](float f) {
+                printf("Sensor %d: %fg\n", sensor, f);
+            });
+        }
+    }
 
     for (auto &load_cell_reader : load_cell_readers) {
-        load_cell_reader.second.stopProducing();
-        load_cell_reader.second.stopConsuming();
+        load_cell_reader.second->stopProducing();
+        load_cell_reader.second->stopConsuming();
     }
 }
 
