@@ -1,0 +1,60 @@
+#include "LoadCellReader.h"
+
+#include <utility>
+#include <chrono>
+
+using namespace std;
+
+LoadCellReader::LoadCellReader(shared_ptr<HX711> hx711) :
+        hx711_(std::move(hx711)), raw_output_(1024), smoothed_output_(1024), load_cell_data_(1024),
+        producer_thread_(nullptr), consumer_thread_(nullptr), producing_(false), consuming_(false)
+{
+
+}
+
+void LoadCellReader::startProducing() {
+    if (producing_) return;
+    producing_ = true;
+    producer_thread_ = new thread(&LoadCellReader::produce, this);
+}
+
+void LoadCellReader::stopProducing() {
+    if (!producing_) return;
+    producing_ = false;
+    producer_thread_->join();
+}
+
+void LoadCellReader::produce() {
+    while (producing_) {
+        load_cell_data_.push(hx711_->getUnits());
+#ifdef IS_RPI
+        thread::sleep_for(50ms);
+#endif
+    }
+}
+
+void LoadCellReader::startConsuming() {
+    if (consuming_) return;
+    consuming_ = true;
+    consumer_thread_ = new thread(&LoadCellReader::consume, this);
+}
+
+void LoadCellReader::stopConsuming() {
+    if (!consuming_) return;
+    consuming_ = false;
+    consumer_thread_->join();
+}
+
+void LoadCellReader::consume() {
+    while (consuming_) {
+        // TODO
+    }
+}
+
+LoadCellReader::~LoadCellReader() {
+    consuming_ = false;
+    producing_ = false;
+
+    delete consumer_thread_;
+    delete producer_thread_;
+}

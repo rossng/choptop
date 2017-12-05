@@ -11,13 +11,13 @@
 #include <vector>
 #include "hx711.h"
 
-HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup, std::mutex &wiringPiMutex) :
+HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup, std::mutex &wiring_pi_mutex) :
         gainBits_(1),
         scale_(1.0f),
         offset_(0),
         clockPin_(clockPin),
         dataPin_(dataPin),
-        wiringPiMutex_(wiringPiMutex) {
+        wiringPiMutex_(wiring_pi_mutex) {
     this->initialize(skipSetup);
 }
 

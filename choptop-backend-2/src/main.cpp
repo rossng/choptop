@@ -1,93 +1,77 @@
-#include <thread>
+#include <boost/thread/thread.hpp>
 #include <csignal>
+#include <thread>
 #include <iostream>
 #include <atomic>
 #include "CLI11.hpp"
 #include "hx711.h"
+#include "LoadCellReader.h"
+#include <map>
+#include <memory>
+#include <boost/lockfree/spsc_queue.hpp>
 
 using namespace std;
 
-float sensor_inputs[] = {0.0f, 0.0f, 0.0f, 0.0f};
 std::vector<thread> threads;
 std::atomic<bool> executing(true);
-std::mutex wiringPiMutex;
+mutex wiring_pi_mutex;
+
+std::map<int, LoadCellReader> load_cell_readers;
 
 void gracefulShutdown(int s) {
     executing = false;
 
-    for (auto &thread : threads) {
-        thread.join();
+    for (auto &load_cell_reader : load_cell_readers) {
+        load_cell_reader.second.stopProducing();
+        load_cell_reader.second.stopConsuming();
     }
     exit(1);
-}
-
-void getReadings(uint8_t clk, uint8_t data, int index, float scale, std::mutex &mutex) {
-    HX711 sensor(clk, data, 0, mutex);
-    sensor.tare();
-    sensor.setScale(scale);
-    while (executing) {
-        sensor_inputs[index] = sensor.getUnits();
-    }
 }
 
 float clamp(float n, float hi, float lo) {
     return std::min(std::max(n, lo), hi);
 }
 
-void printValues(vector<int> sensors, bool total_weight, bool xpos, bool ypos) {
+shared_ptr<HX711> makeHX711(uint8_t clk, uint8_t data, float scale, mutex &wiring_pi_mutex) {
+    auto sensor = make_shared<HX711>(clk, data, 0, wiring_pi_mutex);
+    sensor->tare();
+    sensor->setScale(scale);
+    return sensor;
+}
+
+void printValues(vector<int> enable_sensors, const vector<int> &print_sensors, bool total_weight, bool xpos, bool ypos) {
     // Spin up a thread to read from each of the requested sensors (TODO: abstract this)
-    if (std::find(sensors.begin(), sensors.end(), 0) != sensors.end()) {
-        threads.emplace_back(getReadings, 6, 5, 0, 443.7, std::ref(wiringPiMutex));
+    if (std::find(enable_sensors.begin(), enable_sensors.end(), 0) != enable_sensors.end()) {
+        load_cell_readers.emplace(0, makeHX711(6, 5, 443.7, wiring_pi_mutex));
     }
-    if (std::find(sensors.begin(), sensors.end(), 1) != sensors.end()) {
-        threads.emplace_back(getReadings, 8, 7, 1, 453.3, std::ref(wiringPiMutex));
+    if (std::find(enable_sensors.begin(), enable_sensors.end(), 1) != enable_sensors.end()) {
+        load_cell_readers.emplace(1, makeHX711(8, 7, 453.3, wiring_pi_mutex));
     }
-    if (std::find(sensors.begin(), sensors.end(), 2) != sensors.end()) {
-        threads.emplace_back(getReadings, 10, 9, 2, 422.2, std::ref(wiringPiMutex));
+    if (std::find(enable_sensors.begin(), enable_sensors.end(), 2) != enable_sensors.end()) {
+        load_cell_readers.emplace(2, makeHX711(10, 9, 422.2, wiring_pi_mutex));
     }
-    if (std::find(sensors.begin(), sensors.end(), 3) != sensors.end()) {
-        threads.emplace_back(getReadings, 21, 20, 3, 411.3, std::ref(wiringPiMutex));
+    if (std::find(enable_sensors.begin(), enable_sensors.end(), 3) != enable_sensors.end()) {
+        load_cell_readers.emplace(3, makeHX711(21, 20, 411.3, wiring_pi_mutex));
     }
 
-    // Collect data from each sensor (TODO: clean up)
-    //signal(SIGINT, gracefulShutdown);
-    std::vector<float> weights(4, 0.0);
-    while (executing) {
-        float total = 0;
-        for (int i = 0; i < 4; i++) {
-            weights[i] = sensor_inputs[i];
-            total += weights[i];
-        }
+    for (auto &load_cell_reader : load_cell_readers) {
+        load_cell_reader.second.startProducing();
+        load_cell_reader.second.startConsuming();
+    }
 
-        float x = clamp((weights[0] + weights[1]) / total, 0.0, 1.0f);
-        float y = clamp((weights[1] + weights[2]) / total, 0.0, 1.0f);
 
-        for (const auto sensor : sensors) {
-            printf("Sensor %d: %.2f\n", sensor, weights[sensor]);
-        }
-
-        if (total_weight) {
-            printf("%.2fg\n", total);
-        }
-
-        if (xpos) {
-            printf("X %.2f", x);
-        }
-        if (xpos && ypos) {
-            printf(", ");
-        }
-        if (xpos) {
-            printf("Y %.2f", y);
-        }
-        if (xpos || ypos) {
-            printf("\n");
-        }
+    for (auto &load_cell_reader : load_cell_readers) {
+        load_cell_reader.second.stopProducing();
+        load_cell_reader.second.stopConsuming();
     }
 }
 
 int main(int argc, char** argv) {
     CLI::App app{"Choptop - an interactive chopping board"};
     app.require_subcommand(1);
+
+    vector<int> enable_sensors;
+    app.add_option("--enable-sensors", enable_sensors, "Sensors to be enabled");
 
     auto print = app.add_subcommand("print", "Print a stream of values from Choptop");
 
@@ -102,11 +86,11 @@ int main(int argc, char** argv) {
 
     signal(SIGINT, gracefulShutdown);
     signal(SIGTERM, gracefulShutdown);
-    signal(SIGKILL, gracefulShutdown);
+    //signal(SIGKILL, gracefulShutdown);
     signal(SIGABRT, gracefulShutdown);
 
     if (app.got_subcommand("print")) {
         printf("Printing values\n");
-        printValues(print_sensors, print_total_weight, print_xpos, print_ypos);
+        printValues(enable_sensors, print_sensors, print_total_weight, print_xpos, print_ypos);
     }
 }
