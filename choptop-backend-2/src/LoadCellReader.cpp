@@ -26,9 +26,7 @@ void LoadCellReader::stopProducing() {
 void LoadCellReader::produce() {
     while (producing_) {
         load_cell_data_.push(hx711_->getUnits());
-#ifdef IS_RPI
-        thread::sleep_for(50ms);
-#endif
+        this_thread::sleep_for(50ms);
     }
 }
 
