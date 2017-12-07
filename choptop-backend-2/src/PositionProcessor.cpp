@@ -35,6 +35,7 @@ float PositionProcessor::expAvg(float sample, float avg, float w) {
 }
 
 void PositionProcessor::consume() {
+    static int step = 0;
     while (running_) {
         bool updated = false;
 
@@ -60,12 +61,10 @@ void PositionProcessor::consume() {
             float y = min(max((top_left_avg_ + top_right_avg_) / total, 0.f), 1.0f);
             float x = min(max((top_right_avg_ + bottom_right_avg_) / total, 0.f), 1.0f);
 
-            if (step % 10 == 0) {
+            if (step++ % 10 == 0) {
                 output_.push(make_pair(x, y));
                 log_file_ << std::fixed << std::setprecision(5) << x << "," << y << endl;
             }
-
-            step++;
         }
     }
 }

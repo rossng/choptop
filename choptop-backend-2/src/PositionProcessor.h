@@ -29,7 +29,6 @@ private:
 
     std::ofstream log_file_;
 
-    int step = 0;
     float top_left_avg_ = 0; // for exponential smoothing
     float top_right_avg_ = 0; // for exponential smoothing
     float bottom_right_avg_ = 0; // for exponential smoothing

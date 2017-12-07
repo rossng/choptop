@@ -64,7 +64,7 @@ shared_ptr<HX711> makeHX711(uint8_t clk, uint8_t data, float scale, mutex &wirin
     return sensor;
 }
 
-void startSensors(vector<int> enable_sensors, string log_sensors, string log_xy) {
+void startSensors(vector<int> enable_sensors, string log_sensors, string log_xy, string log_weight) {
     this_thread::sleep_for(500ms);
 
     std::for_each(enable_sensors.begin(), enable_sensors.end(), [&](int id) {
@@ -78,15 +78,20 @@ void startSensors(vector<int> enable_sensors, string log_sensors, string log_xy)
     });
 
     if (enable_sensors.size() == 4) {
-        position_processor = make_shared<PositionProcessor>(load_cell_readers[0]->raw_output_,
-                                                            load_cell_readers[1]->raw_output_,
-                                                            load_cell_readers[2]->raw_output_,
-                                                            load_cell_readers[3]->raw_output_,
-                                                            log_xy.empty() ? NULLFILE : log_xy + ".txt");
-        load_cells_processor = make_shared<LoadCellsProcessor>(load_cell_readers[0]->raw_output_,
-                                                              load_cell_readers[1]->raw_output_,
-                                                              load_cell_readers[2]->raw_output_,
-                                                              load_cell_readers[3]->raw_output_);
+        position_processor = make_shared<PositionProcessor>(
+                load_cell_readers[0]->raw_output_,
+                load_cell_readers[1]->raw_output_,
+                load_cell_readers[2]->raw_output_,
+                load_cell_readers[3]->raw_output_,
+                log_xy.empty() ? NULLFILE : log_xy + ".txt");
+
+        load_cells_processor = make_shared<LoadCellsProcessor>(
+                load_cell_readers[0]->raw_output_,
+                load_cell_readers[1]->raw_output_,
+                load_cell_readers[2]->raw_output_,
+                load_cell_readers[3]->raw_output_,
+                log_weight.empty() ? NULLFILE : log_weight + ".txt");
+
         position_processor->startThread();
         load_cells_processor->startThread();
     }
@@ -109,6 +114,12 @@ void printValues(const vector<int> &print_sensors, bool print_weight, bool print
                 printf("XY: %.2f %.2f\n", p.first, p.second);
             });
         }
+
+        if (print_weight) {
+            load_cells_processor->output_.consume_all([](auto w) {
+                printf("Weight: %.2fg\n", w);
+            });
+        }
     }
 }
 
@@ -117,17 +128,18 @@ int main(int argc, char **argv) {
     app.require_subcommand(1);
 
     vector<int> enable_sensors;
-    string log_sensors, log_xy;
+    string log_sensors, log_xy, log_weight;
     app.add_option("--enable-sensors", enable_sensors, "Sensors to be enabled");
     app.add_option("--log-sensors", log_sensors, "File prefix to log sensor data to");
     app.add_option("--log-xy", log_xy, "File prefix to log xy data to");
+    app.add_option("--log-weight", log_weight, "File prefix to log weight data to");
 
     auto print = app.add_subcommand("print", "Print a stream of values from Choptop");
 
     vector<int> print_sensors;
-    bool print_total_weight, print_xy;
+    bool print_weight, print_xy;
     print->add_option("--sensors", print_sensors, "Sensors to be printed");
-    print->add_flag("--total-weight", print_total_weight, "Print total weight");
+    print->add_flag("--weight", print_weight, "Print total weight");
     print->add_flag("--xy", print_xy, "Print x position");
 
     CLI11_PARSE(app, argc, argv);
@@ -137,10 +149,10 @@ int main(int argc, char **argv) {
     //signal(SIGKILL, gracefulShutdown);
     signal(SIGABRT, gracefulShutdown);
 
-    startSensors(enable_sensors, log_sensors, log_xy);
+    startSensors(enable_sensors, log_sensors, log_xy, log_weight);
 
     if (app.got_subcommand("print")) {
         printf("Printing values\n");
-        printValues(print_sensors, print_total_weight, print_xy);
+        printValues(print_sensors, print_weight, print_xy);
     }
 }
