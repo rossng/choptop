@@ -34,12 +34,13 @@ float clamp(float n, float hi, float lo) {
 
 shared_ptr<HX711> makeHX711(uint8_t clk, uint8_t data, float scale, mutex &wiring_pi_mutex) {
     auto sensor = make_shared<HX711>(clk, data, 0, wiring_pi_mutex);
-    sensor->tare();
+    sensor->tare(100);
     sensor->setScale(scale);
     return sensor;
 }
 
 void printValues(vector<int> enable_sensors, const vector<int> &print_sensors, bool total_weight, bool xpos, bool ypos) {
+    this_thread::sleep_for(500ms);
     // Spin up a thread to read from each of the requested sensors (TODO: abstract this)
     if (std::find(enable_sensors.begin(), enable_sensors.end(), 0) != enable_sensors.end()) {
         load_cell_readers[0] = make_shared<LoadCellReader>(makeHX711(6, 5, 443.7, wiring_pi_mutex));

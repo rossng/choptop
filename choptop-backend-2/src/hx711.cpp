@@ -110,8 +110,8 @@ float HX711::getUnits(uint8_t times) {
 }
 
 void HX711::tare(uint8_t times) {
-    uint64_t sum = readMedian(times);
-    setOffset(sum);
+    auto median = readAverage(times);
+    setOffset(median);
 }
 
 void HX711::setScale(float scale) {
