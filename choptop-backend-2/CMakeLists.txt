@@ -4,7 +4,7 @@ project(choptop)
 set(CMAKE_CXX_STANDARD 14)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
-#find_package(Threads REQUIRED)
+find_package(Threads REQUIRED)
 
 find_package(Boost REQUIRED COMPONENTS system)
 
@@ -16,7 +16,7 @@ set(SOURCE_FILES
 
 add_executable(choptop ${SOURCE_FILES})
 
-#target_link_libraries(choptop Threads::Threads)
+target_link_libraries(choptop Threads::Threads)
 
 if(Boost_FOUND)
     message(${Boost_INCLUDE_DIRS})
