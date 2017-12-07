@@ -22,6 +22,7 @@ private:
     std::atomic<bool> running_;
     std::thread *thread_;
 
+    int step = 0;
     float top_left_avg_ = 0; // for exponential smoothing
     float top_right_avg_ = 0; // for exponential smoothing
     float bottom_right_avg_ = 0; // for exponential smoothing
