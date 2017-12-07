@@ -26,7 +26,7 @@ mutex wiring_pi_mutex;
 
 map<int, shared_ptr<LoadCellReader>> load_cell_readers;
 shared_ptr<PositionProcessor> position_processor;
-shared_ptr<LoadCellsProcessor> load_cell_processor;
+shared_ptr<LoadCellsProcessor> load_cells_processor;
 
 struct HX711Settings {
     uint8_t clk;
@@ -49,6 +49,7 @@ void gracefulShutdown(int s) {
         load_cell_reader.second->stopConsuming();
     }
     position_processor->stopThread();
+    load_cells_processor->stopThread();
     exit(1);
 }
 
@@ -82,12 +83,12 @@ void startSensors(vector<int> enable_sensors, string log_sensors, string log_xy)
                                                             load_cell_readers[2]->raw_output_,
                                                             load_cell_readers[3]->raw_output_,
                                                             log_xy.empty() ? NULLFILE : log_xy + ".txt");
-        load_cell_processor = make_shared<LoadCellsProcessor>(load_cell_readers[0]->raw_output_,
+        load_cells_processor = make_shared<LoadCellsProcessor>(load_cell_readers[0]->raw_output_,
                                                               load_cell_readers[1]->raw_output_,
                                                               load_cell_readers[2]->raw_output_,
                                                               load_cell_readers[3]->raw_output_);
         position_processor->startThread();
-        load_cell_processor->startThread();
+        load_cells_processor->startThread();
     }
     for (auto &load_cell_reader : load_cell_readers) {
         load_cell_reader.second->startProducing();
