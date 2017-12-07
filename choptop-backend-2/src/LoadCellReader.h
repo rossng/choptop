@@ -23,7 +23,6 @@ public:
     virtual ~LoadCellReader();
 
     boost::lockfree::spsc_queue<float> raw_output_;
-    boost::lockfree::spsc_queue<float> smoothed_output_;
 private:
     void produce();
     void consume();
