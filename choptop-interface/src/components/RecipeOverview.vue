@@ -5,7 +5,7 @@
 			<h2>Difficulty: {{recipe.difficulty}}</h2>
 			<h2>Time: {{recipe.time}} minutes</h2>
 		</div>
-		<div v-if="selected">
+		<div v-if="selected && !stepsVisible">
 			<h1>{{recipe.title}}</h1>
 			<h2>Difficulty: {{recipe.difficulty}}</h2>
 			<h2>Time: {{recipe.time}} minutes</h2>
@@ -18,29 +18,33 @@
 					</div>
 				</div>
 			</div>
+		</div>	
 
-
+		<div v-if="selected && stepsVisible">	
 			<div id="steps">
-				Step {{this.selectedStep +1}}/{{this.recipe.steps.length -1}}
-				<div v-for="(step, idx) in this.recipe.steps" class="step">
-					<div v-if="idx == selectedStep">
-						{{step.text}}
-					</div>
-				</div>
+				<StepDisplay :steps="recipe.steps" :stepIdx="selectedStep"/>
 			</div>
-
 		</div>
+
 	</div>
 </template>
 
 <script>
+
+	import StepDisplay from './StepDisplay'
+
 	export default {
 	  name: 'recipe',
 	  props:['recipe', 'hovered', 'selected'],
 	  data () {
 	    return {
 	      selectedStep:0,
+	      stepsVisible:true,
 	    }
+	  },
+
+	  components:{
+	  	StepDisplay
 	  },
 
 	  methods: {
@@ -121,6 +125,13 @@
 		width:50%;
 		display:inline-block;
 		float:left;
+
+
+	}
+
+	#ingredientsList{
+		clear:both;
+		overflow:hidden;
 	}
 	
 </style>
