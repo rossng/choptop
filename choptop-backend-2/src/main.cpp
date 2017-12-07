@@ -6,6 +6,7 @@
 #include "CLI11.hpp"
 #include "hx711.h"
 #include "LoadCellReader.h"
+#include "PositionProcessor.h"
 #include <map>
 #include <memory>
 #include <boost/lockfree/spsc_queue.hpp>
@@ -17,6 +18,7 @@ atomic<bool> executing(true);
 mutex wiring_pi_mutex;
 
 map<int, shared_ptr<LoadCellReader>> load_cell_readers;
+shared_ptr<PositionProcessor> position_processor;
 
 struct HX711Settings {
     uint8_t clk;
@@ -65,6 +67,13 @@ void startSensors(vector<int> enable_sensors, string log_sensors) {
         }
     });
 
+    if (enable_sensors.size() == 4) {
+        position_processor = make_shared<PositionProcessor>(load_cell_readers[0]->raw_output_,
+                                                            load_cell_readers[1]->raw_output_,
+                                                            load_cell_readers[2]->raw_output_,
+                                                            load_cell_readers[3]->raw_output_);
+        position_processor->startThread();
+    }
     for (auto &load_cell_reader : load_cell_readers) {
         load_cell_reader.second->startProducing();
         load_cell_reader.second->startConsuming();

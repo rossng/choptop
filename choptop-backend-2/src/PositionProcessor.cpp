@@ -3,6 +3,7 @@
 #include <thread>
 
 #include <algorithm>
+#include <iostream>
 
 using namespace std;
 
@@ -51,6 +52,7 @@ void PositionProcessor::consume() {
         float x = min(max((top_left_avg_ + top_right_avg_) / total, 0.f), 1.0f);
         float y = min(max((top_right_avg_ + bottom_right_avg_) / total, 0.f), 1.0f);
 
+        cout << "xy: " << x << "," << y << endl;
     }
 }
 
