@@ -87,11 +87,17 @@ void startSensors(vector<int> enable_sensors, string log_sensors) {
     }
 }
 
-void printValues(const vector<int> &print_sensors, bool total_weight, bool xpos, bool ypos) {
+void printValues(const vector<int> &print_sensors, bool print_weight, bool print_xy) {
     while (executing) {
         for (auto sensor : print_sensors) {
-            load_cell_readers[sensor]->raw_output_.consume_one([sensor](float f) {
+            load_cell_readers[sensor]->raw_output_.consume_all([sensor](float f) {
                 printf("Sensor %d: %fg\n", sensor, f);
+            });
+        }
+
+        if (print_xy) {
+            position_processor->output_.consume_all([](auto p) {
+                printf("XY: %.2f %.2f\n", p.first, p.second);
             });
         }
     }
@@ -109,11 +115,10 @@ int main(int argc, char **argv) {
     auto print = app.add_subcommand("print", "Print a stream of values from Choptop");
 
     vector<int> print_sensors;
-    bool print_total_weight, print_xpos, print_ypos;
+    bool print_total_weight, print_xy;
     print->add_option("--sensors", print_sensors, "Sensors to be printed");
     print->add_flag("--total-weight", print_total_weight, "Print total weight");
-    print->add_flag("--xpos", print_xpos, "Print x position");
-    print->add_flag("--ypos", print_ypos, "Print y position");
+    print->add_flag("--xy", print_xy, "Print x position");
 
     CLI11_PARSE(app, argc, argv);
 
@@ -126,6 +131,6 @@ int main(int argc, char **argv) {
 
     if (app.got_subcommand("print")) {
         printf("Printing values\n");
-        printValues(print_sensors, print_total_weight, print_xpos, print_ypos);
+        printValues(print_sensors, print_total_weight, print_xy);
     }
 }
