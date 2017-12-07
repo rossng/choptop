@@ -71,7 +71,6 @@
         }
       },
       upPressed(){
-        console.log("up pressed");
         this.currentScreen="welcome";
         this.focussed = true;
       },
@@ -92,7 +91,6 @@
         parsed = {};
         try{
           var parsed = JSON.parse(data)
-          console.log(data)
         }catch (e)
         {
           console.log("bad Json ")

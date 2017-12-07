@@ -9,6 +9,7 @@ cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
+cmake-build-*/
 ### C template
 # Prerequisites
 *.d
@@ -119,6 +120,7 @@ dkms.conf
 
 # CMake
 cmake-build-debug/
+cmake-build-*/
 
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml

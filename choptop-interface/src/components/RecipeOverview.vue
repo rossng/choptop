@@ -5,7 +5,7 @@
 			<h2>Difficulty: {{recipe.difficulty}}</h2>
 			<h2>Time: {{recipe.time}} minutes</h2>
 		</div>
-		<div v-if="selected">
+		<div v-if="selected && !stepsVisible">
 			<h1>{{recipe.title}}</h1>
 			<h2>Difficulty: {{recipe.difficulty}}</h2>
 			<h2>Time: {{recipe.time}} minutes</h2>
@@ -18,57 +18,66 @@
 					</div>
 				</div>
 			</div>
+		</div>	
 
-
+		<div v-if="selected && stepsVisible">	
 			<div id="steps">
-				Step {{this.selectedStep +1}}/{{this.recipe.steps.length -1}}
-				<div v-for="(step, idx) in this.recipe.steps" class="step">
-					<div v-if="idx == selectedStep">
-						{{step.text}}
-					</div>
-				</div>
+				<StepDisplay :steps="recipe.steps" :stepIdx="selectedStep"/>
 			</div>
-
 		</div>
+
 	</div>
 </template>
 
 <script>
+
+	import StepDisplay from './StepDisplay'
+
 	export default {
 	  name: 'recipe',
 	  props:['recipe', 'hovered', 'selected', "eventBus"],
 	  data () {
 	    return {
 	      selectedStep:0,
-	      focussed: true,
+	      focussed: false,
+	      stepsVisible:false,
 	    }
 	  },
 	  created(){
 			this.eventBus.$on("pressed", this.handlePress);
 	  },
+
+	  components:{
+	  	StepDisplay
+	  },
 	  methods: {
 	  	handlePress(dir){
-			if (this.focussed == true){
+			if (this.selected){
 				if(dir == "right"){
+					console.log("right step")
 					this.nextStep();
 				}else if(dir =="left"){
 					this.prevStep();
 				}else if(dir == "down"){
-					// this.selected = true;
-					// this.focussed = false;
+					console.log("steps visible")
+					this.stepsVisible = true;
 				}else if(dir == "up"){
-					this.$parent.upPressed();
+					if(this.stepsVisible){
+						this.stepsVisible = false;
+					}else{
+						this.$parent.upPressed();
+					}
 				}
 			}
 		},
 	  	nextStep: function(){
-	  		if(selectedStep < length(this.recipe.steps)){
-	  			selectedStep++;
+	  		if(this.selectedStep < this.recipe.steps.length - 1){
+	  			this.selectedStep++;
 	  		}
 	  	},
 	  	prevStep: function(){
-	  		if(selectedStep > 0){
-	  			selectedStep--;
+	  		if(this.selectedStep > 0){
+	  			this.selectedStep--;
 	  		}
 	  	},
 	  	getClass : function(){
@@ -138,6 +147,13 @@
 		width:50%;
 		display:inline-block;
 		float:left;
+
+
+	}
+
+	#ingredientsList{
+		clear:both;
+		overflow:hidden;
 	}
 	
 </style>
