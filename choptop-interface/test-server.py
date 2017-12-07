@@ -7,8 +7,9 @@ from  multiprocessing import Manager, Value
 
 async def hello(websocket, path):
     while True:
-        now = datetime.datetime.utcnow().isoformat() + 'Z'
-        await websocket.send(str(data["a"]))
+        if(data["a"] != "null"):
+            await websocket.send('{"event":"' + str(data["a"]) + '"}')
+            data["a"] = 'null';
         await asyncio.sleep(0.1)
     return
 
@@ -24,7 +25,7 @@ directionPressed = "left"
 manager = Manager()
 
 data = manager.dict()
-data["a"] = "start"
+data["a"] = 'null'
 
 asyncio.get_event_loop().run_until_complete(start_server)
 
@@ -33,7 +34,18 @@ async def echo():
     stdin, stdout = await aioconsole.get_standard_streams()
     async for line in stdin:
         stdout.write(line)
-        data["a"] = line.decode().strip()
+        inData = line.decode().strip()
+
+        if inData == "l":
+        	data["a"] = "leftPressed"
+        elif inData == "r":
+        	data["a"] = "rightPressed"
+        elif inData == "u":
+        	data["a"] = "upPressed"
+        elif inData == "d":
+        	data["a"] = "downPressed"
+        else:
+        	data["a"] = inData
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(echo())

@@ -1,7 +1,7 @@
 <template>
-	<div class="ff">
+	<div class="recipeOverviewListing">
 		<div v-for="(rec, index)  in recipes">
-			<RecipeOverview :recipe="rec" :hovered="index == hoveredRecipeIndex" :selected="index == hoveredRecipeIndex && selected"/>
+			<RecipeOverview :eventBus="eventBus" v-if="!selected || hoveredRecipeIndex ==index"  :recipe="rec" :hovered="index == hoveredRecipeIndex" :selected="index == hoveredRecipeIndex && selected"/>
 		</div>
 	</div>
 </template>
@@ -16,11 +16,44 @@
 			RecipeOverview
 		},
 
-		props: ['recipes'],
+		created(){
+			this.eventBus.$on("pressed", this.handlePress);
+		},
+
+		methods:{
+			handlePress(dir){
+			  if (this.focussed == true){
+			  	if(dir == "right"){
+			  		this.nextRecipe();
+			  	}else if(dir =="left"){
+			  		this.previousRecipe();
+			  	}else if(dir == "down"){
+			  		this.selected = true;
+			  		this.focussed = false;
+			  	}else if(dir == "up"){
+			  		this.$parent.upPressed();
+			  	}
+			  }
+			},
+			upPressed(){
+				this.selected = false;
+				this.focussed = true;
+			},
+			nextRecipe(){
+				this.hoveredRecipeIndex = (this.hoveredRecipeIndex + 1) % this.recipes.length
+			},
+			previousRecipe(){
+				this.hoveredRecipeIndex = (this.hoveredRecipeIndex - 1  + this.recipes.length) % this.recipes.length //correct modulo
+			}
+		},
+
+		props: ['recipes', 'eventBus'],
 		data () {
 			return {
 				hoveredRecipeIndex: 0,
-				selected: true
+				selected: false,
+
+				focussed:true
 			  
 			}
 		}

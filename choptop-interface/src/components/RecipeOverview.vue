@@ -1,6 +1,6 @@
 <template>
 	<div :class="getClass()">
-		<div v-if="hovered && !selected">
+		<div v-if="!selected">
 			<h1>{{recipe.title}}</h1>
 			<h2>Difficulty: {{recipe.difficulty}}</h2>
 			<h2>Time: {{recipe.time}} minutes</h2>
@@ -36,14 +36,31 @@
 <script>
 	export default {
 	  name: 'recipe',
-	  props:['recipe', 'hovered', 'selected'],
+	  props:['recipe', 'hovered', 'selected', "eventBus"],
 	  data () {
 	    return {
 	      selectedStep:0,
+	      focussed: true,
 	    }
 	  },
-
+	  created(){
+			this.eventBus.$on("pressed", this.handlePress);
+	  },
 	  methods: {
+	  	handlePress(dir){
+			if (this.focussed == true){
+				if(dir == "right"){
+					this.nextStep();
+				}else if(dir =="left"){
+					this.prevStep();
+				}else if(dir == "down"){
+					// this.selected = true;
+					// this.focussed = false;
+				}else if(dir == "up"){
+					this.$parent.upPressed();
+				}
+			}
+		},
 	  	nextStep: function(){
 	  		if(selectedStep < length(this.recipe.steps)){
 	  			selectedStep++;

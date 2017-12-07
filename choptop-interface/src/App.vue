@@ -4,7 +4,7 @@
     <NavButton direction="left" :pressed="latestUpdate.leftPressed"/>
     <div id="main">
       <WelcomeToChopTop v-if="shouldShowWelcome()"/>
-      <RecipeListing v-if="shouldShowRecipeListing()" :recipes="recipe"/>
+      <RecipeListing v-if="shouldShowRecipeListing()" :recipes="recipe" :eventBus="eventBus"/>
     </div>
     <NavButton direction="right" :pressed="latestUpdate.rightPressed"/>
     <NavButton direction="down" :pressed="latestUpdate.downPressed"/>
@@ -33,6 +33,8 @@
   // import recipes json file
   import Recipes from './recipes.json'
 
+
+
   export default {
     name: 'app',
     components: {
@@ -43,21 +45,36 @@
 
     data() {
       return {
-        currentScreen: "recipeListing",
+        currentScreen: "welcome",
         recipe: Recipes,
-        latestUpdate: {}
+        latestUpdate: {},
+        focussed: true,
+        eventBus : new Vue()
 
       }
     },
 
     created () {
-      // fetch the data when the view is created and the data is
-      // already being observed
-      this.setupFetchData()
+        this.setupFetchData();
+        this.eventBus.$on("pressed", this.handlePress);
     },
+    
 
 
     methods: {
+      handlePress(dir){
+        if (this.focussed = true){
+          if(dir == "down"){
+            this.currentScreen = "recipeListing";
+            this.focussed = false;
+          }
+        }
+      },
+      upPressed(){
+        console.log("up pressed");
+        this.currentScreen="welcome";
+        this.focussed = true;
+      },
       setupFetchData () {
       //results from websocket connection
         this.$options.sockets.onmessage = this.handleNewData
@@ -72,7 +89,28 @@
       handleNewData(msg){
         var data = msg.data
         console.log(data)
-        this.latestUpdate = JSON.parse(data)
+        parsed = {};
+        try{
+          var parsed = JSON.parse(data)
+          console.log(data)
+        }catch (e)
+        {
+          console.log("bad Json ")
+          console.log(msg)
+        }
+
+        if(parsed.event =="leftPressed"){
+          this.eventBus.$emit("pressed",'left')
+        }
+        if(parsed.event =="rightPressed"){
+          this.eventBus.$emit("pressed",'right')
+        }
+        if(parsed.event =="upPressed"){
+          this.eventBus.$emit("pressed",'up')
+        }
+        if(parsed.event =="downPressed"){
+          this.eventBus.$emit("pressed",'down')
+        }
       }
     }
   }
