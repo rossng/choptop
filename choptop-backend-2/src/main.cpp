@@ -39,9 +39,8 @@ shared_ptr<HX711> makeHX711(uint8_t clk, uint8_t data, float scale, mutex &wirin
     return sensor;
 }
 
-void printValues(vector<int> enable_sensors, const vector<int> &print_sensors, bool total_weight, bool xpos, bool ypos) {
+void startSensors(vector<int> enable_sensors, string log_sensors) {
     this_thread::sleep_for(500ms);
-    // Spin up a thread to read from each of the requested sensors (TODO: abstract this)
     if (std::find(enable_sensors.begin(), enable_sensors.end(), 0) != enable_sensors.end()) {
         load_cell_readers[0] = make_shared<LoadCellReader>(makeHX711(6, 5, 443.7, wiring_pi_mutex));
     }
@@ -59,18 +58,15 @@ void printValues(vector<int> enable_sensors, const vector<int> &print_sensors, b
         load_cell_reader.second->startProducing();
         load_cell_reader.second->startConsuming();
     }
+}
 
-    while (true) {
-        for (auto sensor : enable_sensors) {
+void printValues(const vector<int> &print_sensors, bool total_weight, bool xpos, bool ypos) {
+    while (executing) {
+        for (auto sensor : print_sensors) {
             load_cell_readers[sensor]->raw_output_.consume_one([sensor](float f) {
                 printf("Sensor %d: %fg\n", sensor, f);
             });
         }
-    }
-
-    for (auto &load_cell_reader : load_cell_readers) {
-        load_cell_reader.second->stopProducing();
-        load_cell_reader.second->stopConsuming();
     }
 }
 
@@ -79,7 +75,9 @@ int main(int argc, char** argv) {
     app.require_subcommand(1);
 
     vector<int> enable_sensors;
+    string log_sensors;
     app.add_option("--enable-sensors", enable_sensors, "Sensors to be enabled");
+    app.add_option("--log-sensors", log_sensors, "File prefix to log sensor data to");
 
     auto print = app.add_subcommand("print", "Print a stream of values from Choptop");
 
@@ -97,8 +95,10 @@ int main(int argc, char** argv) {
     //signal(SIGKILL, gracefulShutdown);
     signal(SIGABRT, gracefulShutdown);
 
+    startSensors(enable_sensors, log_sensors);
+
     if (app.got_subcommand("print")) {
         printf("Printing values\n");
-        printValues(enable_sensors, print_sensors, print_total_weight, print_xpos, print_ypos);
+        printValues(print_sensors, print_total_weight, print_xpos, print_ypos);
     }
 }

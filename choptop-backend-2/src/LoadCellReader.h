@@ -5,12 +5,14 @@
 #include <boost/lockfree/spsc_queue.hpp>
 #include <boost/optional.hpp>
 #include <thread>
+#include <fstream>
 #include "hx711.h"
 
 
 class LoadCellReader {
 public:
     explicit LoadCellReader(std::shared_ptr<HX711> hx711);
+    explicit LoadCellReader(std::shared_ptr<HX711> hx711, std::string log_file);
 
     void startProducing();
     void stopProducing();
@@ -32,4 +34,7 @@ private:
     std::thread *consumer_thread_;
     std::atomic<bool> producing_;
     std::atomic<bool> consuming_;
+
+    bool enable_logging_;
+    std::ofstream log_file_;
 };
