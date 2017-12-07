@@ -57,6 +57,9 @@ void LoadCellReader::consume() {
     while (consuming_) {
         load_cell_data_.consume_one([&](float f) {
             raw_output_.push(f);
+            if (enable_logging_) {
+                log_file_ << f << std::endl;
+            }
         });
     }
 }
