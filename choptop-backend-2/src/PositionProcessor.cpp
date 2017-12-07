@@ -75,3 +75,11 @@ PositionProcessor::~PositionProcessor() {
     delete thread_;
 }
 
+void PositionProcessor::printStatus() {
+    cout << "PositionProcessor: " << endl;
+    cout << "output_: " << output_.read_available() << "/" << output_.write_available() << endl;
+    cout << "top_left_: " << top_left_.read_available() << "/" << top_left_.write_available() << endl;
+    cout << "top_right_: " << top_right_.read_available() << "/" << top_right_.write_available() << endl;
+    cout << "bottom_right_: " << bottom_right_.read_available() << "/" << bottom_right_.write_available() << endl;
+    cout << "bottom_left_: " << bottom_left_.read_available() << "/" << bottom_left_.write_available() << endl;
+}

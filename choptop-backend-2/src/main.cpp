@@ -134,6 +134,8 @@ void printValues(const vector<int> &print_sensors, bool debug, bool print_weight
                 load_cell_readers[1]->printStatus(1);
                 load_cell_readers[2]->printStatus(2);
                 load_cell_readers[3]->printStatus(3);
+                position_processor->printStatus();
+                load_cells_processor->printStatus();
             }
         }
     }
