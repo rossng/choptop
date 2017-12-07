@@ -6,17 +6,32 @@
 #include "CLI11.hpp"
 #include "hx711.h"
 #include "LoadCellReader.h"
+#include "PositionProcessor.h"
 #include <map>
 #include <memory>
 #include <boost/lockfree/spsc_queue.hpp>
 
 using namespace std;
 
-std::vector<thread> threads;
-std::atomic<bool> executing(true);
+vector<thread> threads;
+atomic<bool> executing(true);
 mutex wiring_pi_mutex;
 
-std::map<int, shared_ptr<LoadCellReader>> load_cell_readers;
+map<int, shared_ptr<LoadCellReader>> load_cell_readers;
+shared_ptr<PositionProcessor> position_processor;
+
+struct HX711Settings {
+    uint8_t clk;
+    uint8_t data;
+    float scale;
+};
+
+map<int, HX711Settings> sensor_settings = {
+        {0, {6,  5,  443.7}},
+        {1, {8,  7,  453.3}},
+        {2, {10, 9,  422.2}},
+        {3, {21, 20, 411.3}}
+};
 
 void gracefulShutdown(int s) {
     executing = false;
@@ -41,19 +56,24 @@ shared_ptr<HX711> makeHX711(uint8_t clk, uint8_t data, float scale, mutex &wirin
 
 void startSensors(vector<int> enable_sensors, string log_sensors) {
     this_thread::sleep_for(500ms);
-    if (std::find(enable_sensors.begin(), enable_sensors.end(), 0) != enable_sensors.end()) {
-        load_cell_readers[0] = make_shared<LoadCellReader>(makeHX711(6, 5, 443.7, wiring_pi_mutex));
-    }
-    if (std::find(enable_sensors.begin(), enable_sensors.end(), 1) != enable_sensors.end()) {
-        load_cell_readers[1] = make_shared<LoadCellReader>(makeHX711(8, 7, 453.3, wiring_pi_mutex));
-    }
-    if (std::find(enable_sensors.begin(), enable_sensors.end(), 2) != enable_sensors.end()) {
-        load_cell_readers[2] = make_shared<LoadCellReader>(makeHX711(10, 9, 422.2, wiring_pi_mutex));
-    }
-    if (std::find(enable_sensors.begin(), enable_sensors.end(), 3) != enable_sensors.end()) {
-        load_cell_readers[3] = make_shared<LoadCellReader>(makeHX711(21, 20, 411.3, wiring_pi_mutex));
-    }
 
+    std::for_each(enable_sensors.begin(), enable_sensors.end(), [&](int id) {
+        auto hx711 = makeHX711(sensor_settings[id].clk, sensor_settings[id].data, sensor_settings[id].scale,
+                               wiring_pi_mutex);
+        if (log_sensors.empty()) {
+            load_cell_readers[id] = make_shared<LoadCellReader>(hx711);
+        } else {
+            load_cell_readers[id] = make_shared<LoadCellReader>(hx711, log_sensors + to_string(id) + ".txt");
+        }
+    });
+
+    if (enable_sensors.size() == 4) {
+        position_processor = make_shared<PositionProcessor>(load_cell_readers[0]->raw_output_,
+                                                            load_cell_readers[1]->raw_output_,
+                                                            load_cell_readers[2]->raw_output_,
+                                                            load_cell_readers[3]->raw_output_);
+        position_processor->startThread();
+    }
     for (auto &load_cell_reader : load_cell_readers) {
         load_cell_reader.second->startProducing();
         load_cell_reader.second->startConsuming();
@@ -70,7 +90,7 @@ void printValues(const vector<int> &print_sensors, bool total_weight, bool xpos,
     }
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
     CLI::App app{"Choptop - an interactive chopping board"};
     app.require_subcommand(1);
 

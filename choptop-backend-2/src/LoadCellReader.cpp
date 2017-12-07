@@ -6,13 +6,13 @@
 using namespace std;
 
 LoadCellReader::LoadCellReader(shared_ptr<HX711> hx711) :
-        hx711_(std::move(hx711)), raw_output_(1024), smoothed_output_(1024), load_cell_data_(1024),
+        hx711_(std::move(hx711)), raw_output_(1024), load_cell_data_(1024),
         producer_thread_(nullptr), consumer_thread_(nullptr), producing_(false), consuming_(false),
         enable_logging_(false) {
 }
 
 LoadCellReader::LoadCellReader(shared_ptr<HX711> hx711, string log_file) :
-        hx711_(std::move(hx711)), raw_output_(1024), smoothed_output_(1024), load_cell_data_(1024),
+        hx711_(std::move(hx711)), raw_output_(1024), load_cell_data_(1024),
         producer_thread_(nullptr), consumer_thread_(nullptr), producing_(false), consuming_(false),
         enable_logging_(true), log_file_(log_file) {
     enable_logging_ = true;
@@ -49,14 +49,13 @@ void LoadCellReader::stopConsuming() {
     consumer_thread_->join();
 }
 
-float expAvg(float sample, float avg, float w) {
-    return w*sample + (1.f-w)*avg;
-}
-
 void LoadCellReader::consume() {
     while (consuming_) {
         load_cell_data_.consume_one([&](float f) {
             raw_output_.push(f);
+            if (enable_logging_) {
+                log_file_ << f << std::endl;
+            }
         });
     }
 }
