@@ -14,6 +14,8 @@ public:
 
     virtual ~PositionProcessor();
 
+    boost::lockfree::spsc_queue<std::pair<float, float>> output_;
+
 private:
     boost::lockfree::spsc_queue<float> &top_left_;
     boost::lockfree::spsc_queue<float> &top_right_;
@@ -27,7 +29,7 @@ private:
     float top_right_avg_ = 0; // for exponential smoothing
     float bottom_right_avg_ = 0; // for exponential smoothing
     float bottom_left_avg_ = 0; // for exponential smoothing
-    float w = 0.25; // smoothing rate
+    float w = 0.05; // smoothing rate
 
     void consume();
 
