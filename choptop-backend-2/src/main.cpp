@@ -13,6 +13,12 @@
 
 using namespace std;
 
+#ifdef _WIN32
+#define NULLFILE "nul"
+#else
+#define NULLFILE "/dev/null"
+#endif
+
 vector<thread> threads;
 atomic<bool> executing(true);
 mutex wiring_pi_mutex;
@@ -40,6 +46,7 @@ void gracefulShutdown(int s) {
         load_cell_reader.second->stopProducing();
         load_cell_reader.second->stopConsuming();
     }
+    position_processor->stopThread();
     exit(1);
 }
 
@@ -54,14 +61,14 @@ shared_ptr<HX711> makeHX711(uint8_t clk, uint8_t data, float scale, mutex &wirin
     return sensor;
 }
 
-void startSensors(vector<int> enable_sensors, string log_sensors) {
+void startSensors(vector<int> enable_sensors, string log_sensors, string log_xy) {
     this_thread::sleep_for(500ms);
 
     std::for_each(enable_sensors.begin(), enable_sensors.end(), [&](int id) {
         auto hx711 = makeHX711(sensor_settings[id].clk, sensor_settings[id].data, sensor_settings[id].scale,
                                wiring_pi_mutex);
         if (log_sensors.empty()) {
-            load_cell_readers[id] = make_shared<LoadCellReader>(hx711);
+            load_cell_readers[id] = make_shared<LoadCellReader>(hx711, NULLFILE);
         } else {
             load_cell_readers[id] = make_shared<LoadCellReader>(hx711, log_sensors + to_string(id) + ".txt");
         }
@@ -71,7 +78,8 @@ void startSensors(vector<int> enable_sensors, string log_sensors) {
         position_processor = make_shared<PositionProcessor>(load_cell_readers[0]->raw_output_,
                                                             load_cell_readers[1]->raw_output_,
                                                             load_cell_readers[2]->raw_output_,
-                                                            load_cell_readers[3]->raw_output_);
+                                                            load_cell_readers[3]->raw_output_,
+                                                            log_xy.empty() ? NULLFILE : log_xy + ".txt");
         position_processor->startThread();
     }
     for (auto &load_cell_reader : load_cell_readers) {
@@ -101,9 +109,10 @@ int main(int argc, char **argv) {
     app.require_subcommand(1);
 
     vector<int> enable_sensors;
-    string log_sensors;
+    string log_sensors, log_xy;
     app.add_option("--enable-sensors", enable_sensors, "Sensors to be enabled");
     app.add_option("--log-sensors", log_sensors, "File prefix to log sensor data to");
+    app.add_option("--log-xy", log_xy, "File prefix to log xy data to");
 
     auto print = app.add_subcommand("print", "Print a stream of values from Choptop");
 
@@ -120,7 +129,7 @@ int main(int argc, char **argv) {
     //signal(SIGKILL, gracefulShutdown);
     signal(SIGABRT, gracefulShutdown);
 
-    startSensors(enable_sensors, log_sensors);
+    startSensors(enable_sensors, log_sensors, log_xy);
 
     if (app.got_subcommand("print")) {
         printf("Printing values\n");

@@ -2,15 +2,18 @@
 
 #include <boost/lockfree/spsc_queue.hpp>
 #include <thread>
+#include <fstream>
 
 class PositionProcessor {
 public:
     explicit PositionProcessor(boost::lockfree::spsc_queue<float> &top_left,
                                boost::lockfree::spsc_queue<float> &top_right,
                                boost::lockfree::spsc_queue<float> &bottom_right,
-                               boost::lockfree::spsc_queue<float> &bottom_left);
+                               boost::lockfree::spsc_queue<float> &bottom_left,
+                               std::string log_file);
 
     void startThread();
+    void stopThread();
 
     virtual ~PositionProcessor();
 
@@ -24,6 +27,8 @@ private:
     std::atomic<bool> running_;
     std::thread *thread_;
 
+    std::ofstream log_file_;
+
     int step = 0;
     float top_left_avg_ = 0; // for exponential smoothing
     float top_right_avg_ = 0; // for exponential smoothing
@@ -32,8 +37,6 @@ private:
     float w = 0.05; // smoothing rate
 
     void consume();
-
-    void stopThread();
 
     float expAvg(float sample, float avg, float w);
 };

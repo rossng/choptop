@@ -11,7 +11,6 @@
 
 class LoadCellReader {
 public:
-    explicit LoadCellReader(std::shared_ptr<HX711> hx711);
     explicit LoadCellReader(std::shared_ptr<HX711> hx711, std::string log_file);
 
     void startProducing();
@@ -34,6 +33,5 @@ private:
     std::atomic<bool> producing_;
     std::atomic<bool> consuming_;
 
-    bool enable_logging_;
     std::ofstream log_file_;
 };
