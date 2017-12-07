@@ -4,15 +4,17 @@
 
 #include <algorithm>
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
 PositionProcessor::PositionProcessor(boost::lockfree::spsc_queue<float> &top_left,
                                      boost::lockfree::spsc_queue<float> &top_right,
                                      boost::lockfree::spsc_queue<float> &bottom_right,
-                                     boost::lockfree::spsc_queue<float> &bottom_left) :
+                                     boost::lockfree::spsc_queue<float> &bottom_left,
+                                     string log_file) :
         top_left_(top_left), top_right_(top_right), bottom_right_(bottom_right), bottom_left_(bottom_left),
-        output_(1024) {
+        output_(1024), log_file_(log_file) {
 
 }
 
@@ -60,7 +62,9 @@ void PositionProcessor::consume() {
 
             if (step % 10 == 0) {
                 output_.push(make_pair(x, y));
+                log_file_ << std::fixed << std::setprecision(5) << x << "," << y << endl;
             }
+
             step++;
         }
     }

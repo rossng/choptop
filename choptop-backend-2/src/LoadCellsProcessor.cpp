@@ -5,7 +5,7 @@
 
 using namespace std;
 
-LoadCellsProcessor::LoadCellProcessor(boost::lockfree::spsc_queue<float> &top_left,
+LoadCellsProcessor::LoadCellsProcessor(boost::lockfree::spsc_queue<float> &top_left,
                                       boost::lockfree::spsc_queue<float> &top_right,
                                       boost::lockfree::spsc_queue<float> &bottom_right,
                                       boost::lockfree::spsc_queue<float> &bottom_left) : top_left_(top_left),
@@ -15,13 +15,13 @@ LoadCellsProcessor::LoadCellProcessor(boost::lockfree::spsc_queue<float> &top_le
 
 }
 
-void LoadCellProcessor::startThread() {
+void LoadCellsProcessor::startThread() {
     if (running_) return;
-    running = true;
+    running_ = true;
     thread_ = new thread(&LoadCellsProcessor::consume, this);
 }
 
-void LoadCellProcessor::stopThread() {
+void LoadCellsProcessor::stopThread() {
     if (!running_) return;
     running_ = false;
     thread_->join();
@@ -31,8 +31,8 @@ float LoadCellProcessor::expAvg(float sample, float avg, float w) {
     return w * sample + (1.f - w) * avg;
 }
 
-void LoadCellProcessor::consume() {
-    while (running){
+void LoadCellsProcessor::consume() {
+    while (running_){
         top_left_.consume_one([&](float f) {
             top_left_total_ = expAvg(f, top_left_total_, w);
         });
@@ -52,7 +52,7 @@ void LoadCellProcessor::consume() {
     }
 }
 
-PositionProcessor::~LoadCellProcessor() {
+LoadCellsProcessor::~LoadCellsProcessor() {
     running_ = false;
     delete thread_;
 }
