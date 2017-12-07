@@ -1,33 +1,54 @@
 #include "LoadCellsProcessor.h"
 
-/*
-while (executing) {
-float total = 0;
-for (auto &sensor : sensor_data) {
-while (!sensor.second->read_available()) {}
-float weight = sensor.second->pop();
-total += weight;
+#include <thread>
+#include <iostream>
 
-printf("Sensor %d: %.2f\n", sensor.first, weight);
-}
+using namespace std;
 
-float x = clamp((weights[0] + weights[1]) / total, 0.0, 1.0f);
-float y = clamp((weights[1] + weights[2]) / total, 0.0, 1.0f);
+LoadCellsProcessor::LoadCellProcessor(boost::lockfree::spsc_queue<float> &top_left,
+                                      boost::lockfree::spsc_queue<float> &top_right,
+                                      boost::lockfree::spsc_queue<float> &bottom_right,
+                                      boost::lockfree::spsc_queue<float> &bottom_left) : top_left_(top_left),
+                                                                                         top_right_(top_right),
+                                                                                         bottom_right_(bottom_right),
+                                                                                         bottom_left_(bottom_left) {
 
-if (total_weight) {
-printf("%.2fg\n", total);
 }
 
-if (xpos) {
-printf("X %.2f", x);
+void LoadCellProcessor::startThread() {
+    if (running_) return;
+    running = true;
+    thread_ = new thread(&LoadCellsProcessor::consume, this);
 }
-if (xpos && ypos) {
-printf(", ");
+
+void LoadCellProcessor::stopThread() {
+    if (!running_) return;
+    running_ = false;
+    thread_->join();
 }
-if (xpos) {
-printf("Y %.2f", y);
+
+void LoadCellProcessor::consume() {
+    while (running){
+        top_left_.consume_one([&](float f) {
+            top_left_total_ = f;
+        });
+        top_right_.consume_one([&](float f) {
+            top_right_total_ = f;
+        });
+        bottom_left_.consume_one([&](float f) {
+            bottom_left_total_ = f;
+        });
+        bottom_right_.consume_one([&](float f) {
+            bottom_right_total_ = f;
+        });
+
+        float total = top_left_total_ + top_right_total_ + bottom_right_total_ + bottom_left_total_;
+
+        cout << "total 'weight': " << total << endl;
+    }
 }
-if (xpos || ypos) {
-printf("\n");
+
+PositionProcessor::~LoadCellProcessor() {
+    running_ = false;
+    delete thread_;
 }
-}*/
