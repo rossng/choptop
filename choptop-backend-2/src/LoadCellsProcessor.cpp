@@ -27,19 +27,23 @@ void LoadCellProcessor::stopThread() {
     thread_->join();
 }
 
+float LoadCellProcessor::expAvg(float sample, float avg, float w) {
+    return w * sample + (1.f - w) * avg;
+}
+
 void LoadCellProcessor::consume() {
     while (running){
         top_left_.consume_one([&](float f) {
-            top_left_total_ = f;
+            top_left_total_ = expAvg(f, top_left_total_, w);
         });
         top_right_.consume_one([&](float f) {
-            top_right_total_ = f;
+            top_right_total_ = expAvg(f, top_right_total_, w);
         });
         bottom_left_.consume_one([&](float f) {
-            bottom_left_total_ = f;
+            bottom_left_total_ = expAvg(f, bottom_left_total_, w);
         });
         bottom_right_.consume_one([&](float f) {
-            bottom_right_total_ = f;
+            bottom_right_total_ = expAvg(f, bottom_right_total_, w);
         });
 
         float total = top_left_total_ + top_right_total_ + bottom_right_total_ + bottom_left_total_;

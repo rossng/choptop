@@ -27,6 +27,7 @@ private:
     float top_right_total_ = 0;
     float bottom_right_total_ = 0;
     float bottom_left_total_ = 0;
+    float w = 0.1; // smoothing rate
 
     void consume();
 
