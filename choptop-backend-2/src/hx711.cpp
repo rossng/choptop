@@ -11,13 +11,13 @@
 #include <vector>
 #include "hx711.h"
 
-HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup, std::mutex &wiringPiMutex) :
+HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup, std::mutex &wiring_pi_mutex) :
         gainBits_(1),
         scale_(1.0f),
         offset_(0),
         clockPin_(clockPin),
         dataPin_(dataPin),
-        wiringPiMutex_(wiringPiMutex) {
+        wiringPiMutex_(wiring_pi_mutex) {
     this->initialize(skipSetup);
 }
 
@@ -92,6 +92,15 @@ int32_t HX711::readAverage(uint8_t times) {
     return sum / times;
 }
 
+int32_t HX711::readMedian(uint8_t times) {
+    std::vector<int32_t> readings(times);
+    for (uint8_t i = 0; i < times; i++) {
+        readings.push_back(read());
+    }
+    std::sort(readings.begin(), readings.end());
+    return readings[times/2];
+}
+
 int32_t HX711::getRawValue(uint8_t times) {
     return readAverage(times) - offset_;
 }
@@ -101,8 +110,8 @@ float HX711::getUnits(uint8_t times) {
 }
 
 void HX711::tare(uint8_t times) {
-    uint64_t sum = readAverage(times);
-    setOffset(sum);
+    auto median = readAverage(times);
+    setOffset(median);
 }
 
 void HX711::setScale(float scale) {

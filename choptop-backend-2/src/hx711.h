@@ -58,4 +58,6 @@ public:
     int32_t getOffset();
 
     float getScale();
+
+    int32_t readMedian(uint8_t times);
 };
