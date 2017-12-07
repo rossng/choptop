@@ -19,6 +19,8 @@ public:
     void startConsuming();
     void stopConsuming();
 
+    void printStatus(int idx);
+
     virtual ~LoadCellReader();
 
     boost::lockfree::spsc_queue<float> raw_output_;

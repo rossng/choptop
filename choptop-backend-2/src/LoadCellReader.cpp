@@ -2,6 +2,7 @@
 
 #include <utility>
 #include <chrono>
+#include <iostream>
 
 using namespace std;
 
@@ -44,10 +45,11 @@ void LoadCellReader::stopConsuming() {
 
 void LoadCellReader::consume() {
     while (consuming_) {
-        load_cell_data_.consume_one([&](float f) {
+        load_cell_data_.consume_all([&](float f) {
             raw_output_.push(f);
             log_file_ << f << std::endl;
         });
+        this_thread::sleep_for(50ms);
     }
 }
 
@@ -57,4 +59,10 @@ LoadCellReader::~LoadCellReader() {
 
     delete consumer_thread_;
     delete producer_thread_;
+}
+
+void LoadCellReader::printStatus(int idx) {
+    cout << "LoadCellReader " << idx << ": " << endl;
+    cout << "load_cell_data_: " << load_cell_data_.read_available() << "/" << load_cell_data_.write_available() << endl;
+    cout << "raw_output_: " << raw_output_.read_available() << "/" << raw_output_.write_available() << endl;
 }

@@ -61,11 +61,12 @@ void PositionProcessor::consume() {
             float y = min(max((top_left_avg_ + top_right_avg_) / total, 0.f), 1.0f);
             float x = min(max((top_right_avg_ + bottom_right_avg_) / total, 0.f), 1.0f);
 
-            if (step++ % 10 == 0) {
+            if (step++ % 1 == 0) {
                 output_.push(make_pair(x, y));
                 log_file_ << std::fixed << std::setprecision(5) << x << "," << y << endl;
             }
         }
+        this_thread::sleep_for(50ms);
     }
 }
 

@@ -68,6 +68,7 @@ void startSensors(vector<int> enable_sensors, string log_sensors, string log_xy,
     this_thread::sleep_for(500ms);
 
     std::for_each(enable_sensors.begin(), enable_sensors.end(), [&](int id) {
+        cout << id;
         auto hx711 = makeHX711(sensor_settings[id].clk, sensor_settings[id].data, sensor_settings[id].scale,
                                wiring_pi_mutex);
         if (log_sensors.empty()) {
@@ -76,6 +77,8 @@ void startSensors(vector<int> enable_sensors, string log_sensors, string log_xy,
             load_cell_readers[id] = make_shared<LoadCellReader>(hx711, log_sensors + to_string(id) + ".txt");
         }
     });
+
+    cout << endl;
 
     if (enable_sensors.size() == 4) {
         position_processor = make_shared<PositionProcessor>(
@@ -101,7 +104,9 @@ void startSensors(vector<int> enable_sensors, string log_sensors, string log_xy,
     }
 }
 
-void printValues(const vector<int> &print_sensors, bool print_weight, bool print_xy) {
+void printValues(const vector<int> &print_sensors, bool debug, bool print_weight, bool print_xy) {
+    static int step = 0;
+
     while (executing) {
         for (auto sensor : print_sensors) {
             load_cell_readers[sensor]->raw_output_.consume_all([sensor](float f) {
@@ -120,6 +125,17 @@ void printValues(const vector<int> &print_sensors, bool print_weight, bool print
                 printf("Weight: %.2fg\n", w);
             });
         }
+
+        this_thread::sleep_for(50ms);
+
+        if (debug) {
+            if (step++ % 100 == 0) {
+                load_cell_readers[0]->printStatus(0);
+                load_cell_readers[1]->printStatus(1);
+                load_cell_readers[2]->printStatus(2);
+                load_cell_readers[3]->printStatus(3);
+            }
+        }
     }
 }
 
@@ -128,11 +144,13 @@ int main(int argc, char **argv) {
     app.require_subcommand(1);
 
     vector<int> enable_sensors;
+    bool debug;
     string log_sensors, log_xy, log_weight;
     app.add_option("--enable-sensors", enable_sensors, "Sensors to be enabled");
     app.add_option("--log-sensors", log_sensors, "File prefix to log sensor data to");
     app.add_option("--log-xy", log_xy, "File prefix to log xy data to");
     app.add_option("--log-weight", log_weight, "File prefix to log weight data to");
+    app.add_flag("--debug", debug, "File prefix to log weight data to");
 
     auto print = app.add_subcommand("print", "Print a stream of values from Choptop");
 
@@ -149,10 +167,12 @@ int main(int argc, char **argv) {
     //signal(SIGKILL, gracefulShutdown);
     signal(SIGABRT, gracefulShutdown);
 
+    cout << "Start sensors" << endl;
+
     startSensors(enable_sensors, log_sensors, log_xy, log_weight);
 
     if (app.got_subcommand("print")) {
-        printf("Printing values\n");
-        printValues(print_sensors, print_weight, print_xy);
+        cout << "Print values" << endl;
+        printValues(print_sensors, debug, print_weight, print_xy);
     }
 }

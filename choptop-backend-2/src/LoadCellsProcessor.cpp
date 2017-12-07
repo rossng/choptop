@@ -57,11 +57,13 @@ void LoadCellsProcessor::consume() {
         if (updated) {
             float total = top_left_total_ + top_right_total_ + bottom_right_total_ + bottom_left_total_;
 
-            if (step++ % 10 == 0) {
+            if (step++ % 1 == 0) {
                 output_.push(total);
                 log_file_ << std::fixed << std::setprecision(5) << total << endl;
             }
         }
+
+        this_thread::sleep_for(50ms);
     }
 }
 
