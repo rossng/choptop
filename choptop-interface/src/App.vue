@@ -94,7 +94,7 @@
 
   #main {
     width: 760px;
-    height: 460px;
+    height: 440px; /*480px - 2 x 20px */
     float: left;
     display: inline-block;
     background: #f2b74b;

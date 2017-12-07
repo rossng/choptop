@@ -12,8 +12,10 @@
 
 			<div id="ingredients">
 				Ingredients
-				<div v-for="(ingredient, idx) in this.recipe.ingredients" class="ingredients">
-					{{getIngredientText(ingredient)}}
+				<div id="ingredientsList">
+					<div v-for="(ingredient, idx) in this.recipe.ingredients" class="ingredient">
+						{{getIngredientText(ingredient)}}
+					</div>
 				</div>
 			</div>
 
@@ -113,6 +115,12 @@
 
 	.recipeOverview.selected{
 		background: #68b4b2;
+	}
+
+	.ingredient{
+		width:50%;
+		display:inline-block;
+		float:left;
 	}
 	
 </style>

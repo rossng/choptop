@@ -49,25 +49,26 @@
 	}
 
 	.nav-button-up{
-
+		height:20px;
 	}
 
 	.nav-button-left{
 		display:inline-block;
-		height:100%;
+		height:440px;
 		width:20px;
 		float:left;
 	}
 
 	.nav-button-right{
 		display:inline-block;
-		height:100%;
+		height:440px;
 		width:20px;
 		float:left;
 	}
 
 	.nav-button-down{
 		clear:both;
+		height:20px;
 	}
 
 	.pressed-true{
