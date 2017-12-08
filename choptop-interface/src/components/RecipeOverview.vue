@@ -112,7 +112,12 @@
 	  				var quantity = ingredient.quantity[0]
 	  				text += quantity + " "
 	  				text += ingredient.name
-	  			}else{
+	  			}else if (ingredient.units == "to taste"){
+	  				text += ingredient.name + " "
+	  				text += ingredient.units
+	  				
+	  			}
+	  			else{
 	  				var quantity = ingredient.quantity[0]
 	  				text += quantity + " " + ingredient.units+" "
 	  				text += ingredient.name
