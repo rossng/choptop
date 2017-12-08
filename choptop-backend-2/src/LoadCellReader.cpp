@@ -26,7 +26,7 @@ void LoadCellReader::stopProducing() {
 
 float LoadCellReader::hampel(float reading) {
     window_[hampel_idx_] = reading;
-    hampel_idx_ = (hampel_idx_++) % 7;
+    hampel_idx_ = (hampel_idx_ + 1) % 7;
 
     // Compute median
     window2_ = window_;
@@ -39,7 +39,7 @@ float LoadCellReader::hampel(float reading) {
     float sq_sum = std::inner_product(window2_.begin(), window2_.end(), window2_.begin(), 0.f);
     float stdev = std::sqrt(sq_sum/7);
 
-    return std::abs(reading - median) > (3 * stdev) ? median : reading;
+    return std::abs(reading - median) > (2 * stdev) ? median : reading;
 }
 
 void LoadCellReader::produce() {
