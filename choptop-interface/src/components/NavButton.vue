@@ -1,5 +1,5 @@
 <template>
-	<div :class="getClass()">
+	<div :class="getClass()" v-on:click="doAction()">
 		{{direction}} button:
 		{{pressed}}
 	</div>
@@ -8,7 +8,7 @@
 <script>
 	export default {
 	  name: 'nav-button',
-	  props: ['pressed', 'direction'],
+	  props: ['pressed', 'direction', 'eventBus'],
 	  watch: { 
 	  	pressed : function(newVal, oldVal){
 	  		console.log('Pressed for ' + this.direction + ' changed: ', newVal, ' | was: ', oldVal)
@@ -25,6 +25,9 @@
 	  methods: {
 	  	getClass : function(){
 	  		return "nav-button " + "nav-button-" + this.direction + " pressed-" + this.pressed
+	  	},
+	  	doAction(){
+	  		this.eventBus.$emit("pressed",this.direction)
 	  	}
 	  },
 

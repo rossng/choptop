@@ -133,6 +133,7 @@
 	.recipeOverview{
 		border:1px black solid;
 		margin:10px;
+		width:100%;
 	}
 
 	.recipeOverview.hovered{

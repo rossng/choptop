@@ -1,14 +1,13 @@
 <template>
   <div id="app">
-    <NavButton direction="up" :pressed="latestUpdate.upPressed"/>
-    <NavButton direction="left" :pressed="latestUpdate.leftPressed"/>
+    <NavButton direction="up" :pressed="latestUpdate.upPressed" :eventBus="eventBus"/>
+    <NavButton direction="left" :pressed="latestUpdate.leftPressed" :eventBus="eventBus"/>
     <div id="main">
       <WelcomeToChopTop v-if="shouldShowWelcome()"/>
       <RecipeListing v-if="shouldShowRecipeListing()" :recipes="recipe" :eventBus="eventBus"/>
     </div>
-    <NavButton direction="right" :pressed="latestUpdate.rightPressed"/>
-    <NavButton direction="down" :pressed="latestUpdate.downPressed"/>
-    <button v-on:click="leftPressed = !leftPressed">toggleLeft</button>
+    <NavButton direction="right" :pressed="latestUpdate.rightPressed" :eventBus="eventBus"/>
+    <NavButton direction="down" :pressed="latestUpdate.downPressed" :eventBus="eventBus"/>
   </div>
 
 </template>

@@ -1,8 +1,6 @@
 <template>
 	<div class="recipeOverviewListing">
-		<div v-for="(rec, index)  in recipes">
-			<RecipeOverview :eventBus="eventBus" v-if="!selected || hoveredRecipeIndex ==index"  :recipe="rec" :hovered="index == hoveredRecipeIndex" :selected="index == hoveredRecipeIndex && selected"/>
-		</div>
+			<RecipeOverview v-for="(rec, index)  in recipes" :key="rec.name" :eventBus="eventBus" v-if="!selected || hoveredRecipeIndex ==index"  :recipe="rec" :hovered="index == hoveredRecipeIndex" :selected="index == hoveredRecipeIndex && selected"/>
 	</div>
 </template>
 
@@ -65,6 +63,11 @@
 <style scoped>
 	h1{
 	
+	}
+
+	.recipeOverviewListing{
+		display: flex;
+  		flex-direction: row;
 	}
 	
 </style>

@@ -158,5 +158,29 @@
 				{"text":"Toss the salad leaves and cucumber with the dressing."},
 				{"text":"Cut the quesadillas into quarters and serve with the salad."}
 			]
+		},
+		{
+			"title":"Another Thing",
+			"difficulty":"Easy",
+			"time":60,
+			"serving":2,
+			"calories":500,
+			"ingredients":[
+				{
+				"name":"sfirst ingred",
+				"quantity": [1], 
+				"units":"each"
+				},
+				{
+				"name":"large onion",
+				"quantity":["1/3",210],
+				"units":["each","g"]
+				}
+			],
+			"steps":[
+				{"text":"Cut the chicken breast into 1/2 cm strips."},
+				{"text":"Slice the onion."}
+			]
+			
 		}
 	]
