@@ -36,4 +36,10 @@ private:
     std::atomic<bool> consuming_;
 
     std::ofstream log_file_;
+
+    float hampel(float reading);
+
+    std::vector<float> window_;
+    std::vector<float> window2_;
+    int hampel_idx_ = 0;
 };
