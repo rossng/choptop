@@ -50,6 +50,7 @@
 	  components:{
 	  	StepDisplay
 	  },
+	  
 	  methods: {
 	  	handlePress(dir){
 			if (this.selected){
@@ -126,18 +127,13 @@
 
 
 <style scoped>
-	h1{
-	  
-	}
-
 	.recipeOverview{
 		border:1px black solid;
 		margin:10px;
-		width:100%;
 	}
 
 	.recipeOverview.hovered{
-		background:lightgray;
+		background:#ffe6bf;
 	}
 
 	.recipeOverview.selected{
@@ -148,8 +144,6 @@
 		width:50%;
 		display:inline-block;
 		float:left;
-
-
 	}
 
 	#ingredientsList{
