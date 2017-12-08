@@ -5,6 +5,7 @@
     <div id="main">
       <WelcomeToChopTop v-if="shouldShowWelcome()"/>
       <RecipeListing v-if="shouldShowRecipeListing()" :recipes="recipe" :eventBus="eventBus"/>
+      <WeightDisplay :eventBus="eventBus"/>
     </div>
     <NavButton direction="right" :pressed="latestUpdate.rightPressed" :eventBus="eventBus"/>
     <NavButton direction="down" :pressed="latestUpdate.downPressed" :eventBus="eventBus"/>
@@ -16,6 +17,7 @@
   import WelcomeToChopTop from './components/WelcomeToChopTop'
   import NavButton from './components/NavButton'
   import RecipeListing from './components/RecipeListing'
+  import WeightDisplay from './components/WeightDisplay'
 
   import VueWebsocket from 'vue-native-websocket'
 
@@ -39,7 +41,8 @@
     components: {
       WelcomeToChopTop,
       NavButton,
-      RecipeListing
+      RecipeListing,
+      WeightDisplay
     },
 
     data() {
@@ -107,6 +110,9 @@
         }
         if(parsed.event =="downPressed"){
           this.eventBus.$emit("pressed",'down')
+        }
+        if(parsed.event == "weightReading"){
+          this.eventBus.$emit("weight", parsed.value)
         }
       }
     }

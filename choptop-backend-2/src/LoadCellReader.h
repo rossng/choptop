@@ -11,7 +11,6 @@
 
 class LoadCellReader {
 public:
-    explicit LoadCellReader(std::shared_ptr<HX711> hx711);
     explicit LoadCellReader(std::shared_ptr<HX711> hx711, std::string log_file);
 
     void startProducing();
@@ -20,10 +19,11 @@ public:
     void startConsuming();
     void stopConsuming();
 
+    void printStatus(int idx);
+
     virtual ~LoadCellReader();
 
     boost::lockfree::spsc_queue<float> raw_output_;
-    boost::lockfree::spsc_queue<float> smoothed_output_;
 private:
     void produce();
     void consume();
@@ -35,6 +35,11 @@ private:
     std::atomic<bool> producing_;
     std::atomic<bool> consuming_;
 
-    bool enable_logging_;
     std::ofstream log_file_;
+
+    float hampel(float reading);
+
+    std::vector<float> window_;
+    std::vector<float> window2_;
+    int hampel_idx_ = 0;
 };

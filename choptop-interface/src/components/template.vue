@@ -7,6 +7,7 @@
 <script>
 	export default {
 	  name: 'name',
+	  props:['eventBus'],
 	  data () {
 	    return {
 	      
@@ -18,8 +19,6 @@
 
 
 <style scoped>
-	h1{
-	  
-	}
+
 	
 </style>

@@ -12,7 +12,7 @@ set(SOURCE_FILES
         src/hx711.cpp
         src/hx711.h
         src/main.cpp
-        src/hx711_mock.cpp src/LoadCellReader.cpp src/LoadCellReader.h src/LoadCellsProcessor.cpp src/LoadCellsProcessor.h)
+        src/hx711_mock.cpp src/LoadCellReader.cpp src/LoadCellReader.h src/LoadCellsProcessor.cpp src/LoadCellsProcessor.h src/PositionProcessor.cpp src/PositionProcessor.h)
 
 add_executable(choptop ${SOURCE_FILES})
 
