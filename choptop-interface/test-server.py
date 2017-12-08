@@ -4,11 +4,12 @@ import datetime
 import random
 import aioconsole
 from  multiprocessing import Manager, Value
+from random import randint
 
 async def hello(websocket, path):
     while True:
         if(data["a"] != "null"):
-            await websocket.send('{"event":"' + str(data["a"]) + '"}')
+            await websocket.send(str(data["a"]))
             data["a"] = 'null';
         await asyncio.sleep(0.1)
     return
@@ -37,13 +38,15 @@ async def echo():
         inData = line.decode().strip()
 
         if inData == "l":
-        	data["a"] = "leftPressed"
+        	data["a"] = '{"event":leftPressed"}'
         elif inData == "r":
-        	data["a"] = "rightPressed"
+        	data["a"] = '{"event":rightPressed"}'
         elif inData == "u":
-        	data["a"] = "upPressed"
+        	data["a"] = '{"event":upPressed"}'
         elif inData == "d":
-        	data["a"] = "downPressed"
+        	data["a"] = '{"event":downPressed"}'
+        elif inData == "w":
+            data["a"] = '{"event":"weightReading", "value": ' + str(randint(0, 1000)) + '}'
         else:
         	data["a"] = inData
 
