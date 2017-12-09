@@ -141,25 +141,36 @@ void printValues(const vector<int> &print_sensors, bool debug, bool print_weight
     }
 }
 
+
 void startServer(uint16_t port) {
     ChoptopServer srv(port);
     srv.startServer();
+    auto lastSend = std::chrono::system_clock::now();
 
     while (executing) {
         load_cells_processor->press_events_.consume_all([&](auto p) {
             switch(p){
                 case PressEvent::TOP:
-                    srv.sendMessage("upPressed");
+                    srv.sendMessage("{\"event\": \"upPressed\"}");
                     break;
                 case PressEvent::BOTTOM:
-                    srv.sendMessage("downPressed");
+                    srv.sendMessage("{\"event\": \"downPressed\"}");
                     break;
                 case PressEvent::RIGHT:
-                    srv.sendMessage("rightPressed");
+                    srv.sendMessage("{\"event\": \"rightPressed\"}");
                     break;
                 case PressEvent::LEFT:
-                    srv.sendMessage("leftPressed");
+                    srv.sendMessage("{\"event\": \"leftPressed\"}");
                     break;
+            }
+        });
+
+        load_cells_processor->output_.consume_all([&](auto p){
+            if(std::chrono::system_clock::now() - lastSend > std::chrono::milliseconds(50)){
+                lastSend = std::chrono::system_clock::now();
+                std::stringstream stream;
+                stream << "{\"event\": \"weightReading\", \"value\":" << std::fixed << std::setprecision(0) << p << "}";
+                srv.sendMessage(stream.str());
             }
         });
     }
