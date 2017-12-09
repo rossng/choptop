@@ -12,6 +12,8 @@
 #include <memory>
 #include <boost/lockfree/spsc_queue.hpp>
 #include <mutex>
+#include "ChoptopServer.h"
+#include <boost/format.hpp>
 
 using namespace std;
 
@@ -139,6 +141,18 @@ void printValues(const vector<int> &print_sensors, bool debug, bool print_weight
     }
 }
 
+void startServer(uint16_t port) {
+    ChoptopServer srv(port);
+    srv.startServer();
+
+    while (executing) {
+        position_processor->output_.consume_all([&](auto p) {
+            auto command = boost::format("xy %1% %2%") % p.first % p.second;
+            srv.sendMessage(command.str());
+        });
+    }
+}
+
 int main(int argc, char **argv) {
     CLI::App app{"Choptop - an interactive chopping board"};
     app.require_subcommand(1);
@@ -161,6 +175,11 @@ int main(int argc, char **argv) {
     print->add_flag("--weight", print_weight, "Print total weight");
     print->add_flag("--xy", print_xy, "Print x position");
 
+    auto serve = app.add_subcommand("serve", "Serve a stream of information over a WebSocket");
+
+    uint16_t port = 8765;
+    serve->add_option("--port", port, "Port to serve the WebSocket on");
+
     CLI11_PARSE(app, argc, argv);
 
     signal(SIGINT, gracefulShutdown);
@@ -172,7 +191,10 @@ int main(int argc, char **argv) {
 
     startSensors(enable_sensors, log_sensors, log_xy, log_weight, log_diff);
 
-    if (app.got_subcommand("print")) {
+    if (app.got_subcommand("serve")) {
+        cout << "Serve over WebSocket" << endl;
+        startServer(port);
+    } else if (app.got_subcommand("print")) {
         cout << "Print values" << endl;
         printValues(print_sensors, debug, print_weight, print_xy);
     }
