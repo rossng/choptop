@@ -1,14 +1,18 @@
 <template>
 	<div class="weightDisplay">
 		Weight:
-		{{currentWeight - tareValue}}
+		<AnimatedInt :value="displayWeight()" />
 	</div>
 </template>
 
 <script>
+	import AnimatedInt from './AnimatedInteger'
 	export default {
 	  name: 'weightDisplay',
 	  props:['eventBus'],
+	  components:{
+	  	AnimatedInt
+	  },
 	  methods:{
 
 	  },
@@ -23,6 +27,9 @@
 	  	},
 	  	handleTare(){
 	  		this.tareValue = this.weight;
+	  	},
+	  	displayWeight(){
+	  		return this.currentWeight - this.tareValue;
 	  	}
 	  },
 	  data () {
@@ -31,12 +38,19 @@
 	      tareValue:0,
 	    }
 	  }
+	  
 	}
 </script>
 
 
 
 <style scoped>
-
+	.weightDisplay{
+		position: fixed;
+		bottom: 45px;
+		text-align: center;
+		width: 800px;
+		left: 0px;
+	}
 	
 </style>
