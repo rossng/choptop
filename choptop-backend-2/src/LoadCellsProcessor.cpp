@@ -39,9 +39,11 @@ void LoadCellsProcessor::edgeDetect(float sample, float threshold) {
     log_diff_file_ << std::fixed << std::setprecision(5) << diff << endl;
     if(diff >= threshold && previous_diff < threshold){
         isPressed = true;
+        cout << "pressed" << endl;
     }
-    else if(diff <= threshold && previous_diff > threshold){
+    else if(diff <= (-threshold) && previous_diff > (-threshold)){
         isPressed = false;
+        cout << "released" << endl;
     }
     previous_diff = diff;
 }
