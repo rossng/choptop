@@ -59,7 +59,7 @@
 
 			],
 			"steps":[
-				{"text":"Cut the cucumber into small peaces."},
+				{"text":"Cut the cucumber into small pieces.", "time": 0.1, "timerName":"Cucumber"},
 				{"text":"Slice the onion."},
 				{"text":"Slice the tomatoes into thick rings."},
 				{"text":"Cut feta into small cubes."},
@@ -67,7 +67,7 @@
 				{"text":"Add olive oil"},
 				{"text":"Add salt and pepper"},
 				{"text":"Add lemon juice or salad dressing"},
-				{"text":"Mix for half minute"}
+				{"text":"Mix for half a minute","time":0.5, "timerName":"Mixing"}
 			]
 		},
 		{
@@ -138,13 +138,13 @@
 				{"text":"Finely chop the garlic."},
 				{"text":"Grate the ginger."},
 				{"text":"To make the marinade, mix together the soy sauce, garlic and ginger, add the chicken and set aside."},
-				{"text":"Allow to marinate for 30 minutes in the fridge if you have time."},
+				{"text":"Allow to marinate for 30 minutes in the fridge if you have time.","time":30, "timerName":"Marinating"},
 				{"text":"Cook the noodles according to the packet instructions."},
 				{"text":"Drain well and set aside."},
 				{"text":"Heat 1 tbsp oil in a wok or large frying pan."},
-				{"text":"Stir-fry the chicken and marinade for 2-3 minutes."},
+				{"text":"Stir-fry the chicken and marinade for 2-3 minutes.","time":3},
 				{"text":"Remove from the pan and set aside."},
-				{"text":"Add 1/2 tbsp oil to the pan (if necessary) and fry the onion,spring onions, pepper and broccoli for 3-4 minutes"},
+				{"text":"Add 1/2 tbsp oil to the pan (if necessary) and fry the onion,spring onions, pepper and broccoli for 3-4 minutes","time":4, "timerName":"Frying" },
 				{"text":"Add the cooked chicken and noodles and continue to stir-fry until piping hot."},
 				{"text":"Remove from the heat, add extra soy sauce to taste."},
 				{"text":"Serve immediately."}
@@ -219,8 +219,8 @@
 				{"text":"Mix together 2 tbsp oil, the vinegar and mixed herbs."},
 				{"text":"Season with salt and pepper and set aside."},
 				{"text":"Next we make the filling:"},
-				{"text":"Heat 1 tbsp oil in a frying pan and cook the chicken for 5-6 minutes(until lightly browned)."},
-				{"text":"Add the mushrooms and onion, cook for 3-4 minutes."},
+				{"text":"Heat 1 tbsp oil in a frying pan and cook the chicken for 5-6 minutes(until lightly browned).","time":6, "timerName":"Cook Chicken"},
+				{"text":"Add the mushrooms and onion, cook for 3-4 minutes.","time":4, "timerName":"Cook"},
 				{"text":"Remove from the heat.Season with salt and pepper and mix in the grated cheese."},
 				{"text":"To make the quesadillas:"},
 				{"text":"Spoon the filling evenly onto 4 tortillas and lay the remaining tortillas on top."},
@@ -229,29 +229,5 @@
 				{"text":"Toss the salad leaves and cucumber with the dressing."},
 				{"text":"Cut the quesadillas into quarters and serve with the salad."}
 			]
-		},
-		{
-			"title":"Another Thing",
-			"difficulty":"Easy",
-			"time":60,
-			"serving":2,
-			"calories":500,
-			"ingredients":[
-				{
-				"name":"sfirst ingred",
-				"quantity": [1], 
-				"units":"each"
-				},
-				{
-				"name":"large onion",
-				"quantity":["1/3",210],
-				"units":["each","g"]
-				}
-			],
-			"steps":[
-				{"text":"Cut the chicken breast into 1/2 cm strips."},
-				{"text":"Slice the onion."}
-			]
-			
 		}
 	]

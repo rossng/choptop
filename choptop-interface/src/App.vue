@@ -18,6 +18,7 @@
   import NavButton from './components/NavButton'
   import RecipeListing from './components/RecipeListing'
   import WeightDisplay from './components/WeightDisplay'
+  import Timer from './components/Timer'
 
   import VueWebsocket from 'vue-native-websocket'
 
@@ -42,7 +43,8 @@
       WelcomeToChopTop,
       NavButton,
       RecipeListing,
-      WeightDisplay
+      WeightDisplay,
+      Timer
     },
 
     data() {

@@ -4,6 +4,7 @@
 #include <thread>
 #include <fstream>
 #include <atomic>
+#include <chrono>
 
 class LoadCellsProcessor {
 
@@ -43,12 +44,22 @@ private:
     float bottom_right_total_ = 0;
     float bottom_left_total_ = 0;
 
+    float top_left_pos_ = 0;
+    float top_right_pos_ = 0;
+
+    float bottom_right_pos_ = 0;
+    float bottom_left_pos_ = 0;
+
     float total_slow_ = 0;
     float w = 0.1; // smoothing rate
     float lag_weight = 0.0625;
     float previous_diff = 0;
-    const float edge_threshold = 200;
+    const float edge_threshold = 300;
     bool isPressed = false;
+
+    std::chrono::system_clock::time_point start;
+    bool timeStart = false;
+    std::chrono::system_clock::time_point stop;
 
     void consume();
 

@@ -3,6 +3,7 @@
 #include <thread>
 #include <iostream>
 #include <iomanip>
+#include <chrono>
 
 using namespace std;
 
@@ -37,12 +38,16 @@ void LoadCellsProcessor::edgeDetect(float sample, float threshold) {
     total_slow_ = expAvg(sample, total_slow_, lag_weight);
     float diff = sample - total_slow_;
     log_diff_file_ << std::fixed << std::setprecision(5) << diff << endl;
-    if(diff >= threshold && previous_diff < threshold){
+
+    if (diff >= threshold && previous_diff < threshold) {
         isPressed = true;
         cout << "pressed" << endl;
-    }
-    else if(diff <= (-threshold) && previous_diff > (-threshold)){
+
+    } else if (isPressed &&
+               ((diff <= (-threshold) && previous_diff > (-threshold)) || stop - start >= std::chrono::seconds(2))) {
+
         isPressed = false;
+        timeStart = false;
         cout << "released" << endl;
     }
     previous_diff = diff;
@@ -53,27 +58,44 @@ void LoadCellsProcessor::consume() {
     static int step = 0;
     while (running_) {
         bool updated = false;
+        stop = std::chrono::system_clock::now();
 
         top_left_.consume_all([&](float f) {
             top_left_total_ = expAvg(f, top_left_total_, w);
+            top_left_pos_ = expAvg(f, top_left_pos_, 0.05);
             updated = true;
         });
         top_right_.consume_all([&](float f) {
             top_right_total_ = expAvg(f, top_right_total_, w);
+            top_right_pos_ = expAvg(f, top_right_pos_, 0.05);
             updated = true;
         });
         bottom_left_.consume_all([&](float f) {
             bottom_left_total_ = expAvg(f, bottom_left_total_, w);
+            bottom_left_pos_ = expAvg(f, bottom_left_pos_, 0.05);
             updated = true;
         });
         bottom_right_.consume_all([&](float f) {
             bottom_right_total_ = expAvg(f, bottom_right_total_, w);
+            bottom_right_pos_ = expAvg(f, bottom_right_pos_, 0.05);
             updated = true;
         });
 
         if (updated) {
             float total = top_left_total_ + top_right_total_ + bottom_right_total_ + bottom_left_total_;
+            float total_pos = top_left_pos_ + top_right_pos_ + bottom_right_pos_ + bottom_left_pos_;
+            float y = min(max((top_left_pos_ + top_right_pos_) / total_pos, 0.f), 1.0f);
+            float x = min(max((top_right_pos_ + bottom_right_pos_) / total_pos, 0.f), 1.0f);
+
             edgeDetect(total, edge_threshold);
+
+            if (isPressed) {
+                if (!timeStart) {
+                    start = std::chrono::system_clock::now();
+                    timeStart = true;
+                }
+                cout << "XY: " << x << " : " << y << endl;
+            }
 
             if (step++ % 1 == 0) {
                 output_.push(total);
