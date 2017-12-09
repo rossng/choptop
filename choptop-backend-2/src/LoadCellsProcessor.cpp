@@ -10,9 +10,10 @@ LoadCellsProcessor::LoadCellsProcessor(boost::lockfree::spsc_queue<float> &top_l
                                        boost::lockfree::spsc_queue<float> &top_right,
                                        boost::lockfree::spsc_queue<float> &bottom_right,
                                        boost::lockfree::spsc_queue<float> &bottom_left,
-                                       string log_file) :
+                                       string log_file,
+                                       string log_diff_file) :
         top_left_(top_left), top_right_(top_right), bottom_right_(bottom_right), bottom_left_(bottom_left),
-        output_(1024), log_file_(log_file) {
+        output_(1024), log_file_(log_file), log_diff_file_(log_diff_file) {
 
 }
 
@@ -32,7 +33,22 @@ float LoadCellsProcessor::expAvg(float sample, float avg, float w) {
     return w * sample + (1.f - w) * avg;
 }
 
+bool LoadCellsProcessor::edgeDetect(float sample, float threshold) {
+    total_slow_ = expAvg(sample, total_slow_, lag_weight);
+    float diff = sample - total_slow_;
+    log_diff_file_ << std::fixed << std::setprecision(5) << diff << endl;
+    cout << std::fixed << std::setprecision(5) << diff << endl;
+    bool detected = diff >= threshold && previous_diff < threshold;
+    previous_diff = diff;
+    if(detected){
+        cout << "EDGE DETECTED BABYYYYYYY" << endl;
+        return true;
+    }
+    return false;
+}
+
 void LoadCellsProcessor::consume() {
+
     static int step = 0;
     while (running_) {
         bool updated = false;
@@ -56,6 +72,7 @@ void LoadCellsProcessor::consume() {
 
         if (updated) {
             float total = top_left_total_ + top_right_total_ + bottom_right_total_ + bottom_left_total_;
+            edgeDetect(total, 1000);
 
             if (step++ % 1 == 0) {
                 output_.push(total);

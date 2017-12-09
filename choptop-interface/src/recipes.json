@@ -1,5 +1,76 @@
 	[
 		{
+			"title":"Vegetable-feta salad",
+			"difficulty":"Easy",
+			"time":15,
+			"serving":2,
+			"calories":180,
+			"ingredients":[
+				{
+				"name":"cucumber",
+				"quantity": [1], 
+				"units":"each"
+				},
+				{
+				"name":"tomatoes",
+				"quantity":["1"],
+				"units":["cup"]
+				},
+				{
+				"name":"onion (medium)",
+				"quantity":[1],
+				"units":["each"]
+				},
+				{
+				"name":"feta",
+				"quantity":[150],
+				"units":["g"]
+				},
+				{
+				"name":"bell pepper",
+				"quantity":["1"],
+				"units":["each"]
+				},
+				{
+				"name":"lettuce",
+				"quantity":[2],
+				"units":["handful"]
+				},
+				{
+				"name":"olive oil",
+				"quantity":[1],
+				"units":["tbsp"]
+				},
+				{
+				"name":"salt",
+				"quantity":[1],
+				"units":["to taste"]
+				},
+				{
+				"name":"pepper",
+				"quantity":[1],
+				"units":["to taste"]
+				},
+				{
+				"name":"lemon juice or salad dressing",
+				"quantity":[1],
+				"units":["to taste"]
+				}
+
+			],
+			"steps":[
+				{"text":"Cut the cucumber into small peaces."},
+				{"text":"Slice the onion."},
+				{"text":"Slice the tomatoes into thick rings."},
+				{"text":"Cut feta into small cubes."},
+				{"text":"Cut the pepper."},
+				{"text":"Add olive oil"},
+				{"text":"Add salt and pepper"},
+				{"text":"Add lemon juice or salad dressing"},
+				{"text":"Mix for half minute"}
+			]
+		},
+		{
 			"title":"Chicken Stir-fry",
 			"difficulty":"Easy",
 			"time":15,

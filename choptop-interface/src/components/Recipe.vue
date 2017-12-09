@@ -49,6 +49,7 @@
 
 	.recipeOverview.selected{
 		background:#68b4b2;
+		
 	}
 	
 </style>

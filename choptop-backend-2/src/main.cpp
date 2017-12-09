@@ -53,10 +53,6 @@ void gracefulShutdown(int s) {
     exit(1);
 }
 
-float clamp(float n, float hi, float lo) {
-    return std::min(std::max(n, lo), hi);
-}
-
 shared_ptr<HX711> makeHX711(uint8_t clk, uint8_t data, float scale, mutex &wiring_pi_mutex) {
     auto sensor = make_shared<HX711>(clk, data, 0, wiring_pi_mutex);
     sensor->tare(100);
@@ -64,7 +60,7 @@ shared_ptr<HX711> makeHX711(uint8_t clk, uint8_t data, float scale, mutex &wirin
     return sensor;
 }
 
-void startSensors(vector<int> enable_sensors, string log_sensors, string log_xy, string log_weight) {
+void startSensors(vector<int> enable_sensors, string log_sensors, string log_xy, string log_weight, string log_diff) {
     this_thread::sleep_for(500ms);
 
     std::for_each(enable_sensors.begin(), enable_sensors.end(), [&](int id) {
@@ -93,7 +89,8 @@ void startSensors(vector<int> enable_sensors, string log_sensors, string log_xy,
                 load_cell_readers[1]->raw_output_,
                 load_cell_readers[2]->raw_output_,
                 load_cell_readers[3]->raw_output_,
-                log_weight.empty() ? NULLFILE : log_weight + ".txt");
+                log_weight.empty() ? NULLFILE : log_weight + ".txt",
+                log_diff.empty() ? NULLFILE : log_diff + ".txt");
 
         position_processor->startThread();
         load_cells_processor->startThread();
@@ -147,11 +144,12 @@ int main(int argc, char **argv) {
 
     vector<int> enable_sensors;
     bool debug;
-    string log_sensors, log_xy, log_weight;
+    string log_sensors, log_xy, log_weight, log_diff;
     app.add_option("--enable-sensors", enable_sensors, "Sensors to be enabled");
     app.add_option("--log-sensors", log_sensors, "File prefix to log sensor data to");
     app.add_option("--log-xy", log_xy, "File prefix to log xy data to");
     app.add_option("--log-weight", log_weight, "File prefix to log weight data to");
+    app.add_option("--log-diff", log_diff, "File prefix to log weight change data to");
     app.add_flag("--debug", debug, "File prefix to log weight data to");
 
     auto print = app.add_subcommand("print", "Print a stream of values from Choptop");
@@ -171,7 +169,7 @@ int main(int argc, char **argv) {
 
     cout << "Start sensors" << endl;
 
-    startSensors(enable_sensors, log_sensors, log_xy, log_weight);
+    startSensors(enable_sensors, log_sensors, log_xy, log_weight, log_diff);
 
     if (app.got_subcommand("print")) {
         cout << "Print values" << endl;

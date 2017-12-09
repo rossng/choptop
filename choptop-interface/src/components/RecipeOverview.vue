@@ -50,6 +50,7 @@
 	  components:{
 	  	StepDisplay
 	  },
+	  
 	  methods: {
 	  	handlePress(dir){
 			if (this.selected){
@@ -111,7 +112,12 @@
 	  				var quantity = ingredient.quantity[0]
 	  				text += quantity + " "
 	  				text += ingredient.name
-	  			}else{
+	  			}else if (ingredient.units == "to taste"){
+	  				text += ingredient.name + " "
+	  				text += ingredient.units
+	  				
+	  			}
+	  			else{
 	  				var quantity = ingredient.quantity[0]
 	  				text += quantity + " " + ingredient.units+" "
 	  				text += ingredient.name
@@ -126,18 +132,13 @@
 
 
 <style scoped>
-	h1{
-	  
-	}
-
 	.recipeOverview{
 		border:1px black solid;
 		margin:10px;
-		width:100%;
 	}
 
 	.recipeOverview.hovered{
-		background:lightgray;
+		background:#ffe6bf;
 	}
 
 	.recipeOverview.selected{
@@ -148,8 +149,6 @@
 		width:50%;
 		display:inline-block;
 		float:left;
-
-
 	}
 
 	#ingredientsList{

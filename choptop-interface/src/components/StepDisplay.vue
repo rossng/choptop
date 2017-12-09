@@ -17,7 +17,6 @@
 		props: ['steps', 'stepIdx'],
 		data () {
 			return {
-				// hoveredRecipeIndex: 0,
 				selected: true
 			  
 			}
@@ -28,8 +27,10 @@
 
 
 <style scoped>
-	h1{
-	
+	.step{
+		font-style: italic;
+	  	font-size: 30px;
+	  	margin:30px;
 	}
 	
 </style>
