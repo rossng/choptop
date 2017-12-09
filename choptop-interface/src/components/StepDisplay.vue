@@ -6,12 +6,8 @@
 				{{steps[stepIdx].text}}
 		</div>
 		
-		{{getTime(stepIdx)}}
-		<div v-if = "timeDisp">
-			Display the time:
-			<div class="timer">
-				{{steps[stepIdx].time}}
-			</div>
+		<div v-if = "hasTime()">
+			Press DOWN to start timer
 		</div>
 	</div>
 
@@ -37,11 +33,8 @@
 		},
 
 		methods: {
-		  	getTime: function(index){
-
-		  		if(this.steps[index].time != 0){
-		  			this.timeDisp = true;
-		  		}
+		  	hasTime(){
+		  		return this.steps[this.stepIdx].time != undefined
 		  	}
 		}
 	}

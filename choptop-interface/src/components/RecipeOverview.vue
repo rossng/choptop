@@ -24,6 +24,9 @@
 			<div id="steps">
 				<StepDisplay :steps="recipe.steps" :stepIdx="selectedStep"/>
 			</div>
+			<div id="timers">
+				<Timer v-for="(timer, idx) in this.activeTimers" :key="idx" :running="timer.running" :name="timer.name" :startTime="timer.startTime"/>
+			</div>
 		</div>
 
 	</div>
@@ -32,15 +35,17 @@
 <script>
 
 	import StepDisplay from './StepDisplay'
+	import Timer from './Timer'
 
 	export default {
-	  name: 'recipe',
+	  name: 'recipeOverview',
 	  props:['recipe', 'hovered', 'selected', "eventBus"],
 	  data () {
 	    return {
 	      selectedStep:0,
 	      focussed: false,
 	      stepsVisible:false,
+	      activeTimers: [],
 	    }
 	  },
 	  created(){
@@ -48,7 +53,8 @@
 	  },
 
 	  components:{
-	  	StepDisplay
+	  	StepDisplay,
+	  	Timer
 	  },
 	  
 	  methods: {
@@ -61,7 +67,11 @@
 					this.prevStep();
 				}else if(dir == "down"){
 					console.log("steps visible")
-					this.stepsVisible = true;
+					if(!this.stepsVisible){
+						this.stepsVisible = true;
+					}else{
+						this.startTimer();
+					}
 				}else if(dir == "up"){
 					if(this.stepsVisible){
 						this.stepsVisible = false;
@@ -76,15 +86,46 @@
 	  			this.selectedStep++;
 	  		}
 	  	},
-	  	// //Maybe should be in stepdisplay
-	  	// getTime: function(index){
-	  	// 	if(this.recipe.steps[index].length>1){ // How do I check if steps[i].length == 2?
-	  	// 		time = this.recipe.steps[index].time;
-	  	// 		return time;
-	  	// 	}else{
-	  	// 		return 0;
-	  	// 	}
-	  	// },
+	  	startTimer(){
+	  		if(this.hasTimeAtCurrentStep()){
+	  			console.log("starting timer for " + this.getStepTime() + "mins for " + this.getTimerName());
+	  			var timerName = this.getTimerName();
+
+	  			if(this.timerSet(timerName)){
+	  				console.log("timer already set for " + timerName);
+	  				return; //since timer is already set
+	  			}
+
+	  			var timer = {
+	  				startTime: this.getStepTime(),
+	  				name: timerName,
+	  				running: true,
+	  			}
+
+	  			this.activeTimers.push(timer)
+	  		}
+	  	},
+	  	hasTimeAtCurrentStep(){
+		  		return this.recipe.steps[this.selectedStep].time != undefined;
+		},
+
+		getStepTime(){
+			return this.recipe.steps[this.selectedStep].time;
+		},
+		getTimerName(){
+			var tn = this.recipe.steps[this.selectedStep].timerName;
+			if (tn != undefined) return tn;
+			return "Timer";
+		},
+		timerSet(name){
+			for (var timer of this.activeTimers){
+				if(timer.name == name){
+					return true;
+				}
+			}
+			return false;
+		},
+
 	  	prevStep: function(){
 	  		if(this.selectedStep > 0){
 	  			this.selectedStep--;
@@ -152,6 +193,8 @@
 
 	.recipeOverview.selected{
 		background: #68b4b2;
+		/*height: 100%;
+    	width: 100%;*/
 	}
 
 	.ingredient{
