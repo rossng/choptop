@@ -93,8 +93,12 @@ void LoadCellsProcessor::consume() {
                 if (!timeStart) {
                     start = std::chrono::system_clock::now();
                     timeStart = true;
+                    cout << "XY: " << x << " : " << y << endl;
+                    if(x < 0.5 && y > 0.5) cout << "left" << endl;
+                    else if ( x > 0.5 && y > 0.5) cout << "top" << endl;
+                    else if ( x > 0.5 && y < 0.5) cout << "right" << endl;
+                    else if ( x < 0.5 && y < 0.5) cout << "bottom" << endl;
                 }
-                cout << "XY: " << x << " : " << y << endl;
             }
 
             if (step++ % 1 == 0) {
