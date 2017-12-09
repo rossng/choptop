@@ -26,3 +26,7 @@ ChoptopServerWrapper::ChoptopServerWrapper(int port): commands_(100), server_thr
 void ChoptopServerWrapper::sendMessage(std::string text) {
     commands_.push(text);
 }
+
+void ChoptopServerWrapper::waitUntilConnected() {
+    while (!server_.connected_);
+}

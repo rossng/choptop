@@ -189,3 +189,5 @@ void WebSocketServer::_removeConnection(int socketID) {
     this->connections.erase(socketID);
     delete c;
 }
+
+WebSocketServer::Connection::Connection() : buffer(), keyValueMap(), createTime() {}

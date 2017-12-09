@@ -35,6 +35,8 @@ class WebSocketServer {
 public:
     // Represents a client connection
     struct Connection {
+        Connection();
+
         list <string> buffer;     // Ordered list of pending messages to flush out when socket is writable
         map<string, string> keyValueMap;
         time_t createTime;
@@ -45,7 +47,7 @@ public:
     map<int, Connection *> connections;
 
     // Constructor / Destructor
-    WebSocketServer(int port, const string certPath = "", const string &keyPath = "");
+    explicit WebSocketServer(int port, const string certPath = "", const string &keyPath = "");
 
     virtual ~WebSocketServer();
 

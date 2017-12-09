@@ -14,6 +14,8 @@ public:
 
     void sendMessage(std::string text);
 
+    void waitUntilConnected();
+
 private:
     void serve();
 
