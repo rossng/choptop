@@ -1,17 +1,16 @@
 #include <ChoptopServer.h>
-#include <thread>
-#include <ChoptopServerWrapper.h>
+
+using namespace std;
 
 int main() {
-    ChoptopServerWrapper server(8080);
+    ChoptopServer srv(8765);
 
-    server.startServer();
+    srv.startServer();
 
-    this_thread::sleep_for(5s);
+    while (true) {
+        srv.sendMessage("test");
+        this_thread::sleep_for(1s);
+    }
 
-    server.sendMessage("hello");
-
-    while (true);
-
-    return 0;
+    srv.stopServer();
 }
