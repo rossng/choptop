@@ -6,6 +6,8 @@
 #include <atomic>
 #include <chrono>
 
+enum class PressEvent {TOP, BOTTOM, LEFT, RIGHT};
+
 class LoadCellsProcessor {
 
 public:
@@ -27,6 +29,7 @@ public:
 
 
     boost::lockfree::spsc_queue<float> output_;
+    boost::lockfree::spsc_queue<PressEvent> press_events_;
 private:
     boost::lockfree::spsc_queue<float> &top_left_;
     boost::lockfree::spsc_queue<float> &top_right_;

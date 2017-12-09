@@ -146,9 +146,21 @@ void startServer(uint16_t port) {
     srv.startServer();
 
     while (executing) {
-        position_processor->output_.consume_all([&](auto p) {
-            auto command = boost::format("xy %1% %2%") % p.first % p.second;
-            srv.sendMessage(command.str());
+        load_cells_processor->press_events_.consume_all([&](auto p) {
+            switch(p){
+                case PressEvent::TOP:
+                    srv.sendMessage("upPressed");
+                    break;
+                case PressEvent::BOTTOM:
+                    srv.sendMessage("downPressed");
+                    break;
+                case PressEvent::RIGHT:
+                    srv.sendMessage("rightPressed");
+                    break;
+                case PressEvent::LEFT:
+                    srv.sendMessage("leftPressed");
+                    break;
+            }
         });
     }
 }
