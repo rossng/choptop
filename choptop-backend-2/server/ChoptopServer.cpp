@@ -41,8 +41,8 @@ void ChoptopServer::onClose(connection_hdl hdl) {
 ChoptopServer::ChoptopServer(uint16_t port) : commands_(100), server_thread_(nullptr), sender_thread_(nullptr),
                                          running_(false), server_(), port_(port) {
     server_.init_asio();
-    server_.set_open_handler(bind(&ChoptopServer::onOpen, this, _1));
-    server_.set_close_handler(bind(&ChoptopServer::onClose, this, _1));
+    server_.set_open_handler(std::bind(&ChoptopServer::onOpen, this, std::placeholders::_1));
+    server_.set_close_handler(std::bind(&ChoptopServer::onClose, this, std::placeholders::_1));
 }
 
 void ChoptopServer::sendMessage(std::string text) {
