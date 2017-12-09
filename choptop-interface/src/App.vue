@@ -141,6 +141,7 @@
     float: left;
     display: inline-block;
     background: #f2b74b;
+    /*background:white;*/
   }
 
 

@@ -1,12 +1,12 @@
 <template>
-	<div class="timer">
+	<div :class="getClass()">
 		<vue-circle
 		ref="circ"
         :progress="100"
         :size="100"
         :reverse="false"
+        :fill='{gradient: ["#fdd250", "#3aeabb"], gradientAngle: Math.PI / 4}'
         line-cap="round"
-        inner-text="getTimeString()"
         show-percent="false"
         :animation-start-value="0"
         :start-angle="(3/2)*Math.PI"
@@ -48,6 +48,8 @@
 	  		}else{
 	  			this.$refs.circ.updateProgress((this.currentTime/this.startTime)*100)	
 	  		}
+
+	  		this.getClass()
 	  	},
 	  	timeString(minutes){
 	  		if(minutes < 0) minutes = 0;
@@ -61,6 +63,13 @@
 	  		return mins + ":" + secsString
 
 	  	},
+	  	getClass(){
+	  		var str = "timer"
+	  		if(this.currentTime <= 0){
+	  			str+=" finished"
+	  		}
+	  		return str;
+	  	},
 	  	getTimeString(){
 	  		return this.timeString(this.currentTime);
 	  	}
@@ -72,10 +81,9 @@
 
 <style>
 	.timer{
-		bottom: 45px;
+		display: inline-block;
 		text-align: center;
-		width: 800px;
-		left: 200px;
+		margin:10px;
 	}
 
 	.inner-text{
@@ -83,12 +91,22 @@
 	}
 
 	.timerValue{
-		color:red;
+		/*color:red;*/
 		margin-top:-12px;
 	}
 	.timerName{
 
-		color:blue;
+		/*color:blue;*/
+	}
+	.timer.finished .timerValue {
+  		animation: blinker 1s linear infinite;
+  		color:red;
+	}
+
+	@keyframes blinker {  
+		20% { opacity: 1; }
+  		50% { opacity: 0; }
+  		90% { opacity: 1; }
 	}
 
 	.totalTime{
