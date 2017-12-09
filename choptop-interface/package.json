@@ -12,7 +12,8 @@
   "dependencies": {
     "tween.js": "^16.6.0",
     "vue": "^2.5.2",
-    "vue-native-websocket": "^2.0.5"
+    "vue-native-websocket": "^2.0.5",
+    "vue2-circle-progress": "^1.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
