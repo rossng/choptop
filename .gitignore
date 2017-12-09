@@ -3,3 +3,13 @@ choptop-backend/logs/
 .idea/
 
 \.DS_Store
+
+choptop-backend-2/\.vs/choptop-backend-2/v15/
+
+choptop-backend-2/\.vs/config/
+
+choptop-backend-2/\.vs/
+
+choptop-backend-2/CMakeSettings\.json
+
+choptop-backend-2/Debug/

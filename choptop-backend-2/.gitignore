@@ -1,4 +1,4 @@
-# Created by .ignore support plugin (hsz.mobi)
+	# Created by .ignore support plugin (hsz.mobi)
 ### CMake template
 CMakeCache.txt
 CMakeFiles
@@ -147,4 +147,5 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-
+#Visual Studio
+choptop-backend-2/\.vs

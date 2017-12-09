@@ -3,6 +3,7 @@
 #include <utility>
 #include <chrono>
 #include <iostream>
+#include <numeric>
 
 using namespace std;
 
