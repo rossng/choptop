@@ -38,13 +38,13 @@ async def echo():
         inData = line.decode().strip()
 
         if inData == "l":
-        	data["a"] = '{"event":leftPressed"}'
+        	data["a"] = '{"event":"leftPressed"}'
         elif inData == "r":
-        	data["a"] = '{"event":rightPressed"}'
+        	data["a"] = '{"event":"rightPressed"}'
         elif inData == "u":
-        	data["a"] = '{"event":upPressed"}'
+        	data["a"] = '{"event":"upPressed"}'
         elif inData == "d":
-        	data["a"] = '{"event":downPressed"}'
+        	data["a"] = '{"event":"downPressed"}'
         elif inData == "w":
             data["a"] = '{"event":"weightReading", "value": ' + str(randint(0, 1000)) + '}'
         else:

@@ -59,7 +59,7 @@
 
 			],
 			"steps":[
-				{"text":"Cut the cucumber into small pieces.", "time": 2, "timerName":"Cucumber"},
+				{"text":"Cut the cucumber into small pieces.", "time": 0.1, "timerName":"Cucumber"},
 				{"text":"Slice the onion."},
 				{"text":"Slice the tomatoes into thick rings."},
 				{"text":"Cut feta into small cubes."},
