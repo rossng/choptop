@@ -47,10 +47,12 @@ private:
     float w = 0.1; // smoothing rate
     float lag_weight = 0.0625;
     float previous_diff = 0;
+    const float edge_threshold = 200;
+    bool isPressed = false;
 
     void consume();
 
     float expAvg(float sample, float avg, float w);
 
-    bool edgeDetect(float sample, float threshold);
+    void edgeDetect(float sample, float threshold);
 };
