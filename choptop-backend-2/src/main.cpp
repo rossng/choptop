@@ -58,7 +58,7 @@ void gracefulShutdown(int s) {
 
 shared_ptr<HX711> makeHX711(uint8_t clk, uint8_t data, float scale, mutex &wiring_pi_mutex) {
     auto sensor = make_shared<HX711>(clk, data, 0, wiring_pi_mutex);
-    sensor->tare(100);
+    sensor->tare(10);
     sensor->setScale(scale);
     return sensor;
 }
