@@ -9,7 +9,12 @@
 #include <iostream>
 #include <csignal>
 #include <vector>
+#include <chrono>
+
 #include "hx711.h"
+
+using namespace std;
+
 
 HX711::HX711(uint8_t clockPin, uint8_t dataPin, uint8_t skipSetup, std::mutex &wiring_pi_mutex) :
         gainBits_(1),
@@ -28,6 +33,9 @@ void HX711::initialize(uint8_t skipSetup) {
     }
     pinMode(clockPin_, OUTPUT);
     pinMode(dataPin_, INPUT);
+	if(piHiPri(99)){
+        cout << "unable to set high priority\n";
+    }
     wiringPiMutex_.unlock();
 }
 
@@ -57,23 +65,28 @@ void HX711::setGain(uint8_t gain) {
 
 int32_t HX711::read() {
     // wait for the chip to become ready
-    while (!this->isReady());
+    while (!this->isReady()){
+        this_thread::sleep_for(1ms);
+    }
+
 
     int32_t data = 0;
     // pulse the clock pin 24 times to read the data
     for (uint8_t i = 24; i--;) {
         digitalWrite(clockPin_, HIGH);
-
-        digitalRead(dataPin_);
+        this_thread::sleep_for(1us);
         data |= (digitalRead(dataPin_) << i);
 
         digitalWrite(clockPin_, LOW);
+        this_thread::sleep_for(1us);        
     }
 
     // set the channel and the gain factor for the next reading using the clock pin
     for (int i = 0; i < gainBits_; i++) {
         digitalWrite(clockPin_, HIGH);
+        this_thread::sleep_for(1us);            
         digitalWrite(clockPin_, LOW);
+        this_thread::sleep_for(1us);        
     }
 
     // Sign-extend 24-bit integer to 32 bits

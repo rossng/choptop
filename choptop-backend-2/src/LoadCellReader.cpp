@@ -46,7 +46,7 @@ float LoadCellReader::hampel(float reading) {
 void LoadCellReader::produce() {
     while (producing_) {
         load_cell_data_.push(hx711_->getUnits());
-        this_thread::sleep_for(50ms);
+        this_thread::sleep_for(1ms);
     }
 }
 

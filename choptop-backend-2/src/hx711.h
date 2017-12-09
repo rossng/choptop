@@ -39,9 +39,9 @@ public:
 
     int32_t read();
 
-    int32_t readAverage(uint8_t times = 10);
+    int32_t readAverage(uint8_t times = 1);
 
-    int32_t getRawValue(uint8_t times = 10);
+    int32_t getRawValue(uint8_t times = 1);
 
     float getUnits(uint8_t times = 1);
 

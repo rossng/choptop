@@ -11,6 +11,7 @@
 #include <map>
 #include <memory>
 #include <boost/lockfree/spsc_queue.hpp>
+#include <mutex>
 
 using namespace std;
 
