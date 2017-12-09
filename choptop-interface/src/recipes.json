@@ -59,15 +59,15 @@
 
 			],
 			"steps":[
-				{"text":"Cut the cucumber into small peaces."},
-				{"text":"Slice the onion."},
-				{"text":"Slice the tomatoes into thick rings."},
-				{"text":"Cut feta into small cubes."},
-				{"text":"Cut the pepper."},
-				{"text":"Add olive oil"},
-				{"text":"Add salt and pepper"},
-				{"text":"Add lemon juice or salad dressing"},
-				{"text":"Mix for half minute"}
+				{"text":"Cut the cucumber into small peaces.","time":0},
+				{"text":"Slice the onion.","time":0},
+				{"text":"Slice the tomatoes into thick rings.","time":0},
+				{"text":"Cut feta into small cubes.","time":0},
+				{"text":"Cut the pepper.","time":0},
+				{"text":"Add olive oil","time":0},
+				{"text":"Add salt and pepper","time":0},
+				{"text":"Add lemon juice or salad dressing","time":0},
+				{"text":"Mix for half minute","time":0.5}
 			]
 		},
 		{
@@ -130,23 +130,23 @@
 
 			],
 			"steps":[
-				{"text":"Cut the chicken breast into 1/2 cm strips."},
-				{"text":"Slice the onion."},
-				{"text":"Slice the red pepper."},
-				{"text":"Cut the broccoli into florets."},
-				{"text":"Slice the spring onions."},
-				{"text":"Finely chop the garlic."},
-				{"text":"Grate the ginger."},
-				{"text":"To make the marinade, mix together the soy sauce, garlic and ginger, add the chicken and set aside."},
-				{"text":"Allow to marinate for 30 minutes in the fridge if you have time."},
-				{"text":"Cook the noodles according to the packet instructions."},
-				{"text":"Drain well and set aside."},
-				{"text":"Heat 1 tbsp oil in a wok or large frying pan."},
-				{"text":"Stir-fry the chicken and marinade for 2-3 minutes."},
-				{"text":"Remove from the pan and set aside."},
-				{"text":"Add 1/2 tbsp oil to the pan (if necessary) and fry the onion,spring onions, pepper and broccoli for 3-4 minutes"},
-				{"text":"Add the cooked chicken and noodles and continue to stir-fry until piping hot."},
-				{"text":"Remove from the heat, add extra soy sauce to taste."},
+				{"text":"Cut the chicken breast into 1/2 cm strips.","time":0},
+				{"text":"Slice the onion.","time":0},
+				{"text":"Slice the red pepper.","time":0},
+				{"text":"Cut the broccoli into florets.","time":0},
+				{"text":"Slice the spring onions.","time":0},
+				{"text":"Finely chop the garlic.","time":0},
+				{"text":"Grate the ginger.","time":0},
+				{"text":"To make the marinade, mix together the soy sauce, garlic and ginger, add the chicken and set aside.","time":0},
+				{"text":"Allow to marinate for 30 minutes in the fridge if you have time.","time":30},
+				{"text":"Cook the noodles according to the packet instructions.","time":0},
+				{"text":"Drain well and set aside.","time":0},
+				{"text":"Heat 1 tbsp oil in a wok or large frying pan.","time":0},
+				{"text":"Stir-fry the chicken and marinade for 2-3 minutes.","time":3},
+				{"text":"Remove from the pan and set aside.","time":0},
+				{"text":"Add 1/2 tbsp oil to the pan (if necessary) and fry the onion,spring onions, pepper and broccoli for 3-4 minutes","time":4},
+				{"text":"Add the cooked chicken and noodles and continue to stir-fry until piping hot.","time":0},
+				{"text":"Remove from the heat, add extra soy sauce to taste.","time":0},
 				{"text":"Serve immediately."}
 			]
 		},
@@ -210,48 +210,24 @@
 
 			],
 			"steps":[
-				{"text":"Chop the onions finely."},
-				{"text":"Cut chicken into thin strips"},
-				{"text":"Slice the mushrooms."},
-				{"text":"Grate the cheese."},
-				{"text":"Slice the cucumber finely."},
-				{"text":"Follow the next steps to make the dressing:"},
-				{"text":"Mix together 2 tbsp oil, the vinegar and mixed herbs."},
-				{"text":"Season with salt and pepper and set aside."},
-				{"text":"Next we make the filling:"},
-				{"text":"Heat 1 tbsp oil in a frying pan and cook the chicken for 5-6 minutes(until lightly browned)."},
-				{"text":"Add the mushrooms and onion, cook for 3-4 minutes."},
-				{"text":"Remove from the heat.Season with salt and pepper and mix in the grated cheese."},
-				{"text":"To make the quesadillas:"},
-				{"text":"Spoon the filling evenly onto 4 tortillas and lay the remaining tortillas on top."},
-				{"text":"Heat 1 tbsp oil in the frying pan and fry the quesadillas, one at a time."},
-				{"text":"Keep on heat until the tortillas are golden and the cheese filling has melted."},
-				{"text":"Toss the salad leaves and cucumber with the dressing."},
-				{"text":"Cut the quesadillas into quarters and serve with the salad."}
+				{"text":"Chop the onions finely.","time":0},
+				{"text":"Cut chicken into thin strips","time":0},
+				{"text":"Slice the mushrooms.","time":0},
+				{"text":"Grate the cheese.","time":0},
+				{"text":"Slice the cucumber finely.","time":0},
+				{"text":"Follow the next steps to make the dressing:","time":0},
+				{"text":"Mix together 2 tbsp oil, the vinegar and mixed herbs.","time":0},
+				{"text":"Season with salt and pepper and set aside.","time":0},
+				{"text":"Next we make the filling:","time":0},
+				{"text":"Heat 1 tbsp oil in a frying pan and cook the chicken for 5-6 minutes(until lightly browned).","time":6},
+				{"text":"Add the mushrooms and onion, cook for 3-4 minutes.","time":4},
+				{"text":"Remove from the heat.Season with salt and pepper and mix in the grated cheese.","time":0},
+				{"text":"To make the quesadillas:","time":0},
+				{"text":"Spoon the filling evenly onto 4 tortillas and lay the remaining tortillas on top.","time":0},
+				{"text":"Heat 1 tbsp oil in the frying pan and fry the quesadillas, one at a time.","time":0},
+				{"text":"Keep on heat until the tortillas are golden and the cheese filling has melted.","time":0},
+				{"text":"Toss the salad leaves and cucumber with the dressing.","time":0},
+				{"text":"Cut the quesadillas into quarters and serve with the salad.","time":0}
 			]
-		},
-		{
-			"title":"Another Thing",
-			"difficulty":"Easy",
-			"time":60,
-			"serving":2,
-			"calories":500,
-			"ingredients":[
-				{
-				"name":"sfirst ingred",
-				"quantity": [1], 
-				"units":"each"
-				},
-				{
-				"name":"large onion",
-				"quantity":["1/3",210],
-				"units":["each","g"]
-				}
-			],
-			"steps":[
-				{"text":"Cut the chicken breast into 1/2 cm strips."},
-				{"text":"Slice the onion."}
-			]
-			
 		}
 	]

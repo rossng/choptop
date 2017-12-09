@@ -76,6 +76,15 @@
 	  			this.selectedStep++;
 	  		}
 	  	},
+	  	// //Maybe should be in stepdisplay
+	  	// getTime: function(index){
+	  	// 	if(this.recipe.steps[index].length>1){ // How do I check if steps[i].length == 2?
+	  	// 		time = this.recipe.steps[index].time;
+	  	// 		return time;
+	  	// 	}else{
+	  	// 		return 0;
+	  	// 	}
+	  	// },
 	  	prevStep: function(){
 	  		if(this.selectedStep > 0){
 	  			this.selectedStep--;
