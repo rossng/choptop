@@ -1,20 +1,41 @@
 #pragma once
 
-#include "WebSocketServer.h"
-#include "Util.h"
+#include <boost/lockfree/spsc_queue.hpp>
+#include <thread>
+#include <websocketpp/config/asio_no_tls.hpp>
+#include <websocketpp/server.hpp>
+#include <mutex>
 
-class ChoptopServer : public WebSocketServer {
+typedef websocketpp::server<websocketpp::config::asio> server;
+
+using websocketpp::connection_hdl;
+
+class ChoptopServer {
 public:
-    explicit ChoptopServer(int port, const std::string &certPath = "", const std::string &keyPath = "")
-            : WebSocketServer(port, certPath, keyPath) {}
+    explicit ChoptopServer(uint16_t port);
 
-    ~ChoptopServer() override;
+    void startServer();
 
-    void onConnect(int socketID) override;
+    void stopServer();
 
-    void onMessage(int socketID, const std::string &data) override;
+    void sendMessage(std::string text);
 
-    void onDisconnect(int socketID) override;
+    void run();
 
-    void onError(int socketID, const std::string &message) override;
+    void onOpen(connection_hdl hdl);
+
+    void onClose(connection_hdl hdl);
+
+private:
+    void send();
+
+    typedef std::set<connection_hdl,std::owner_less<connection_hdl>> con_list;
+    server server_;
+    con_list connections_;
+    std::mutex mutex_;
+    boost::lockfree::spsc_queue<std::string> commands_;
+    std::thread *server_thread_;
+    std::thread *sender_thread_;
+    std::atomic<bool> running_;
+    uint16_t port_;
 };

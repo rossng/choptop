@@ -3,12 +3,10 @@ project(choptop)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_subdirectory(cppWebSockets)
-
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 
-find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED COMPONENTS system thread filesystem regex coroutine context)
 
 set(SOURCE_FILES
         src/hx711.cpp
@@ -39,10 +37,13 @@ if (IS_RPI)
     target_compile_definitions(choptop PRIVATE IS_RPI=1)
 endif ()
 
-add_library(server server/ChoptopServer.h server/ChoptopServer.cpp server/ChoptopServerWrapper.cpp server/ChoptopServerWrapper.h)
-target_include_directories(server PUBLIC ${Boost_INCLUDE_DIRS} server/)
-target_link_libraries(server ws ${Boost_LIBRARIES})
+add_library(server server/ChoptopServer.cpp server/ChoptopServer.h)
+target_include_directories(server PUBLIC ${Boost_INCLUDE_DIRS} ${WEBSOCKETPP_INCLUDE_DIR} server/)
+target_link_libraries(server ${Boost_LIBRARIES})
+if(WIN32)
+    target_link_libraries(server ws2_32 wsock32)
+endif ()
 
 add_executable(server_test src/test_server.cpp)
 target_link_libraries(server_test server)
-#target_include_directories(test_server PRIVATE cppWebSockets)
+#target_include_directories(server_test PUBLIC server/)
