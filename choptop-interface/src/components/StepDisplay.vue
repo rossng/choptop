@@ -2,7 +2,7 @@
 	<div>
 		<div class="step">
 			<!-- The time in the Json file is in minutes, didn't want to add another component for that -->
-				Step:{{stepIdx+1}}/{{steps.length}}
+				Step:{{stepIdx+1}}/{{steps.length}}<br/>
 				{{steps[stepIdx].text}}
 		</div>
 		

@@ -5,7 +5,7 @@
 			<h2>Difficulty: {{recipe.difficulty}}</h2>
 			<h2>Time: {{recipe.time}} minutes</h2>
 		</div>
-		<div v-if="selected && !stepsVisible">
+		<div class="recipeInner" v-if="selected && !stepsVisible">
 			<h1>{{recipe.title}}</h1>
 			<h2>Difficulty: {{recipe.difficulty}}</h2>
 			<h2>Time: {{recipe.time}} minutes</h2>
@@ -20,7 +20,7 @@
 			</div>
 		</div>	
 
-		<div v-if="selected && stepsVisible">	
+		<div class="inRecipe" v-show="selected && stepsVisible">	
 			<div id="steps">
 				<StepDisplay :steps="recipe.steps" :stepIdx="selectedStep"/>
 			</div>
@@ -86,6 +86,11 @@
 	  			this.selectedStep++;
 	  		}
 	  	},
+	  	prevStep: function(){
+	  		if(this.selectedStep > 0){
+	  			this.selectedStep--;
+	  		}
+	  	},
 	  	startTimer(){
 	  		if(this.hasTimeAtCurrentStep()){
 	  			console.log("starting timer for " + this.getStepTime() + "mins for " + this.getTimerName());
@@ -125,12 +130,6 @@
 			}
 			return false;
 		},
-
-	  	prevStep: function(){
-	  		if(this.selectedStep > 0){
-	  			this.selectedStep--;
-	  		}
-	  	},
 	  	getClass : function(){
 	  		var divClass = "recipeOverview"
 	  		if(this.hovered && !this.selected){
@@ -139,6 +138,8 @@
 
 	  		if(this.selected){
 	  			divClass += " selected"
+	  		}else if(this.activeTimers.length > 0){
+	  			this.activeTimers = []; //clear timers when changing recipes
 	  		}
 	  		return divClass
 	  	},
@@ -183,18 +184,33 @@
 
 <style scoped>
 	.recipeOverview{
-		border:1px black solid;
+		transition: max-height max-width 1s;
+		max-width:33%;
+		overflow: hidden;
 		margin:10px;
+		border:1px black solid;
+		height:80%;
+		width:100%;
+		transition:background 0.3s;
+		display: flex;
+    	flex-direction: row;
+    	align-items: center;
 	}
 
 	.recipeOverview.hovered{
 		background:#ffe6bf;
+		transition:background 0.3s;
 	}
 
 	.recipeOverview.selected{
-		background: #68b4b2;
-		/*height: 100%;
-    	width: 100%;*/
+		background: inherit;
+		margin:0;
+		transition: 1s;
+		border:0;
+		
+		width:100%;
+		max-height:100%;
+		max-width: 100%;
 	}
 
 	.ingredient{
@@ -206,6 +222,21 @@
 	#ingredientsList{
 		clear:both;
 		overflow:hidden;
+	}
+
+	.recipeInner{
+		background: #68b4b2;
+		width:740px;
+		margin:10px;
+		overflow: hidden
+	}
+
+	.timers{
+		background:blue;
+	}
+
+	.inRecipe{
+		width:100%;
 	}
 	
 </style>

@@ -18,8 +18,7 @@ set(SOURCE_FILES
         src/LoadCellsProcessor.cpp
         src/LoadCellsProcessor.h
         src/PositionProcessor.cpp
-        src/PositionProcessor.h
-        src/test_server.cpp)
+        src/PositionProcessor.h)
 
 add_executable(choptop ${SOURCE_FILES})
 
@@ -46,4 +45,4 @@ endif ()
 
 add_executable(server_test src/test_server.cpp)
 target_link_libraries(server_test server)
-#target_include_directories(server_test PUBLIC server/)
+target_include_directories(server_test PUBLIC server/)

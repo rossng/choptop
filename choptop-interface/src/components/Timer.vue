@@ -1,13 +1,34 @@
 <template>
-	<div class="timer">
-		{{name}} {{timeString(currentTime)}} of {{timeString(startTime)}}
+	<div :class="getClass()">
+		<vue-circle
+		ref="circ"
+        :progress="100"
+        :size="100"
+        :reverse="false"
+        :fill='{gradient: ["#fdd250", "#3aeabb"], gradientAngle: Math.PI / 4}'
+        line-cap="round"
+        show-percent="false"
+        :animation-start-value="0"
+        :start-angle="(3/2)*Math.PI"
+        insert-mode="append"
+        :thickness="10"
+        :show-percent="false">
+          <span class="timerValue">{{getTimeString()}}</span>
+          <span class="timerName">{{name}}</span>
+          <span class="totalTime">{{timeString(startTime)}}</span>
+      </vue-circle>
 	</div>
 </template>
 
 <script>
+	import VueCircle from 'vue2-circle-progress';
+
 	export default {
 	  name: 'timer',
 	  props:['eventBus', 'running', 'startTime', 'name'],
+	  components:{
+		VueCircle
+	  },
 	  data () {
 	    return {
 	      currentTime:0,
@@ -22,6 +43,13 @@
 	  		if(!this.running || this.currentTime <=0) return;
 
 	  		this.currentTime -= 1/60;
+	  		if(this.currentTime <=0){
+	  			this.$refs.circ.updateProgress(0.01)	
+	  		}else{
+	  			this.$refs.circ.updateProgress((this.currentTime/this.startTime)*100)	
+	  		}
+
+	  		this.getClass()
 	  	},
 	  	timeString(minutes){
 	  		if(minutes < 0) minutes = 0;
@@ -34,6 +62,16 @@
 
 	  		return mins + ":" + secsString
 
+	  	},
+	  	getClass(){
+	  		var str = "timer"
+	  		if(this.currentTime <= 0){
+	  			str+=" finished"
+	  		}
+	  		return str;
+	  	},
+	  	getTimeString(){
+	  		return this.timeString(this.currentTime);
 	  	}
 	  }
 	}
@@ -41,13 +79,39 @@
 
 
 
-<style scoped>
+<style>
 	.timer{
-		position: fixed;
-		bottom: 45px;
+		display: inline-block;
 		text-align: center;
-		width: 800px;
-		left: 200px;
+		margin:10px;
+	}
+
+	.inner-text{
+		color:red;
+	}
+
+	.timerValue{
+		/*color:red;*/
+		margin-top:-12px;
+	}
+	.timerName{
+
+		/*color:blue;*/
+	}
+	.timer.finished .timerValue {
+  		animation: blinker 1s linear infinite;
+  		color:red;
+	}
+
+	@keyframes blinker {  
+		20% { opacity: 1; }
+  		50% { opacity: 0; }
+  		90% { opacity: 1; }
+	}
+
+	.totalTime{
+		font-size:70%;
+		margin-top:10px;
 	}
 	
 </style>
