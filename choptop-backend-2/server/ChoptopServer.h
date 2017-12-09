@@ -1,10 +1,12 @@
 #pragma once
 
-#include <boost/lockfree/spsc_queue.hpp>
 #include <thread>
+#include <functional>
 #include <websocketpp/config/asio_no_tls.hpp>
 #include <websocketpp/server.hpp>
 #include <mutex>
+#include <set>
+#include <boost/lockfree/spsc_queue.hpp>
 
 typedef websocketpp::server<websocketpp::config::asio> server;
 
