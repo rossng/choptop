@@ -16,11 +16,9 @@
 
     // Data
     var weight = new TimeSeries();
-    var weightSlow = new TimeSeries();
 
     // Add to SmoothieChart
     weightChart.addTimeSeries(weight, {strokeStyle: 'rgb(255,0,0)'});
-    weightChart.addTimeSeries(weightSlow, {strokeStyle: 'rgb(0,255,0)'});
 
     var positionChart = new SmoothieChart({maxValue: 1, minValue: 0});
     positionChart.streamTo(document.getElementById("positionChart"), 100);
@@ -39,9 +37,8 @@
             console.log(evt.data);
             try {
                 var parsed = JSON.parse(evt.data);
-                if (parsed.event === "loadCellsProcessor") {
+                if (parsed.event === "weightProcessor") {
                     weight.append(new Date().getTime(), parsed.weight);
-                    weightSlow.append(new Date().getTime(), parsed.weightSlow);
                 }
                 if (parsed.event === "positionProcessor") {
                     x.append(new Date().getTime(), parsed.x);
