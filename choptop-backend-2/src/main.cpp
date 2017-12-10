@@ -166,12 +166,21 @@ void startServer(uint16_t port) {
         });
 
         load_cells_processor->output_.consume_all([&](auto p){
-            if(std::chrono::system_clock::now() - lastSend > std::chrono::milliseconds(50)){
+            //if(std::chrono::system_clock::now() - lastSend > std::chrono::milliseconds(50)){
                 lastSend = std::chrono::system_clock::now();
                 std::stringstream stream;
                 stream << "{\"event\": \"weightReading\", \"value\":" << std::fixed << std::setprecision(0) << p << "}";
                 srv.sendMessage(stream.str());
-            }
+            //}
+        });
+
+        load_cells_processor->output_slow_.consume_all([&](auto p){
+            //if(std::chrono::system_clock::now() - lastSend > std::chrono::milliseconds(50)){
+                lastSend = std::chrono::system_clock::now();
+                std::stringstream stream;
+                stream << "{\"event\": \"weightReadingSlow\", \"value\":" << std::fixed << std::setprecision(0) << p << "}";
+                srv.sendMessage(stream.str());
+            //}
         });
     }
 }

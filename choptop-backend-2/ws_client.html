@@ -5,15 +5,41 @@
     <title>WebSocket Test</title>
 </head>
 <body>
+<canvas id="weightChart" width="400" height="400"></canvas>
+<script type="text/javascript" src="smoothie.js"></script>
 <script>
+    var smoothie = new SmoothieChart();
+    smoothie.streamTo(document.getElementById("weightChart"), 500);
+
+    // Data
+    var weight = new TimeSeries();
+    var weightSlow = new TimeSeries();
+
+    // Add to SmoothieChart
+    smoothie.addTimeSeries(weight, {strokeStyle: 'rgb(255,0,0)'});
+    smoothie.addTimeSeries(weightSlow, {strokeStyle: 'rgb(0,255,0)'});
+
     var ws;
     window.onload = function () {
         ws = new WebSocket("ws://localhost:8765/");
+
         ws.onmessage = function (evt) {
             console.log(evt.data);
+            try {
+                var parsed = JSON.parse(evt.data);
+                if (parsed.event === "weightReading") {
+                    weight.append(new Date().getTime(), parsed.value);
+                }
+                if (parsed.event === "weightReadingSlow") {
+                    weightSlow.append(new Date().getTime(), parsed.value);
+                }
+            } catch (e) {
+                console.log("Bad JSON");
+            }
         };
+
         ws.onopen = function (evt) {
-            ws.send("Hello");
+            //ws.send("Hello");
         }
     };
     window.onclose = function () {

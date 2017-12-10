@@ -29,6 +29,7 @@ public:
 
 
     boost::lockfree::spsc_queue<float> output_;
+    boost::lockfree::spsc_queue<float> output_slow_;
     boost::lockfree::spsc_queue<PressEvent> press_events_;
 private:
     boost::lockfree::spsc_queue<float> &top_left_;
