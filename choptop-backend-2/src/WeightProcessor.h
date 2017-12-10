@@ -6,17 +6,14 @@
 #include <atomic>
 #include <chrono>
 
-enum class PressEvent {TOP, BOTTOM, LEFT, RIGHT};
-
-struct LoadCellsProcessorOutput {
+struct WeightProcessorOutput {
     float weight;
-    float weightSlow;
 };
 
-class LoadCellsProcessor {
+class WeightProcessor {
 
 public:
-    explicit LoadCellsProcessor(boost::lockfree::spsc_queue<float> &top_left,
+    explicit WeightProcessor(boost::lockfree::spsc_queue<float> &top_left,
                                 boost::lockfree::spsc_queue<float> &top_right,
                                 boost::lockfree::spsc_queue<float> &bottom_right,
                                 boost::lockfree::spsc_queue<float> &bottom_left,
@@ -27,15 +24,14 @@ public:
 
     void stopThread();
 
-    virtual ~LoadCellsProcessor();
+    virtual ~WeightProcessor();
 
     void printStatus();
 
 
 
     boost::lockfree::spsc_queue<float> output_;
-    boost::lockfree::spsc_queue<LoadCellsProcessorOutput> output_verbose_;
-    boost::lockfree::spsc_queue<PressEvent> press_events_;
+    boost::lockfree::spsc_queue<WeightProcessorOutput> output_verbose_;
 private:
     boost::lockfree::spsc_queue<float> &top_left_;
     boost::lockfree::spsc_queue<float> &top_right_;
@@ -59,12 +55,8 @@ private:
     float bottom_right_pos_ = 0;
     float bottom_left_pos_ = 0;
 
-    float total_slow_ = 0;
     float w = 0.1; // smoothing rate
-    float lag_weight = 0.0625;
-    float previous_diff = 0;
-    const float edge_threshold = 300;
-    bool isPressed = false;
+
 
     std::chrono::system_clock::time_point start;
     bool timeStart = false;
@@ -74,5 +66,4 @@ private:
 
     float expAvg(float sample, float avg, float w);
 
-    void edgeDetect(float sample, float threshold);
 };

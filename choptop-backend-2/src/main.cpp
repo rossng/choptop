@@ -6,7 +6,7 @@
 #include "CLI11.hpp"
 #include "hx711.h"
 #include "LoadCellReader.h"
-#include "LoadCellsProcessor.h"
+#include "WeightProcessor.h"
 #include "PositionProcessor.h"
 #include <map>
 #include <memory>
@@ -29,7 +29,7 @@ mutex wiring_pi_mutex;
 
 map<int, shared_ptr<LoadCellReader>> load_cell_readers;
 shared_ptr<PositionProcessor> position_processor;
-shared_ptr<LoadCellsProcessor> load_cells_processor;
+shared_ptr<WeightProcessor> load_cells_processor;
 
 shared_ptr<ChoptopServer> choptop_server;
 
@@ -94,7 +94,7 @@ void startSensors(vector<int> enable_sensors, string log_sensors, string log_xy,
                 load_cell_readers[3]->raw_output_,
                 log_xy.empty() ? NULLFILE : log_xy + ".txt");
 
-        load_cells_processor = make_shared<LoadCellsProcessor>(
+        load_cells_processor = make_shared<WeightProcessor>(
                 load_cell_readers[0]->raw_output_,
                 load_cell_readers[1]->raw_output_,
                 load_cell_readers[2]->raw_output_,
@@ -155,7 +155,7 @@ void startServer(uint16_t port) {
     auto lastSend = std::chrono::system_clock::now();
 
     while (executing) {
-        load_cells_processor->press_events_.consume_all([&](auto p) {
+        position_processor->press_events_.consume_all([&](auto p) {
             switch (p) {
                 case PressEvent::TOP:
                     choptop_server->sendMessage("{\"event\": \"upPressed\"}");
@@ -185,9 +185,8 @@ void startServer(uint16_t port) {
             //if(std::chrono::system_clock::now() - lastSend > std::chrono::milliseconds(50)){
             lastSend = std::chrono::system_clock::now();
             std::stringstream stream;
-            stream << "{\"event\": \"loadCellsProcessor\""
+            stream << "{\"event\": \"WeightProcessor\""
                    << ", \"weight\":" << std::fixed << std::setprecision(0) << p.weight
-                   << ", \"weightSlow\":" << std::fixed << std::setprecision(0) << p.weightSlow
                    << "}";
             choptop_server->sendMessage(stream.str());
             //}

@@ -3,6 +3,9 @@
 #include <boost/lockfree/spsc_queue.hpp>
 #include <thread>
 #include <fstream>
+#include <chrono>
+enum class PressEvent {TOP, BOTTOM, LEFT, RIGHT};
+
 
 class PositionProcessor {
 public:
@@ -20,6 +23,7 @@ public:
     void printStatus();
 
     boost::lockfree::spsc_queue<std::pair<float, float>> output_;
+    boost::lockfree::spsc_queue<PressEvent> press_events_;    
 private:
     boost::lockfree::spsc_queue<float> &top_left_;
     boost::lockfree::spsc_queue<float> &top_right_;
@@ -35,9 +39,18 @@ private:
     float bottom_right_avg_ = 0; // for exponential smoothing
     float bottom_left_avg_ = 0; // for exponential smoothing
 
-    float w = 0.05; // smoothing rate
-
+    float w = 0.4; // smoothing rate
+    float lag_weight = 0.1;
+    float previous_diff = 0;
+    const float edge_threshold = 300;
+    float release_threshold;
+    bool isPressed = false;
+    float total_slow_ = 0;
+    std::chrono::high_resolution_clock::time_point press_start_time_;
     void consume();
 
     float expAvg(float sample, float avg, float w);
+
+    void edgeDetect(float sample, float threshold);
+    
 };

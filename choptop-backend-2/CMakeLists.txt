@@ -15,8 +15,8 @@ set(SOURCE_FILES
         src/hx711_mock.cpp
         src/LoadCellReader.cpp
         src/LoadCellReader.h
-        src/LoadCellsProcessor.cpp
-        src/LoadCellsProcessor.h
+        src/WeightProcessor.cpp
+        src/WeightProcessor.h
         src/PositionProcessor.cpp
         src/PositionProcessor.h)
 

@@ -5,7 +5,9 @@
 #include <algorithm>
 #include <iostream>
 #include <iomanip>
-
+#include <chrono>
+#include <ctime>
+#include <ratio>
 using namespace std;
 
 PositionProcessor::PositionProcessor(boost::lockfree::spsc_queue<float> &top_left,
@@ -14,7 +16,7 @@ PositionProcessor::PositionProcessor(boost::lockfree::spsc_queue<float> &top_lef
                                      boost::lockfree::spsc_queue<float> &bottom_left,
                                      string log_file) :
         top_left_(top_left), top_right_(top_right), bottom_right_(bottom_right), bottom_left_(bottom_left),
-        output_(1024), log_file_(log_file) {
+        output_(1024), log_file_(log_file), press_events_(64) {
 
 }
 
@@ -33,6 +35,22 @@ void PositionProcessor::stopThread() {
 float PositionProcessor::expAvg(float sample, float avg, float w) {
     return w * sample + (1.f - w) * avg;
 }
+
+void PositionProcessor::edgeDetect(float sample, float threshold) {
+    float diff = sample - total_slow_;
+    auto now = chrono::high_resolution_clock::now();
+    auto time_since_last_press = chrono::duration_cast<chrono::duration<double>>(now - press_start_time_);
+    if (diff >= threshold && previous_diff < threshold
+         && time_since_last_press.count() > 0.01f ) {
+        isPressed = true;
+        cout << "pressed" << endl;
+        release_threshold = total_slow_;
+    } else if (sample < total_slow_) {
+        isPressed = false;
+    }
+    previous_diff = diff;
+}
+
 
 void PositionProcessor::consume() {
     static int step = 0;
@@ -58,9 +76,20 @@ void PositionProcessor::consume() {
 
         if (updated) {
             float total = top_left_avg_ + top_right_avg_ + bottom_left_avg_ + bottom_right_avg_;
+            total_slow_ = expAvg(total, total_slow_, lag_weight);            
             float y = min(max((top_left_avg_ + top_right_avg_) / total, 0.f), 1.0f);
             float x = min(max((top_right_avg_ + bottom_right_avg_) / total, 0.f), 1.0f);
-
+            edgeDetect(total, edge_threshold);
+            
+            if (isPressed) {
+                    press_start_time_ = std::chrono::high_resolution_clock::now();        
+                    cout << "XY: " << x << " : " << y << endl;
+                    if(x < 0.1 && y > 0.3 && y < 0.7) press_events_.push(PressEvent::LEFT);
+                    else if ( x > 0.3 && x < 0.7 && y > 0.9) press_events_.push(PressEvent::TOP);
+                    else if ( x > 0.9 && y < 0.7 && y > 0.3) press_events_.push(PressEvent::RIGHT);
+                    else if ( x < 0.7 && x > 0.3 && y < 0.1) press_events_.push(PressEvent::BOTTOM);
+                    isPressed = false;
+            }
             if (step++ % 1 == 0) {
                 output_.push(make_pair(x, y));
                 log_file_ << std::fixed << std::setprecision(5) << x << "," << y << endl;
