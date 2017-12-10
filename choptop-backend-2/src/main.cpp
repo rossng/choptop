@@ -191,6 +191,16 @@ void startServer(uint16_t port) {
             choptop_server->sendMessage(stream.str());
             //}
         });
+
+        position_processor->output_verbose_.consume_all([&](auto p) {
+            lastSend = std::chrono::system_clock::now();
+            std::stringstream stream;
+            stream << "{\"event\": \"positionProcessor\""
+                   << ", \"x\":" << std::fixed << std::setprecision(0) << p.x
+                   << ", \"y\":" << std::fixed << std::setprecision(0) << p.y
+                   << "}";
+            choptop_server->sendMessage(stream.str());
+        });
     }
 }
 

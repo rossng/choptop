@@ -6,6 +6,10 @@
 #include <chrono>
 enum class PressEvent {TOP, BOTTOM, LEFT, RIGHT};
 
+struct PositionProcessorOutput {
+    float x;
+    float y;
+};
 
 class PositionProcessor {
 public:
@@ -23,6 +27,7 @@ public:
     void printStatus();
 
     boost::lockfree::spsc_queue<std::pair<float, float>> output_;
+    boost::lockfree::spsc_queue<PositionProcessorOutput> output_verbose_;
     boost::lockfree::spsc_queue<PressEvent> press_events_;    
 private:
     boost::lockfree::spsc_queue<float> &top_left_;
