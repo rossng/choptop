@@ -43,6 +43,8 @@ ChoptopServer::ChoptopServer(uint16_t port) : commands_(100), server_thread_(nul
     server_.init_asio();
     server_.set_open_handler(std::bind(&ChoptopServer::onOpen, this, std::placeholders::_1));
     server_.set_close_handler(std::bind(&ChoptopServer::onClose, this, std::placeholders::_1));
+    server_.set_access_channels(websocketpp::log::alevel::none);
+    server_.set_error_channels(websocketpp::log::elevel::none);
 }
 
 void ChoptopServer::sendMessage(std::string text) {
