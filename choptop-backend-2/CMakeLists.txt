@@ -9,16 +9,22 @@ find_package(Threads REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system thread filesystem regex coroutine context)
 
 set(SOURCE_FILES
-        src/hx711.cpp
         src/hx711.h
         src/main.cpp
-        src/hx711_mock.cpp
         src/LoadCellReader.cpp
         src/LoadCellReader.h
         src/WeightProcessor.cpp
         src/WeightProcessor.h
         src/PositionProcessor.cpp
         src/PositionProcessor.h)
+
+if (HX711_GPIO)
+    set(SOURCE_FILES ${SOURCE_FILES} src/hx711_gpio.cpp)
+elseif (HX711_SERIAL)
+    set(SOURCE_FILES ${SOURCE_FILES} src/hx711_serial.cpp)
+else ()
+    set(SOURCE_FILES ${SOURCE_FILES} src/hx711_mock.cpp)
+endif ()
 
 add_executable(choptop ${SOURCE_FILES})
 
@@ -30,19 +36,24 @@ if (Boost_FOUND)
     target_link_libraries(choptop ${Boost_LIBRARIES})
 endif ()
 
-if (IS_RPI)
+if (HX711_GPIO)
     find_library(wiringPi_LIB wiringPi)
     target_link_libraries(choptop ${wiringPi_LIB})
-    target_compile_definitions(choptop PRIVATE IS_RPI=1)
 endif ()
+
+add_library(rs232 rs232/rs232-linux.c rs232/rs232-win.c rs232/rs232.h)
 
 add_library(server server/ChoptopServer.cpp server/ChoptopServer.h)
 target_include_directories(server PUBLIC ${Boost_INCLUDE_DIRS} ${WEBSOCKETPP_INCLUDE_DIR} server/)
 target_link_libraries(server ${Boost_LIBRARIES})
-if(WIN32)
+if (WIN32)
     target_link_libraries(server ws2_32 wsock32)
 endif ()
 
 add_executable(server_test src/test_server.cpp)
 target_link_libraries(server_test server)
 target_include_directories(server_test PUBLIC server/)
+
+add_executable(serial_test src/test_serial.cpp)
+target_link_libraries(serial_test rs232)
+target_include_directories(serial_test PUBLIC rs232/)

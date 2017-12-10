@@ -29,8 +29,12 @@
 	  		this.tareValue = this.weight;
 	  	},
 	  	displayWeight(){
-	  		return this.currentWeight - this.tareValue;
-	  	}
+	  		return this.round(this.currentWeight - this.tareValue);
+	  	},
+	  	round(weight){
+	  		// Rounds the weight to the closest 5 grams. Only rounds the displayed value so the error wouldn't build up.
+		   	return Math.round(weight/5)*5;
+		}
 	  },
 	  data () {
 	    return {

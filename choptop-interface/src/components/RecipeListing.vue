@@ -1,6 +1,6 @@
 <template>
 	<div class="recipeOverviewListing">
-			<RecipeOverview v-for="(rec, index)  in recipes" :key="rec.name" :eventBus="eventBus" v-if="!selected || hoveredRecipeIndex ==index"  :recipe="rec" :hovered="index == hoveredRecipeIndex" :selected="index == hoveredRecipeIndex && selected"/>
+			<RecipeOverview v-for="(rec, index)  in recipes" :key="rec.name" :eventBus="eventBus" v-if="!selected || hoveredRecipeIndex ==index"  :recipe="rec" :hovered="index == hoveredRecipeIndex" :selected="index == hoveredRecipeIndex && selected" :portions="portionCount"/>
 	</div>
 </template>
 
@@ -45,7 +45,7 @@
 			}
 		},
 
-		props: ['recipes', 'eventBus'],
+		props: ['recipes', 'eventBus', 'portionCount'],
 		data () {
 			return {
 				hoveredRecipeIndex: 0,

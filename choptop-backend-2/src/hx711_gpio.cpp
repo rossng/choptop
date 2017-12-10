@@ -1,6 +1,3 @@
-//#define IS_RPI
-#ifdef IS_RPI
-
 #include <cstdio>
 #include <cinttypes>
 #include <wiringPi.h>
@@ -151,5 +148,3 @@ int32_t HX711::getOffset() {
 float HX711::getScale() {
     return this->scale_;
 }
-
-#endif
