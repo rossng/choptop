@@ -39,14 +39,13 @@
 
 	export default {
 	  name: 'recipeOverview',
-	  props:['recipe', 'hovered', 'selected', "eventBus"],
+	  props:['recipe', 'hovered', 'selected', "eventBus", "portions"],
 	  data () {
 	    return {
 	      selectedStep:0,
 	      focussed: false,
 	      stepsVisible:false,
 	      activeTimers: [],
-	      portions: 2,
 	    }
 	  },
 	  created(){
@@ -61,10 +60,10 @@
 	  methods: {
 	  	handlePress(dir){
 			if (this.selected){
-				if(dir == "right"){
+				if(dir == "right" && this.stepsVisible){
 					console.log("right step")
 					this.nextStep();
-				}else if(dir =="left"){
+				}else if(dir =="left" && this.stepsVisible){
 					this.prevStep();
 				}else if(dir == "down"){
 					console.log("steps visible")
@@ -154,7 +153,7 @@
 	  				var quantity = ingredient.quantity[0]/this.recipe.serving * this.portions //Make ingredient scale to portions
 	  				text += quantity + " "
 	  				text += ingredient.name
-	  				if(quantity > 1 && ingredient.name[ingredient.name.length -1] != s){
+	  				if(quantity > 1 && ingredient.name[ingredient.name.length -1] != "s"){
 	  					text += "s" //pluralise names
 	  				}
 	  				text += " ("+(ingredient.quantity[1]/this.recipe.serving * this.portions)+ " " + ingredient.units[1]+") "

@@ -4,7 +4,8 @@
     <NavButton direction="left" :pressed="latestUpdate.leftPressed" :eventBus="eventBus"/>
     <div id="main">
       <WelcomeToChopTop v-if="shouldShowWelcome()"/>
-      <RecipeListing v-if="shouldShowRecipeListing()" :recipes="recipe" :eventBus="eventBus"/>
+      <PortionSelector v-if="shouldShowPortionSelector()" :eventBus="eventBus" :portionCount="portionCount"/>
+      <RecipeListing v-if="shouldShowRecipeListing()" :recipes="recipe" :eventBus="eventBus" :portionCount="portionCount"/>
       <WeightDisplay :eventBus="eventBus"/>
     </div>
     <NavButton direction="right" :pressed="latestUpdate.rightPressed" :eventBus="eventBus"/>
@@ -18,6 +19,7 @@
   import NavButton from './components/NavButton'
   import RecipeListing from './components/RecipeListing'
   import WeightDisplay from './components/WeightDisplay'
+  import PortionSelector from './components/PortionSelector'
   import Timer from './components/Timer'
 
   import VueWebsocket from 'vue-native-websocket'
@@ -44,7 +46,8 @@
       NavButton,
       RecipeListing,
       WeightDisplay,
-      Timer
+      Timer,
+      PortionSelector
     },
 
     data() {
@@ -53,7 +56,8 @@
         recipe: Recipes,
         latestUpdate: {},
         focussed: true,
-        eventBus : new Vue()
+        eventBus : new Vue(),
+        portionCount : 2,
 
       }
     },
@@ -61,6 +65,7 @@
     created () {
         this.setupFetchData();
         this.eventBus.$on("pressed", this.handlePress);
+        this.eventBus.$on("portionCount",this.setPortionCount);
     },
     
 
@@ -69,14 +74,18 @@
       handlePress(dir){
         if (this.focussed = true){
           if(dir == "down"){
-            this.currentScreen = "recipeListing";
-            this.focussed = false;
+            this.nextState()
           }
         }
       },
+      setPortionCount(count){
+        this.portionCount = count;
+      },
       upPressed(){
-        this.currentScreen="welcome";
-        this.focussed = true;
+        this.prevState();
+      },
+      downPressed(){
+        this.nextState();
       },
       setupFetchData () {
       //results from websocket connection
@@ -84,10 +93,29 @@
       },
       shouldShowWelcome: function () {
         return this.currentScreen === "welcome"
-
       },
       shouldShowRecipeListing: function () {
         return this.currentScreen === "recipeListing"
+      },
+      shouldShowPortionSelector: function () {
+        return this.currentScreen === "portionSelector";
+      },
+      nextState(){
+        if(this.currentScreen === "portionSelector"){
+          this.currentScreen = "recipeListing";
+          this.focussed = false;
+        }if(this.currentScreen ==="welcome"){
+          this.currentScreen = "portionSelector"
+          this.focussed = false;
+        }
+      },
+      prevState(){
+        if(this.currentScreen === "portionSelector"){
+          this.currentScreen = "welcome";
+          this.focussed = true;
+        }else if(this.currentScreen === "recipeListing"){
+          this.currentScreen = "portionSelector"
+        }
       },
       handleNewData(msg){
         var data = msg.data
