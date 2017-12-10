@@ -156,7 +156,7 @@ void startServer(uint16_t port) {
 
     while (executing) {
         load_cells_processor->press_events_.consume_all([&](auto p) {
-            switch(p){
+            switch (p) {
                 case PressEvent::TOP:
                     choptop_server->sendMessage("{\"event\": \"upPressed\"}");
                     break;
@@ -172,21 +172,24 @@ void startServer(uint16_t port) {
             }
         });
 
-        load_cells_processor->output_.consume_all([&](auto p){
+        load_cells_processor->output_.consume_all([&](auto p) {
             //if(std::chrono::system_clock::now() - lastSend > std::chrono::milliseconds(50)){
-                lastSend = std::chrono::system_clock::now();
-                std::stringstream stream;
-                stream << "{\"event\": \"weightReading\", \"value\":" << std::fixed << std::setprecision(0) << p << "}";
-                choptop_server->sendMessage(stream.str());
+            lastSend = std::chrono::system_clock::now();
+            std::stringstream stream;
+            stream << "{\"event\": \"weightReading\", \"value\":" << std::fixed << std::setprecision(0) << p << "}";
+            choptop_server->sendMessage(stream.str());
             //}
         });
 
-        load_cells_processor->output_slow_.consume_all([&](auto p){
+        load_cells_processor->output_verbose_.consume_all([&](auto p) {
             //if(std::chrono::system_clock::now() - lastSend > std::chrono::milliseconds(50)){
-                lastSend = std::chrono::system_clock::now();
-                std::stringstream stream;
-                stream << "{\"event\": \"weightReadingSlow\", \"value\":" << std::fixed << std::setprecision(0) << p << "}";
-                choptop_server->sendMessage(stream.str());
+            lastSend = std::chrono::system_clock::now();
+            std::stringstream stream;
+            stream << "{\"event\": \"loadCellsProcessor\""
+                   << ", \"weight\":" << std::fixed << std::setprecision(0) << p.weight
+                   << ", \"weightSlow\":" << std::fixed << std::setprecision(0) << p.weightSlow
+                   << "}";
+            choptop_server->sendMessage(stream.str());
             //}
         });
     }
