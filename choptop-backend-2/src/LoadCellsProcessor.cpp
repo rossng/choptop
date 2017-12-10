@@ -14,7 +14,7 @@ LoadCellsProcessor::LoadCellsProcessor(boost::lockfree::spsc_queue<float> &top_l
                                        string log_file,
                                        string log_diff_file) :
         top_left_(top_left), top_right_(top_right), bottom_right_(bottom_right), bottom_left_(bottom_left),
-        output_(1024), log_file_(log_file), log_diff_file_(log_diff_file), press_events_(64), output_slow_(1024) {
+        output_(1024), log_file_(log_file), log_diff_file_(log_diff_file), press_events_(64), output_verbose_(1024) {
 
 }
 
@@ -98,7 +98,7 @@ void LoadCellsProcessor::consume() {
 
             if (step++ % 1 == 0) {
                 output_.push(total);
-                output_slow_.push(total_slow_);
+                output_verbose_.push({total, total_slow_});
                 log_file_ << std::fixed << std::setprecision(5) << total << endl;
             }
         }

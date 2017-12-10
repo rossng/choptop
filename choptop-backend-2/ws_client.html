@@ -27,11 +27,9 @@
             console.log(evt.data);
             try {
                 var parsed = JSON.parse(evt.data);
-                if (parsed.event === "weightReading") {
-                    weight.append(new Date().getTime(), parsed.value);
-                }
-                if (parsed.event === "weightReadingSlow") {
-                    weightSlow.append(new Date().getTime(), parsed.value);
+                if (parsed.event === "loadCellsProcessor") {
+                    weight.append(new Date().getTime(), parsed.weight);
+                    weightSlow.append(new Date().getTime(), parsed.weightSlow);
                 }
             } catch (e) {
                 console.log("Bad JSON");
