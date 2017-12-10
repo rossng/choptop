@@ -46,6 +46,7 @@
 	      focussed: false,
 	      stepsVisible:false,
 	      activeTimers: [],
+	      portions: 2,
 	    }
 	  },
 	  created(){
@@ -150,17 +151,17 @@
 	  		if(ingredient.units.length == 2){
 	  			// 
 	  			if(ingredient.units[0] == "each"){
-	  				var quantity = ingredient.quantity[0]
+	  				var quantity = ingredient.quantity[0]/this.recipe.serving * this.portions //Make ingredient scale to portions
 	  				text += quantity + " "
 	  				text += ingredient.name
 	  				if(quantity > 1 && ingredient.name[ingredient.name.length -1] != s){
 	  					text += "s" //pluralise names
 	  				}
-	  				text += " ("+ingredient.quantity[1]+ " " + ingredient.units[1]+") "
+	  				text += " ("+(ingredient.quantity[1]/this.recipe.serving * this.portions)+ " " + ingredient.units[1]+") "
 	  			}
 	  		}else {
 	  			if (ingredient.units == "each"){
-	  				var quantity = ingredient.quantity[0]
+	  				var quantity = ingredient.quantity[0]/this.recipe.serving * this.portions
 	  				text += quantity + " "
 	  				text += ingredient.name
 	  			}else if (ingredient.units == "to taste"){
@@ -169,13 +170,19 @@
 	  				
 	  			}
 	  			else{
-	  				var quantity = ingredient.quantity[0]
+	  				var quantity = ingredient.quantity[0]/this.recipe.serving * this.portions
 	  				text += quantity + " " + ingredient.units+" "
 	  				text += ingredient.name
 	  			}
 	  		}
 	  		return text
-	  	}
+	  	},
+
+	  // 	setPortions(ingredient){
+
+			// ingredient.quantity = (ingredient.quantity/this.recipe.serving) * this.portions;
+			// // return this.portions 
+	  // 	}
 	  }
 	}
 </script>
