@@ -14,7 +14,7 @@ LoadCellsProcessor::LoadCellsProcessor(boost::lockfree::spsc_queue<float> &top_l
                                        string log_file,
                                        string log_diff_file) :
         top_left_(top_left), top_right_(top_right), bottom_right_(bottom_right), bottom_left_(bottom_left),
-        output_(1024), log_file_(log_file), log_diff_file_(log_diff_file) {
+        output_(1024), log_file_(log_file), log_diff_file_(log_diff_file), press_events_(64) {
 
 }
 
@@ -93,8 +93,12 @@ void LoadCellsProcessor::consume() {
                 if (!timeStart) {
                     start = std::chrono::system_clock::now();
                     timeStart = true;
+                    cout << "XY: " << x << " : " << y << endl;
+                    if(x < 0.5 && y > 0.5) press_events_.push(PressEvent::LEFT);
+                    else if ( x > 0.5 && y > 0.5) press_events_.push(PressEvent::TOP);
+                    else if ( x > 0.5 && y < 0.5) press_events_.push(PressEvent::RIGHT);
+                    else if ( x < 0.5 && y < 0.5) press_events_.push(PressEvent::BOTTOM);
                 }
-                cout << "XY: " << x << " : " << y << endl;
             }
 
             if (step++ % 1 == 0) {

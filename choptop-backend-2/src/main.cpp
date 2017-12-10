@@ -12,6 +12,8 @@
 #include <memory>
 #include <boost/lockfree/spsc_queue.hpp>
 #include <mutex>
+#include "ChoptopServer.h"
+#include <boost/format.hpp>
 
 using namespace std;
 
@@ -36,10 +38,10 @@ struct HX711Settings {
 };
 
 map<int, HX711Settings> sensor_settings = {
-        {0, {6,  5,  443.7f}},
-        {1, {8,  7,  453.3f}},
-        {2, {10, 9,  422.2f}},
-        {3, {21, 20, 411.3f}}
+        {0, {6,  5,  466.1f}},
+        {1, {8,  7,  476.2f}},
+        {2, {10, 9,  476.8f}},
+        {3, {21, 20, 467.09f}}
 };
 
 void gracefulShutdown(int s) {
@@ -56,7 +58,7 @@ void gracefulShutdown(int s) {
 
 shared_ptr<HX711> makeHX711(uint8_t clk, uint8_t data, float scale, mutex &wiring_pi_mutex) {
     auto sensor = make_shared<HX711>(clk, data, 0, wiring_pi_mutex);
-    sensor->tare(100);
+    sensor->tare(30);
     sensor->setScale(scale);
     return sensor;
 }
@@ -139,6 +141,41 @@ void printValues(const vector<int> &print_sensors, bool debug, bool print_weight
     }
 }
 
+
+void startServer(uint16_t port) {
+    ChoptopServer srv(port);
+    srv.startServer();
+    auto lastSend = std::chrono::system_clock::now();
+
+    while (executing) {
+        load_cells_processor->press_events_.consume_all([&](auto p) {
+            switch(p){
+                case PressEvent::TOP:
+                    srv.sendMessage("{\"event\": \"upPressed\"}");
+                    break;
+                case PressEvent::BOTTOM:
+                    srv.sendMessage("{\"event\": \"downPressed\"}");
+                    break;
+                case PressEvent::RIGHT:
+                    srv.sendMessage("{\"event\": \"rightPressed\"}");
+                    break;
+                case PressEvent::LEFT:
+                    srv.sendMessage("{\"event\": \"leftPressed\"}");
+                    break;
+            }
+        });
+
+        load_cells_processor->output_.consume_all([&](auto p){
+            if(std::chrono::system_clock::now() - lastSend > std::chrono::milliseconds(50)){
+                lastSend = std::chrono::system_clock::now();
+                std::stringstream stream;
+                stream << "{\"event\": \"weightReading\", \"value\":" << std::fixed << std::setprecision(0) << p << "}";
+                srv.sendMessage(stream.str());
+            }
+        });
+    }
+}
+
 int main(int argc, char **argv) {
     CLI::App app{"Choptop - an interactive chopping board"};
     app.require_subcommand(1);
@@ -161,6 +198,11 @@ int main(int argc, char **argv) {
     print->add_flag("--weight", print_weight, "Print total weight");
     print->add_flag("--xy", print_xy, "Print x position");
 
+    auto serve = app.add_subcommand("serve", "Serve a stream of information over a WebSocket");
+
+    uint16_t port = 8765;
+    serve->add_option("--port", port, "Port to serve the WebSocket on");
+
     CLI11_PARSE(app, argc, argv);
 
     signal(SIGINT, gracefulShutdown);
@@ -172,7 +214,10 @@ int main(int argc, char **argv) {
 
     startSensors(enable_sensors, log_sensors, log_xy, log_weight, log_diff);
 
-    if (app.got_subcommand("print")) {
+    if (app.got_subcommand("serve")) {
+        cout << "Serve over WebSocket" << endl;
+        startServer(port);
+    } else if (app.got_subcommand("print")) {
         cout << "Print values" << endl;
         printValues(print_sensors, debug, print_weight, print_xy);
     }

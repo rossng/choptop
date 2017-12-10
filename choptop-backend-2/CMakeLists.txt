@@ -22,7 +22,7 @@ set(SOURCE_FILES
 
 add_executable(choptop ${SOURCE_FILES})
 
-target_link_libraries(choptop Threads::Threads)
+target_link_libraries(choptop Threads::Threads server)
 
 if (Boost_FOUND)
     message(${Boost_INCLUDE_DIRS})
