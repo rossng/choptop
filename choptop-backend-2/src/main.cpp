@@ -38,10 +38,10 @@ struct HX711Settings {
 };
 
 map<int, HX711Settings> sensor_settings = {
-        {0, {6,  5,  443.7f}},
-        {1, {8,  7,  453.3f}},
-        {2, {10, 9,  422.2f}},
-        {3, {21, 20, 411.3f}}
+        {0, {6,  5,  466.1f}},
+        {1, {8,  7,  476.2f}},
+        {2, {10, 9,  476.8f}},
+        {3, {21, 20, 467.09f}}
 };
 
 void gracefulShutdown(int s) {
@@ -58,7 +58,7 @@ void gracefulShutdown(int s) {
 
 shared_ptr<HX711> makeHX711(uint8_t clk, uint8_t data, float scale, mutex &wiring_pi_mutex) {
     auto sensor = make_shared<HX711>(clk, data, 0, wiring_pi_mutex);
-    sensor->tare(10);
+    sensor->tare(30);
     sensor->setScale(scale);
     return sensor;
 }
