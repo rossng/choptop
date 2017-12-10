@@ -4,6 +4,11 @@
 #include <thread>
 #include <fstream>
 
+struct PositionProcessorOutput {
+    float x;
+    float y;
+};
+
 class PositionProcessor {
 public:
     explicit PositionProcessor(boost::lockfree::spsc_queue<float> &top_left,
@@ -20,6 +25,7 @@ public:
     void printStatus();
 
     boost::lockfree::spsc_queue<std::pair<float, float>> output_;
+    boost::lockfree::spsc_queue<PositionProcessorOutput> output_verbose_;
 private:
     boost::lockfree::spsc_queue<float> &top_left_;
     boost::lockfree::spsc_queue<float> &top_right_;

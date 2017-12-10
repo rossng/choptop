@@ -5,19 +5,31 @@
     <title>WebSocket Test</title>
 </head>
 <body>
-<canvas id="weightChart" width="400" height="400"></canvas>
+<h1>Weight</h1>
+<canvas id="weightChart" width="600" height="150"></canvas>
+<h1>Position</h1>
+<canvas id="positionChart" width="600" height="150"></canvas>
 <script type="text/javascript" src="smoothie.js"></script>
 <script>
-    var smoothie = new SmoothieChart({maxValue: 1000, minValue: 0});
-    smoothie.streamTo(document.getElementById("weightChart"), 100);
+    var weightChart = new SmoothieChart({maxValue: 1000, minValue: 0});
+    weightChart.streamTo(document.getElementById("weightChart"), 100);
 
     // Data
     var weight = new TimeSeries();
     var weightSlow = new TimeSeries();
 
     // Add to SmoothieChart
-    smoothie.addTimeSeries(weight, {strokeStyle: 'rgb(255,0,0)'});
-    smoothie.addTimeSeries(weightSlow, {strokeStyle: 'rgb(0,255,0)'});
+    weightChart.addTimeSeries(weight, {strokeStyle: 'rgb(255,0,0)'});
+    weightChart.addTimeSeries(weightSlow, {strokeStyle: 'rgb(0,255,0)'});
+
+    var positionChart = new SmoothieChart({maxValue: 1, minValue: 0});
+    positionChart.streamTo(document.getElementById("positionChart"), 100);
+
+    var x = new TimeSeries();
+    var y = new TimeSeries();
+
+    positionChart.addTimeSeries(x, {strokeStyle: 'rgb(255,0,0)'});
+    positionChart.addTimeSeries(y, {strokeStyle: 'rgb(0,255,0)'});
 
     var ws;
     window.onload = function () {
@@ -30,6 +42,10 @@
                 if (parsed.event === "loadCellsProcessor") {
                     weight.append(new Date().getTime(), parsed.weight);
                     weightSlow.append(new Date().getTime(), parsed.weightSlow);
+                }
+                if (parsed.event === "positionProcessor") {
+                    x.append(new Date().getTime(), parsed.x);
+                    y.append(new Date().getTime(), parsed.y);
                 }
             } catch (e) {
                 console.log("Bad JSON");
