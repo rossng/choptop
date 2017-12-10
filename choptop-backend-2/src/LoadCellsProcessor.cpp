@@ -79,9 +79,13 @@ void LoadCellsProcessor::consume() {
         if (updated) {
             float total = top_left_total_ + top_right_total_ + bottom_right_total_ + bottom_left_total_;
             total_slow_ = expAvg(total, total_slow_, lag_weight);
-            float y = min(max((top_left_pos_ + top_right_pos_) / total, 0.f), 1.0f);
-            float x = min(max((top_right_pos_ + bottom_right_pos_) / total, 0.f), 1.0f);
-
+            float y_top = min(max((top_left_pos_ + top_right_pos_) / total, 0.f), 1.0f);
+            float y_bottom = 1.0f - min(max((bottom_left_pos_ + bottom_right_pos_) / total, 0.f), 1.0f);            
+            float x_right = min(max((top_right_pos_ + bottom_right_pos_) / total, 0.f), 1.0f);
+            float x_left = 1.0f - min(max((top_left_pos_ + bottom_left_pos_) / total, 0.f), 1.0f);
+            
+            float x = (x_left + x_right) / 2.0f;
+            float y = (y_top + y_bottom) / 2.0f;
             edgeDetect(total, edge_threshold);
 
             if (isPressed) {
