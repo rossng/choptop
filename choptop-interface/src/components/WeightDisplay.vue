@@ -13,9 +13,6 @@
 	  components:{
 	  	AnimatedInt
 	  },
-	  methods:{
-
-	  },
 	  created (){
 	  	this.eventBus.$on("weight", this.handleNewWeight);
 	  	this.eventBus.$on("tare", this.handleTare);

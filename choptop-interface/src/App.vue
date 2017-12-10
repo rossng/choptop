@@ -144,6 +144,10 @@
         if(parsed.event == "weightReading"){
           this.eventBus.$emit("weight", parsed.value)
         }
+        if(parsed.event == "posReading"){
+          this.eventBus.$emit("pos", parsed.pos)
+          // console.log(parsed.pos[0])
+        }
       }
     }
   }

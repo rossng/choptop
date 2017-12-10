@@ -47,6 +47,8 @@ async def echo():
         	data["a"] = '{"event":"downPressed"}'
         elif inData == "w":
             data["a"] = '{"event":"weightReading", "value": ' + str(randint(0, 1000)) + '}'
+        elif inData == "p":
+            data["a"] = '{"event":"position", "pos": ['+ str(randint(0, 100)/100)+ ',' + str(randint(0, 100)/100)+'] }'
         else:
         	data["a"] = inData
 
