@@ -53,3 +53,7 @@ endif ()
 add_executable(server_test src/test_server.cpp)
 target_link_libraries(server_test server)
 target_include_directories(server_test PUBLIC server/)
+
+add_executable(serial_test src/test_serial.cpp)
+target_link_libraries(serial_test rs232)
+target_include_directories(serial_test PUBLIC rs232/)
