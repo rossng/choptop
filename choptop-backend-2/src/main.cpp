@@ -185,7 +185,7 @@ void startServer(uint16_t port) {
             //if(std::chrono::system_clock::now() - lastSend > std::chrono::milliseconds(50)){
             lastSend = std::chrono::system_clock::now();
             std::stringstream stream;
-            stream << "{\"event\": \"WeightProcessor\""
+            stream << "{\"event\": \"weightProcessor\""
                    << ", \"weight\":" << std::fixed << std::setprecision(0) << p.weight
                    << "}";
             choptop_server->sendMessage(stream.str());
