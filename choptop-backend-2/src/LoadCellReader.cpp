@@ -4,6 +4,7 @@
 #include <chrono>
 #include <iostream>
 #include <numeric>
+#include <wiringPi.h>
 
 using namespace std;
 
@@ -46,7 +47,7 @@ float LoadCellReader::hampel(float reading) {
 void LoadCellReader::produce() {
     while (producing_) {
         load_cell_data_.push(hx711_->getUnits());
-        this_thread::sleep_for(1ms);
+        delay(1);
     }
 }
 
@@ -69,7 +70,7 @@ void LoadCellReader::consume() {
             raw_output_.push(despiked_value);
             log_file_ << despiked_value << std::endl;
         });
-        this_thread::sleep_for(50ms);
+        delay(50);
     }
 }
 

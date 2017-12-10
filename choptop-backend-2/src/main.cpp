@@ -31,6 +31,8 @@ map<int, shared_ptr<LoadCellReader>> load_cell_readers;
 shared_ptr<PositionProcessor> position_processor;
 shared_ptr<LoadCellsProcessor> load_cells_processor;
 
+shared_ptr<ChoptopServer> choptop_server;
+
 struct HX711Settings {
     uint8_t clk;
     uint8_t data;
@@ -53,6 +55,11 @@ void gracefulShutdown(int s) {
     }
     position_processor->stopThread();
     load_cells_processor->stopThread();
+
+    if (choptop_server != nullptr) {
+        choptop_server->stopServer();
+    }
+
     exit(1);
 }
 
@@ -143,35 +150,44 @@ void printValues(const vector<int> &print_sensors, bool debug, bool print_weight
 
 
 void startServer(uint16_t port) {
-    ChoptopServer srv(port);
-    srv.startServer();
+    choptop_server = make_shared<ChoptopServer>(port);
+    choptop_server->startServer();
     auto lastSend = std::chrono::system_clock::now();
 
     while (executing) {
         load_cells_processor->press_events_.consume_all([&](auto p) {
             switch(p){
                 case PressEvent::TOP:
-                    srv.sendMessage("{\"event\": \"upPressed\"}");
+                    choptop_server->sendMessage("{\"event\": \"upPressed\"}");
                     break;
                 case PressEvent::BOTTOM:
-                    srv.sendMessage("{\"event\": \"downPressed\"}");
+                    choptop_server->sendMessage("{\"event\": \"downPressed\"}");
                     break;
                 case PressEvent::RIGHT:
-                    srv.sendMessage("{\"event\": \"rightPressed\"}");
+                    choptop_server->sendMessage("{\"event\": \"rightPressed\"}");
                     break;
                 case PressEvent::LEFT:
-                    srv.sendMessage("{\"event\": \"leftPressed\"}");
+                    choptop_server->sendMessage("{\"event\": \"leftPressed\"}");
                     break;
             }
         });
 
         load_cells_processor->output_.consume_all([&](auto p){
-            if(std::chrono::system_clock::now() - lastSend > std::chrono::milliseconds(50)){
+            //if(std::chrono::system_clock::now() - lastSend > std::chrono::milliseconds(50)){
                 lastSend = std::chrono::system_clock::now();
                 std::stringstream stream;
                 stream << "{\"event\": \"weightReading\", \"value\":" << std::fixed << std::setprecision(0) << p << "}";
-                srv.sendMessage(stream.str());
-            }
+                choptop_server->sendMessage(stream.str());
+            //}
+        });
+
+        load_cells_processor->output_slow_.consume_all([&](auto p){
+            //if(std::chrono::system_clock::now() - lastSend > std::chrono::milliseconds(50)){
+                lastSend = std::chrono::system_clock::now();
+                std::stringstream stream;
+                stream << "{\"event\": \"weightReadingSlow\", \"value\":" << std::fixed << std::setprecision(0) << p << "}";
+                choptop_server->sendMessage(stream.str());
+            //}
         });
     }
 }

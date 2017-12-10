@@ -66,7 +66,7 @@ void HX711::setGain(uint8_t gain) {
 int32_t HX711::read() {
     // wait for the chip to become ready
     while (!this->isReady()){
-        this_thread::sleep_for(1ms);
+        delay(1);
     }
 
 
@@ -74,19 +74,19 @@ int32_t HX711::read() {
     // pulse the clock pin 24 times to read the data
     for (uint8_t i = 24; i--;) {
         digitalWrite(clockPin_, HIGH);
-        this_thread::sleep_for(1us);
+        delayMicroseconds(1);
         data |= (digitalRead(dataPin_) << i);
 
         digitalWrite(clockPin_, LOW);
-        this_thread::sleep_for(1us);        
+        delayMicroseconds(1);        
     }
 
     // set the channel and the gain factor for the next reading using the clock pin
     for (int i = 0; i < gainBits_; i++) {
         digitalWrite(clockPin_, HIGH);
-        this_thread::sleep_for(1us);            
+        delayMicroseconds(1);         
         digitalWrite(clockPin_, LOW);
-        this_thread::sleep_for(1us);        
+        delayMicroseconds(1);        
     }
 
     // Sign-extend 24-bit integer to 32 bits
