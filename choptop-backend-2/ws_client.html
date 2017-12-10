@@ -8,7 +8,7 @@
 <canvas id="weightChart" width="400" height="400"></canvas>
 <script type="text/javascript" src="smoothie.js"></script>
 <script>
-    var smoothie = new SmoothieChart();
+    var smoothie = new SmoothieChart({maxValue: 1000, minValue: 0});
     smoothie.streamTo(document.getElementById("weightChart"), 500);
 
     // Data
