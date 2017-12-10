@@ -31,6 +31,8 @@ map<int, shared_ptr<LoadCellReader>> load_cell_readers;
 shared_ptr<PositionProcessor> position_processor;
 shared_ptr<LoadCellsProcessor> load_cells_processor;
 
+shared_ptr<ChoptopServer> server;
+
 struct HX711Settings {
     uint8_t clk;
     uint8_t data;
@@ -53,6 +55,11 @@ void gracefulShutdown(int s) {
     }
     position_processor->stopThread();
     load_cells_processor->stopThread();
+
+    if (server != nullptr) {
+        server->stopServer();
+    }
+
     exit(1);
 }
 
@@ -143,24 +150,24 @@ void printValues(const vector<int> &print_sensors, bool debug, bool print_weight
 
 
 void startServer(uint16_t port) {
-    ChoptopServer srv(port);
-    srv.startServer();
+    server = make_shared<ChoptopServer>(port);
+    server->startServer();
     auto lastSend = std::chrono::system_clock::now();
 
     while (executing) {
         load_cells_processor->press_events_.consume_all([&](auto p) {
             switch(p){
                 case PressEvent::TOP:
-                    srv.sendMessage("{\"event\": \"upPressed\"}");
+                    server->sendMessage("{\"event\": \"upPressed\"}");
                     break;
                 case PressEvent::BOTTOM:
-                    srv.sendMessage("{\"event\": \"downPressed\"}");
+                    server->sendMessage("{\"event\": \"downPressed\"}");
                     break;
                 case PressEvent::RIGHT:
-                    srv.sendMessage("{\"event\": \"rightPressed\"}");
+                    server->sendMessage("{\"event\": \"rightPressed\"}");
                     break;
                 case PressEvent::LEFT:
-                    srv.sendMessage("{\"event\": \"leftPressed\"}");
+                    server->sendMessage("{\"event\": \"leftPressed\"}");
                     break;
             }
         });
