@@ -44,7 +44,7 @@ private:
     float w = 0.4; // smoothing rate
     float lag_weight = 0.1;
     float previous_diff_ = 0;
-    const float edge_threshold_ = 300;
+    const float edge_threshold_ = 200;
     float release_threshold;
     bool is_pressed_ = false;
     float weight_slow_ = 0;
