@@ -25,6 +25,7 @@ atomic<bool> executing(true);
 mutex wiring_pi_mutex;
 
 shared_ptr<DataProcessor> data_processor;
+shared_ptr<SensorReader> sensor_reader;
 
 shared_ptr<ChoptopServer> choptop_server;
 
@@ -43,11 +44,11 @@ void gracefulShutdown(int s) {
 void startSensors(string device) {
     this_thread::sleep_for(500ms);
 
-    SensorReader sensor_reader(device);
-    sensor_reader.tare();
-    sensor_reader.startReading();
+    sensor_reader = make_shared<SensorReader>(device);
+    sensor_reader->tare();
+    sensor_reader->startReading();
 
-    data_processor = make_shared<DataProcessor>(sensor_reader.sensor_data_);
+    data_processor = make_shared<DataProcessor>(sensor_reader->sensor_data_);
     data_processor->startThread();
 }
 
