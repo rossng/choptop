@@ -54,8 +54,9 @@
 		height: 30px;
 		margin-top: -15px;
 		margin-left: -15px;
-		border-radius: 15px;
+		-webkit-border-radius: 50%;
 		transition : 0.5s;
+		opacity: 0.65;
 	}
 
 	
