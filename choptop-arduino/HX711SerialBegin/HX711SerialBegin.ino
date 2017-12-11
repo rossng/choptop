@@ -1,4 +1,4 @@
-  #include "HX711.h"
+#include "HX711.h"
 
 HX711 scales[4];
 
@@ -13,7 +13,7 @@ void setup() {
   scales[0].set_scale(466.1f);
   scales[1].set_scale(476.2f);
   scales[2].set_scale(476.8f);
-    scales[3].set_scale(467.09f);
+  scales[3].set_scale(467.09f);
 
   Serial.println("Initializing the scale");
   Serial.println("Waiting for tare command");
