@@ -32,7 +32,7 @@
 
   Vue.component('icon', Icon)
 
-  Vue.use(VueWebsocket, "ws://localhost:8765", { 
+  Vue.use(VueWebsocket, "ws://localhost:8765", {
       format: 'json',
       reconnection: true, // (Boolean) whether to reconnect automatically (false)
       reconnectionAttempts: 10000, // (Number) number of reconnection attempts before giving up (Infinity),
@@ -74,7 +74,7 @@
         this.eventBus.$on("pressed", this.handlePress);
         this.eventBus.$on("portionCount",this.setPortionCount);
     },
-    
+
 
 
     methods: {
@@ -162,6 +162,8 @@
 </script>
 <style>
 
+  @import url('https://fonts.googleapis.com/css?family=Fredoka+One|Roboto');
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -170,8 +172,7 @@
     color: #2c3e50;
     height: 100%;
     width: 100%;
-    background: #026967;
-    /*overflow:hidden;*/
+    background: #c7f3ff;
   }
 
   #main {
@@ -179,8 +180,7 @@
     height: 440px; /*480px - 2 x 20px */
     float: left;
     display: inline-block;
-    background: #f2b74b;
-    /*background:white;*/
+    background: white;
   }
 
 
