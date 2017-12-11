@@ -27,7 +27,7 @@
 	  		if (this.latestPos ==null){
 	  			return ''; 
 	  		}
-	  		text += "transform: translate("+this.latestPos[0]*800+"px,"+ this.latestPos[1]*480+"px) scale("+this.latestScale+")";
+	  		text += "transform: translate("+this.latestPos[0]*800+"px,"+ (1.0-this.latestPos[1])*480+"px) scale("+this.latestScale+")";
 	  		return text;
 	  	}
 	  },
