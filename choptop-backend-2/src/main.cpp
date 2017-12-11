@@ -47,8 +47,15 @@ void startSensors(string device) {
     sensor_reader.tare();
     sensor_reader.startReading();
 
-    data_processor = make_shared<DataProcessor>(sensor_reader.sensor_data_);
-    data_processor->startThread();
+    //data_processor = make_shared<DataProcessor>(sensor_reader.sensor_data_);
+    //data_processor->startThread();
+
+
+    while (true) {
+        sensor_reader.sensor_data_.consume_all([](auto sd) {
+            printf("%f %f %f %f\n", sd.top_left, sd.top_right, sd.bottom_right, sd.bottom_left);
+        });
+    }
 }
 
 void printValues(const vector<int> &print_sensors, bool print_weight, bool print_xy, bool print_presses) {
