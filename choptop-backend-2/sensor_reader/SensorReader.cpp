@@ -84,21 +84,41 @@ void SensorReader::read() {
         std::string line = readLine();
         while (line[0] != '0') {
             line = readLine();
+            try {
+                stof(line.substr(2));
+            } catch (std::invalid_argument &e) {
+                line = "";
+            }
         }
         float top_left = stof(line.substr(2));
 
         while (line[0] != '1') {
             line = readLine();
+            try {
+                stof(line.substr(2));
+            } catch (std::invalid_argument &e) {
+                line = "";
+            }
         }
         float top_right = stof(line.substr(2));
 
         while (line[0] != '2') {
             line = readLine();
+            try {
+                stof(line.substr(2));
+            } catch (std::invalid_argument &e) {
+                line = "";
+            }
         }
         float bottom_right = stof(line.substr(2));
 
         while (line[0] != '3') {
             line = readLine();
+            try {
+                stof(line.substr(2));
+            } catch (std::invalid_argument &e) {
+                line = "";
+            }
         }
         float bottom_left = stof(line.substr(2));
 
