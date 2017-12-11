@@ -36,7 +36,7 @@
 
 #define _DARWIN_C_SOURCE
 
-#include "rs232.h"
+#include "sensor_reader.h"
 
 #include <unistd.h>
 #define __USE_MISC // For CRTSCTS

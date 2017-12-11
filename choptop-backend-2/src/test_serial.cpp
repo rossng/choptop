@@ -1,5 +1,6 @@
 #include <iostream>
 #include <thread>
+#include <SensorReader.h>
 #include "rs232.h"
 
 using namespace std;
@@ -11,17 +12,15 @@ int main() {
         cout << "Device " << i << ": " << comGetPortName(i) << endl;
     }
 
-    char serial_char;
+    SensorReader sr("/dev/ttyACM1");
+    sr.tare();
+    sr.startReading();
 
-    if (comOpen(0, 38400)) {
-        while (true) {
-            if (comRead(0, &serial_char, 1) > 0) {
-                printf("%c", serial_char);
-            }
-        }
-    } else {
-        cout << "Failed to open device 0" << endl;
+    while (true) {
+        sr.sensor_data_.consume_all([](auto sd) {
+            printf("%f %f %f %f\n", sd.top_left, sd.top_right, sd.bottom_right, sd.bottom_left);
+        });
     }
 
-    comCloseAll();
+    sr.stopReading();
 }
