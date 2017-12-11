@@ -58,7 +58,7 @@ void DataProcessor::consume() {
         sensor_data_.consume_all([&](SensorData sd) {
             // Hampel filter to remove spikes
             sd.top_left = hampel(sd.top_left, top_left_window1, top_left_window2, top_left_idx);
-            sd.top_right = hampel(sd.top_left, top_right_window1, top_right_window2, top_right_idx);
+            sd.top_right = hampel(sd.top_right, top_right_window1, top_right_window2, top_right_idx);
             sd.bottom_right = hampel(sd.bottom_right, bottom_right_window1, bottom_right_window2, bottom_right_idx);
             sd.bottom_left = hampel(sd.bottom_left, bottom_left_window1, bottom_left_window2, bottom_left_idx);
 

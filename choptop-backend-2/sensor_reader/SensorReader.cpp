@@ -109,5 +109,5 @@ void SensorReader::read() {
 void SensorReader::tare() {
     std::string line;
     this_thread::sleep_for(2s);
-    comWrite(port_, "tare\r\n", 6);
+    comWrite(port_, "t", 1);
 }
