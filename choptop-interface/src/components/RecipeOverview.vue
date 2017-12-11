@@ -24,6 +24,9 @@
 			<div id="steps">
 				<StepDisplay :steps="recipe.steps" :stepIdx="selectedStep"/>
 			</div>
+			<div id="weighers">
+				 <WeightDisplay :eventBus="eventBus" v-if="selected && stepHasWeight()" :requiredWeight="getStepRequiredWeight()" :name="getStepWeightName()"/>
+			</div>
 			<div id="timers">
 				<Timer v-for="(timer, idx) in this.activeTimers" :key="idx" :running="timer.running" :name="timer.name" :startTime="timer.startTime"/>
 			</div>
@@ -36,6 +39,7 @@
 
 	import StepDisplay from './StepDisplay'
 	import Timer from './Timer'
+	import WeightDisplay from './WeightDisplay'
 
 	export default {
 	  name: 'recipeOverview',
@@ -54,7 +58,8 @@
 
 	  components:{
 	  	StepDisplay,
-	  	Timer
+	  	Timer,
+	  	WeightDisplay
 	  },
 	  
 	  methods: {
@@ -130,14 +135,14 @@
 			
 	  	},
 	  	hasTimeAtCurrentStep(){
-		  		return this.recipe.steps[this.selectedStep].time != undefined;
+		  		return this.currentStep().time != undefined;
 		},
 
 		getStepTime(){
-			return this.recipe.steps[this.selectedStep].time;
+			return this.currentStep().time;
 		},
 		getTimerName(){
-			var tn = this.recipe.steps[this.selectedStep].timerName;
+			var tn = this.currentStep().timerName;
 			if (tn != undefined) return tn;
 			return "Timer";
 		},
@@ -182,8 +187,6 @@
 	  	},
 
 	  	getIngredientText(ingredient){
-	  		var logging = ingredient.name ==="a bunch of spring onions"
-
 	  		//this code isn't nice, sorry
 	  		var text = "";
 	  		if(ingredient.units.length == 2){
@@ -215,12 +218,30 @@
 	  		}
 	  		return text
 	  	},
+	  	stepHasWeight(){
+	  		return this.currentStep().weighing == true;
+	  	},
+	  	currentStep(){
+	  		return this.recipe.steps[this.selectedStep];
+	  	},
 
-	  // 	setPortions(ingredient){
+	  	getStepRequiredWeight(){
+	  		var ingred = this.currentStep().ingredientName;
 
-			// ingredient.quantity = (ingredient.quantity/this.recipe.serving) * this.portions;
-			// // return this.portions 
-	  // 	}
+	  		if (ingred == undefined){
+	  			console.log("error undefined ingredient")
+	  			return 0;
+	  		}
+	  		// debugger
+
+	  		var weightRequired = this.recipe.ingredients[ingred].quantity[0] * this.portions
+
+	  		return weightRequired;
+	  	},
+	  	getStepWeightName(){
+	  		var ingred = this.currentStep().ingredientName;
+	  		return ingred
+	  	}
 	  }
 	}
 </script>

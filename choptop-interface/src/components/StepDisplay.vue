@@ -5,6 +5,9 @@
 			<div class="step">
 					Step:{{stepIdx+1}}/{{steps.length}}<br/>
 					{{steps[stepIdx].text}}
+					<div v-if="hasWeight()" class="weigher">
+						hasWeight
+					</div>
 			</div>
 			<div :class="{rightArr:true, arr:true, noshow: stepIdx == steps.length - 1}"><icon name="angle-right" scale="4"></icon></div>
 		</div>
@@ -27,7 +30,7 @@
 		components: {
 		},
 
-		props: ['steps', 'stepIdx','time'],
+		props: ['steps', 'stepIdx',],
 		data () {
 			return {
 				selected: true,
@@ -39,6 +42,13 @@
 		methods: {
 		  	hasTime(){
 		  		return this.steps[this.stepIdx].time != undefined
+		  	},
+		  	hasWeight(){
+		  		return this.steps[this.stepIdx].weighing == true;
+		  	},
+
+		  	getWeightRequired(){
+
 		  	}
 		}
 	}

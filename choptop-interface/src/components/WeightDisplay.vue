@@ -1,26 +1,49 @@
 <template>
 	<div class="weightDisplay">
-		Weight:
-		<AnimatedInt :value="displayWeight()" />
+		<div class="weightCropper">
+			<vue-circle
+			ref="circ"
+	        :progress="0"
+	        :size="100"
+	        :reverse="false"
+	        :fill='{gradient: ["#fdd250", "#3aeabb","#3aeabb", "red"], gradientAngle: Math.PI / 4}'
+	        line-cap="round"
+	        show-percent="false"
+	        :animation-start-value="0"
+	        :start-angle="(6/2)*Math.PI"
+	        insert-mode="append"
+	        :animation="{ duration: 200, easing: 'easeOutBounce' }"
+	        :thickness="10"
+	        :show-percent="false">
+	      </vue-circle>
+	    </div>
+	    <div class="weightText">
+		    <span class="timerValue"><AnimatedInt :value="displayWeight()" />g</span>
+		    <span class="timerName">{{name.charAt(0).toUpperCase() + name.slice(1)}}</span>
+			<span class="totalTime">{{requiredWeight}}g</span>
+		</div>
 	</div>
 </template>
 
 <script>
+	import VueCircle from 'vue2-circle-progress';
 	import AnimatedInt from './AnimatedInteger'
 	export default {
 	  name: 'weightDisplay',
-	  props:['eventBus'],
+	  props:['eventBus', "requiredWeight", "name"],
 	  components:{
-	  	AnimatedInt
+	  	AnimatedInt,
+	  	VueCircle
 	  },
 	  created (){
-	  	this.eventBus.$on("weight", this.handleNewWeight);
+	  	this.eventBus.$on("weight", this.handleNewWeight.bind(this));
 	  	this.eventBus.$on("tare", this.handleTare);
 	  },
 	  methods:{
 	  	handleNewWeight(weight){
 	  		console.log("new weight" + weight)
 	  		this.currentWeight = weight;
+	  		this.$refs.circ.updateProgress(this.weightCompleteness())	
 	  	},
 	  	handleTare(){
 	  		this.tareValue = this.weight;
@@ -31,12 +54,16 @@
 	  	round(weight){
 	  		// Rounds the weight to the closest 5 grams. Only rounds the displayed value so the error wouldn't build up.
 		   	return Math.round(weight/5)*5;
+		},
+		weightCompleteness(){
+			return (this.currentWeight/this.requiredWeight)*100 / 2;
 		}
 	  },
 	  data () {
 	    return {
 	      currentWeight:0,
 	      tareValue:0,
+	      circle: null
 	    }
 	  }
 	  
@@ -47,11 +74,25 @@
 
 <style scoped>
 	.weightDisplay{
-		position: fixed;
-		bottom: 45px;
 		text-align: center;
-		width: 800px;
-		left: 0px;
+		display: inline-block;
+		position: relative;
+	}
+
+	.weightCropper{
+		overflow: hidden;
+		height:50px;
+	}
+
+	.weightText{
+		position: absolute;
+		left:0px;
+		top:16px;
+		width:100px;
+	}
+
+	.weightText span.timerValue, .weightText span.timerName, .weightText span.totalTime{
+		display:block;
 	}
 	
 </style>

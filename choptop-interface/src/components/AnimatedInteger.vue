@@ -1,7 +1,7 @@
 <template>
-  <div class="animatedInteger">
+  <span class="animatedInteger">
     <span>{{ tweeningValue }}</span>
-  </div>
+  </span>
 </template>
 
 <script>

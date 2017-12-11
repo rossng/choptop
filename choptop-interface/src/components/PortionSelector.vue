@@ -1,13 +1,17 @@
 <template>
-	<div class="portionSelector verticalCenter">
-		<div :class="getClass()">-</div>
-			<div>
-				<h2>How many portions would you like to make?</h2>
-				<p>
-					<h1>{{showPortionCount}} portion<span v-if="showPortionCount > 1">s</span></h1>
-				</p>
-			</div>
-		<div class="rightArr arr">+</div>
+	<div class="portionSelectorOuter">
+		<div :class="{arr:true, upArr:true}"><icon name="angle-up" scale="4"></icon><span class="text">Back</span></div>
+		<div class="portionSelector verticalCenter">
+			<div :class="getClass()">-</div>
+				<div>
+					<h2>How many portions would you like to make?</h2>
+					<p>
+						<h1>{{showPortionCount}} portion<span v-if="showPortionCount > 1">s</span></h1>
+					</p>
+				</div>
+			<div class="rightArr arr">+</div>
+		</div>
+        <div :class="{arr:true, downArr:true}"><span class="text">Continue</span><icon name="angle-down" scale="4"></icon></div>
 	</div>
 </template>
 
@@ -66,10 +70,19 @@
 		padding:10px;
 	}
 
+	.portionSelectorOuter{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height:100%;
+	}
+
 
 	.arr{
 		font-size:100px;
 	}
+
+
 
 	.leftArr{
 		/*float:left;*/
@@ -82,6 +95,18 @@
 	}
 	.rightArr{
 		/*float:right;*/
+	}
+
+	.arr.downArr, .arr.upArr{
+		font-size:20px;
+	}
+
+	.arr.downArr .text{
+		display: block;
+	}
+
+	.arr.upArr .text{
+		display: block;
 	}
 
 	/*&rsaquo;*/

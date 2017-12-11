@@ -5,60 +5,61 @@
 			"time":15,
 			"serving":2,
 			"calories":180,
-			"ingredients":[
-				{
-				"name":"cucumber",
-				"quantity": [1], 
-				"units":["each"]
+			"ingredients":{
+				"cucumber":{
+					"name":"cucumber",
+					"quantity": [1], 
+					"units":["each"]
 				},
-				{
-				"name":"tomatoes",
-				"quantity":["1"],
-				"units":["cup"]
+				"tomatoes":{
+					"name":"tomatoes",
+					"quantity":["1"],
+					"units":["cup"]
 				},
-				{
-				"name":"onion (medium)",
-				"quantity":[1],
-				"units":["each"]
+				"onion (medium)":{
+					"name":"onion (medium)",
+					"quantity":[1],
+					"units":["each"]
 				},
-				{
-				"name":"feta",
-				"quantity":[150],
-				"units":["g"]
+				"feta":{
+					"name":"feta",
+					"quantity":[150],
+					"units":["g"]
 				},
-				{
-				"name":"bell pepper",
-				"quantity":["1"],
-				"units":["each"]
+				"pepper":{
+					"name":"bell pepper",
+					"quantity":["1"],
+					"units":["each"]
 				},
-				{
-				"name":"lettuce",
-				"quantity":[2],
-				"units":["handful"]
+				"lettuce":{
+					"name":"lettuce",
+					"quantity":[2],
+					"units":["handful"]
 				},
-				{
-				"name":"olive oil",
-				"quantity":[1],
-				"units":["tbsp"]
+				"oil":{
+					"name":"olive oil",
+					"quantity":[1],
+					"units":["tbsp"]
 				},
-				{
-				"name":"salt",
-				"quantity":[1],
-				"units":["to taste"]
+				"salt":{
+					"name":"salt",
+					"quantity":[1],
+					"units":["to taste"]
 				},
-				{
-				"name":"pepper",
-				"quantity":[1],
-				"units":["to taste"]
+				"pepper":{
+					"name":"pepper",
+					"quantity":[1],
+					"units":["to taste"]
 				},
-				{
-				"name":"lemon juice or salad dressing",
-				"quantity":[1],
-				"units":["to taste"]
+				"lemon juice or salad dressing:":{
+					"name":"lemon juice or salad dressing",
+					"quantity":[1],
+					"units":["to taste"]
 				}
 
-			],
+			},
 			"steps":[
+				{"text" : "Weigh out the feta", "weighing":true, "ingredientName":"feta"},
 				{"text":"Cut the cucumber into small pieces.", "time": 0.05, "timerName":"Cucumber"},
 				{"text":"Slice the onion."},
 				{"text":"Slice the tomatoes into thick rings."},
@@ -213,8 +214,8 @@
 				{"text":"Chop the onions finely."},
 				{"text":"Cut chicken into thin strips"},
 				{"text":"Slice the mushrooms."},
-				{"text":"Grate the cheese."},
-				{"text":"Slice the cucumber finely."},
+				{"text":"Grate the cheese.", "weightRequired": "300"},
+				{"text":"Slice the cucumber finely.", "sliceSize" : "1.5", "sliceShape":"cylinder"},
 				{"text":"Follow the next steps to make the dressing:"},
 				{"text":"Mix together 2 tbsp oil, the vinegar and mixed herbs."},
 				{"text":"Season with salt and pepper and set aside."},

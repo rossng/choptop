@@ -6,7 +6,7 @@
       <WelcomeToChopTop v-if="shouldShowWelcome()"/>
       <PortionSelector v-if="shouldShowPortionSelector()" :eventBus="eventBus" :portionCount="portionCount"/>
       <RecipeListing v-if="shouldShowRecipeListing()" :recipes="recipe" :eventBus="eventBus" :portionCount="portionCount"/>
-      <WeightDisplay :eventBus="eventBus"/>
+      <!-- <WeightDisplay :eventBus="eventBus"/> -->
       <TapPosition :eventBus="eventBus"/>
     </div>
     <NavButton direction="right" :pressed="latestUpdate.rightPressed" :eventBus="eventBus"/>
