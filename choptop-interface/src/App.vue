@@ -25,6 +25,10 @@
   import VueWebsocket from 'vue-native-websocket'
 
   import Vue from 'vue'
+  import 'vue-awesome/icons'
+  import Icon from 'vue-awesome/components/Icon'
+
+  Vue.component('icon', Icon)
 
   Vue.use(VueWebsocket, "ws://localhost:8765", { 
       format: 'json',

@@ -1,9 +1,11 @@
 <template>
 	<div :class="getClass()">
 		<div v-if="!selected">
-			<h1>{{recipe.title}}</h1>
+			<h1 class="overviewTitle">{{recipe.title}}</h1>
 			<h2>Difficulty: {{recipe.difficulty}}</h2>
 			<h2>Time: {{recipe.time}} minutes</h2>
+			<!-- <icon class="fa fa-angle-down" aria-hidden="true"></icon> -->
+			<icon name="angle-down"></icon>
 		</div>
 		<div class="recipeInner" v-if="selected && !stepsVisible">
 			<h1>{{recipe.title}}</h1>
@@ -143,15 +145,35 @@
 	  		}
 	  		return divClass
 	  	},
+	  	getNiceFrac(value){
+	  		var fracPart = value % 1;
+	  		var wholePart = value  - fracPart
+	  		var wholeStr = "";
+	  		if(wholePart > 0){
+	  			wholeStr = wholePart + " ";
+	  		}
+	  		if (fracPart > 0.31 && fracPart < 0.34){
+	  			return wholeStr + "1/2"
+	  		}else if(fracPart == 0.5){
+	  			return wholeStr + "1/3"
+	  		}else if(fracPart > 0.65 && fracPart < 0.67){
+	  			return wholeStr + "2/3"
+	  		}else if(fracPart == 0.75){
+	  			return wholeStr + "3/4";
+	  		}
+	  		return value;
+	  	},
 
 	  	getIngredientText(ingredient){
+	  		var logging = ingredient.name ==="a bunch of spring onions"
+
 	  		//this code isn't nice, sorry
 	  		var text = "";
 	  		if(ingredient.units.length == 2){
 	  			// 
 	  			if(ingredient.units[0] == "each"){
 	  				var quantity = ingredient.quantity[0]/this.recipe.serving * this.portions //Make ingredient scale to portions
-	  				text += quantity + " "
+	  				text += this.getNiceFrac(quantity) + " "
 	  				text += ingredient.name
 	  				if(quantity > 1 && ingredient.name[ingredient.name.length -1] != "s"){
 	  					text += "s" //pluralise names
@@ -159,18 +181,18 @@
 	  				text += " ("+(ingredient.quantity[1]/this.recipe.serving * this.portions)+ " " + ingredient.units[1]+") "
 	  			}
 	  		}else {
-	  			if (ingredient.units == "each"){
+	  			if (ingredient.units[0] == "each"){
 	  				var quantity = ingredient.quantity[0]/this.recipe.serving * this.portions
-	  				text += quantity + " "
+	  				text += this.getNiceFrac(quantity) + " "
 	  				text += ingredient.name
-	  			}else if (ingredient.units == "to taste"){
+	  			}else if (ingredient.units[0] == "to taste"){
 	  				text += ingredient.name + " "
-	  				text += ingredient.units
+	  				text += ingredient.units[0]
 	  				
 	  			}
 	  			else{
 	  				var quantity = ingredient.quantity[0]/this.recipe.serving * this.portions
-	  				text += quantity + " " + ingredient.units+" "
+	  				text += quantity + " " + ingredient.units[0]+" "
 	  				text += ingredient.name
 	  			}
 	  		}
@@ -189,6 +211,9 @@
 
 
 <style scoped>
+	h1.overviewTitle{
+		font-size:30px;
+	}
 	.recipeOverview{
 		transition: max-height max-width 1s;
 		max-width:33%;
@@ -201,6 +226,7 @@
 		display: flex;
     	flex-direction: row;
     	align-items: center;
+    	padding:10px;
 	}
 
 	.recipeOverview.hovered{

@@ -47,8 +47,8 @@
 }
 
 	.nav-button{
-		border:3px solid #004a63;
 		color:white;
+		background:none;
 	}
 
 	.nav-button-up{
@@ -75,13 +75,13 @@
 	}
 
 	.pressed-true{
-		animation-name: buttonPress;
+		/*animation-name: buttonPress;*/
     	animation-duration: 2s;
-    	background-color: green;
+    	/*background-color: green;*/
 	}
 
 	.pressed-false{
-		background:green;
-		background:white;
+		/*background:green;*/
+		/*background:white;*/
 	}
 </style>
