@@ -25,6 +25,8 @@ SensorReader::SensorReader(string device) :
         throw "Did not find device";
     } else {
         comOpen(port_, 38400);
+        comClose(port_);
+        comOpen(port_, 38400);
     }
 }
 
@@ -34,6 +36,8 @@ SensorReader::SensorReader(int port) :
         throw "Did not find device";
     }
     device_ = comGetInternalName(port_);
+    comOpen(port_, 38400);
+    comClose(port_);
     comOpen(port_, 38400);
 }
 
@@ -104,9 +108,6 @@ void SensorReader::read() {
 
 void SensorReader::tare() {
     std::string line;
-    do {
-        line = readLine();
-        cout << line << endl;
-    } while (line != "Waiting for tare command");
+    this_thread::sleep_for(2s);
     comWrite(port_, "tare\r\n", 6);
 }
