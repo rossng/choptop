@@ -18,9 +18,9 @@
 	      </vue-circle>
 	    </div>
 	    <div class="weightText">
-		    <span class="timerValue"><AnimatedInt :value="displayWeight()" />g</span>
-		    <span class="timerName">{{name.charAt(0).toUpperCase() + name.slice(1)}}</span>
-			<span class="totalTime">{{requiredWeight}}g</span>
+		    <span class="weightValue"><AnimatedInt :value="displayWeight()" />g</span>
+		    <span class="weigherName">{{name.charAt(0).toUpperCase() + name.slice(1)}}</span>
+			<span class="totalWeight">{{requiredWeight}}g</span>
 		</div>
 	</div>
 </template>
@@ -91,7 +91,7 @@
 		width:100px;
 	}
 
-	.weightText span.timerValue, .weightText span.timerName, .weightText span.totalTime{
+	.weightText span.weightValue, .weightText span.weigherName, .weightText span.totalWeight{
 		display:block;
 	}
 	

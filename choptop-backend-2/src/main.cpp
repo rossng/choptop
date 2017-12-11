@@ -143,9 +143,9 @@ void startServer(uint16_t port) {
             lastSend = std::chrono::system_clock::now();
             std::stringstream stream;
             stream << "{\"event\": \"position\""
-                   << ", \"x\":" << std::fixed << std::setprecision(3) << p.first
-                   << ", \"y\":" << std::fixed << std::setprecision(3) << p.second
-                   << "}";
+                   << ", \"pos\": [" << std::fixed << std::setprecision(3) << p.first
+                   << ", " << std::fixed << std::setprecision(3) << p.second
+                   << "], \"scale\": 1 }";
             choptop_server->sendMessage(stream.str());
         });
     }
