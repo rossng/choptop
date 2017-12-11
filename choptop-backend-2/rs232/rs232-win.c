@@ -6,7 +6,7 @@
     
     The MIT License (MIT)
 
-    Copyright (c) 2013-2015 Frédéric Meslin, Florent Touchard
+    Copyright (c) 2013-2015 FrÃ©dÃ©ric Meslin, Florent Touchard
     Email: fredericmeslin@hotmail.com
     Website: www.fredslab.net
     Twitter: @marzacdev
