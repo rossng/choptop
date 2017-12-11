@@ -7,6 +7,7 @@
       <PortionSelector v-if="shouldShowPortionSelector()" :eventBus="eventBus" :portionCount="portionCount"/>
       <RecipeListing v-if="shouldShowRecipeListing()" :recipes="recipe" :eventBus="eventBus" :portionCount="portionCount"/>
       <WeightDisplay :eventBus="eventBus"/>
+      <TapPosition :eventBus="eventBus"/>
     </div>
     <NavButton direction="right" :pressed="latestUpdate.rightPressed" :eventBus="eventBus"/>
     <NavButton direction="down" :pressed="latestUpdate.downPressed" :eventBus="eventBus"/>
@@ -21,6 +22,7 @@
   import WeightDisplay from './components/WeightDisplay'
   import PortionSelector from './components/PortionSelector'
   import Timer from './components/Timer'
+  import TapPosition from './components/TapPosition'
 
   import VueWebsocket from 'vue-native-websocket'
 
@@ -51,7 +53,8 @@
       RecipeListing,
       WeightDisplay,
       Timer,
-      PortionSelector
+      PortionSelector,
+      TapPosition,
     },
 
     data() {
@@ -148,8 +151,8 @@
         if(parsed.event == "weightReading"){
           this.eventBus.$emit("weight", parsed.value)
         }
-        if(parsed.event == "posReading"){
-          this.eventBus.$emit("pos", parsed.pos)
+        if(parsed.event == "position"){
+          this.eventBus.$emit("pos", parsed)
           // console.log(parsed.pos[0])
         }
       }

@@ -17,11 +17,6 @@ async def hello(websocket, path):
 start_server = websockets.serve(hello, 'localhost', 8765)
 
 
-
-
-
-
-
 directionPressed = "left"
 manager = Manager()
 
@@ -48,7 +43,7 @@ async def echo():
         elif inData == "w":
             data["a"] = '{"event":"weightReading", "value": ' + str(randint(0, 1000)) + '}'
         elif inData == "p":
-            data["a"] = '{"event":"position", "pos": ['+ str(randint(0, 100)/100)+ ',' + str(randint(0, 100)/100)+'] }'
+            data["a"] = '{"event":"position", "pos": ['+ str(randint(0, 100)/100)+ ',' + str(randint(0, 100)/100)+'], "scale":'+str(randint(0, 100)/100)+' }'
         else:
         	data["a"] = inData
 
