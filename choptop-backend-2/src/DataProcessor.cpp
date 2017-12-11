@@ -85,9 +85,9 @@ void DataProcessor::consume() {
 
             if (is_pressed_) {
                 press_start_time_ = std::chrono::high_resolution_clock::now();
-                if (x < 0.1 && y > 0.3 && y < 0.7) press_events_.push({x, y, PressLocation::LEFT});
+                if (x < 0.2 && y > 0.3 && y < 0.7) press_events_.push({x, y, PressLocation::LEFT});
                 else if (x > 0.3 && x < 0.7 && y > 0.9) press_events_.push({x, y, PressLocation::TOP});
-                else if (x > 0.9 && y < 0.7 && y > 0.3) press_events_.push({x, y, PressLocation::RIGHT});
+                else if (x > 0.8 && y < 0.7 && y > 0.3) press_events_.push({x, y, PressLocation::RIGHT});
                 else if (x < 0.7 && x > 0.3 && y < 0.1) press_events_.push({x, y, PressLocation::BOTTOM});
                 is_pressed_ = false;
             }
