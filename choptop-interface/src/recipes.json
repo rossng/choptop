@@ -77,59 +77,59 @@
 			"time":15,
 			"serving":2,
 			"calories":351,
-			"ingredients":[
-				{
+			"ingredients":{
+				"skinless chicken breast fillet":{
 				"name":"skinless chicken breast fillet",
 				"quantity": [1], 
 				"units":["each"]
 				},
-				{
+				"large onion":{
 				"name":"large onion",
 				"quantity":["0.33",210],
 				"units":["each","g"]
 				},
-				{
+				"red pepper":{
 				"name":"red pepper",
 				"quantity":[1,155],
 				"units":["each","g"]
 				},
-				{
+				"broccoli":{
 				"name":"broccoli",
 				"quantity":[1,200],
 				"units":["each","g"]
 				},
-				{
+				"a bunch of spring onions":{
 				"name":"a bunch of spring onions",
 				"quantity":["0.75"],
 				"units":["each"]
 				},
-				{
+				"medium dried egg noodles":{
 				"name":"medium dried egg noodles",
 				"quantity":[100],
 				"units":["g"]
 				},
-				{
+				"vegetable oil":{
 				"name":"vegetable oil",
 				"quantity":[5],
 				"units":["tbsp"]
 				},
-				{
+				"clove of garlic":{
 				"name":"clove of garlic",
 				"quantity":[1],
 				"units":["each"]
 				},
-				{
+				"fresh ginger":{
 				"name":"fresh ginger",
 				"quantity":[1],
 				"units":["tbsp"]
 				},
-				{
+				"light soy sauce":{
 				"name":"light soy sauce",
 				"quantity":[2],
 				"units":["tbsp"]
 				}
 
-			],
+			},
 			"steps":[
 				{"text":"Cut the chicken breast into 1/2 cm strips."},
 				{"text":"Slice the onion."},
@@ -157,59 +157,59 @@
 			"time":25,
 			"serving":4,
 			"calories":1400,
-			"ingredients":[
-				{
+			"ingredients":{
+				"medium onion":{
 				"name":"medium onion",
 				"quantity": [1,185], 
 				"units":["each","g"]
 				},
-				{
+				"skinless chicken breast fillets":{
 				"name":"skinless chicken breast fillets",
 				"quantity":[2],
 				"units":["each"]
 				},
-				{
+				"closed cup mushrooms":{
 				"name":"closed cup mushrooms",
 				"quantity":[10],
 				"units":["each"]
 				},
-				{
+				"cheddar cheese":{
 				"name":"cheddar cheese",
 				"quantity":[300],
 				"units":["g"]
 				},
-				{
+				"plain flour tortilla wraps":{
 				"name":"plain flour tortilla wraps",
 				"quantity":[8],
 				"units":["each"]
 				},
-				{
+				"Watercress, spinach and rocket":{
 				"name":"Watercress, spinach and rocket",
 				"quantity":[110],
 				"units":["g"]
 				},
-				{
+				"cucumber":{
 				"name":"cucumber",
 				"quantity":["0.5"],
 				"units":["each"]
 				},
-				{
+				"dried mixed herbs":{
 				"name":"dried mixed herbs",
 				"quantity":[1],
 				"units":["tbsp"]
 				},
-				{
+				"vegetable oil":{
 				"name":"vegetable oil",
 				"quantity":[4],
 				"units":["tbsp"]
 				},
-				{
+				"vinegar":{
 				"name":"vinegar",
 				"quantity":[2],
 				"units":["tbsp"]
 				}
 
-			],
+			},
 			"steps":[
 				{"text":"Chop the onions finely."},
 				{"text":"Cut chicken into thin strips"},
