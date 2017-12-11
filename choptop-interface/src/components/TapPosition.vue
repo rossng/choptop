@@ -56,7 +56,7 @@
 		margin-left: -15px;
 		-webkit-border-radius: 50%;
 		transition : 0.5s;
-		opacity: 0.65;
+		opacity: 0.30;
 	}
 
 	
