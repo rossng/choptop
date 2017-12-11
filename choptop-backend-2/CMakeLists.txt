@@ -9,26 +9,14 @@ find_package(Threads REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system thread filesystem regex coroutine context)
 
 set(SOURCE_FILES
-        src/hx711.h
         src/main.cpp
-        src/LoadCellReader.cpp
-        src/LoadCellReader.h
-        src/WeightProcessor.cpp
-        src/WeightProcessor.h
-        src/PositionProcessor.cpp
-        src/PositionProcessor.h)
-
-if (HX711_GPIO)
-    set(SOURCE_FILES ${SOURCE_FILES} src/hx711_gpio.cpp)
-elseif (HX711_SERIAL)
-    set(SOURCE_FILES ${SOURCE_FILES} src/hx711_serial.cpp)
-else ()
-    set(SOURCE_FILES ${SOURCE_FILES} src/hx711_mock.cpp)
-endif ()
+        src/DataProcessor.cpp
+        src/DataProcessor.h)
 
 add_executable(choptop ${SOURCE_FILES})
 
-target_link_libraries(choptop Threads::Threads server)
+target_link_libraries(choptop Threads::Threads server sensor_reader)
+target_include_directories(choptop PUBLIC sensor_reader/)
 
 if (Boost_FOUND)
     message(${Boost_INCLUDE_DIRS})
@@ -36,12 +24,15 @@ if (Boost_FOUND)
     target_link_libraries(choptop ${Boost_LIBRARIES})
 endif ()
 
-if (HX711_GPIO)
-    find_library(wiringPi_LIB wiringPi)
-    target_link_libraries(choptop ${wiringPi_LIB})
-endif ()
+add_library(sensor_reader
+        sensor_reader/rs232-linux.c
+        sensor_reader/rs232-win.c
+        sensor_reader/rs232.h
+        sensor_reader/SensorReader.cpp
+        sensor_reader/SensorReader.h)
 
-add_library(rs232 rs232/rs232-linux.c rs232/rs232-win.c rs232/rs232.h)
+target_include_directories(sensor_reader PUBLIC ${Boost_INCLUDE_DIRS})
+target_link_libraries(sensor_reader ${Boost_LIBRARIES})
 
 add_library(server server/ChoptopServer.cpp server/ChoptopServer.h)
 target_include_directories(server PUBLIC ${Boost_INCLUDE_DIRS} ${WEBSOCKETPP_INCLUDE_DIR} server/)
@@ -55,5 +46,5 @@ target_link_libraries(server_test server)
 target_include_directories(server_test PUBLIC server/)
 
 add_executable(serial_test src/test_serial.cpp)
-target_link_libraries(serial_test rs232)
-target_include_directories(serial_test PUBLIC rs232/)
+target_link_libraries(serial_test sensor_reader)
+target_include_directories(serial_test PUBLIC sensor_reader/)
