@@ -37,10 +37,10 @@
             console.log(evt.data);
             try {
                 var parsed = JSON.parse(evt.data);
-                if (parsed.event === "weightProcessor") {
-                    weight.append(new Date().getTime(), parsed.weight);
+                if (parsed.event === "weightReading") {
+                    weight.append(new Date().getTime(), parsed.value);
                 }
-                if (parsed.event === "positionProcessor") {
+                if (parsed.event === "position") {
                     x.append(new Date().getTime(), parsed.x);
                     y.append(new Date().getTime(), parsed.y);
                 }
