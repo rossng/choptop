@@ -183,5 +183,18 @@
     background: white;
   }
 
+  h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 64px;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  h2 {
+    font-family: 'Fredoka One', cursive;
+    font-weight: normal;
+    text-align: center;
+  }
+
 
 </style>
