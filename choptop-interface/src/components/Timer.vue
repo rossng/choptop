@@ -32,11 +32,15 @@
 	  data () {
 	    return {
 	      currentTime:0,
+	      interval: null
 	    }
 	  },
 	  created() {
 	  	this.currentTime = this.startTime
-	    window.setInterval(this.timerTick,1000);
+	    this.interval = window.setInterval(this.timerTick,1000);
+	  },
+	  beforeDestroy(){
+	  	clearInterval(this.interval)
 	  },
 	  methods:{
 	  	timerTick(){
@@ -45,6 +49,7 @@
 	  		this.currentTime -= 1/60;
 	  		if(this.currentTime <=0){
 	  			this.$refs.circ.updateProgress(0.01)	
+	  			this.$parent.removeWithDelay(this.name) //remove timer after expiry
 	  		}else{
 	  			this.$refs.circ.updateProgress((this.currentTime/this.startTime)*100)	
 	  		}

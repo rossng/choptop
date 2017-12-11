@@ -4,8 +4,6 @@
 			<h1 class="overviewTitle">{{recipe.title}}</h1>
 			<h2>Difficulty: {{recipe.difficulty}}</h2>
 			<h2>Time: {{recipe.time}} minutes</h2>
-			<!-- <icon class="fa fa-angle-down" aria-hidden="true"></icon> -->
-			<icon name="angle-down"></icon>
 		</div>
 		<div class="recipeInner" v-if="selected && !stepsVisible">
 			<h1>{{recipe.title}}</h1>
@@ -111,6 +109,25 @@
 
 	  			this.activeTimers.push(timer)
 	  		}
+	  	},
+	  	removeWithDelay(timerName){
+	  		var self = this;
+	  		var pause = 15000;
+	  		window.setTimeout(function() {self.removeTimer(timerName)}, pause)
+	  	},
+	  	removeTimer(timerName){
+	  		var toRemove = -1;
+	  		for (var i=0; i<this.activeTimers.length; i++){
+				if(this.activeTimers[i].name == timerName){
+					toRemove = i;
+					break;
+				}
+			}
+
+			if(toRemove != -1){
+				this.activeTimers.splice(toRemove, 1)
+			}
+			
 	  	},
 	  	hasTimeAtCurrentStep(){
 		  		return this.recipe.steps[this.selectedStep].time != undefined;
@@ -239,7 +256,7 @@
 		margin:0;
 		transition: 1s;
 		border:0;
-		
+		height:100%;
 		width:100%;
 		max-height:100%;
 		max-width: 100%;

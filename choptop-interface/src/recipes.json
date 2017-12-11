@@ -59,7 +59,7 @@
 
 			],
 			"steps":[
-				{"text":"Cut the cucumber into small pieces.", "time": 0.1, "timerName":"Cucumber"},
+				{"text":"Cut the cucumber into small pieces.", "time": 0.05, "timerName":"Cucumber"},
 				{"text":"Slice the onion."},
 				{"text":"Slice the tomatoes into thick rings."},
 				{"text":"Cut feta into small cubes."},
@@ -221,7 +221,7 @@
 				{"text":"Next we make the filling:"},
 				{"text":"Heat 1 tbsp oil in a frying pan and cook the chicken for 5-6 minutes(until lightly browned).","time":6, "timerName":"Cook Chicken"},
 				{"text":"Add the mushrooms and onion, cook for 3-4 minutes.","time":4, "timerName":"Cook"},
-				{"text":"Remove from the heat.Season with salt and pepper and mix in the grated cheese."},
+				{"text":"Remove from the heat. Season with salt and pepper and mix in the grated cheese."},
 				{"text":"To make the quesadillas:"},
 				{"text":"Spoon the filling evenly onto 4 tortillas and lay the remaining tortillas on top."},
 				{"text":"Heat 1 tbsp oil in the frying pan and fry the quesadillas, one at a time."},

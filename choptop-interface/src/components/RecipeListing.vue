@@ -1,8 +1,12 @@
 <template>
-	<div class="recipeOverviewListing">
-		<div v-if="!this.selected" :class="{arr:true, leftarr:true}"><icon name="angle-left" scale="4"></icon></div>
-		<RecipeOverview v-for="(rec, index)  in recipes" :key="rec.name" :eventBus="eventBus" v-if="!selected || hoveredRecipeIndex ==index"  :recipe="rec" :hovered="index == hoveredRecipeIndex" :selected="index == hoveredRecipeIndex && selected" :portions="portionCount"/>
-		<div v-if="!this.selected" :class="{rightArr:true, arr:true}"><icon name="angle-right" scale="4"></icon></div>
+	<div class="recipeOverviewListingOuter">
+		<div :class="{arr:true, upArr:true}"><icon name="angle-up" scale="4"></icon></div>
+		<div class="recipeOverviewListing">
+			<div v-if="!this.selected" :class="{arr:true, leftarr:true}"><icon name="angle-left" scale="4"></icon></div>
+			<RecipeOverview v-for="(rec, index)  in recipes" :key="rec.name" :eventBus="eventBus" v-if="!selected || hoveredRecipeIndex ==index"  :recipe="rec" :hovered="index == hoveredRecipeIndex" :selected="index == hoveredRecipeIndex && selected" :portions="portionCount"/>
+			<div v-if="!this.selected" :class="{rightArr:true, arr:true}"><icon name="angle-right" scale="4"></icon></div>
+		</div>
+		<div :class="{arr:true, downArr:true}"><icon name="angle-down" scale="4"></icon></div>
 	</div>
 </template>
 
@@ -73,6 +77,15 @@
   		align-items: center;
 	  	justify-content: center;
 	  	height:100%;
+	  	width:100%;
+	}
+
+	.recipeOverviewListingOuter{
+		display:flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		height:100%;
 	}
 
 
@@ -80,6 +93,17 @@
 		font-size: 100px;
 		opacity: 1;
 		transition: 0.5s;
+		display: inline-flex;
+		height:35px;
+	}
+
+	.upArr svg{
+		margin-top:-17px;
+
+	}
+
+	.downArr svg{
+		margin-top:-21px;
 	}
 	
 </style>
