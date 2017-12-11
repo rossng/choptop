@@ -12,7 +12,7 @@ int main() {
         cout << "Device " << i << ": " << comGetPortName(i) << endl;
     }
 
-    SensorReader sr("/dev/ttyACM1");
+    SensorReader sr("/dev/ttyACM0");
     sr.tare();
     sr.startReading();
 

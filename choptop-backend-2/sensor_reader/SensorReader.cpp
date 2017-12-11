@@ -103,7 +103,9 @@ void SensorReader::read() {
 }
 
 void SensorReader::tare() {
-    char c;
-    while (comRead(port_, &c, 1) > 0);
+    std::string line;
+    do {
+        line = readLine();
+    } while (line != "Waiting for tare command");
     comWrite(port_, "tare\r\n", 6);
 }
