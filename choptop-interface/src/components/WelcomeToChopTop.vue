@@ -3,6 +3,7 @@
 		<div>
 			<h1>Welcome to Choptop</h1>
 			<h2>Press at the bottom to start</h2>
+			<icon name="angle-down" scale="4"></icon>
 		</div>
 	</div>
 
@@ -28,6 +29,7 @@
 	}
 
 	.welcome{
+		padding-top:60px;
 		width:760px;
 	}
 	

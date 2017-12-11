@@ -1,14 +1,18 @@
 <template>
-	<div>
-		<div class="step">
-			<!-- The time in the Json file is in minutes, didn't want to add another component for that -->
-				Step:{{stepIdx+1}}/{{steps.length}}<br/>
-				{{steps[stepIdx].text}}
+	<div class="stepWrapper">
+		<div class="middleRow">
+			<div :class="{arr:true, leftarr:true, noshow: stepIdx == 0}"><icon name="angle-left" scale="4"></icon></div>
+			<div class="step">
+					Step:{{stepIdx+1}}/{{steps.length}}<br/>
+					{{steps[stepIdx].text}}
+			</div>
+			<div :class="{rightArr:true, arr:true, noshow: stepIdx == steps.length - 1}"><icon name="angle-right" scale="4"></icon></div>
 		</div>
-		
+
 		<div v-if = "hasTime()">
 			Press DOWN to start timer
 		</div>
+		
 	</div>
 
 
@@ -47,6 +51,24 @@
 		font-style: italic;
 	  	font-size: 30px;
 	  	margin:30px;
+	}
+
+	.middleRow{
+		display:flex;
+		flex-direction: row;
+	  	justify-content: space-between;
+		padding:10px;
+	}
+
+	.arr{
+		font-size: 100px;
+		opacity: 1;
+		transition: 0.5s;
+	}
+
+	.arr.noshow{
+		opacity:0;
+		transition: 0.5s;
 	}
 	
 </style>

@@ -1,6 +1,8 @@
 <template>
 	<div class="recipeOverviewListing">
-			<RecipeOverview v-for="(rec, index)  in recipes" :key="rec.name" :eventBus="eventBus" v-if="!selected || hoveredRecipeIndex ==index"  :recipe="rec" :hovered="index == hoveredRecipeIndex" :selected="index == hoveredRecipeIndex && selected" :portions="portionCount"/>
+		<div v-if="!this.selected" :class="{arr:true, leftarr:true}"><icon name="angle-left" scale="4"></icon></div>
+		<RecipeOverview v-for="(rec, index)  in recipes" :key="rec.name" :eventBus="eventBus" v-if="!selected || hoveredRecipeIndex ==index"  :recipe="rec" :hovered="index == hoveredRecipeIndex" :selected="index == hoveredRecipeIndex && selected" :portions="portionCount"/>
+		<div v-if="!this.selected" :class="{rightArr:true, arr:true}"><icon name="angle-right" scale="4"></icon></div>
 	</div>
 </template>
 
@@ -71,6 +73,13 @@
   		align-items: center;
 	  	justify-content: center;
 	  	height:100%;
+	}
+
+
+	.arr{
+		font-size: 100px;
+		opacity: 1;
+		transition: 0.5s;
 	}
 	
 </style>

@@ -9,7 +9,7 @@
 				{
 				"name":"cucumber",
 				"quantity": [1], 
-				"units":"each"
+				"units":["each"]
 				},
 				{
 				"name":"tomatoes",
@@ -80,11 +80,11 @@
 				{
 				"name":"skinless chicken breast fillet",
 				"quantity": [1], 
-				"units":"each"
+				"units":["each"]
 				},
 				{
 				"name":"large onion",
-				"quantity":["1/3",210],
+				"quantity":["0.33",210],
 				"units":["each","g"]
 				},
 				{
@@ -99,33 +99,33 @@
 				},
 				{
 				"name":"a bunch of spring onions",
-				"quantity":["3/4"],
-				"units":"each"
+				"quantity":["0.75"],
+				"units":["each"]
 				},
 				{
 				"name":"medium dried egg noodles",
 				"quantity":[100],
-				"units":"g"
+				"units":["g"]
 				},
 				{
 				"name":"vegetable oil",
 				"quantity":[5],
-				"units":"tbsp"
+				"units":["tbsp"]
 				},
 				{
 				"name":"clove of garlic",
 				"quantity":[1],
-				"units":"each"
+				"units":["each"]
 				},
 				{
 				"name":"fresh ginger",
 				"quantity":[1],
-				"units":"tbsp"
+				"units":["tbsp"]
 				},
 				{
 				"name":"light soy sauce",
 				"quantity":[2],
-				"units":"tbsp"
+				"units":["tbsp"]
 				}
 
 			],
@@ -165,47 +165,47 @@
 				{
 				"name":"skinless chicken breast fillets",
 				"quantity":[2],
-				"units":"each"
+				"units":["each"]
 				},
 				{
 				"name":"closed cup mushrooms",
 				"quantity":[10],
-				"units":"each"
+				"units":["each"]
 				},
 				{
 				"name":"cheddar cheese",
 				"quantity":[300],
-				"units":"g"
+				"units":["g"]
 				},
 				{
 				"name":"plain flour tortilla wraps",
 				"quantity":[8],
-				"units":"each"
+				"units":["each"]
 				},
 				{
 				"name":"Watercress, spinach and rocket",
 				"quantity":[110],
-				"units":"g"
+				"units":["g"]
 				},
 				{
 				"name":"cucumber",
-				"quantity":["1/2"],
-				"units":"each"
+				"quantity":["0.5"],
+				"units":["each"]
 				},
 				{
 				"name":"dried mixed herbs",
 				"quantity":[1],
-				"units":"tbsp"
+				"units":["tbsp"]
 				},
 				{
 				"name":"vegetable oil",
 				"quantity":[4],
-				"units":"tbsp"
+				"units":["tbsp"]
 				},
 				{
 				"name":"vinegar",
 				"quantity":[2],
-				"units":"tbsp"
+				"units":["tbsp"]
 				}
 
 			],
