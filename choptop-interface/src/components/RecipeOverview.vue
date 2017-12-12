@@ -1,20 +1,20 @@
 <template>
   <div :class="getClass()">
-    <div v-if="!selected">
+
+    <div v-if="state === 'thumbnails'">
       <h1 class="overviewTitle">{{recipe.title}}</h1>
       <div class="overviewMeta">
         <p>{{recipe.difficulty}}</p>
         <p>{{recipe.time}} minutes</p>
       </div>
     </div>
-    <div class="recipeInner" v-if="selected && !stepsVisible">
+
+    <div class="recipeInner" v-if="state === 'ingredients' && selected">
       <h1 class="overviewTitle">{{recipe.title}}</h1>
       <div class="overviewMeta">
         <p>{{recipe.time}} minutes</p>
       </div>
-
       <div id="ingredients">
-        Ingredients
         <div id="ingredientsList">
           <div v-for="(ingredient, idx) in this.recipe.ingredients" class="ingredient">
             {{getIngredientText(ingredient)}}
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <div class="inRecipe" v-show="selected && stepsVisible">
+    <div class="inRecipe" v-show="state === 'steps' && selected">
       <div id="steps">
         <StepDisplay :steps="recipe.steps" :stepIdx="selectedStep"/>
       </div>
@@ -37,7 +37,9 @@
       </div>
     </div>
 
+    <ChopInstructions v-if="state === 'instructions'" :extra="getStepExtra()"/>
   </div>
+
 </template>
 
 <script>
@@ -45,15 +47,14 @@
   import StepDisplay from './StepDisplay'
   import Timer from './Timer'
   import WeightDisplay from './WeightDisplay'
+  import ChopInstructions from './ChopInstructions'
 
   export default {
     name: 'recipeOverview',
-    props: ['recipe', 'hovered', 'selected', "eventBus", "portions"],
+    props: ['recipe', 'state', 'selected', "eventBus", "portions"],
     data() {
       return {
         selectedStep: 0,
-        focussed: false,
-        stepsVisible: false,
         activeTimers: [],
       }
     },
@@ -64,30 +65,27 @@
     components: {
       StepDisplay,
       Timer,
-      WeightDisplay
+      WeightDisplay,
+      ChopInstructions,
     },
 
     methods: {
       handlePress(dir) {
-        if (this.selected) {
-          if (dir === "right" && this.stepsVisible) {
-            console.log("right step");
+        if (this.state === 'steps' && this.selected) {
+          if (dir === 'right') {
             this.nextStep();
-          } else if (dir === "left" && this.stepsVisible) {
+          } else if (dir === 'left') {
             this.prevStep();
-          } else if (dir === "down") {
-            console.log("steps visible");
-            if (!this.stepsVisible) {
-              this.stepsVisible = true;
-            } else {
-              this.startTimer();
-            }
-          } else if (dir === "up") {
-            if (this.stepsVisible) {
-              this.stepsVisible = false;
-            } else {
-              this.$parent.upPressed();
-            }
+          } else if (dir === 'down' && this.hasTimeAtCurrentStep()) {
+            this.startTimer();
+          } else if (dir === 'down' && this.hasInstructions() && this.state === 'steps') {
+            this.showInstructions();
+          } else if (dir === 'up') {
+            this.$parent.upPressed();
+          }
+        } else if (this.state === 'instructions') {
+          if (dir === 'up') {
+            this.hideInstructions();
           }
         }
       },
@@ -95,11 +93,17 @@
         if (this.selectedStep < this.recipe.steps.length - 1) {
           this.selectedStep++;
         }
+        this.stepChangeEvents();
       },
       prevStep: function () {
         if (this.selectedStep > 0) {
           this.selectedStep--;
         }
+        this.stepChangeEvents();
+      },
+      stepChangeEvents: function () {
+        this.$emit('showWeighingScale', this.stepHasWeight());
+        this.$emit('hasInstructions', this.hasInstructions());
       },
       startTimer() {
         if (this.hasTimeAtCurrentStep()) {
@@ -118,6 +122,16 @@
           };
 
           this.activeTimers.push(timer)
+        }
+      },
+      showInstructions() {
+        if (this.hasInstructions()) {
+          this.$parent.showInstructions();
+        }
+      },
+      hideInstructions() {
+        if (this.hasInstructions()) {
+          this.$parent.hideInstructions();
         }
       },
       removeWithDelay(timerName) {
@@ -145,6 +159,14 @@
         return this.currentStep().time !== undefined;
       },
 
+      hasInstructions() {
+        return this.currentStep().extra !== undefined;
+      },
+
+      getStepExtra() {
+        return this.currentStep().extra;
+      },
+
       getStepTime() {
         return this.currentStep().time;
       },
@@ -163,12 +185,12 @@
       },
       getClass: function () {
         let divClass = "recipeOverview";
-        if (this.hovered && !this.selected) {
+        if (this.state === 'thumbnails' && this.selected) {
           divClass += " hovered"
         }
 
-        if (this.selected) {
-          divClass += " selected"
+        if (['ingredients', 'steps', 'instructions'].includes(this.state) && this.selected) {
+          divClass += " opened"
         } else if (this.activeTimers.length > 0) {
           this.activeTimers = []; //clear timers when changing recipes
         }
@@ -190,7 +212,7 @@
         } else if (fracPart === 0.75) {
           return wholeStr + "3/4";
         }
-        return value;
+        return Math.round(value*10)/10;
       },
 
       getIngredientText(ingredient) {
@@ -240,7 +262,9 @@
           return 0;
         }
         // debugger
-
+        if(this.recipe.ingredients[ingred].quantity.length === 2){
+          return  (this.recipe.ingredients[ingred].quantity[1]/this.recipe.serving)* this.portions;
+        }
         return this.recipe.ingredients[ingred].quantity[0] * this.portions;
       },
       getStepWeightName() {
@@ -273,7 +297,7 @@
     border: 1px black solid;
     height: 80%;
     width: 100%;
-    transition: background 0.3s, max-height max-width 1s;
+    transition: background 0.3s, max-height 1s, max-width 1s;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -285,7 +309,7 @@
     transition: background 0.3s;
   }
 
-  .recipeOverview.selected {
+  .recipeOverview.opened {
     background: inherit;
     margin: 0;
     transition: 1s;
@@ -304,7 +328,10 @@
 
   #ingredientsList {
     clear: both;
+    line-height: 26px;
+    margin-top: 25px;
     overflow: hidden;
+    font-size: 18px;
   }
 
   .recipeInner {
@@ -315,8 +342,10 @@
     padding: 20px 0;
   }
 
-  .timers {
-    background: blue;
+  #timers {
+    position: absolute;
+    right: -5px;
+    bottom: -7px;
   }
 
   .inRecipe {
