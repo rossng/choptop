@@ -81,9 +81,9 @@ void DataProcessor::consume() {
             auto y = (y_top + y_bottom) / 2.0f;
             auto x = (x_left + x_right) / 2.0f;
 
-            detectPress(weight, edge_threshold_, x, y);
+            detectPress(weight, x, y);
 
-            weight_.push(weight);
+            weight_.push(weight - weight_slow_);
             position_.push(make_pair(x, y));
         }
         this_thread::sleep_for(50ms);
@@ -94,47 +94,55 @@ float DataProcessor::expAvg(float sample, float avg, float w) {
     return w * sample + (1.f - w) * avg;
 }
 
-void DataProcessor::detectPress(float sample, float threshold, float x, float y) {
+void DataProcessor::detectPress(float sample, float x, float y) {
     float diff = sample - weight_slow_;
 
     bool send_press_start = false;
     bool send_press_success = false;
+    bool send_press_cancel = false;
 
-    if (press_stage_ == PressStage::NO_PRESS && diff >= threshold && previous_diff_ < threshold) {
+    if (press_stage_ == PressStage::NO_PRESS && diff >= press_threshold_ && previous_diff_ < press_threshold_) {
         up_edge_detected_ = true;
-        start_weight = sample;
-    } else if (diff < threshold && up_edge_detected_) {
+    } else if (diff < press_threshold_ && up_edge_detected_) {
         press_stage_ = PressStage::PRESS_STARTED;
         up_edge_detected_ = false;
+        press_started_ = chrono::steady_clock::now();
         send_press_start = true;
-    } else if (press_stage_ == PressStage::PRESS_STARTED && diff <= -threshold && previous_diff_ > -threshold) {
+    } else if (press_stage_ == PressStage::PRESS_STARTED && diff <= release_threshold_ &&
+               previous_diff_ > release_threshold_) {
         down_edge_detected_ = true;
-    } else if (press_stage_ == PressStage::PRESS_STARTED && diff > -threshold && down_edge_detected_) {
+    } else if (press_stage_ == PressStage::PRESS_STARTED && diff > release_threshold_ && down_edge_detected_) {
         press_stage_ = PressStage::PRESS_SUCCESS;
         down_edge_detected_ = false;
         send_press_success = true;
+    } else if (press_stage_ == PressStage::PRESS_STARTED &&
+               chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - press_started_).count() > 2000) {
+        press_stage_ = PressStage::PRESS_CANCELLED;
+        send_press_cancel = true;
     }
 
     if (send_press_start) {
+        cout << "Press start" << endl;
         if (x < 0.2 && y > 0.3 && y < 0.7)
-            press_events_.push({x, y, PressLocation::LEFT, PressStage::PRESS_STARTED});
+            press_location_ = PressLocation::LEFT;
         else if (x > 0.3 && x < 0.7 && y > 0.8)
-            press_events_.push({x, y, PressLocation::TOP, PressStage::PRESS_STARTED});
+            press_location_ = PressLocation::TOP;
         else if (x > 0.8 && y < 0.7 && y > 0.3)
-            press_events_.push({x, y, PressLocation::RIGHT, PressStage::PRESS_STARTED});
+            press_location_ = PressLocation::RIGHT;
         else if (x < 0.7 && x > 0.3 && y < 0.2)
-            press_events_.push({x, y, PressLocation::BOTTOM, PressStage::PRESS_STARTED});
+            press_location_ = PressLocation::BOTTOM;
+        press_events_.push({x, y, press_location_, PressStage::PRESS_STARTED});
     }
 
     if (send_press_success) {
-        if (x < 0.2 && y > 0.3 && y < 0.7) press_events_.push({x, y, PressLocation::LEFT, PressStage::PRESS_SUCCESS});
-        else if (x > 0.3 && x < 0.7 && y > 0.8)
-            press_events_.push({x, y, PressLocation::TOP, PressStage::PRESS_SUCCESS});
-        else if (x > 0.8 && y < 0.7 && y > 0.3)
-            press_events_.push({x, y, PressLocation::RIGHT, PressStage::PRESS_SUCCESS});
-        else if (x < 0.7 && x > 0.3 && y < 0.2)
-            press_events_.push({x, y, PressLocation::BOTTOM, PressStage::PRESS_SUCCESS});
+        cout << "Press success" << endl;
+        press_events_.push({x, y, press_location_, PressStage::PRESS_SUCCESS});
         press_stage_ = PressStage::NO_PRESS;
+    }
+
+    if (send_press_cancel) {
+        cout << "Press cancelled" << endl;
+        press_events_.push({x, y, press_location_, PressStage::PRESS_CANCELLED});
     }
 
     previous_diff_ = diff;

@@ -49,25 +49,20 @@ private:
     float w = 0.6; // smoothing rate
     float lag_weight = 0.8;
     float previous_diff_ = 0;
-    float start_weight = 0;
-    float stop_weight = 0;
-    const float edge_threshold_ = 150;
-    float release_threshold;
-    bool is_pressed_ = false;
+    const float press_threshold_ = 150;
+    const float release_threshold_ = -100;
     float weight_slow_ = 0;
-    std::chrono::high_resolution_clock::time_point press_start_time_;
     bool up_edge_detected_ = false;
     bool down_edge_detected_ = false;
     PressStage press_stage_ = PressStage::NO_PRESS;
-    std::chrono::system_clock::time_point start;
-    bool timeStart = false;
-    std::chrono::system_clock::time_point stop;
+    PressLocation press_location_ = PressLocation::TOP;
+    std::chrono::time_point<std::chrono::steady_clock> press_started_;
 
     void consume();
 
     float expAvg(float sample, float avg, float w);
 
-    void detectPress(float sample, float threshold, float x, float y);
+    void detectPress(float sample, float x, float y);
 
     float hampel(float reading, std::vector<float> &window1, std::vector<float> &window2, int &current_idx);
 };
