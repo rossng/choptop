@@ -56,10 +56,10 @@ void DataProcessor::consume() {
 
         sensor_data_.consume_all([&](SensorData sd) {
             // Hampel filter to remove spikes
-            sd.top_left = hampel(sd.top_left, top_left_window1, top_left_window2, top_left_idx);
-            sd.top_right = hampel(sd.top_right, top_right_window1, top_right_window2, top_right_idx);
+            sd.top_left     = hampel(sd.top_left, top_left_window1, top_left_window2, top_left_idx);
+            sd.top_right    = hampel(sd.top_right, top_right_window1, top_right_window2, top_right_idx);
             sd.bottom_right = hampel(sd.bottom_right, bottom_right_window1, bottom_right_window2, bottom_right_idx);
-            sd.bottom_left = hampel(sd.bottom_left, bottom_left_window1, bottom_left_window2, bottom_left_idx);
+            sd.bottom_left  = hampel(sd.bottom_left, bottom_left_window1, bottom_left_window2, bottom_left_idx);
 
             sensor_data_despiked_.push({sd.top_left, sd.top_right, sd.bottom_right, sd.bottom_left});
 
@@ -72,21 +72,28 @@ void DataProcessor::consume() {
         });
 
         if (updated) {
-            float weight = top_left_smooth_ + top_right_smooth_ + bottom_left_smooth_ + bottom_right_smooth_;
-            weight_slow_ = expAvg(weight, weight_slow_, lag_weight);
-            float y_top = min(max((top_left_smooth_ + top_right_smooth_) / weight, 0.f), 1.0f);
-            float x_right = min(max((top_right_smooth_ + bottom_right_smooth_) / weight, 0.f), 1.0f);
-            float y_bottom = 1.0f - min(max((bottom_left_smooth_ + bottom_right_smooth_) / weight, 0.f), 1.0f);
-            float x_left = 1.0f - min(max((top_left_smooth_ + bottom_left_smooth_) / weight, 0.f), 1.0f);
-            auto y = (y_top + y_bottom) / 2.0f;
-            auto x = (x_left + x_right) / 2.0f;
+            float weight    = top_left_smooth_ + top_right_smooth_ + bottom_left_smooth_ + bottom_right_smooth_;
+            weight_slow_    = expAvg(weight, weight_slow_, lag_weight);
+            float y_top     = min(max((top_left_smooth_ + top_right_smooth_) / weight, 0.f), 1.0f);
+            float x_right   = min(max((top_right_smooth_ + bottom_right_smooth_) / weight, 0.f), 1.0f);
+            float y_bottom  = 1.0f - min(max((bottom_left_smooth_ + bottom_right_smooth_) / weight, 0.f), 1.0f);
+            float x_left    = 1.0f - min(max((top_left_smooth_ + bottom_left_smooth_) / weight, 0.f), 1.0f);
+            auto y          = (y_top + y_bottom) / 2.0f;
+            auto x          = (x_left + x_right) / 2.0f;
             edgeDetect(weight, edge_threshold_);
             if (send_press_) {
                 if (x < 0.2 && y > 0.3 && y < 0.7) press_events_.push({x, y, PressLocation::LEFT});
                 else if (x > 0.3 && x < 0.7 && y > 0.8) press_events_.push({x, y, PressLocation::TOP});
                 else if (x > 0.8 && y < 0.7 && y > 0.3) press_events_.push({x, y, PressLocation::RIGHT});
                 else if (x < 0.7 && x > 0.3 && y < 0.2) press_events_.push({x, y, PressLocation::BOTTOM});
-                send_press_ = false;
+                send_press_     = false;
+                press_started_  = true;
+            }
+
+            if (start_weight > weight && press_started_) {
+                start_weight    = 0;
+                press_stopped_  = true;
+                cout << "press stopped" << endl;
             }
 
             weight_.push(weight);
@@ -103,10 +110,13 @@ float DataProcessor::expAvg(float sample, float avg, float w) {
 void DataProcessor::edgeDetect(float sample, float threshold) {
     float diff = sample - weight_slow_;
     if (diff >= threshold && previous_diff_ < threshold) {
-        press_started_ = true;
-    } else if(diff < threshold && press_started_){
-        press_started_ = false;
-        send_press_ = true;
+        edge_detected_      = true;
+        press_stopped_      = false;
+        start_weight        = sample;
+    } else if(diff < threshold && edge_detected_){
+        edge_detected_  = false;
+        press_started_  = false;
+        send_press_     = true;
     }
     previous_diff_ = diff;
 }
