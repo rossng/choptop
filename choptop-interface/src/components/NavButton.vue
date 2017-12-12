@@ -92,11 +92,6 @@
     animation-duration: 5s;
   }
 
-  /*.pressedCancelNone{
-    animation-name: pressCancelNone;
-    animation-duration: 1s;
-  */
-
   .nav-button{
     background:lightgreen;
   }
