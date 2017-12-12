@@ -264,7 +264,9 @@
           return 0;
         }
         // debugger
-
+        if(this.recipe.ingredients[ingred].quantity.length === 2){
+          return  (this.recipe.ingredients[ingred].quantity[1]/this.recipe.serving)* this.portions;
+        }
         return this.recipe.ingredients[ingred].quantity[0] * this.portions;
       },
       getStepWeightName() {
@@ -305,7 +307,8 @@
   }
 
   .recipeOverview.hovered {
-    background: #fce8ff;
+    /*background: #fce8ff;*/
+    background: #FFE8D6;
     transition: background 0.3s;
   }
 
@@ -335,7 +338,8 @@
   }
 
   .recipeInner {
-    background: #fce8ff;
+    /*background: #fce8ff;*/
+    background: #FFE8D6;
     width: 740px;
     margin: 10px;
     overflow: hidden;
