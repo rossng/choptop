@@ -38,7 +38,11 @@
       </div>
     </div>
 
+    <div v-if="state === 'instructions'">
+    	Show me how to do it.
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -46,6 +50,7 @@
   import StepDisplay from './StepDisplay'
   import Timer from './Timer'
   import WeightDisplay from './WeightDisplay'
+  import ChopInstructions from './ChopInstructions'
 
   export default {
     name: 'recipeOverview',
@@ -73,11 +78,17 @@
             this.nextStep();
           } else if (dir === 'left') {
             this.prevStep();
-          } else if (dir === 'down') {
+          } else if (dir === 'down' && this.hasTimeAtCurrentStep()) {
             this.startTimer();
-          } else if (dir === 'up') {
+          } else if (dir === 'down' && this.hasInsructions() && this.state==='steps') {
+            this.showInstruction();
+          }else if (dir === 'up')  {
             this.$parent.upPressed();
           }
+        }else if(this.state==='instructions'){
+        	if(dir === 'up'){
+        		this.$parent.upPressed();
+        	}
         }
       },
       nextStep: function () {
@@ -109,6 +120,12 @@
           this.activeTimers.push(timer)
         }
       },
+      showInstruction() {
+      	if (this.hasInsructions()){
+      		console.log("I'd want to show some pretty GIFs");
+      		this.$parent.showInstructions();
+      	}
+      },
       removeWithDelay(timerName) {
         let self = this;
         let pause = 15000;
@@ -132,6 +149,10 @@
       },
       hasTimeAtCurrentStep() {
         return this.currentStep().time !== undefined;
+      },
+
+      hasInsructions(){
+      	return this.currentStep().extra !== undefined;
       },
 
       getStepTime() {

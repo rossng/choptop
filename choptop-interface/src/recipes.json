@@ -61,7 +61,7 @@
 			"steps":[
 				{"text" : "Weigh out the feta", "weighing":true, "ingredientName":"feta"},
 				{"text":"Cut the cucumber into small pieces.", "time": 0.05, "timerName":"Cucumber"},
-				{"text":"Slice the onion."},
+				{"text":"Slice the onion.","extra":"slice onion"},
 				{"text":"Slice the tomatoes into thick rings."},
 				{"text":"Cut feta into small cubes."},
 				{"text":"Cut the pepper."},

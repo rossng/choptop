@@ -20,6 +20,10 @@
       Press DOWN to start timer
     </div>
 
+    <div v-if="hasInstructions()">
+      Press DOWN to show instructions
+    </div>
+
   </div>
 
 
@@ -49,9 +53,9 @@
         return this.steps[this.stepIdx].weighing === true;
       },
 
-      getWeightRequired() {
-
-      }
+      hasInstructions() {
+        return this.steps[this.stepIdx].extra !== undefined;
+      },
     }
   }
 </script>
