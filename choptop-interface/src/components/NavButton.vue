@@ -89,7 +89,7 @@
   .pressed-start {
     animation-name: buttonPress;
     background-color: green;
-    animation-duration: 5s;
+    animation-duration: 1s;
   }
 
   .nav-button{

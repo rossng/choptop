@@ -12,15 +12,6 @@
         <icon name="angle-right" scale="4"></icon>
       </div>
     </div>
-
-    <div v-if="hasTime()">
-      Press DOWN to start timer
-    </div>
-
-    <div v-if="hasInstructions()">
-      Press DOWN to show instructions
-    </div>
-
   </div>
 
 
@@ -62,7 +53,14 @@
   .step {
     font-size: 36px;
     margin: 30px;
+    background: #FFE8D6;
+    padding: 0 30px 23px 24px;
+    min-width: 500px;
   }
+  
+/*  .stepWrapper{
+    background: #FFE8D6;
+  }*/
 
   .stepCount {
     font-size: 24px;

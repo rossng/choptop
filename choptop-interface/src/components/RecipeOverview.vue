@@ -71,6 +71,7 @@
 
     methods: {
       handlePress(dir) {
+      	this.stepChangeEvents();
         if (this.state === 'steps' && this.selected) {
           if (dir === 'right') {
             this.nextStep();
@@ -104,6 +105,7 @@
       stepChangeEvents: function () {
         this.$emit('showWeighingScale', this.stepHasWeight());
         this.$emit('hasInstructions', this.hasInstructions());
+        this.$emit('hasTimer', this.hasTimeAtCurrentStep());
       },
       startTimer() {
         if (this.hasTimeAtCurrentStep()) {
@@ -212,7 +214,7 @@
         } else if (fracPart === 0.75) {
           return wholeStr + "3/4";
         }
-        return value;
+        return Math.round(value*10)/10;
       },
 
       getIngredientText(ingredient) {
@@ -262,7 +264,9 @@
           return 0;
         }
         // debugger
-
+        if(this.recipe.ingredients[ingred].quantity.length === 2){
+          return  (this.recipe.ingredients[ingred].quantity[1]/this.recipe.serving)* this.portions;
+        }
         return this.recipe.ingredients[ingred].quantity[0] * this.portions;
       },
       getStepWeightName() {
@@ -293,7 +297,7 @@
     overflow: hidden;
     margin: 10px;
     border: 1px black solid;
-    height: 80%;
+    height: 93%;
     width: 100%;
     transition: background 0.3s, max-height 1s, max-width 1s;
     display: flex;
@@ -303,7 +307,8 @@
   }
 
   .recipeOverview.hovered {
-    background: #fce8ff;
+    /*background: #fce8ff;*/
+    background: #FFE8D6;
     transition: background 0.3s;
   }
 
@@ -333,7 +338,8 @@
   }
 
   .recipeInner {
-    background: #fce8ff;
+    /*background: #fce8ff;*/
+    background: #FFE8D6;
     width: 740px;
     margin: 10px;
     overflow: hidden;
