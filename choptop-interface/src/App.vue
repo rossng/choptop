@@ -31,7 +31,7 @@
   import 'vue-awesome/icons'
   import Icon from 'vue-awesome/components/Icon'
 
-  Vue.component('icon', Icon)
+  Vue.component('icon', Icon);
 
   Vue.use(VueWebsocket, "ws://localhost:8765", {
     format: 'json',
@@ -121,7 +121,7 @@
           this.currentScreen = "portionSelector"
         }
       },
-      handleGlobalKeyDown: function(e) {
+      handleGlobalKeyDown: function (e) {
         switch (e.key) {
           case "ArrowUp":
             this.eventBus.$emit("pressed", 'up');
@@ -140,56 +140,56 @@
         }
       },
       handleNewData(msg) {
-        var data = msg.data
-        console.log(data)
-        parsed = {};
+        let data = msg.data;
+        console.log(data);
+        let parsed = {};
         try {
-          var parsed = JSON.parse(data)
+          parsed = JSON.parse(data)
         } catch (e) {
-          console.log("bad Json ")
+          console.log("Received invalid JSON from server");
           console.log(msg)
         }
 
         //left
         if (parsed.event === "leftPressed") {
-          if(parsed.pressInfo === "start"){
+          if (parsed.pressInfo === "start") {
             this.eventBus.$emit("pressStart", "left")
-          }else if(parsed.pressInfo === "success"){
+          } else if (parsed.pressInfo === "success") {
             this.eventBus.$emit("pressed", 'left')
-          }else if(parsed.pressInfo === "cancel"){
+          } else if (parsed.pressInfo === "cancel") {
             this.eventBus.$emit("pressCancel", 'left')
           }
         }
 
         //right
         if (parsed.event === "rightPressed") {
-          if(parsed.pressInfo ==="start"){
+          if (parsed.pressInfo === "start") {
             this.eventBus.$emit("pressStart", "right")
-          }else if(parsed.pressInfo === "success"){
+          } else if (parsed.pressInfo === "success") {
             this.eventBus.$emit("pressed", 'right')
-          }else if(parsed.pressInfo === "cancel"){
+          } else if (parsed.pressInfo === "cancel") {
             this.eventBus.$emit("pressCancel", 'right')
           }
         }
 
         //up
         if (parsed.event === "upPressed") {
-          if(parsed.pressInfo ==="start"){
+          if (parsed.pressInfo === "start") {
             this.eventBus.$emit("pressStart", "up")
-          }else if(parsed.pressInfo === "success"){
+          } else if (parsed.pressInfo === "success") {
             this.eventBus.$emit("pressed", 'up')
-          }else if(parsed.pressInfo === "cancel"){
+          } else if (parsed.pressInfo === "cancel") {
             this.eventBus.$emit("pressCancel", 'up')
           }
         }
 
         //down
         if (parsed.event === "downPressed") {
-          if(parsed.pressInfo === "start"){
+          if (parsed.pressInfo === "start") {
             this.eventBus.$emit("pressStart", "down")
-          }else if(parsed.pressInfo === "success"){
+          } else if (parsed.pressInfo === "success") {
             this.eventBus.$emit("pressed", 'down')
-          }else if(parsed.pressInfo === "cancel"){
+          } else if (parsed.pressInfo === "cancel") {
             this.eventBus.$emit("pressCancel", 'down')
           }
         }
@@ -198,7 +198,6 @@
         }
         if (parsed.event === "position") {
           this.eventBus.$emit("pos", parsed)
-          // console.log(parsed.pos[0])
         }
       }
     }
