@@ -7,9 +7,6 @@
       <div class="step">
         <p class="stepCount">Step {{stepIdx+1}} of {{steps.length}}</p>
         {{steps[stepIdx].text}}
-        <div v-if="hasWeight()" class="weigher">
-          hasWeight
-        </div>
       </div>
       <div :class="{rightArr:true, arr:true, noshow: stepIdx === steps.length - 1}">
         <icon name="angle-right" scale="4"></icon>
