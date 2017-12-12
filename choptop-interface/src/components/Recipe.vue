@@ -22,7 +22,7 @@
 	  props:['recipe', 'selected'],
 	  data () {
 	    return {
-	      
+
 	    }
 	  },
 
@@ -39,7 +39,7 @@
 
 <style scoped>
 	h1{
-	  
+
 	}
 
 	.recipe{
@@ -47,9 +47,9 @@
 		margin:10px;
 	}
 
-	.recipeOverview.selected{
+	.recipeOverview.opened{
 		background:#68b4b2;
-		
+
 	}
-	
+
 </style>

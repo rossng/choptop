@@ -1,18 +1,19 @@
 <template>
   <div :class="getClass()">
-    <div v-if="!selected">
+
+    <div v-if="state === 'thumbnails'">
       <h1 class="overviewTitle">{{recipe.title}}</h1>
       <div class="overviewMeta">
         <p>{{recipe.difficulty}}</p>
         <p>{{recipe.time}} minutes</p>
       </div>
     </div>
-    <div class="recipeInner" v-if="selected && !stepsVisible">
+
+    <div class="recipeInner" v-if="state === 'ingredients' && selected">
       <h1 class="overviewTitle">{{recipe.title}}</h1>
       <div class="overviewMeta">
         <p>{{recipe.time}} minutes</p>
       </div>
-
       <div id="ingredients">
         Ingredients
         <div id="ingredientsList">
@@ -23,7 +24,7 @@
       </div>
     </div>
 
-    <div class="inRecipe" v-show="selected && stepsVisible">
+    <div class="inRecipe" v-show="state === 'steps' && selected">
       <div id="steps">
         <StepDisplay :steps="recipe.steps" :stepIdx="selectedStep"/>
       </div>
@@ -48,12 +49,10 @@
 
   export default {
     name: 'recipeOverview',
-    props: ['recipe', 'hovered', 'selected', "eventBus", "portions"],
+    props: ['recipe', 'state', 'selected', "eventBus", "portions"],
     data() {
       return {
         selectedStep: 0,
-        focussed: false,
-        stepsVisible: false,
         activeTimers: [],
       }
     },
@@ -69,25 +68,15 @@
 
     methods: {
       handlePress(dir) {
-        if (this.selected) {
-          if (dir === "right" && this.stepsVisible) {
-            console.log("right step");
+        if (this.state ==='steps' && this.selected) {
+          if (dir === 'right') {
             this.nextStep();
-          } else if (dir === "left" && this.stepsVisible) {
+          } else if (dir === 'left') {
             this.prevStep();
-          } else if (dir === "down") {
-            console.log("steps visible");
-            if (!this.stepsVisible) {
-              this.stepsVisible = true;
-            } else {
-              this.startTimer();
-            }
-          } else if (dir === "up") {
-            if (this.stepsVisible) {
-              this.stepsVisible = false;
-            } else {
-              this.$parent.upPressed();
-            }
+          } else if (dir === 'down') {
+            this.startTimer();
+          } else if (dir === 'up') {
+            this.$parent.upPressed();
           }
         }
       },
@@ -163,12 +152,12 @@
       },
       getClass: function () {
         let divClass = "recipeOverview";
-        if (this.hovered && !this.selected) {
+        if (this.state === 'thumbnails' && this.selected) {
           divClass += " hovered"
         }
 
-        if (this.selected) {
-          divClass += " selected"
+        if (['ingredients', 'steps'].includes(this.state) && this.selected) {
+          divClass += " opened"
         } else if (this.activeTimers.length > 0) {
           this.activeTimers = []; //clear timers when changing recipes
         }
@@ -285,7 +274,7 @@
     transition: background 0.3s;
   }
 
-  .recipeOverview.selected {
+  .recipeOverview.opened {
     background: inherit;
     margin: 0;
     transition: 1s;

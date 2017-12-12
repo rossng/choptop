@@ -36,7 +36,6 @@
     methods: {
       handlePress(dir) {
         if (this.focussed) {
-          console.log("portion handle press " + dir)
           if (dir === "left" && this.showPortionCount > 1) {
             this.showPortionCount--;
             this.eventBus.$emit("portionCount", this.showPortionCount)
