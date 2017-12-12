@@ -1,6 +1,6 @@
 <template>
 	<div class = "tapPosition" :style="getStyle()">
-		
+
 	</div>
 </template>
 
@@ -25,7 +25,7 @@
 	  	getStyle(){
 	  		var text = '';
 	  		if (this.latestPos ==null){
-	  			return ''; 
+	  			return '';
 	  		}
 	  		text += "transform: translate("+this.latestPos[0]*800+"px,"+ (1.0-this.latestPos[1])*480+"px) scale("+this.latestScale+")";
 	  		return text;
@@ -37,7 +37,7 @@
 	    	latestScale: 0,
 	    }
 	  }
-	  
+
 	}
 </script>
 
@@ -48,16 +48,17 @@
 		position: fixed;
 		left: 0px;
 		top:0px;
-		background: black;
-		width: 30px;
+		background: none;
+    border: 1px solid black;
+		width: 50px;
 		display: block;
-		height: 30px;
+		height: 50px;
 		margin-top: -15px;
 		margin-left: -15px;
-		-webkit-border-radius: 50%;
+		border-radius: 50%;
 		transition : 0.5s;
 		opacity: 0.30;
 	}
 
-	
+
 </style>

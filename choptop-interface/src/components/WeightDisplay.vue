@@ -18,7 +18,7 @@
       </vue-circle>
     </div>
     <div class="weightText">
-      <span :class="{weightValue: true, overWeight: overWeight()}"><AnimatedInt :value="taredWeight()"/>g</span>
+      <span :class="{weightValue: true, overWeight: overWeight()}"><AnimatedInt :value="displayWeight()"/>g</span>
       <span class="weigherName">{{name.charAt(0).toUpperCase() + name.slice(1)}}</span>
       <span class="totalWeight" v-if="!currentlyTaring">{{ requiredWeight}}g</span>
       <span class="totalWeight" v-else>Taring</span>
@@ -61,6 +61,9 @@
       },
       taredWeight() {
         return this.round(this.currentWeight - this.tareValue);
+      },
+      displayWeight() {
+        return Math.max(this.taredWeight(), 0.0);
       },
       round(weight) {
         // Rounds the weight to the closest 5 grams. Only rounds the displayed value so the error wouldn't build up.
