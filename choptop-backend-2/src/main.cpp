@@ -183,17 +183,7 @@ int main(int argc, char **argv) {
     app.require_subcommand(1);
 
     string device = "ttyACM0";
-    float min_press_time = 500;
-    float press_timeout_time = 1500;
-    float press_debounce_time = 100;
-    float press_threshold = 150;
-    float release_threshold = -50;
     app.add_option("--device", device, "Serial device name");
-    app.add_option("--min-press-time", min_press_time, "Minimum milliseconds to register a press");
-    app.add_option("--press-timeout-time", press_timeout_time, "Maximum milliseconds to register a press");
-    app.add_option("--press-debounce-time", press_debounce_time, "Milliseconds before a press is considered real");
-    app.add_option("--press-threshold", press_threshold, "Threshold to register a press");
-    app.add_option("--release-threshold", release_threshold, "Threshold to register a release");
 
     auto print = app.add_subcommand("print", "Print a stream of values from Choptop");
 
@@ -219,11 +209,6 @@ int main(int argc, char **argv) {
     cout << "Start sensors" << endl;
 
     startSensors(device);
-    data_processor->press_threshold_ = press_threshold;
-    data_processor->release_threshold_ = release_threshold;
-    data_processor->press_minimum_time_ = min_press_time;
-    data_processor->press_timeout_millis_ = press_timeout_time;
-    data_processor->press_debounce_time_ = press_debounce_time;
 
     if (app.got_subcommand("serve")) {
         cout << "Serve over WebSocket" << endl;

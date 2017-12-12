@@ -93,71 +93,90 @@ float DataProcessor::expAvg(float sample, float avg, float w) {
     return w * sample + (1.f - w) * avg;
 }
 
+/**
+ * Detect a deliberate edge press
+ * All these steps must happen in order.
+ * 0. -50 < diff < 10. At least 1000ms since 'trigger'.
+ * 1. diff > 15
+ * 2. diff > 250. Determine which 'edge' is being pressed. Distance from that edge changed no more than 0.1 since
+ *    step 2. => TRIGGER
+ * 3. within 3 readings, value < -50. All readings must be within 0.1 of determined edge. => SUCCEED
+ *    else => FAIL
+ */
 void DataProcessor::detectPress(float sample, float x, float y) {
     float diff = sample - weight_slow_;
+    auto time_since_last_trigger = chrono::duration_cast<chrono::milliseconds>(
+            chrono::steady_clock::now() - time_of_last_trigger_).count();
 
-    bool send_press_start = false;
-    bool send_press_success = false;
-    bool send_press_cancel = false;
-    auto time_since_press = chrono::duration_cast<chrono::milliseconds>(
-            chrono::steady_clock::now() - press_started_).count();
+    switch (stage) {
+        case 0:
 
-    cout << setprecision(3) << time_since_press << ": " << diff << " (" << x << "," << y << ")" << endl;
-
-    if (press_stage_ == PressStage::PRESS_CANCELLED && diff >= press_threshold_ && previous_diff_ < press_threshold_) {
-        cout << "Tentative up edge" << endl;
-        press_started_ = chrono::steady_clock::now();
-        press_tentative_ = true;
-    } else if (press_stage_ == PressStage::PRESS_CANCELLED && diff >= press_threshold_ &&
-               time_since_press > press_debounce_time_ && press_tentative_) {
-        cout << "Up edge started: " << time_since_press << endl;
-        send_press_start = true;
-        press_stage_ = PressStage::PRESS_STARTED;
-    } else if (press_stage_ == PressStage::PRESS_CANCELLED && diff < (press_threshold_/2.0) &&
-               time_since_press > press_debounce_time_ && press_tentative_) {
-        cout << "Cancelled tentative up edge: " << time_since_press << endl;
-        press_tentative_ = false;
-    } else if (press_stage_ == PressStage::PRESS_STARTED && diff <= release_threshold_) {
-        cout << "Down edge started" << endl;
-        if (time_since_press < press_minimum_time_) {
-            cout << "Down edge too soon, cancel: " << time_since_press << endl;
-            press_stage_ = PressStage::PRESS_CANCELLED;
-            send_press_cancel = true;
-        } else {
-            press_stage_ = PressStage::PRESS_SUCCESS;
-            send_press_success = true;
-        }
-    } else if (press_stage_ == PressStage::PRESS_STARTED && time_since_press > press_timeout_millis_) {
-        cout << "Press cancelled" << endl;
-        press_stage_ = PressStage::PRESS_CANCELLED;
-        send_press_cancel = true;
+            if (time_since_last_trigger >= 1000 && diff < 10 && diff > -50) {
+                stage = 1;
+            }
+            break;
+        case 1:
+            stage_1_x_ = x;
+            stage_1_y_ = y;
+            if (diff > 15) {
+                stage = 2;
+            } else {
+                stage = 0;
+            }
+            break;
+        case 2:
+            stage_2_x_ = x;
+            stage_2_y_ = y;
+            if (diff > 250) {
+                if (y > 0.9 && x > 0.2 && x < 0.8) {
+                    if (abs(y - stage_1_y_) > 0.1) {
+                        stage = 0;
+                        break;
+                    }
+                    stage_2_location_ = PressLocation::TOP;
+                } else if (y < 0.1 && x > 0.2 && x < 0.8) {
+                    if (abs(y - stage_1_y_) > 0.1) {
+                        stage = 0;
+                        break;
+                    }
+                    stage_2_location_ = PressLocation::BOTTOM;
+                } else if (x < 0.1 && y > 0.2 && y < 0.8) {
+                    if (abs(x - stage_1_x_) > 0.1) {
+                        stage = 0;
+                        break;
+                    }
+                    stage_2_location_ = PressLocation::LEFT;
+                } else if (x > 0.9 && y > 0.2 && y < 0.8) {
+                    if (abs(x - stage_1_x_) > 0.1) {
+                        stage = 0;
+                        break;
+                    }
+                    stage_2_location_ = PressLocation::RIGHT;
+                } else {
+                    stage = 0;
+                    break;
+                }
+            }
+            time_of_last_trigger_ = chrono::steady_clock::now();
+            press_events_.push({ x, y, stage_2_location_, PressStage::PRESS_STARTED });
+            stage = 3;
+            stage_3_num_readings_ = 0;
+            break;
+        case 3:
+            if (abs(x - stage_2_x_) > 0.1 || abs(y - stage_2_y_) > 0.1 || stage_3_num_readings_ > 3) {
+                stage = 0;
+                press_events_.push({ x, y, stage_2_location_, PressStage::PRESS_CANCELLED });
+            } else if (diff < -50) {
+                stage = 0;
+                press_events_.push({ x, y, stage_2_location_, PressStage::PRESS_SUCCESS });
+            } else {
+                stage_3_num_readings_++;
+            }
+            break;
+        default:
+            stage = 0;
+            break;
     }
-
-    if (send_press_start) {
-        cout << "Press start" << endl;
-        if (x < 0.2 && y > 0.3 && y < 0.7)
-            press_location_ = PressLocation::LEFT;
-        else if (x > 0.3 && x < 0.7 && y > 0.8)
-            press_location_ = PressLocation::TOP;
-        else if (x > 0.8 && y < 0.7 && y > 0.3)
-            press_location_ = PressLocation::RIGHT;
-        else if (x < 0.7 && x > 0.3 && y < 0.2)
-            press_location_ = PressLocation::BOTTOM;
-        press_events_.push({x, y, press_location_, PressStage::PRESS_STARTED});
-    }
-
-    if (send_press_success) {
-        cout << "Press success" << endl;
-        press_events_.push({x, y, press_location_, PressStage::PRESS_SUCCESS});
-        press_stage_ = PressStage::PRESS_CANCELLED;
-    }
-
-    if (send_press_cancel) {
-        cout << "Press cancelled" << endl;
-        press_events_.push({x, y, press_location_, PressStage::PRESS_CANCELLED});
-    }
-
-    previous_diff_ = diff;
 }
 
 
