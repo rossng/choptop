@@ -8,7 +8,7 @@
 			"ingredients":{
 				"cucumber":{
 					"name":"cucumber",
-					"quantity": [1], 
+					"quantity": [1],
 					"units":["each"]
 				},
 				"tomatoes":{
@@ -80,7 +80,7 @@
 			"ingredients":{
 				"skinless chicken breast fillet":{
 				"name":"skinless chicken breast fillet",
-				"quantity": [1], 
+				"quantity": [1],
 				"units":["each"]
 				},
 				"large onion":{
@@ -132,15 +132,15 @@
 			},
 			"steps":[
 				{"text":"Cut the chicken breast into 1/2 cm strips.","extra":"chicken strips"},
-				{"text":"Slice the onion.","extra":"slice onion"},
-				{"text":"Slice the red pepper.","extra":"slice pepper"},
-				{"text":"Cut the broccoli into florets.","extra":"broccoli"},
+				{"text":"Slice the onion.","extra":"slice onion", "weighing": true, "ingredientName":"large onion"},
+				{"text":"Slice the red pepper.","extra":"slice pepper", "weighing": true, "ingredientName":"red pepper"},
+				{"text":"Cut the broccoli into florets.","extra":"broccoli", "weighing": true, "ingredientName":"broccoli"},
 				{"text":"Slice the spring onions.","extra":"slice spring onions"},
 				{"text":"Finely chop the garlic."},
 				{"text":"Grate the ginger."},
 				{"text":"To make the marinade, mix together the soy sauce, garlic and ginger, add the chicken and set aside."},
 				{"text":"Allow to marinate for 30 minutes in the fridge if you have time.","time":30, "timerName":"Marinating"},
-				{"text":"Cook the noodles according to the packet instructions."},
+				{"text":"Cook the noodles for 4 minutes", "time":"4", "timerName":"Noodles"},
 				{"text":"Drain well and set aside."},
 				{"text":"Heat 1 tbsp oil in a wok or large frying pan."},
 				{"text":"Stir-fry the chicken and marinade for 2-3 minutes.","time":3},
@@ -160,7 +160,7 @@
 			"ingredients":{
 				"medium onion":{
 				"name":"medium onion",
-				"quantity": [1,185], 
+				"quantity": [1,185],
 				"units":["each","g"]
 				},
 				"skinless chicken breast fillets":{
@@ -211,7 +211,7 @@
 
 			},
 			"steps":[
-				{"text":"Chop the onions finely.","extra":"slice onion"},
+				{"text":"Chop the onions finely.","extra":"slice onion", "weighing":true, "ingredientName":"medium onion"},
 				{"text":"Cut chicken into thin strips","extra":"chicken strips"},
 				{"text":"Slice the mushrooms.","extra":"slice mushrooms"},
 				{"text":"Grate the cheese.", "weightRequired": "300"},
