@@ -33,8 +33,16 @@ void ChoptopServer::stopServer() {
     if (!server_.stopped()) {
         server_.stop();
     }
-    server_thread_->join();
-    sender_thread_->join();
+    if (server_thread_ != nullptr) {
+        if (server_thread_->joinable()) {
+            server_thread_->join();
+        }
+    }
+    if (sender_thread_ != nullptr) {
+        if (sender_thread_->joinable()) {
+            sender_thread_->join();
+        }
+    }
 }
 
 void ChoptopServer::onOpen(connection_hdl hdl) {

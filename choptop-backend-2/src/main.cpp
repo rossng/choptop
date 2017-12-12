@@ -22,6 +22,7 @@ using namespace std;
 
 vector<thread> threads;
 atomic<bool> executing(true);
+atomic<bool> shutting_down(false);
 mutex wiring_pi_mutex;
 
 shared_ptr<DataProcessor> data_processor = nullptr;
@@ -30,6 +31,7 @@ shared_ptr<SensorReader> sensor_reader = nullptr;
 shared_ptr<ChoptopServer> choptop_server = nullptr;
 
 void gracefulShutdown(int s) {
+    shutting_down = true;
     executing = false;
 
     cout << "Stopping SensorReader" << endl;
@@ -47,6 +49,7 @@ void gracefulShutdown(int s) {
     }
 
     cout << "Goodbye!" << endl;
+    shutting_down = false;
 }
 
 void startSensors(string device) {
@@ -198,4 +201,8 @@ int main(int argc, char **argv) {
         cout << "Print values" << endl;
         printValues(print_sensors, print_weight, print_xy, print_presses);
     }
+
+    while (shutting_down) {}
+
+    return 0;
 }

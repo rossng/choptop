@@ -15,8 +15,7 @@
 using namespace std;
 
 DataProcessor::DataProcessor(boost::lockfree::spsc_queue<SensorData> &sensor_data) :
-        sensor_data_(sensor_data), weight_(1024), press_events_(64), position_(1024), sensor_data_despiked_(1024) {
-
+        sensor_data_(sensor_data), weight_(1024), press_events_(64), position_(1024), sensor_data_despiked_(1024), running_(false) {
 }
 
 DataProcessor::~DataProcessor() {

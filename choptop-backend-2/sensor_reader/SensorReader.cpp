@@ -86,7 +86,10 @@ void SensorReader::read() {
             line = readLine();
             try {
                 stof(line.substr(2));
-            } catch (std::invalid_argument &e) {
+            } catch (const std::invalid_argument &e) {
+                line = "";
+                cerr << "Invalid argument to stof: " << e.what() << endl;
+            } catch (const std::out_of_range &e) {
                 line = "";
             }
         }
@@ -96,7 +99,10 @@ void SensorReader::read() {
             line = readLine();
             try {
                 stof(line.substr(2));
-            } catch (std::invalid_argument &e) {
+            } catch (const std::invalid_argument &e) {
+                line = "";
+                cerr << "Invalid argument to stof: " << e.what() << endl;
+            } catch (const std::out_of_range &e) {
                 line = "";
             }
         }
@@ -106,7 +112,10 @@ void SensorReader::read() {
             line = readLine();
             try {
                 stof(line.substr(2));
-            } catch (std::invalid_argument &e) {
+            } catch (const std::invalid_argument &e) {
+                line = "";
+                cerr << "Invalid argument to stof: " << e.what() << endl;
+            } catch (const std::out_of_range &e) {
                 line = "";
             }
         }
@@ -116,7 +125,10 @@ void SensorReader::read() {
             line = readLine();
             try {
                 stof(line.substr(2));
-            } catch (std::invalid_argument &e) {
+            } catch (const std::invalid_argument &e) {
+                line = "";
+                cerr << "Invalid argument to stof: " << e.what() << endl;
+            } catch (const std::out_of_range &e) {
                 line = "";
             }
         }
