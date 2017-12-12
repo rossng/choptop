@@ -109,6 +109,7 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    position:relative;
   }
 
   .arr {

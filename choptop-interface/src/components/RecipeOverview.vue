@@ -334,8 +334,10 @@
     padding: 20px 0;
   }
 
-  .timers {
-    background: blue;
+  #timers {
+    position: absolute;
+    right: -5px;
+    bottom: -7px;
   }
 
   .inRecipe {
