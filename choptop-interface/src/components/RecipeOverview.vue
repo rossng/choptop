@@ -39,7 +39,7 @@
     </div>
 
     <div v-if="state === 'instructions'">
-    	Show me how to do it.
+    	<ChopInstructions :extra="getStepExtra()"/>
     </div>
   </div>
 
@@ -68,7 +68,8 @@
     components: {
       StepDisplay,
       Timer,
-      WeightDisplay
+      WeightDisplay,
+      ChopInstructions,
     },
 
     methods: {
@@ -155,6 +156,10 @@
       	return this.currentStep().extra !== undefined;
       },
 
+      getStepExtra(){
+      	return this.currentStep().extra;
+      },
+
       getStepTime() {
         return this.currentStep().time;
       },
@@ -177,7 +182,7 @@
           divClass += " hovered"
         }
 
-        if (['ingredients', 'steps'].includes(this.state) && this.selected) {
+        if (['ingredients', 'steps', 'instructions'].includes(this.state) && this.selected) {
           divClass += " opened"
         } else if (this.activeTimers.length > 0) {
           this.activeTimers = []; //clear timers when changing recipes
