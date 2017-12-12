@@ -140,7 +140,7 @@
 				{"text":"Grate the ginger."},
 				{"text":"To make the marinade, mix together the soy sauce, garlic and ginger, add the chicken and set aside."},
 				{"text":"Allow to marinate for 30 minutes in the fridge if you have time.","time":30, "timerName":"Marinating"},
-				{"text":"Cook the noodles according to the packet instructions."},
+				{"text":"Cook the noodles for 4 minutes", "time":"4", "timerName":"Noodles"},
 				{"text":"Drain well and set aside."},
 				{"text":"Heat 1 tbsp oil in a wok or large frying pan."},
 				{"text":"Stir-fry the chicken and marinade for 2-3 minutes.","time":3},

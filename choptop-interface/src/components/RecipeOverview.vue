@@ -212,7 +212,7 @@
         } else if (fracPart === 0.75) {
           return wholeStr + "3/4";
         }
-        return value;
+        return Math.round(value*10)/10;
       },
 
       getIngredientText(ingredient) {
