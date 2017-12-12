@@ -24,10 +24,10 @@ vector<thread> threads;
 atomic<bool> executing(true);
 mutex wiring_pi_mutex;
 
-shared_ptr<DataProcessor> data_processor;
-shared_ptr<SensorReader> sensor_reader;
+shared_ptr<DataProcessor> data_processor = nullptr;
+shared_ptr<SensorReader> sensor_reader = nullptr;
 
-shared_ptr<ChoptopServer> choptop_server;
+shared_ptr<ChoptopServer> choptop_server = nullptr;
 
 void gracefulShutdown(int s) {
     executing = false;
