@@ -24,21 +24,29 @@ vector<thread> threads;
 atomic<bool> executing(true);
 mutex wiring_pi_mutex;
 
-shared_ptr<DataProcessor> data_processor;
-shared_ptr<SensorReader> sensor_reader;
+shared_ptr<DataProcessor> data_processor = nullptr;
+shared_ptr<SensorReader> sensor_reader = nullptr;
 
-shared_ptr<ChoptopServer> choptop_server;
+shared_ptr<ChoptopServer> choptop_server = nullptr;
 
 void gracefulShutdown(int s) {
     executing = false;
 
-    data_processor->stopThread();
+    cout << "Stopping SensorReader" << endl;
+    if (sensor_reader != nullptr) {
+        sensor_reader->stopReading();
+    }
+    cout << "Stopping DataProcessor" << endl;
+    if (data_processor != nullptr) {
+        data_processor->stopThread();
+    }
 
+    cout << "Stopping ChoptopServer" << endl;
     if (choptop_server != nullptr) {
         choptop_server->stopServer();
     }
 
-    exit(1);
+    cout << "Goodbye!" << endl;
 }
 
 void startSensors(string device) {
@@ -176,15 +184,15 @@ int main(int argc, char **argv) {
 
     signal(SIGINT, gracefulShutdown);
     signal(SIGTERM, gracefulShutdown);
-    //signal(SIGKILL, gracefulShutdown);
+    //signal(SIGILL, gracefulShutdown);
     signal(SIGABRT, gracefulShutdown);
 
     cout << "Start sensors" << endl;
 
     startSensors(device);
-
     if (app.got_subcommand("serve")) {
         cout << "Serve over WebSocket" << endl;
+
         startServer(port);
     } else if (app.got_subcommand("print")) {
         cout << "Print values" << endl;
