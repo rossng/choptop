@@ -93,11 +93,17 @@
         if (this.selectedStep < this.recipe.steps.length - 1) {
           this.selectedStep++;
         }
+        this.stepChangeEvents();
       },
       prevStep: function () {
         if (this.selectedStep > 0) {
           this.selectedStep--;
         }
+        this.stepChangeEvents();
+      },
+      stepChangeEvents: function () {
+        this.$emit('showWeighingScale', this.stepHasWeight());
+        this.$emit('hasInstructions', this.hasInstructions());
       },
       startTimer() {
         if (this.hasTimeAtCurrentStep()) {
@@ -289,7 +295,7 @@
     border: 1px black solid;
     height: 80%;
     width: 100%;
-    transition: background 0.3s, max-height max-width 1s;
+    transition: background 0.3s, max-height 1s, max-width 1s;
     display: flex;
     flex-direction: row;
     align-items: center;
