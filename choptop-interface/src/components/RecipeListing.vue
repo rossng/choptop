@@ -54,11 +54,18 @@
           } else if (dir === 'up') {
             this.currentState = 'thumbnails';
           }
-        } else if (this.currentState === 'steps') {
         }
       },
       upPressed() {
-        this.currentState = 'ingredients'
+      	console.log("up pressed")
+      	if(this.currentState === "steps"){
+        	this.currentState = 'ingredients'
+      	}else if(this.currentState === "instructions"){
+      		this.currentState = "steps"
+      	}
+      },
+      showInstructions(){
+      	this.currentState = "instructions"
       },
       nextRecipe() {
         this.chosenRecipeIndex = (this.chosenRecipeIndex + 1) % this.recipes.length
