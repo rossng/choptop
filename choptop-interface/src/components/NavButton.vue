@@ -65,25 +65,12 @@
     height: 20px;
   }
 
-  .nav-button-up:before {
-    color: #ffffff;
-    content: '▲';
-  }
-
   .nav-button-left {
     display: inline-block;
     height: 440px;
     width: 20px;
     float: left;
     position: relative;
-  }
-
-  .nav-button-left:before {
-    color: #ffffff;
-    content: '◄';
-    position: absolute;
-    top: 50%;
-    left: 3px;
   }
 
   .nav-button-right {
@@ -94,22 +81,9 @@
     position: relative;
   }
 
-  .nav-button-right:before {
-    color: #ffffff;
-    content: '►';
-    position: absolute;
-    top: 50%;
-    left: 3px;
-  }
-
   .nav-button-down {
     clear: both;
     height: 20px;
-  }
-
-  .nav-button-down:before {
-    color: #ffffff;
-    content: '▼';
   }
 
   .pressed-start {
