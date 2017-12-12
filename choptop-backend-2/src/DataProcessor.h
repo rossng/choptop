@@ -36,6 +36,12 @@ public:
     boost::lockfree::spsc_queue<float> weight_;
     boost::lockfree::spsc_queue<PressEvent> press_events_;
     boost::lockfree::spsc_queue<SensorData> sensor_data_despiked_;
+
+    float press_threshold_ = 150;
+    float release_threshold_ = -50;
+    float press_debounce_time_ = 100;
+    float press_minimum_time_ = 500;
+    float press_timeout_millis_ = 1500;
 private:
     boost::lockfree::spsc_queue<SensorData> &sensor_data_;
     std::atomic<bool> running_;
@@ -49,12 +55,8 @@ private:
     float w = 0.6; // smoothing rate
     float lag_weight = 0.8;
     float previous_diff_ = 0;
-    const float press_threshold_ = 150;
-    const float release_threshold_ = -50;
-    const float press_timeout_millis_ = 1000;
     float weight_slow_ = 0;
-    bool up_edge_detected_ = false;
-    bool down_edge_detected_ = false;
+    bool press_tentative_ = false;
     PressStage press_stage_ = PressStage::PRESS_CANCELLED;
     PressLocation press_location_ = PressLocation::TOP;
     std::chrono::time_point<std::chrono::steady_clock> press_started_;

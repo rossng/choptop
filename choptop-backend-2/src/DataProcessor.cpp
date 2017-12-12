@@ -86,7 +86,6 @@ void DataProcessor::consume() {
             weight_.push(weight);
             position_.push(make_pair(x, y));
         }
-        this_thread::sleep_for(50ms);
     }
 }
 
@@ -100,27 +99,35 @@ void DataProcessor::detectPress(float sample, float x, float y) {
     bool send_press_start = false;
     bool send_press_success = false;
     bool send_press_cancel = false;
+    auto time_since_press = chrono::duration_cast<chrono::milliseconds>(
+            chrono::steady_clock::now() - press_started_).count();
+
+    cout << setprecision(3) << time_since_press << ": " << diff << " (" << x << "," << y << ")" << endl;
 
     if (press_stage_ == PressStage::PRESS_CANCELLED && diff >= press_threshold_ && previous_diff_ < press_threshold_) {
-        cout << "Up edge started" << endl;
-        up_edge_detected_ = true;
-    } else if (press_stage_ == PressStage::PRESS_CANCELLED && diff < press_threshold_ && up_edge_detected_) {
-        cout << "Up edge ended" << endl;
-        press_stage_ = PressStage::PRESS_STARTED;
-        up_edge_detected_ = false;
+        cout << "Tentative up edge" << endl;
         press_started_ = chrono::steady_clock::now();
+        press_tentative_ = true;
+    } else if (press_stage_ == PressStage::PRESS_CANCELLED && diff >= press_threshold_ &&
+               time_since_press > press_debounce_time_ && press_tentative_) {
+        cout << "Up edge started: " << time_since_press << endl;
         send_press_start = true;
-    } else if (press_stage_ == PressStage::PRESS_STARTED && diff <= release_threshold_ &&
-               previous_diff_ > release_threshold_) {
+        press_stage_ = PressStage::PRESS_STARTED;
+    } else if (press_stage_ == PressStage::PRESS_CANCELLED && diff < (press_threshold_/2.0) &&
+               time_since_press > press_debounce_time_ && press_tentative_) {
+        cout << "Cancelled tentative up edge: " << time_since_press << endl;
+        press_tentative_ = false;
+    } else if (press_stage_ == PressStage::PRESS_STARTED && diff <= release_threshold_) {
         cout << "Down edge started" << endl;
-        down_edge_detected_ = true;
-    } else if (press_stage_ == PressStage::PRESS_STARTED && diff > release_threshold_ && down_edge_detected_) {
-        cout << "Down edge ended" << endl;
-        press_stage_ = PressStage::PRESS_SUCCESS;
-        down_edge_detected_ = false;
-        send_press_success = true;
-    } else if (press_stage_ == PressStage::PRESS_STARTED &&
-               chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - press_started_).count() > press_timeout_millis_) {
+        if (time_since_press < press_minimum_time_) {
+            cout << "Down edge too soon, cancel: " << time_since_press << endl;
+            press_stage_ = PressStage::PRESS_CANCELLED;
+            send_press_cancel = true;
+        } else {
+            press_stage_ = PressStage::PRESS_SUCCESS;
+            send_press_success = true;
+        }
+    } else if (press_stage_ == PressStage::PRESS_STARTED && time_since_press > press_timeout_millis_) {
         cout << "Press cancelled" << endl;
         press_stage_ = PressStage::PRESS_CANCELLED;
         send_press_cancel = true;
