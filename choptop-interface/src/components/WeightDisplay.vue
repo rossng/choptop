@@ -18,9 +18,10 @@
       </vue-circle>
     </div>
     <div class="weightText">
-      <span class="weightValue"><AnimatedInt :value="taredWeight()"/>g</span>
+      <span :class="{weightValue: true, overWeight: overWeight()}"><AnimatedInt :value="taredWeight()"/>g</span>
       <span class="weigherName">{{name.charAt(0).toUpperCase() + name.slice(1)}}</span>
-      <span class="totalWeight">{{requiredWeight}}g</span>
+      <span class="totalWeight" v-if="!currentlyTaring">{{ requiredWeight}}g</span>
+      <span class="totalWeight" v-else>Taring</span>
     </div>
   </div>
 </template>
@@ -43,19 +44,20 @@
     },
     methods: {
       handlePress(dir) {
-        if (this.state === 'steps' && this.selected) {
-          if (dir === 'down') {
-            this.handleTare();
-          }
+        if (dir === 'down') {
+          this.handleTare();
         }
       },
       handleNewWeight(weight) {
-        console.log("new weight" + weight)
         this.currentWeight = weight;
         this.$refs.circ.updateProgress(this.weightCompleteness())
       },
       handleTare() {
-        this.tareValue = this.currentWeight;
+        this.currentlyTaring = true;
+        setTimeout(() => {
+          this.tareValue = this.currentWeight;
+          this.currentlyTaring = false
+        }, 2000);
       },
       taredWeight() {
         return this.round(this.currentWeight - this.tareValue);
@@ -65,14 +67,18 @@
         return Math.round(weight / 5) * 5;
       },
       weightCompleteness() {
-        return (this.taredWeight() / this.requiredWeight) * 100 / 2;
+        return (Math.max(this.taredWeight(), 0.0) / this.requiredWeight) * 100 / 2;
+      },
+      overWeight() {
+        return this.taredWeight() > this.requiredWeight;
       }
     },
     data() {
       return {
         currentWeight: 0,
         tareValue: 0,
-        circle: null
+        circle: null,
+        currentlyTaring: false
       }
     }
 
@@ -101,6 +107,11 @@
 
   .weightText span.weightValue, .weightText span.weigherName, .weightText span.totalWeight {
     display: block;
+  }
+
+  .overWeight {
+    color: #ff0000;
+    font-weight: bold;
   }
 
 </style>
