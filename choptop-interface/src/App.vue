@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <NavButton direction="up" :pressed="latestUpdate.upPressed" :eventBus="eventBus"/>
-    <NavButton direction="left" :pressed="latestUpdate.leftPressed" :eventBus="eventBus"/>
+    <NavButton direction="up" :eventBus="eventBus"/>
+    <NavButton direction="left" :eventBus="eventBus"/>
     <div id="main">
       <WelcomeToChopTop v-if="shouldShowWelcome()"/>
       <PortionSelector v-if="shouldShowPortionSelector()" :eventBus="eventBus" :portionCount="portionCount"/>
@@ -10,8 +10,8 @@
       <!-- <WeightDisplay :eventBus="eventBus"/> -->
       <TapPosition :eventBus="eventBus"/>
     </div>
-    <NavButton direction="right" :pressed="latestUpdate.rightPressed" :eventBus="eventBus"/>
-    <NavButton direction="down" :pressed="latestUpdate.downPressed" :eventBus="eventBus"/>
+    <NavButton direction="right" :eventBus="eventBus"/>
+    <NavButton direction="down" :eventBus="eventBus"/>
   </div>
 
 </template>
@@ -31,7 +31,7 @@
   import 'vue-awesome/icons'
   import Icon from 'vue-awesome/components/Icon'
 
-  Vue.component('icon', Icon)
+  Vue.component('icon', Icon);
 
   Vue.use(VueWebsocket, "ws://localhost:8765", {
     format: 'json',
@@ -59,7 +59,6 @@
       return {
         currentScreen: "welcome",
         recipe: Recipes,
-        latestUpdate: {},
         focussed: true,
         eventBus: new Vue(),
         portionCount: 2,
@@ -122,7 +121,7 @@
           this.currentScreen = "portionSelector"
         }
       },
-      handleGlobalKeyDown: function(e) {
+      handleGlobalKeyDown: function (e) {
         switch (e.key) {
           case "ArrowUp":
             this.eventBus.$emit("pressed", 'up');
@@ -141,34 +140,64 @@
         }
       },
       handleNewData(msg) {
-        var data = msg.data
-        console.log(data)
-        parsed = {};
+        let data = msg.data;
+        console.log(data);
+        let parsed = {};
         try {
-          var parsed = JSON.parse(data)
+          parsed = JSON.parse(data)
         } catch (e) {
-          console.log("bad Json ")
+          console.log("Received invalid JSON from server");
           console.log(msg)
         }
 
+        //left
         if (parsed.event === "leftPressed") {
-          this.eventBus.$emit("pressed", 'left')
+          if (parsed.pressInfo === "start") {
+            this.eventBus.$emit("pressStart", "left")
+          } else if (parsed.pressInfo === "success") {
+            this.eventBus.$emit("pressed", 'left')
+          } else if (parsed.pressInfo === "cancel") {
+            this.eventBus.$emit("pressCancel", 'left')
+          }
         }
+
+        //right
         if (parsed.event === "rightPressed") {
-          this.eventBus.$emit("pressed", 'right')
+          if (parsed.pressInfo === "start") {
+            this.eventBus.$emit("pressStart", "right")
+          } else if (parsed.pressInfo === "success") {
+            this.eventBus.$emit("pressed", 'right')
+          } else if (parsed.pressInfo === "cancel") {
+            this.eventBus.$emit("pressCancel", 'right')
+          }
         }
+
+        //up
         if (parsed.event === "upPressed") {
-          this.eventBus.$emit("pressed", 'up')
+          if (parsed.pressInfo === "start") {
+            this.eventBus.$emit("pressStart", "up")
+          } else if (parsed.pressInfo === "success") {
+            this.eventBus.$emit("pressed", 'up')
+          } else if (parsed.pressInfo === "cancel") {
+            this.eventBus.$emit("pressCancel", 'up')
+          }
         }
+
+        //down
         if (parsed.event === "downPressed") {
-          this.eventBus.$emit("pressed", 'down')
+          if (parsed.pressInfo === "start") {
+            this.eventBus.$emit("pressStart", "down")
+          } else if (parsed.pressInfo === "success") {
+            this.eventBus.$emit("pressed", 'down')
+          } else if (parsed.pressInfo === "cancel") {
+            this.eventBus.$emit("pressCancel", 'down')
+          }
         }
         if (parsed.event === "weightReading") {
           this.eventBus.$emit("weight", parsed.value)
         }
         if (parsed.event === "position") {
           this.eventBus.$emit("pos", parsed)
-          // console.log(parsed.pos[0])
         }
       }
     }

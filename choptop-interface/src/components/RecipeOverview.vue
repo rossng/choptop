@@ -15,7 +15,6 @@
         <p>{{recipe.time}} minutes</p>
       </div>
       <div id="ingredients">
-        Ingredients
         <div id="ingredientsList">
           <div v-for="(ingredient, idx) in this.recipe.ingredients" class="ingredient">
             {{getIngredientText(ingredient)}}
@@ -38,9 +37,7 @@
       </div>
     </div>
 
-    <div v-if="state === 'instructions'">
-    	Show me how to do it.
-    </div>
+    <ChopInstructions v-if="state === 'instructions'" :extra="getStepExtra()"/>
   </div>
 
 </template>
@@ -68,38 +65,45 @@
     components: {
       StepDisplay,
       Timer,
-      WeightDisplay
+      WeightDisplay,
+      ChopInstructions,
     },
 
     methods: {
       handlePress(dir) {
-        if (this.state ==='steps' && this.selected) {
+        if (this.state === 'steps' && this.selected) {
           if (dir === 'right') {
             this.nextStep();
           } else if (dir === 'left') {
             this.prevStep();
           } else if (dir === 'down' && this.hasTimeAtCurrentStep()) {
             this.startTimer();
-          } else if (dir === 'down' && this.hasInsructions() && this.state==='steps') {
-            this.showInstruction();
-          }else if (dir === 'up')  {
+          } else if (dir === 'down' && this.hasInstructions() && this.state === 'steps') {
+            this.showInstructions();
+          } else if (dir === 'up') {
             this.$parent.upPressed();
           }
-        }else if(this.state==='instructions'){
-        	if(dir === 'up'){
-        		this.$parent.upPressed();
-        	}
+        } else if (this.state === 'instructions') {
+          if (dir === 'up') {
+            this.hideInstructions();
+          }
         }
       },
       nextStep: function () {
         if (this.selectedStep < this.recipe.steps.length - 1) {
           this.selectedStep++;
         }
+        this.stepChangeEvents();
       },
       prevStep: function () {
         if (this.selectedStep > 0) {
           this.selectedStep--;
         }
+        this.stepChangeEvents();
+      },
+      stepChangeEvents: function () {
+        this.$emit('showWeighingScale', this.stepHasWeight());
+        this.$emit('hasInstructions', this.hasInstructions());
       },
       startTimer() {
         if (this.hasTimeAtCurrentStep()) {
@@ -120,11 +124,15 @@
           this.activeTimers.push(timer)
         }
       },
-      showInstruction() {
-      	if (this.hasInsructions()){
-      		console.log("I'd want to show some pretty GIFs");
-      		this.$parent.showInstructions();
-      	}
+      showInstructions() {
+        if (this.hasInstructions()) {
+          this.$parent.showInstructions();
+        }
+      },
+      hideInstructions() {
+        if (this.hasInstructions()) {
+          this.$parent.hideInstructions();
+        }
       },
       removeWithDelay(timerName) {
         let self = this;
@@ -151,8 +159,12 @@
         return this.currentStep().time !== undefined;
       },
 
-      hasInsructions(){
-      	return this.currentStep().extra !== undefined;
+      hasInstructions() {
+        return this.currentStep().extra !== undefined;
+      },
+
+      getStepExtra() {
+        return this.currentStep().extra;
       },
 
       getStepTime() {
@@ -177,7 +189,7 @@
           divClass += " hovered"
         }
 
-        if (['ingredients', 'steps'].includes(this.state) && this.selected) {
+        if (['ingredients', 'steps', 'instructions'].includes(this.state) && this.selected) {
           divClass += " opened"
         } else if (this.activeTimers.length > 0) {
           this.activeTimers = []; //clear timers when changing recipes
@@ -200,7 +212,7 @@
         } else if (fracPart === 0.75) {
           return wholeStr + "3/4";
         }
-        return value;
+        return Math.round(value*10)/10;
       },
 
       getIngredientText(ingredient) {
@@ -283,7 +295,7 @@
     border: 1px black solid;
     height: 80%;
     width: 100%;
-    transition: background 0.3s, max-height max-width 1s;
+    transition: background 0.3s, max-height 1s, max-width 1s;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -314,7 +326,10 @@
 
   #ingredientsList {
     clear: both;
+    line-height: 26px;
+    margin-top: 25px;
     overflow: hidden;
+    font-size: 18px;
   }
 
   .recipeInner {
@@ -325,8 +340,10 @@
     padding: 20px 0;
   }
 
-  .timers {
-    background: blue;
+  #timers {
+    position: absolute;
+    right: -5px;
+    bottom: -7px;
   }
 
   .inRecipe {
