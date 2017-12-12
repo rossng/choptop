@@ -62,7 +62,14 @@
   .step {
     font-size: 36px;
     margin: 30px;
+    background: #FFE8D6;
+    padding: 0 30px 23px 24px;
+    min-width: 500px;
   }
+  
+/*  .stepWrapper{
+    background: #FFE8D6;
+  }*/
 
   .stepCount {
     font-size: 24px;
