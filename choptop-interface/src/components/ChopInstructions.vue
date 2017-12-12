@@ -1,6 +1,6 @@
 <template>
   <div class="toChop">
-    Ingreeedient
+    <img :src="getimage(extra)"/>
   </div>
 
 
@@ -15,16 +15,36 @@
     components: {
     },
 
-    props: ['steps', 'stepIdx',],
+    props: ['extra'],
     data () {
       return {
-        selected: true,
-        timeDisp:false,
       }
     },
 
     methods: {
-        
+      getimage(extra){
+        console.log(extra);
+        switch(extra){
+          case "slice onion":
+            return "/src/assets/instructions/sliceOnion.gif";
+          case "slice tomato":
+            return "/src/assets/instructions/sliceTomato.gif";
+          case "slice pepper":
+            return "/src/assets/instructions/slicePepper.gif";
+          case "chicken strips":
+            return "/src/assets/instructions/chickenStrips.gif";
+          case "chicken strips":
+            return "/src/assets/instructions/chickenStrips.gif";
+          case "slice spring onions":
+            return "/src/assets/instructions/sliceSpringOnions.gif";
+          case "broccoli":
+            return "/src/assets/instructions/cutBroccoli.gif";
+          case "slice mushrooms":
+            return "/src/assets/instructions/sliceMushrooms.gif";
+          case "slice cucumber":
+            return "/src/assets/instructions/sliceCucumber.gif";
+        }
+      },
     }
   }
 </script>
@@ -32,9 +52,9 @@
 
 
 <style scoped>
-  .step{
-      font-size: 30px;
-      margin:30px;
+  .toChop{
+    width:100%;
+    display: flex;
+    align-items: center;
   }
-  
 </style>
