@@ -22,23 +22,34 @@ using namespace std;
 
 vector<thread> threads;
 atomic<bool> executing(true);
+atomic<bool> shutting_down(false);
 mutex wiring_pi_mutex;
 
-shared_ptr<DataProcessor> data_processor;
-shared_ptr<SensorReader> sensor_reader;
+shared_ptr<DataProcessor> data_processor = nullptr;
+shared_ptr<SensorReader> sensor_reader = nullptr;
 
-shared_ptr<ChoptopServer> choptop_server;
+shared_ptr<ChoptopServer> choptop_server = nullptr;
 
 void gracefulShutdown(int s) {
+    shutting_down = true;
     executing = false;
 
-    data_processor->stopThread();
+    cout << "Stopping SensorReader" << endl;
+    if (sensor_reader != nullptr) {
+        sensor_reader->stopReading();
+    }
+    cout << "Stopping DataProcessor" << endl;
+    if (data_processor != nullptr) {
+        data_processor->stopThread();
+    }
 
+    cout << "Stopping ChoptopServer" << endl;
     if (choptop_server != nullptr) {
         choptop_server->stopServer();
     }
 
-    exit(1);
+    cout << "Goodbye!" << endl;
+    shutting_down = false;
 }
 
 void startSensors(string device) {
@@ -113,21 +124,37 @@ void startServer(uint16_t port) {
     auto lastSend = std::chrono::system_clock::now();
 
     while (executing) {
-        data_processor->press_events_.consume_all([&](auto p) {
+        data_processor->press_events_.consume_all([&](PressEvent p) {
+            stringstream message;
+            message << "{\"event\": \"";
             switch (p.location) {
                 case PressLocation::TOP:
-                    choptop_server->sendMessage("{\"event\": \"upPressed\"}");
+                    message << "upPressed";
                     break;
                 case PressLocation::BOTTOM:
-                    choptop_server->sendMessage("{\"event\": \"downPressed\"}");
+                    message << "downPressed";
                     break;
                 case PressLocation::RIGHT:
-                    choptop_server->sendMessage("{\"event\": \"rightPressed\"}");
+                    message << "rightPressed";
                     break;
                 case PressLocation::LEFT:
-                    choptop_server->sendMessage("{\"event\": \"leftPressed\"}");
+                    message << "leftPressed";
                     break;
             }
+            message << "\", \"pressInfo\": \"";
+            switch (p.stage) {
+                case PressStage::PRESS_STARTED:
+                    message << "start";
+                    break;
+                case PressStage::PRESS_SUCCESS:
+                    message << "success";
+                    break;
+                case PressStage::PRESS_CANCELLED:
+                    message << "cancel";
+                    break;
+            }
+            message << "\"}";
+            choptop_server->sendMessage(message.str());
         });
 
         data_processor->weight_.consume_all([&](auto p) {
@@ -176,18 +203,22 @@ int main(int argc, char **argv) {
 
     signal(SIGINT, gracefulShutdown);
     signal(SIGTERM, gracefulShutdown);
-    //signal(SIGKILL, gracefulShutdown);
+    //signal(SIGILL, gracefulShutdown);
     signal(SIGABRT, gracefulShutdown);
 
     cout << "Start sensors" << endl;
 
     startSensors(device);
-
     if (app.got_subcommand("serve")) {
         cout << "Serve over WebSocket" << endl;
+
         startServer(port);
     } else if (app.got_subcommand("print")) {
         cout << "Print values" << endl;
         printValues(print_sensors, print_weight, print_xy, print_presses);
     }
+
+    while (shutting_down) {}
+
+    return 0;
 }

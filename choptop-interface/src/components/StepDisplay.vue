@@ -7,9 +7,6 @@
       <div class="step">
         <p class="stepCount">Step {{stepIdx+1}} of {{steps.length}}</p>
         {{steps[stepIdx].text}}
-        <div v-if="hasWeight()" class="weigher">
-          hasWeight
-        </div>
       </div>
       <div :class="{rightArr:true, arr:true, noshow: stepIdx === steps.length - 1}">
         <icon name="angle-right" scale="4"></icon>
@@ -18,6 +15,10 @@
 
     <div v-if="hasTime()">
       Press DOWN to start timer
+    </div>
+
+    <div v-if="hasInstructions()">
+      Press DOWN to show instructions
     </div>
 
   </div>
@@ -49,9 +50,9 @@
         return this.steps[this.stepIdx].weighing === true;
       },
 
-      getWeightRequired() {
-
-      }
+      hasInstructions() {
+        return this.steps[this.stepIdx].extra !== undefined;
+      },
     }
   }
 </script>
@@ -59,7 +60,7 @@
 
 <style scoped>
   .step {
-    font-size: 30px;
+    font-size: 36px;
     margin: 30px;
   }
 

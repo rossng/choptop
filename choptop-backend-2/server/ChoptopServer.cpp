@@ -23,9 +23,26 @@ void ChoptopServer::startServer() {
 
 void ChoptopServer::stopServer() {
     running_ = false;
-    server_.stop();
-    server_thread_->join();
-    sender_thread_->join();
+    if (server_.is_listening()) {
+        server_.stop_listening();
+    }
+    for (auto &conn : connections_) {
+        websocketpp::lib::error_code ec;
+        server_.close(conn, websocketpp::close::status::going_away, "", ec);
+    }
+    if (!server_.stopped()) {
+        server_.stop();
+    }
+    if (server_thread_ != nullptr) {
+        if (server_thread_->joinable()) {
+            server_thread_->join();
+        }
+    }
+    if (sender_thread_ != nullptr) {
+        if (sender_thread_->joinable()) {
+            sender_thread_->join();
+        }
+    }
 }
 
 void ChoptopServer::onOpen(connection_hdl hdl) {

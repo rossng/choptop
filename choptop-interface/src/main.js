@@ -8,8 +8,12 @@ Vue.config.productionTip = false;
 require('../static/globalStyles.css');
 
 /* eslint-disable no-new */
-new Vue({
+let app = new Vue({
   el: '#app',
   template: '<App/>',
   components: { App }
+});
+
+window.addEventListener('keypress', function(e) {
+  app.$children[0].handleGlobalKeyDown(e);
 });
