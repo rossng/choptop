@@ -15,7 +15,8 @@
 using namespace std;
 
 DataProcessor::DataProcessor(boost::lockfree::spsc_queue<SensorData> &sensor_data) :
-        sensor_data_(sensor_data), weight_(1024), press_events_(64), position_(1024), sensor_data_despiked_(1024), running_(false) {
+        sensor_data_(sensor_data), weight_(1024), press_events_(64), position_(1024), sensor_data_despiked_(1024),
+        running_(false) {
 }
 
 DataProcessor::~DataProcessor() {
@@ -55,45 +56,32 @@ void DataProcessor::consume() {
 
         sensor_data_.consume_all([&](SensorData sd) {
             // Hampel filter to remove spikes
-            sd.top_left     = hampel(sd.top_left, top_left_window1, top_left_window2, top_left_idx);
-            sd.top_right    = hampel(sd.top_right, top_right_window1, top_right_window2, top_right_idx);
+            sd.top_left = hampel(sd.top_left, top_left_window1, top_left_window2, top_left_idx);
+            sd.top_right = hampel(sd.top_right, top_right_window1, top_right_window2, top_right_idx);
             sd.bottom_right = hampel(sd.bottom_right, bottom_right_window1, bottom_right_window2, bottom_right_idx);
-            sd.bottom_left  = hampel(sd.bottom_left, bottom_left_window1, bottom_left_window2, bottom_left_idx);
+            sd.bottom_left = hampel(sd.bottom_left, bottom_left_window1, bottom_left_window2, bottom_left_idx);
 
             sensor_data_despiked_.push({sd.top_left, sd.top_right, sd.bottom_right, sd.bottom_left});
 
             // Exponential average to smooth
-            top_left_smooth_        = sd.top_left;//= expAvg(sd.top_left, top_left_smooth_, w);
-            top_right_smooth_       = sd.top_right;//= expAvg(sd.top_right, top_right_smooth_, w);
-            bottom_right_smooth_    = sd.bottom_right;//= expAvg(sd.bottom_right, bottom_right_smooth_, w);
-            bottom_left_smooth_     = sd.bottom_left;//= expAvg(sd.bottom_left, bottom_left_smooth_, w);
+            top_left_smooth_ = sd.top_left;//= expAvg(sd.top_left, top_left_smooth_, w);
+            top_right_smooth_ = sd.top_right;//= expAvg(sd.top_right, top_right_smooth_, w);
+            bottom_right_smooth_ = sd.bottom_right;//= expAvg(sd.bottom_right, bottom_right_smooth_, w);
+            bottom_left_smooth_ = sd.bottom_left;//= expAvg(sd.bottom_left, bottom_left_smooth_, w);
             updated = true;
         });
 
         if (updated) {
-            float weight    = top_left_smooth_ + top_right_smooth_ + bottom_left_smooth_ + bottom_right_smooth_;
-            weight_slow_    = expAvg(weight, weight_slow_, lag_weight);
-            float y_top     = min(max((top_left_smooth_ + top_right_smooth_) / weight, 0.f), 1.0f);
-            float x_right   = min(max((top_right_smooth_ + bottom_right_smooth_) / weight, 0.f), 1.0f);
-            float y_bottom  = 1.0f - min(max((bottom_left_smooth_ + bottom_right_smooth_) / weight, 0.f), 1.0f);
-            float x_left    = 1.0f - min(max((top_left_smooth_ + bottom_left_smooth_) / weight, 0.f), 1.0f);
-            auto y          = (y_top + y_bottom) / 2.0f;
-            auto x          = (x_left + x_right) / 2.0f;
-            edgeDetect(weight, edge_threshold_);
-            if (send_press_) {
-                if (x < 0.2 && y > 0.3 && y < 0.7) press_events_.push({x, y, PressLocation::LEFT});
-                else if (x > 0.3 && x < 0.7 && y > 0.8) press_events_.push({x, y, PressLocation::TOP});
-                else if (x > 0.8 && y < 0.7 && y > 0.3) press_events_.push({x, y, PressLocation::RIGHT});
-                else if (x < 0.7 && x > 0.3 && y < 0.2) press_events_.push({x, y, PressLocation::BOTTOM});
-                send_press_     = false;
-                press_started_  = true;
-            }
+            float weight = top_left_smooth_ + top_right_smooth_ + bottom_left_smooth_ + bottom_right_smooth_;
+            weight_slow_ = expAvg(weight, weight_slow_, lag_weight);
+            float y_top = min(max((top_left_smooth_ + top_right_smooth_) / weight, 0.f), 1.0f);
+            float x_right = min(max((top_right_smooth_ + bottom_right_smooth_) / weight, 0.f), 1.0f);
+            float y_bottom = 1.0f - min(max((bottom_left_smooth_ + bottom_right_smooth_) / weight, 0.f), 1.0f);
+            float x_left = 1.0f - min(max((top_left_smooth_ + bottom_left_smooth_) / weight, 0.f), 1.0f);
+            auto y = (y_top + y_bottom) / 2.0f;
+            auto x = (x_left + x_right) / 2.0f;
 
-            if (start_weight > weight && press_started_) {
-                start_weight    = 0;
-                press_stopped_  = true;
-                cout << "press stopped" << endl;
-            }
+            detectPress(weight, edge_threshold_, x, y);
 
             weight_.push(weight);
             position_.push(make_pair(x, y));
@@ -106,17 +94,49 @@ float DataProcessor::expAvg(float sample, float avg, float w) {
     return w * sample + (1.f - w) * avg;
 }
 
-void DataProcessor::edgeDetect(float sample, float threshold) {
+void DataProcessor::detectPress(float sample, float threshold, float x, float y) {
     float diff = sample - weight_slow_;
-    if (diff >= threshold && previous_diff_ < threshold) {
-        edge_detected_      = true;
-        press_stopped_      = false;
-        start_weight        = sample;
-    } else if(diff < threshold && edge_detected_){
-        edge_detected_  = false;
-        press_started_  = false;
-        send_press_     = true;
+
+    bool send_press_start = false;
+    bool send_press_success = false;
+
+    if (press_stage_ == PressStage::NO_PRESS && diff >= threshold && previous_diff_ < threshold) {
+        up_edge_detected_ = true;
+        start_weight = sample;
+    } else if (diff < threshold && up_edge_detected_) {
+        press_stage_ = PressStage::PRESS_STARTED;
+        up_edge_detected_ = false;
+        send_press_start = true;
+    } else if (press_stage_ == PressStage::PRESS_STARTED && diff <= -threshold && previous_diff_ > -threshold) {
+        down_edge_detected_ = true;
+    } else if (press_stage_ == PressStage::PRESS_STARTED && diff > -threshold && down_edge_detected_) {
+        press_stage_ = PressStage::PRESS_SUCCESS;
+        down_edge_detected_ = false;
+        send_press_success = true;
     }
+
+    if (send_press_start) {
+        if (x < 0.2 && y > 0.3 && y < 0.7)
+            press_events_.push({x, y, PressLocation::LEFT, PressStage::PRESS_STARTED});
+        else if (x > 0.3 && x < 0.7 && y > 0.8)
+            press_events_.push({x, y, PressLocation::TOP, PressStage::PRESS_STARTED});
+        else if (x > 0.8 && y < 0.7 && y > 0.3)
+            press_events_.push({x, y, PressLocation::RIGHT, PressStage::PRESS_STARTED});
+        else if (x < 0.7 && x > 0.3 && y < 0.2)
+            press_events_.push({x, y, PressLocation::BOTTOM, PressStage::PRESS_STARTED});
+    }
+
+    if (send_press_success) {
+        if (x < 0.2 && y > 0.3 && y < 0.7) press_events_.push({x, y, PressLocation::LEFT, PressStage::PRESS_SUCCESS});
+        else if (x > 0.3 && x < 0.7 && y > 0.8)
+            press_events_.push({x, y, PressLocation::TOP, PressStage::PRESS_SUCCESS});
+        else if (x > 0.8 && y < 0.7 && y > 0.3)
+            press_events_.push({x, y, PressLocation::RIGHT, PressStage::PRESS_SUCCESS});
+        else if (x < 0.7 && x > 0.3 && y < 0.2)
+            press_events_.push({x, y, PressLocation::BOTTOM, PressStage::PRESS_SUCCESS});
+        press_stage_ = PressStage::NO_PRESS;
+    }
+
     previous_diff_ = diff;
 }
 

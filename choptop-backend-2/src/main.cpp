@@ -124,21 +124,39 @@ void startServer(uint16_t port) {
     auto lastSend = std::chrono::system_clock::now();
 
     while (executing) {
-        data_processor->press_events_.consume_all([&](auto p) {
+        data_processor->press_events_.consume_all([&](PressEvent p) {
+            stringstream message;
+            message << "{\"event\": \"";
             switch (p.location) {
                 case PressLocation::TOP:
-                    choptop_server->sendMessage("{\"event\": \"upPressed\"}");
+                    message << "upPressed";
                     break;
                 case PressLocation::BOTTOM:
-                    choptop_server->sendMessage("{\"event\": \"downPressed\"}");
+                    message << "downPressed";
                     break;
                 case PressLocation::RIGHT:
-                    choptop_server->sendMessage("{\"event\": \"rightPressed\"}");
+                    message << "rightPressed";
                     break;
                 case PressLocation::LEFT:
-                    choptop_server->sendMessage("{\"event\": \"leftPressed\"}");
+                    message << "leftPressed";
                     break;
             }
+            message << "\", \"pressInfo\": \"";
+            switch (p.stage) {
+                case PressStage::PRESS_STARTED:
+                    message << "start";
+                    break;
+                case PressStage::PRESS_SUCCESS:
+                    message << "success";
+                    break;
+                case PressStage::PRESS_CANCELLED:
+                    message << "cancel";
+                    break;
+                case PressStage::NO_PRESS:
+                    return;
+            }
+            message << "\"}";
+            choptop_server->sendMessage(message.str());
         });
 
         data_processor->weight_.consume_all([&](auto p) {
