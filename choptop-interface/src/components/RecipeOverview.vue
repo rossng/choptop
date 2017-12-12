@@ -305,7 +305,8 @@
   }
 
   .recipeOverview.hovered {
-    background: #fce8ff;
+    /*background: #fce8ff;*/
+    background: #FFE8D6;
     transition: background 0.3s;
   }
 
@@ -335,7 +336,8 @@
   }
 
   .recipeInner {
-    background: #fce8ff;
+    /*background: #fce8ff;*/
+    background: #FFE8D6;
     width: 740px;
     margin: 10px;
     overflow: hidden;
