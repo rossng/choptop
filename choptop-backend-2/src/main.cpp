@@ -32,13 +32,19 @@ shared_ptr<ChoptopServer> choptop_server;
 void gracefulShutdown(int s) {
     executing = false;
 
-    data_processor->stopThread();
+    cout << "Stopping SensorReader" << endl;
+    if (sensor_reader != nullptr) {
+        sensor_reader->stopReading();
+    }
+    cout << "Stopping DataProcessor" << endl;
+    if (data_processor != nullptr) {
+        data_processor->stopThread();
+    }
 
+    cout << "Stopping ChoptopServer" << endl;
     if (choptop_server != nullptr) {
         choptop_server->stopServer();
     }
-
-    exit(1);
 }
 
 void startSensors(string device) {
@@ -176,7 +182,7 @@ int main(int argc, char **argv) {
 
     signal(SIGINT, gracefulShutdown);
     signal(SIGTERM, gracefulShutdown);
-    //signal(SIGKILL, gracefulShutdown);
+    //signal(SIGILL, gracefulShutdown);
     signal(SIGABRT, gracefulShutdown);
 
     cout << "Start sensors" << endl;
