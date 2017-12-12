@@ -5,26 +5,44 @@
 <script>
   export default {
     name: 'nav-button',
-    props: ['pressed', 'direction', 'eventBus'],
-    watch: {
-      pressed: function (newVal, oldVal) {
-        console.log('Pressed for ' + this.direction + ' changed: ', newVal, ' | was: ', oldVal)
-      }
+    props: ['direction', 'eventBus'],
+    created(){
+      this.eventBus.$on("pressed", this.handlePressed);
+      this.eventBus.$on("pressStart", this.handlePressStart);
+      this.eventBus.$on("pressCancel", this.handlePressCancel);
     },
 
     data() {
       return {
         pressStart: 0,
+        pressed: false,
+        pressState: "none"
 
       }
     },
 
     methods: {
       getClass: function () {
-        return "nav-button " + "nav-button-" + this.direction + " pressed-" + this.pressed
+        return "nav-button " + "nav-button-" + this.direction + " pressed-" + this.pressState
       },
       doAction() {
         this.eventBus.$emit("pressed", this.direction)
+      },
+      handlePressed(dir){
+        if(dir != this.direction) return;
+        this.pressState = "success"
+        console.log("pressed " + dir)
+      },
+      handlePressStart(dir){
+        if(dir != this.direction) return;
+        this.pressState = "start"
+        console.log("press start " + dir)
+
+      },
+      handlePressCancel(dir){
+        if(dir != this.direction) return;
+        this.pressState = "cancel"
+        console.log("press cancel")
       }
     },
 
@@ -106,14 +124,18 @@
     content: '▼';
   }
 
-  .pressed-true {
+  .pressed-start {
     /*animation-name: buttonPress;*/
     animation-duration: 2s;
-    /*background-color: green;*/
+    background-color: green;
   }
 
-  .pressed-false {
+  .pressed-cancel{
+    background:red;
+  }
+
+  .pressed-success {
     /*background:green;*/
-    /*background:white;*/
+    background:white;
   }
 </style>
