@@ -190,9 +190,9 @@ int main(int argc, char **argv) {
     cout << "Start sensors" << endl;
 
     startSensors(device);
-
     if (app.got_subcommand("serve")) {
         cout << "Serve over WebSocket" << endl;
+
         startServer(port);
     } else if (app.got_subcommand("print")) {
         cout << "Print values" << endl;
