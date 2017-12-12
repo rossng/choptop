@@ -211,7 +211,7 @@
 
 			},
 			"steps":[
-				{"text":"Chop the onions finely.","extra":"slice onion"},
+				{"text":"Chop the onions finely.","extra":"slice onion", "weighing":true, "ingredientName":"medium onion"},
 				{"text":"Cut chicken into thin strips","extra":"chicken strips"},
 				{"text":"Slice the mushrooms.","extra":"slice mushrooms"},
 				{"text":"Grate the cheese.", "weightRequired": "300"},
