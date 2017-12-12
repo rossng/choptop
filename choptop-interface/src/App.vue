@@ -165,14 +165,14 @@
   @import url('https://fonts.googleapis.com/css?family=Fredoka+One|Roboto');
 
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
+    color: #4e3726;
     height: 100%;
     width: 100%;
-    background: #c7f3ff;
+    background: #7cff70;
   }
 
   #main {
