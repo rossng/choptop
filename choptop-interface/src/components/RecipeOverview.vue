@@ -15,7 +15,6 @@
         <p>{{recipe.time}} minutes</p>
       </div>
       <div id="ingredients">
-        Ingredients
         <div id="ingredientsList">
           <div v-for="(ingredient, idx) in this.recipe.ingredients" class="ingredient">
             {{getIngredientText(ingredient)}}
@@ -321,7 +320,10 @@
 
   #ingredientsList {
     clear: both;
+    line-height: 26px;
+    margin-top: 25px;
     overflow: hidden;
+    font-size: 18px;
   }
 
   .recipeInner {
