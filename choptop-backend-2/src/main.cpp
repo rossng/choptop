@@ -11,6 +11,7 @@
 #include <mutex>
 #include "ChoptopServer.h"
 #include <boost/format.hpp>
+#include <stdio.h>
 
 using namespace std;
 
@@ -63,10 +64,26 @@ void startSensors(string device) {
     data_processor->startThread();
 }
 
+void labelChops(chrono::time_point<chrono::steady_clock> startTime){
+    while(true){
+        char c = getchar();
+        if(c != EOF){
+            auto now = std::chrono::steady_clock::now();
+            auto timestamp = chrono::duration_cast<chrono::milliseconds>(now - startTime).count();            
+            cout << "CHOP: " << timestamp << endl;
+        }
+    }
+}
+
 void printValues(const vector<int> &print_sensors, bool print_weight, bool print_xy, bool print_presses) {
     static int step = 0;
-
+    auto start = std::chrono::steady_clock::now();
+    auto labelThread = new thread(&labelChops, start);
+    
     while (executing) {
+
+
+
         if (print_weight) {
             data_processor->weight_.consume_all([](float weight) {
                 printf("Weight: %.2fg\n", weight);
@@ -99,6 +116,9 @@ void printValues(const vector<int> &print_sensors, bool print_weight, bool print
         }
 
         data_processor->sensor_data_despiked_.consume_all([&](SensorData sd) {
+            auto now = std::chrono::steady_clock::now();
+            auto duration = chrono::duration_cast<chrono::milliseconds>(now-start).count();
+            cout << "Time: " << duration << endl;
             if (std::find(print_sensors.begin(), print_sensors.end(), 0) != print_sensors.end()) {
                 printf("Sensor 0: %.2f\n", sd.top_left);
             }
@@ -116,6 +136,8 @@ void printValues(const vector<int> &print_sensors, bool print_weight, bool print
         this_thread::sleep_for(50ms);
     }
 }
+
+
 
 
 void startServer(uint16_t port) {

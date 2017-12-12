@@ -102,32 +102,32 @@ void DataProcessor::detectPress(float sample, float x, float y) {
     bool send_press_cancel = false;
 
     if (press_stage_ == PressStage::PRESS_CANCELLED && diff >= press_threshold_ && previous_diff_ < press_threshold_) {
-        cout << "Up edge started" << endl;
+        //cout << "Up edge started" << endl;
         up_edge_detected_ = true;
     } else if (press_stage_ == PressStage::PRESS_CANCELLED && diff < press_threshold_ && up_edge_detected_) {
-        cout << "Up edge ended" << endl;
+        //cout << "Up edge ended" << endl;
         press_stage_ = PressStage::PRESS_STARTED;
         up_edge_detected_ = false;
         press_started_ = chrono::steady_clock::now();
         send_press_start = true;
     } else if (press_stage_ == PressStage::PRESS_STARTED && diff <= release_threshold_ &&
                previous_diff_ > release_threshold_) {
-        cout << "Down edge started" << endl;
+        //cout << "Down edge started" << endl;
         down_edge_detected_ = true;
     } else if (press_stage_ == PressStage::PRESS_STARTED && diff > release_threshold_ && down_edge_detected_) {
-        cout << "Down edge ended" << endl;
+        //cout << "Down edge ended" << endl;
         press_stage_ = PressStage::PRESS_SUCCESS;
         down_edge_detected_ = false;
         send_press_success = true;
     } else if (press_stage_ == PressStage::PRESS_STARTED &&
                chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - press_started_).count() > press_timeout_millis_) {
-        cout << "Press cancelled" << endl;
+        //cout << "Press cancelled" << endl;
         press_stage_ = PressStage::PRESS_CANCELLED;
         send_press_cancel = true;
     }
 
     if (send_press_start) {
-        cout << "Press start" << endl;
+        //cout << "Press start" << endl;
         if (x < 0.2 && y > 0.3 && y < 0.7)
             press_location_ = PressLocation::LEFT;
         else if (x > 0.3 && x < 0.7 && y > 0.8)
@@ -140,13 +140,13 @@ void DataProcessor::detectPress(float sample, float x, float y) {
     }
 
     if (send_press_success) {
-        cout << "Press success" << endl;
+        //cout << "Press success" << endl;
         press_events_.push({x, y, press_location_, PressStage::PRESS_SUCCESS});
         press_stage_ = PressStage::PRESS_CANCELLED;
     }
 
     if (send_press_cancel) {
-        cout << "Press cancelled" << endl;
+        //cout << "Press cancelled" << endl;
         press_events_.push({x, y, press_location_, PressStage::PRESS_CANCELLED});
     }
 
