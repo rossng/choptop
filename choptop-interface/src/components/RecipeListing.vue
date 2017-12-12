@@ -2,6 +2,7 @@
   <div class="recipeOverviewListingOuter">
     <div :class="{arr:true, upArr:true}">
       <icon name="angle-up" scale="4"></icon>
+      <span class="buttonText">Back</span>
     </div>
     <div class="recipeOverviewListing">
       <div v-if="currentState === 'thumbnails'" :class="{arr:true, leftarr:true}">
@@ -13,14 +14,21 @@
                       :selected="chosenRecipeIndex === index"
                       :portions="portionCount"
                       @showWeighingScale="setShowWeighingScale"
-                      @hasInstructions="setHasInstructions" />
+                      @hasInstructions="setHasInstructions" 
+                      @hasTimer="setHasTimer" />
       <div v-if="currentState === 'thumbnails'" :class="{rightArr:true, arr:true}">
         <icon name="angle-right" scale="4"></icon>
       </div>
     </div>
-    <div :class="{arr:true, downArr:true, hidden: currentState === 'steps' && !hasInstructions && !showWeighingScale || currentState === 'instructions'}">
-      <div v-if="showWeighingScale" class="tareButton">Tare</div>
-      <icon v-else name="angle-down" scale="4"></icon>
+    <div :class="{arr:true, downArr:true, hidden: currentState === 'steps' && !hasInstructions && !showWeighingScale && !hasTimer || currentState === 'instructions'}">
+        <span v-if="currentState =='ingredients'" class="buttonText">Start Cooking!</span>
+        <span v-else-if="currentState == 'thumbnails'" class="buttonText">Select Recipe</span>
+        <span v-else-if="hasInstructions" class="buttonText">Extra Instructions</span>
+        <span v-else-if="showWeighingScale" class="buttonText tareButton">Reset Scales</span>
+        <span v-else-if="hasTimer" class="buttonText">Start Timer</span>
+        <span v-else class="buttonText"> </span>
+        <icon name="angle-down" scale="4"></icon>
+      </span>
     </div>
   </div>
 </template>
@@ -84,6 +92,9 @@
       },
       setHasInstructions: function (enabled) {
         this.hasInstructions = enabled;
+      },
+      setHasTimer: function(enabled){
+        this.hasTimer = enabled;
       }
     },
 
@@ -93,7 +104,8 @@
         chosenRecipeIndex: 0,
         currentState: 'thumbnails', // one of ['thumbnails', 'ingredients', 'steps', 'instructions']
         showWeighingScale: false,
-        hasInstructions: false
+        hasInstructions: false,
+        hasTimer:false
       }
     }
   }
@@ -124,11 +136,19 @@
   }
 
   .arr {
-    font-size: 100px;
     opacity: 1;
+    display: block;
+    height: 68px;
     transition: 0.5s;
-    display: inline-flex;
-    height: 35px;
+  }
+
+  .arr.downArr.hidden{
+    transition: 0s;
+  }
+
+  .arr .fa-icon{
+    margin-bottom: -17px;
+
   }
 
   .arr.hidden{
@@ -144,10 +164,16 @@
     margin-top: -21px;
   }
 
-  .tareButton {
+ /* .tareButton {
     font-family: 'Fredoka One', cursive;
     font-size: 26px;
     margin-top: -10px;
+  }*/
+
+  .buttonText{
+    margin:5px;
+    font-size:20px;
+    display:block;
   }
 
 </style>

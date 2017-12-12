@@ -71,6 +71,7 @@
 
     methods: {
       handlePress(dir) {
+      	this.stepChangeEvents();
         if (this.state === 'steps' && this.selected) {
           if (dir === 'right') {
             this.nextStep();
@@ -104,6 +105,7 @@
       stepChangeEvents: function () {
         this.$emit('showWeighingScale', this.stepHasWeight());
         this.$emit('hasInstructions', this.hasInstructions());
+        this.$emit('hasTimer', this.hasTimeAtCurrentStep());
       },
       startTimer() {
         if (this.hasTimeAtCurrentStep()) {
@@ -293,7 +295,7 @@
     overflow: hidden;
     margin: 10px;
     border: 1px black solid;
-    height: 80%;
+    height: 93%;
     width: 100%;
     transition: background 0.3s, max-height 1s, max-width 1s;
     display: flex;

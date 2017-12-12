@@ -12,15 +12,6 @@
         <icon name="angle-right" scale="4"></icon>
       </div>
     </div>
-
-    <div v-if="hasTime()">
-      Press DOWN to start timer
-    </div>
-
-    <div v-if="hasInstructions()">
-      Press DOWN to show instructions
-    </div>
-
   </div>
 
 
