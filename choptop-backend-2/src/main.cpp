@@ -152,8 +152,6 @@ void startServer(uint16_t port) {
                 case PressStage::PRESS_CANCELLED:
                     message << "cancel";
                     break;
-                case PressStage::NO_PRESS:
-                    return;
             }
             message << "\"}";
             choptop_server->sendMessage(message.str());

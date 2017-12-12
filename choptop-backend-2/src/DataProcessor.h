@@ -12,7 +12,7 @@ enum class PressLocation {
 };
 
 enum class PressStage {
-    PRESS_STARTED, PRESS_SUCCESS, PRESS_CANCELLED, NO_PRESS
+    PRESS_STARTED, PRESS_SUCCESS, PRESS_CANCELLED
 };
 
 struct PressEvent {
@@ -50,11 +50,11 @@ private:
     float lag_weight = 0.8;
     float previous_diff_ = 0;
     const float press_threshold_ = 150;
-    const float release_threshold_ = -100;
+    const float release_threshold_ = -50;
     float weight_slow_ = 0;
     bool up_edge_detected_ = false;
     bool down_edge_detected_ = false;
-    PressStage press_stage_ = PressStage::NO_PRESS;
+    PressStage press_stage_ = PressStage::PRESS_CANCELLED;
     PressLocation press_location_ = PressLocation::TOP;
     std::chrono::time_point<std::chrono::steady_clock> press_started_;
 

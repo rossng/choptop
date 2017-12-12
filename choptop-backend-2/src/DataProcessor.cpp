@@ -101,22 +101,27 @@ void DataProcessor::detectPress(float sample, float x, float y) {
     bool send_press_success = false;
     bool send_press_cancel = false;
 
-    if (press_stage_ == PressStage::NO_PRESS && diff >= press_threshold_ && previous_diff_ < press_threshold_) {
+    if (press_stage_ == PressStage::PRESS_CANCELLED && diff >= press_threshold_ && previous_diff_ < press_threshold_) {
+        cout << "Up edge started" << endl;
         up_edge_detected_ = true;
-    } else if (diff < press_threshold_ && up_edge_detected_) {
+    } else if (press_stage_ == PressStage::PRESS_CANCELLED && diff < press_threshold_ && up_edge_detected_) {
+        cout << "Up edge ended" << endl;
         press_stage_ = PressStage::PRESS_STARTED;
         up_edge_detected_ = false;
         press_started_ = chrono::steady_clock::now();
         send_press_start = true;
     } else if (press_stage_ == PressStage::PRESS_STARTED && diff <= release_threshold_ &&
                previous_diff_ > release_threshold_) {
+        cout << "Down edge started" << endl;
         down_edge_detected_ = true;
     } else if (press_stage_ == PressStage::PRESS_STARTED && diff > release_threshold_ && down_edge_detected_) {
+        cout << "Down edge ended" << endl;
         press_stage_ = PressStage::PRESS_SUCCESS;
         down_edge_detected_ = false;
         send_press_success = true;
     } else if (press_stage_ == PressStage::PRESS_STARTED &&
                chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - press_started_).count() > 2000) {
+        cout << "Press cancelled" << endl;
         press_stage_ = PressStage::PRESS_CANCELLED;
         send_press_cancel = true;
     }
@@ -137,7 +142,7 @@ void DataProcessor::detectPress(float sample, float x, float y) {
     if (send_press_success) {
         cout << "Press success" << endl;
         press_events_.push({x, y, press_location_, PressStage::PRESS_SUCCESS});
-        press_stage_ = PressStage::NO_PRESS;
+        press_stage_ = PressStage::PRESS_CANCELLED;
     }
 
     if (send_press_cancel) {
