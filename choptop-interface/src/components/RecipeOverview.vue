@@ -93,10 +93,19 @@
         if (this.selectedStep < this.recipe.steps.length - 1) {
           this.selectedStep++;
         }
+        this.stepChangeEvents();
       },
       prevStep: function () {
         if (this.selectedStep > 0) {
           this.selectedStep--;
+        }
+        this.stepChangeEvents();
+      },
+      stepChangeEvents: function () {
+        if (this.stepHasWeight()) {
+          this.$emit('showWeighingScale', true)
+        } else {
+          this.$emit('showWeighingScale', false);
         }
       },
       startTimer() {
@@ -289,7 +298,7 @@
     border: 1px black solid;
     height: 80%;
     width: 100%;
-    transition: background 0.3s, max-height max-width 1s;
+    transition: background 0.3s, max-height 1s, max-width 1s;
     display: flex;
     flex-direction: row;
     align-items: center;

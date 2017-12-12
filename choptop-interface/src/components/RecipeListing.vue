@@ -11,13 +11,17 @@
                       v-if="currentState === 'thumbnails' || chosenRecipeIndex === index" :recipe="rec"
                       :state="currentState"
                       :selected="chosenRecipeIndex === index"
-                      :portions="portionCount"/>
+                      :portions="portionCount"
+                      @showWeighingScale="setShowWeighingScale"/>
       <div v-if="currentState === 'thumbnails'" :class="{rightArr:true, arr:true}">
         <icon name="angle-right" scale="4"></icon>
       </div>
     </div>
-    <div v-if="currentState !== 'steps'" :class="{arr:true, downArr:true}">
+    <div v-if="currentState !== 'steps'" class="{arr:true, downArr:true}">
       <icon name="angle-down" scale="4"></icon>
+    </div>
+    <div v-else-if="showWeighingScale" class="tareButton">
+      Tare
     </div>
   </div>
 </template>
@@ -75,6 +79,9 @@
       },
       previousRecipe() {
         this.chosenRecipeIndex = (this.chosenRecipeIndex - 1 + this.recipes.length) % this.recipes.length //correct modulo
+      },
+      setShowWeighingScale: function (enabled) {
+        this.showWeighingScale = enabled;
       }
     },
 
@@ -83,6 +90,7 @@
       return {
         chosenRecipeIndex: 0,
         currentState: 'thumbnails', // one of ['thumbnails', 'ingredients', 'steps', 'instructions']
+        showWeighingScale: false
       }
     }
   }
@@ -126,6 +134,11 @@
 
   .downArr svg {
     margin-top: -21px;
+  }
+
+  .tareButton {
+    font-family: 'Fredoka One', cursive;
+    font-size: 26px;
   }
 
 </style>
