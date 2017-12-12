@@ -39,6 +39,10 @@
         console.log("press start " + dir)
 
       },
+      handlePressNone(dir){
+        if(dir != this.direction) return;
+        this.pressState = "none"
+      },
       handlePressCancel(dir){
         if(dir != this.direction) return;
         this.pressState = "cancel"
@@ -52,22 +56,6 @@
 
 
 <style scoped>
-
-  @keyframes buttonPress {
-    0% {
-      background-color: green;
-    }
-    70% {
-      background-color: orange;
-    }
-    95% {
-      background-color: red;
-    }
-    100% {
-      background-color: green;
-    }
-  }
-
   .nav-button {
     color: white;
     background: none;
@@ -125,17 +113,67 @@
   }
 
   .pressed-start {
-    /*animation-name: buttonPress;*/
-    animation-duration: 2s;
+    animation-name: buttonPress;
     background-color: green;
+    animation-duration: 5s;
+  }
+
+  /*.pressedCancelNone{
+    animation-name: pressCancelNone;
+    animation-duration: 1s;
+  */
+
+  .nav-button{
+    background:lightgreen;
   }
 
   .pressed-cancel{
-    background:red;
+    transition: 0s;
+    animation-name: pressCancel;
+    animation-duration: 1s;
   }
 
   .pressed-success {
-    /*background:green;*/
-    background:white;
+    animation-name: pressSuccess;
+    animation-duration: 0.5s;
   }
+
+  @keyframes buttonPress {
+    0% {
+      background-color: lightgreen;
+    }
+    100% {
+      background-color: green;
+    }
+  }
+
+  @keyframes pressCancel {
+    0% {
+      background-color: red;
+    }
+
+    40% {
+      background-color: red;
+    }
+
+    100% {
+      background-color: lightgreen;
+    }
+  }
+
+  @keyframes pressSuccess {
+    0% {
+      background-color: green;
+    }
+
+    40% {
+      background-color: green;
+    }
+
+    100% {
+      background-color: lightgreen;
+    }
+  }
+
+
 </style>

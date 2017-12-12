@@ -102,11 +102,8 @@
         this.stepChangeEvents();
       },
       stepChangeEvents: function () {
-        if (this.stepHasWeight()) {
-          this.$emit('showWeighingScale', true)
-        } else {
-          this.$emit('showWeighingScale', false);
-        }
+        this.$emit('showWeighingScale', this.stepHasWeight());
+        this.$emit('hasInstructions', this.hasInstructions());
       },
       startTimer() {
         if (this.hasTimeAtCurrentStep()) {

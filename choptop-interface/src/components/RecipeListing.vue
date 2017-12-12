@@ -12,16 +12,15 @@
                       :state="currentState"
                       :selected="chosenRecipeIndex === index"
                       :portions="portionCount"
-                      @showWeighingScale="setShowWeighingScale"/>
+                      @showWeighingScale="setShowWeighingScale"
+                      @hasInstructions="setHasInstructions" />
       <div v-if="currentState === 'thumbnails'" :class="{rightArr:true, arr:true}">
         <icon name="angle-right" scale="4"></icon>
       </div>
     </div>
-    <div v-if="currentState !== 'steps'" class="{arr:true, downArr:true}">
-      <icon name="angle-down" scale="4"></icon>
-    </div>
-    <div v-else-if="showWeighingScale" class="tareButton">
-      Tare
+    <div :class="{arr:true, downArr:true, hidden: currentState === 'steps' && !hasInstructions && !showWeighingScale || currentState === 'instructions'}">
+      <div v-if="showWeighingScale" class="tareButton">Tare</div>
+      <icon v-else name="angle-down" scale="4"></icon>
     </div>
   </div>
 </template>
@@ -82,6 +81,9 @@
       },
       setShowWeighingScale: function (enabled) {
         this.showWeighingScale = enabled;
+      },
+      setHasInstructions: function (enabled) {
+        this.hasInstructions = enabled;
       }
     },
 
@@ -90,7 +92,8 @@
       return {
         chosenRecipeIndex: 0,
         currentState: 'thumbnails', // one of ['thumbnails', 'ingredients', 'steps', 'instructions']
-        showWeighingScale: false
+        showWeighingScale: false,
+        hasInstructions: false
       }
     }
   }
@@ -127,6 +130,10 @@
     height: 35px;
   }
 
+  .arr.hidden{
+    opacity:0;
+  }
+
   .upArr svg {
     margin-top: -17px;
 
@@ -139,6 +146,7 @@
   .tareButton {
     font-family: 'Fredoka One', cursive;
     font-size: 26px;
+    margin-top: -10px;
   }
 
 </style>
