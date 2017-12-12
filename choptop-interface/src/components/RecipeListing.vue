@@ -16,7 +16,7 @@
         <icon name="angle-right" scale="4"></icon>
       </div>
     </div>
-    <div v-if="currentState !== 'steps'" :class="{arr:true, downArr:true}">
+    <div :class="{arr:true, downArr:true, hidden: currentState == 'steps' || currentState == 'instructions'}">
       <icon name="angle-down" scale="4"></icon>
     </div>
   </div>
@@ -114,6 +114,10 @@
     transition: 0.5s;
     display: inline-flex;
     height: 35px;
+  }
+
+  .arr.hidden{
+    opacity:0;
   }
 
   .upArr svg {
