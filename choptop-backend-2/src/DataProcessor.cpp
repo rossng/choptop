@@ -86,8 +86,6 @@ void DataProcessor::consume() {
                 else if (x > 0.3 && x < 0.7 && y > 0.8) press_events_.push({x, y, PressLocation::TOP});
                 else if (x > 0.8 && y < 0.7 && y > 0.3) press_events_.push({x, y, PressLocation::RIGHT});
                 else if (x < 0.7 && x > 0.3 && y < 0.2) press_events_.push({x, y, PressLocation::BOTTOM});
-                send_press_ = false;
-                else if (x < 0.7 && x > 0.3 && y < 0.2) press_events_.push({x, y, PressLocation::BOTTOM});
                 send_press_     = false;
                 press_started_  = true;
             }
@@ -111,11 +109,6 @@ float DataProcessor::expAvg(float sample, float avg, float w) {
 
 void DataProcessor::edgeDetect(float sample, float threshold) {
     float diff = sample - weight_slow_;
-    if (diff >= threshold && previous_diff_ < threshold) {
-        press_started_ = true;
-    } else if(diff < threshold && press_started_){
-        press_started_ = false;
-        send_press_ = true;
     if (diff >= threshold && previous_diff_ < threshold) {
         edge_detected_      = true;
         press_stopped_      = false;
