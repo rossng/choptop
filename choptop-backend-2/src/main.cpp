@@ -45,6 +45,8 @@ void gracefulShutdown(int s) {
     if (choptop_server != nullptr) {
         choptop_server->stopServer();
     }
+
+    cout << "Goodbye!" << endl;
 }
 
 void startSensors(string device) {
