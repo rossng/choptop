@@ -15,7 +15,6 @@
         <p>{{recipe.time}} minutes</p>
       </div>
       <div id="ingredients">
-        Ingredients
         <div id="ingredientsList">
           <div v-for="(ingredient, idx) in this.recipe.ingredients" class="ingredient">
             {{getIngredientText(ingredient)}}
@@ -38,9 +37,7 @@
       </div>
     </div>
 
-    <div v-if="state === 'instructions'">
-    	<ChopInstructions :extra="getStepExtra()"/>
-    </div>
+    <ChopInstructions v-if="state === 'instructions'" :extra="getStepExtra()"/>
   </div>
 
 </template>
@@ -74,22 +71,22 @@
 
     methods: {
       handlePress(dir) {
-        if (this.state ==='steps' && this.selected) {
+        if (this.state === 'steps' && this.selected) {
           if (dir === 'right') {
             this.nextStep();
           } else if (dir === 'left') {
             this.prevStep();
           } else if (dir === 'down' && this.hasTimeAtCurrentStep()) {
             this.startTimer();
-          } else if (dir === 'down' && this.hasInsructions() && this.state==='steps') {
-            this.showInstruction();
-          }else if (dir === 'up')  {
+          } else if (dir === 'down' && this.hasInstructions() && this.state === 'steps') {
+            this.showInstructions();
+          } else if (dir === 'up') {
             this.$parent.upPressed();
           }
-        }else if(this.state==='instructions'){
-        	if(dir === 'up'){
-        		this.$parent.upPressed();
-        	}
+        } else if (this.state === 'instructions') {
+          if (dir === 'up') {
+            this.hideInstructions();
+          }
         }
       },
       nextStep: function () {
@@ -121,11 +118,15 @@
           this.activeTimers.push(timer)
         }
       },
-      showInstruction() {
-      	if (this.hasInsructions()){
-      		console.log("I'd want to show some pretty GIFs");
-      		this.$parent.showInstructions();
-      	}
+      showInstructions() {
+        if (this.hasInstructions()) {
+          this.$parent.showInstructions();
+        }
+      },
+      hideInstructions() {
+        if (this.hasInstructions()) {
+          this.$parent.hideInstructions();
+        }
       },
       removeWithDelay(timerName) {
         let self = this;
@@ -152,12 +153,12 @@
         return this.currentStep().time !== undefined;
       },
 
-      hasInsructions(){
-      	return this.currentStep().extra !== undefined;
+      hasInstructions() {
+        return this.currentStep().extra !== undefined;
       },
 
-      getStepExtra(){
-      	return this.currentStep().extra;
+      getStepExtra() {
+        return this.currentStep().extra;
       },
 
       getStepTime() {
@@ -319,7 +320,10 @@
 
   #ingredientsList {
     clear: both;
+    line-height: 26px;
+    margin-top: 25px;
     overflow: hidden;
+    font-size: 18px;
   }
 
   .recipeInner {

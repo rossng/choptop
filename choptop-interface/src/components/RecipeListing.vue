@@ -57,15 +57,18 @@
         }
       },
       upPressed() {
-      	console.log("up pressed")
-      	if(this.currentState === "steps"){
-        	this.currentState = 'ingredients'
-      	}else if(this.currentState === "instructions"){
-      		this.currentState = "steps"
-      	}
+        console.log("up pressed");
+        if (this.currentState === "steps") {
+          this.currentState = 'ingredients'
+        } else if (this.currentState === "instructions") {
+          this.currentState = "steps"
+        }
       },
-      showInstructions(){
-      	this.currentState = "instructions"
+      showInstructions() {
+        this.currentState = "instructions"
+      },
+      hideInstructions() {
+        this.currentState = "steps"
       },
       nextRecipe() {
         this.chosenRecipeIndex = (this.chosenRecipeIndex + 1) % this.recipes.length
@@ -79,7 +82,7 @@
     data() {
       return {
         chosenRecipeIndex: 0,
-        currentState: 'thumbnails', // one of ['thumbnails', 'ingredients', 'steps']
+        currentState: 'thumbnails', // one of ['thumbnails', 'ingredients', 'steps', 'instructions']
       }
     }
   }

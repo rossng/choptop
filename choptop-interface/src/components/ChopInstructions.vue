@@ -1,10 +1,5 @@
 <template>
-  <div class="toChop">
-    <img :src="getimage(extra)"/>
-  </div>
-
-
-  
+    <img :src="getImage(extra)" class="toChop"/>
 </template>
 
 <script>
@@ -22,7 +17,7 @@
     },
 
     methods: {
-      getimage(extra){
+      getImage(extra){
         console.log(extra);
         switch(extra){
           case "slice onion":
@@ -32,9 +27,7 @@
           case "slice pepper":
             return "/src/assets/instructions/slicePepper.gif";
           case "chicken strips":
-            return "/src/assets/instructions/chickenStrips.gif";
-          case "chicken strips":
-            return "/src/assets/instructions/chickenStrips.gif";
+            return "/src/assets/instructions/chickenStrips.jpg";
           case "slice spring onions":
             return "/src/assets/instructions/sliceSpringOnions.gif";
           case "broccoli":
@@ -52,9 +45,11 @@
 
 
 <style scoped>
-  .toChop{
-    width:100%;
+  .toChop {
+    max-width: 600px;
+    max-height: 300px;
     display: flex;
     align-items: center;
+    margin: 0 auto;
   }
 </style>
