@@ -59,7 +59,7 @@
 
 <style scoped>
   .step {
-    font-size: 30px;
+    font-size: 36px;
     margin: 30px;
   }
 

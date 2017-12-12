@@ -5,7 +5,8 @@
     <div id="main">
       <WelcomeToChopTop v-if="shouldShowWelcome()"/>
       <PortionSelector v-if="shouldShowPortionSelector()" :eventBus="eventBus" :portionCount="portionCount"/>
-      <RecipeListing v-if="shouldShowRecipeListing()" :recipes="recipe" :eventBus="eventBus" :portionCount="portionCount"/>
+      <RecipeListing v-if="shouldShowRecipeListing()" :recipes="recipe" :eventBus="eventBus"
+                     :portionCount="portionCount"/>
       <!-- <WeightDisplay :eventBus="eventBus"/> -->
       <TapPosition :eventBus="eventBus"/>
     </div>
@@ -33,17 +34,14 @@
   Vue.component('icon', Icon)
 
   Vue.use(VueWebsocket, "ws://localhost:8765", {
-      format: 'json',
-      reconnection: true, // (Boolean) whether to reconnect automatically (false)
-      reconnectionAttempts: 10000, // (Number) number of reconnection attempts before giving up (Infinity),
-      reconnectionDelay: 3000, // (Number) how long to initially wait before attempting a new (1000)
-    });
-
+    format: 'json',
+    reconnection: true, // (Boolean) whether to reconnect automatically (false)
+    reconnectionAttempts: 10000, // (Number) number of reconnection attempts before giving up (Infinity),
+    reconnectionDelay: 3000, // (Number) how long to initially wait before attempting a new (1000)
+  });
 
   // import recipes json file
   import Recipes from './recipes.json'
-
-
 
   export default {
     name: 'app',
@@ -63,39 +61,38 @@
         recipe: Recipes,
         latestUpdate: {},
         focussed: true,
-        eventBus : new Vue(),
-        portionCount : 2,
+        eventBus: new Vue(),
+        portionCount: 2,
 
       }
     },
 
-    created () {
-        this.setupFetchData();
-        this.eventBus.$on("pressed", this.handlePress);
-        this.eventBus.$on("portionCount",this.setPortionCount);
+    created() {
+      this.setupFetchData();
+      this.eventBus.$on("pressed", this.handlePress);
+      this.eventBus.$on("portionCount", this.setPortionCount);
     },
 
 
-
     methods: {
-      handlePress(dir){
-        if (this.focussed = true){
-          if(dir == "down"){
+      handlePress(dir) {
+        if (this.focussed = true) {
+          if (dir === "down") {
             this.nextState()
           }
         }
       },
-      setPortionCount(count){
+      setPortionCount(count) {
         this.portionCount = count;
       },
-      upPressed(){
+      upPressed() {
         this.prevState();
       },
-      downPressed(){
+      downPressed() {
         this.nextState();
       },
-      setupFetchData () {
-      //results from websocket connection
+      setupFetchData() {
+        //results from websocket connection
         this.$options.sockets.onmessage = this.handleNewData
       },
       shouldShowWelcome: function () {
@@ -107,51 +104,69 @@
       shouldShowPortionSelector: function () {
         return this.currentScreen === "portionSelector";
       },
-      nextState(){
-        if(this.currentScreen === "portionSelector"){
+      nextState() {
+        if (this.currentScreen === "portionSelector") {
           this.currentScreen = "recipeListing";
           this.focussed = false;
-        }if(this.currentScreen ==="welcome"){
-          this.currentScreen = "portionSelector"
+        }
+        if (this.currentScreen === "welcome") {
+          this.currentScreen = "portionSelector";
           this.focussed = false;
         }
       },
-      prevState(){
-        if(this.currentScreen === "portionSelector"){
+      prevState() {
+        if (this.currentScreen === "portionSelector") {
           this.currentScreen = "welcome";
           this.focussed = true;
-        }else if(this.currentScreen === "recipeListing"){
+        } else if (this.currentScreen === "recipeListing") {
           this.currentScreen = "portionSelector"
         }
       },
-      handleNewData(msg){
+      handleGlobalKeyDown: function(e) {
+        switch (e.key) {
+          case "ArrowUp":
+            this.eventBus.$emit("pressed", 'up');
+            break;
+          case "ArrowRight":
+            this.eventBus.$emit("pressed", 'right');
+            break;
+          case "ArrowDown":
+            this.eventBus.$emit("pressed", 'down');
+            break;
+          case "ArrowLeft":
+            this.eventBus.$emit("pressed", 'left');
+            break;
+          default:
+            return;
+        }
+      },
+      handleNewData(msg) {
         var data = msg.data
         console.log(data)
         parsed = {};
-        try{
+        try {
           var parsed = JSON.parse(data)
-        }catch (e)
-        {
+        } catch (e) {
           console.log("bad Json ")
           console.log(msg)
         }
 
-        if(parsed.event =="leftPressed"){
-          this.eventBus.$emit("pressed",'left')
+        if (parsed.event === "leftPressed") {
+          this.eventBus.$emit("pressed", 'left')
         }
-        if(parsed.event =="rightPressed"){
-          this.eventBus.$emit("pressed",'right')
+        if (parsed.event === "rightPressed") {
+          this.eventBus.$emit("pressed", 'right')
         }
-        if(parsed.event =="upPressed"){
-          this.eventBus.$emit("pressed",'up')
+        if (parsed.event === "upPressed") {
+          this.eventBus.$emit("pressed", 'up')
         }
-        if(parsed.event =="downPressed"){
-          this.eventBus.$emit("pressed",'down')
+        if (parsed.event === "downPressed") {
+          this.eventBus.$emit("pressed", 'down')
         }
-        if(parsed.event == "weightReading"){
+        if (parsed.event === "weightReading") {
           this.eventBus.$emit("weight", parsed.value)
         }
-        if(parsed.event == "position"){
+        if (parsed.event === "position") {
           this.eventBus.$emit("pos", parsed)
           // console.log(parsed.pos[0])
         }
