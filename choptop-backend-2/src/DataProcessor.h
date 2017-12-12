@@ -51,6 +51,7 @@ private:
     float previous_diff_ = 0;
     const float press_threshold_ = 150;
     const float release_threshold_ = -50;
+    const float press_timeout_millis_ = 1000;
     float weight_slow_ = 0;
     bool up_edge_detected_ = false;
     bool down_edge_detected_ = false;

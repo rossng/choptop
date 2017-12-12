@@ -120,7 +120,7 @@ void DataProcessor::detectPress(float sample, float x, float y) {
         down_edge_detected_ = false;
         send_press_success = true;
     } else if (press_stage_ == PressStage::PRESS_STARTED &&
-               chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - press_started_).count() > 2000) {
+               chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - press_started_).count() > press_timeout_millis_) {
         cout << "Press cancelled" << endl;
         press_stage_ = PressStage::PRESS_CANCELLED;
         send_press_cancel = true;
