@@ -25,7 +25,7 @@
 	  	handleTare(){
 	  		this.tareValue = this.weight;
 	  	},
-	  	displayWeight(){
+	  	taredWeight(){
 	  		return this.round(this.currentWeight - this.tareValue);
 	  	},
 	  	round(weight){
@@ -39,7 +39,7 @@
 	      tareValue:0,
 	    }
 	  }
-	  
+
 	}
 </script>
 
@@ -53,5 +53,5 @@
 		/*width: 800px;*/
 		/*left: 0px;*/
 	}
-	
+
 </style>
