@@ -83,7 +83,7 @@ void DataProcessor::consume() {
 
             detectPress(weight, x, y);
 
-            weight_.push(weight - weight_slow_);
+            weight_.push(weight);
             position_.push(make_pair(x, y));
         }
         this_thread::sleep_for(50ms);
