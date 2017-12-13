@@ -1,0 +1,9410 @@
+Time: 4706
+Sensor 0: -31.63
+Sensor 1: 33.11
+Sensor 2: -508.18
+Sensor 3: -58.22
+Time: 4806
+Sensor 0: -31.50
+Sensor 1: 33.03
+Sensor 2: -508.17
+Sensor 3: -58.22
+Time: 4906
+Sensor 0: -31.50
+Sensor 1: 33.03
+Sensor 2: -508.17
+Sensor 3: -58.01
+Time: 4957
+Sensor 0: 0.23
+Sensor 1: 0.13
+Sensor 2: 0.57
+Sensor 3: 0.04
+Time: 5057
+Sensor 0: 0.13
+Sensor 1: 0.20
+Sensor 2: 0.56
+Sensor 3: 0.00
+Time: 5159
+Sensor 0: -0.07
+Sensor 1: 0.12
+Sensor 2: 0.62
+Sensor 3: 0.02
+Time: 5259
+Sensor 0: -0.06
+Sensor 1: 0.06
+Sensor 2: 0.70
+Sensor 3: 0.01
+Time: 5309
+Sensor 0: -0.01
+Sensor 1: 0.12
+Sensor 2: 0.68
+Sensor 3: 0.02
+Time: 5409
+Sensor 0: 0.17
+Sensor 1: 0.09
+Sensor 2: 0.73
+Sensor 3: -0.03
+Time: 5510
+Sensor 0: 0.15
+Sensor 1: 0.05
+Sensor 2: 0.73
+Sensor 3: 0.01
+Time: 5610
+Sensor 0: 0.10
+Sensor 1: 0.08
+Sensor 2: 0.70
+Sensor 3: 0.04
+Time: 5660
+Sensor 0: -0.05
+Sensor 1: 0.10
+Sensor 2: 0.75
+Sensor 3: 0.00
+Time: 5760
+Sensor 0: -0.06
+Sensor 1: 0.01
+Sensor 2: 0.75
+Sensor 3: 0.03
+Time: 5860
+Sensor 0: -0.01
+Sensor 1: 0.07
+Sensor 2: 0.78
+Sensor 3: -0.04
+Time: 5960
+Sensor 0: 0.08
+Sensor 1: 0.12
+Sensor 2: 0.75
+Sensor 3: -0.06
+Time: 6061
+Sensor 0: 0.09
+Sensor 1: 0.08
+Sensor 2: 0.75
+Sensor 3: 0.04
+Time: 6111
+Sensor 0: 0.05
+Sensor 1: 0.04
+Sensor 2: 0.93
+Sensor 3: 0.02
+Time: 6211
+Sensor 0: 0.08
+Sensor 1: 0.05
+Sensor 2: 0.96
+Sensor 3: -0.02
+Time: 6311
+Sensor 0: -0.03
+Sensor 1: 0.08
+Sensor 2: 0.91
+Sensor 3: -0.03
+Time: 6411
+Sensor 0: -0.02
+Sensor 1: 0.05
+Sensor 2: 0.96
+Sensor 3: -0.03
+Time: 6461
+Sensor 0: 0.06
+Sensor 1: 0.06
+Sensor 2: 0.99
+Sensor 3: 0.03
+Time: 6561
+Sensor 0: 0.02
+Sensor 1: 0.03
+Sensor 2: 1.00
+Sensor 3: -0.05
+Time: 6662
+Sensor 0: -0.03
+Sensor 1: 0.05
+Sensor 2: 0.94
+Sensor 3: -0.08
+Time: 6762
+Sensor 0: 0.05
+Sensor 1: 0.01
+Sensor 2: 0.96
+Sensor 3: -0.04
+Time: 6812
+Sensor 0: -0.08
+Sensor 1: 0.03
+Sensor 2: 0.99
+Sensor 3: -0.09
+Time: 6912
+Sensor 0: -0.03
+Sensor 1: 0.03
+Sensor 2: 1.00
+Sensor 3: -0.10
+Time: 7012
+Sensor 0: 0.11
+Sensor 1: 0.11
+Sensor 2: 1.20
+Sensor 3: -0.04
+Time: 7113
+Sensor 0: 0.11
+Sensor 1: 0.05
+Sensor 2: 1.20
+Sensor 3: -0.01
+Time: 7213
+Sensor 0: 0.04
+Sensor 1: 0.10
+Sensor 2: 1.20
+Sensor 3: -0.00
+Time: 7263
+Sensor 0: 0.09
+Sensor 1: 0.13
+Sensor 2: 1.22
+Sensor 3: 0.06
+Time: 7363
+Sensor 0: 0.05
+Sensor 1: 0.04
+Sensor 2: 1.23
+Sensor 3: 0.08
+Time: 7463
+Sensor 0: 0.05
+Sensor 1: 0.04
+Sensor 2: 1.21
+Sensor 3: 0.02
+Time: 7563
+Sensor 0: -0.02
+Sensor 1: 0.06
+Sensor 2: 1.21
+Sensor 3: -0.04
+Time: 7663
+Sensor 0: 0.07
+Sensor 1: 0.06
+Sensor 2: 1.22
+Sensor 3: -0.07
+Time: 7764
+Sensor 0: 0.09
+Sensor 1: 0.09
+Sensor 2: 1.31
+Sensor 3: 0.02
+Time: 7814
+Sensor 0: 0.12
+Sensor 1: 0.08
+Sensor 2: 1.36
+Sensor 3: -0.08
+Time: 7914
+Sensor 0: 0.02
+Sensor 1: 0.14
+Sensor 2: 1.39
+Sensor 3: -0.09
+Time: 8014
+Sensor 0: -0.01
+Sensor 1: 0.09
+Sensor 2: 1.39
+Sensor 3: -0.02
+Time: 8114
+Sensor 0: -0.02
+Sensor 1: 0.13
+Sensor 2: 1.42
+Sensor 3: 0.06
+Time: 8214
+Sensor 0: 0.06
+Sensor 1: 0.16
+Sensor 2: 1.47
+Sensor 3: -0.02
+Time: 8315
+Sensor 0: 0.01
+Sensor 1: 0.08
+Sensor 2: 1.47
+Sensor 3: 0.12
+Time: 8365
+Sensor 0: 0.04
+Sensor 1: 0.07
+Sensor 2: 1.50
+Sensor 3: 0.03
+Time: 8465
+Sensor 0: 0.05
+Sensor 1: 0.10
+Sensor 2: 1.56
+Sensor 3: -0.03
+Time: 8565
+Sensor 0: 0.03
+Sensor 1: 0.10
+Sensor 2: 1.47
+Sensor 3: 0.00
+Time: 8665
+Sensor 0: 0.07
+Sensor 1: 0.10
+Sensor 2: 1.54
+Sensor 3: 0.02
+Time: 8765
+Sensor 0: 0.00
+Sensor 1: 0.08
+Sensor 2: 1.64
+Sensor 3: -0.02
+Time: 8866
+Sensor 0: 0.03
+Sensor 1: 0.12
+Sensor 2: 1.68
+Sensor 3: -0.01
+Time: 8916
+Sensor 0: -0.04
+Sensor 1: 0.14
+Sensor 2: 1.62
+Sensor 3: 0.03
+Time: 9016
+Sensor 0: -0.01
+Sensor 1: 0.13
+Sensor 2: 1.66
+Sensor 3: -0.01
+Time: 9116
+Sensor 0: 0.02
+Sensor 1: 0.13
+Sensor 2: 1.62
+Sensor 3: 0.02
+Time: 9216
+Sensor 0: -0.03
+Sensor 1: 0.12
+Sensor 2: 1.64
+Sensor 3: 0.00
+Time: 9316
+Sensor 0: 0.01
+Sensor 1: 0.12
+Sensor 2: 1.66
+Sensor 3: 0.04
+Time: 9417
+Sensor 0: -0.00
+Sensor 1: 0.13
+Sensor 2: 1.68
+Sensor 3: 0.05
+Time: 9467
+Sensor 0: 0.02
+Sensor 1: 0.18
+Sensor 2: 1.71
+Sensor 3: 0.02
+Time: 9567
+Sensor 0: 0.04
+Sensor 1: 0.08
+Sensor 2: 1.72
+Sensor 3: 0.04
+Time: 9667
+Sensor 0: 0.07
+Sensor 1: 0.05
+Sensor 2: 1.76
+Sensor 3: -0.01
+Time: 9768
+Sensor 0: 0.02
+Sensor 1: 0.05
+Sensor 2: 1.76
+Sensor 3: 0.00
+Time: 9868
+Sensor 0: 0.12
+Sensor 1: 0.18
+Sensor 2: 1.78
+Sensor 3: -0.02
+Time: 9968
+Sensor 0: 0.05
+Sensor 1: 0.19
+Sensor 2: 1.81
+Sensor 3: 0.01
+Time: 10018
+Sensor 0: -0.05
+Sensor 1: 0.15
+Sensor 2: 1.76
+Sensor 3: 0.06
+Time: 10119
+Sensor 0: -0.01
+Sensor 1: 0.10
+Sensor 2: 1.86
+Sensor 3: 0.01
+Time: 10175
+Sensor 0: 0.02
+Sensor 1: 0.09
+Sensor 2: 1.89
+Sensor 3: 0.01
+Time: 10276
+Sensor 0: -0.01
+Sensor 1: 0.09
+Sensor 2: 1.78
+Sensor 3: 0.13
+Time: 10376
+Sensor 0: 0.03
+Sensor 1: 0.16
+Sensor 2: 1.82
+Sensor 3: 0.16
+Time: 10476
+Sensor 0: 0.06
+Sensor 1: 0.23
+Sensor 2: 1.85
+Sensor 3: 0.12
+Time: 11001
+Sensor 0: 0.04
+Sensor 1: 0.24
+Sensor 2: 1.89
+Sensor 3: 0.11
+Time: 11001
+Sensor 0: -0.02
+Sensor 1: 0.23
+Sensor 2: 1.95
+Sensor 3: 0.11
+Time: 11001
+Sensor 0: -0.04
+Sensor 1: 0.17
+Sensor 2: 1.94
+Sensor 3: 0.12
+Time: 11001
+Sensor 0: -0.01
+Sensor 1: 0.19
+Sensor 2: 1.98
+Sensor 3: 0.12
+Time: 11001
+Sensor 0: 0.00
+Sensor 1: 0.15
+Sensor 2: 2.01
+Sensor 3: 0.10
+Time: 11051
+Sensor 0: -0.04
+Sensor 1: 0.13
+Sensor 2: 1.97
+Sensor 3: 0.11
+Time: 11152
+Sensor 0: 0.01
+Sensor 1: 0.24
+Sensor 2: 1.97
+Sensor 3: 0.11
+Time: 11202
+Sensor 0: -0.01
+Sensor 1: 0.28
+Sensor 2: 1.97
+Sensor 3: 0.08
+Time: 11302
+Sensor 0: -0.06
+Sensor 1: 0.22
+Sensor 2: 2.02
+Sensor 3: 0.06
+Time: 11402
+Sensor 0: -0.06
+Sensor 1: 0.27
+Sensor 2: 2.07
+Sensor 3: 0.08
+Time: 11502
+Sensor 0: -0.13
+Sensor 1: 0.21
+Sensor 2: 2.07
+Sensor 3: 0.08
+Time: 11603
+Sensor 0: 0.02
+Sensor 1: 0.15
+Sensor 2: 2.09
+Sensor 3: 0.07
+Time: 11703
+Sensor 0: 0.05
+Sensor 1: 0.20
+Sensor 2: 2.10
+Sensor 3: 0.08
+Time: 11753
+Sensor 0: -0.06
+Sensor 1: 0.20
+Sensor 2: 2.14
+Sensor 3: 0.08
+Time: 11853
+Sensor 0: -0.12
+Sensor 1: 0.21
+Sensor 2: 2.17
+Sensor 3: 0.19
+Time: 11954
+Sensor 0: -0.09
+Sensor 1: 0.30
+Sensor 2: 2.17
+Sensor 3: 0.10
+Time: 12054
+Sensor 0: -0.01
+Sensor 1: 0.25
+Sensor 2: 2.19
+Sensor 3: 0.12
+Time: 12154
+Sensor 0: 0.02
+Sensor 1: 0.22
+Sensor 2: 2.22
+Sensor 3: 0.10
+Time: 12254
+Sensor 0: -0.03
+Sensor 1: 0.24
+Sensor 2: 2.22
+Sensor 3: 0.09
+Time: 12354
+Sensor 0: -0.08
+Sensor 1: 0.22
+Sensor 2: 2.23
+Sensor 3: 0.10
+Time: 12405
+Sensor 0: -0.10
+Sensor 1: 0.19
+Sensor 2: 2.21
+Sensor 3: 0.17
+Time: 12505
+Sensor 0: -0.14
+Sensor 1: 0.18
+Sensor 2: 2.16
+Sensor 3: 0.10
+Time: 12605
+Sensor 0: -0.12
+Sensor 1: 0.22
+Sensor 2: 2.22
+Sensor 3: 0.19
+Time: 12705
+Sensor 0: -0.04
+Sensor 1: 0.26
+Sensor 2: 2.24
+Sensor 3: 0.20
+Time: 12806
+Sensor 0: -0.08
+Sensor 1: 0.16
+Sensor 2: 2.22
+Sensor 3: 0.22
+Time: 12906
+Sensor 0: -0.09
+Sensor 1: 0.11
+Sensor 2: 2.27
+Sensor 3: 0.23
+Time: 12956
+Sensor 0: -0.16
+Sensor 1: 0.16
+Sensor 2: 2.22
+Sensor 3: 0.17
+Time: 13056
+Sensor 0: -0.08
+Sensor 1: 0.24
+Sensor 2: 2.30
+Sensor 3: 0.25
+Time: 13157
+Sensor 0: -0.00
+Sensor 1: 0.27
+Sensor 2: 2.32
+Sensor 3: 0.22
+Time: 13257
+Sensor 0: -0.09
+Sensor 1: 0.30
+Sensor 2: 2.31
+Sensor 3: 0.22
+Time: 13357
+Sensor 0: -0.10
+Sensor 1: 0.23
+Sensor 2: 2.36
+Sensor 3: 0.11
+Time: 13457
+Sensor 0: -0.05
+Sensor 1: 0.19
+Sensor 2: 2.31
+Sensor 3: 0.17
+Time: 13507
+Sensor 0: -0.10
+Sensor 1: 0.12
+Sensor 2: 2.36
+Sensor 3: 0.20
+Time: 13608
+Sensor 0: -0.10
+Sensor 1: 0.13
+Sensor 2: 2.33
+Sensor 3: 0.19
+Time: 13708
+Sensor 0: -0.11
+Sensor 1: 0.18
+Sensor 2: 2.41
+Sensor 3: 0.17
+Time: 13808
+Sensor 0: -0.10
+Sensor 1: 0.18
+Sensor 2: 2.36
+Sensor 3: 0.13
+Time: 13908
+Sensor 0: -0.09
+Sensor 1: 0.25
+Sensor 2: 2.38
+Sensor 3: 0.15
+Time: 14009
+Sensor 0: -0.03
+Sensor 1: 0.11
+Sensor 2: 2.40
+Sensor 3: 0.14
+Time: 14059
+Sensor 0: -0.02
+Sensor 1: 0.14
+Sensor 2: 2.50
+Sensor 3: 0.13
+Time: 14159
+Sensor 0: -0.08
+Sensor 1: 0.19
+Sensor 2: 2.49
+Sensor 3: 0.17
+Time: 14259
+Sensor 0: -0.02
+Sensor 1: 0.19
+Sensor 2: 2.42
+Sensor 3: 0.15
+Time: 14360
+Sensor 0: 0.04
+Sensor 1: 0.24
+Sensor 2: 2.42
+Sensor 3: 0.14
+Time: 14460
+Sensor 0: -0.03
+Sensor 1: 0.19
+Sensor 2: 2.38
+Sensor 3: 0.10
+Time: 14560
+Sensor 0: -0.04
+Sensor 1: 0.23
+Sensor 2: 2.49
+Sensor 3: 0.12
+Time: 14660
+Sensor 0: -0.05
+Sensor 1: 0.22
+Sensor 2: 2.55
+Sensor 3: 0.11
+Time: 14710
+Sensor 0: -0.04
+Sensor 1: 0.19
+Sensor 2: 2.51
+Sensor 3: 0.12
+Time: 14811
+Sensor 0: -0.08
+Sensor 1: 0.26
+Sensor 2: 2.47
+Sensor 3: 0.12
+Time: 14911
+Sensor 0: -0.14
+Sensor 1: 0.18
+Sensor 2: 2.54
+Sensor 3: 0.12
+Time: 15011
+Sensor 0: -0.05
+Sensor 1: 0.18
+Sensor 2: 2.54
+Sensor 3: 0.22
+Time: 15111
+Sensor 0: -0.06
+Sensor 1: 0.21
+Sensor 2: 2.60
+Sensor 3: 0.13
+Time: 15212
+Sensor 0: 0.03
+Sensor 1: 0.26
+Sensor 2: 2.63
+Sensor 3: 0.14
+Time: 15748
+Sensor 0: -0.07
+Sensor 1: 0.18
+Sensor 2: 2.64
+Sensor 3: 0.22
+Time: 15748
+Sensor 0: -0.19
+Sensor 1: 0.14
+Sensor 2: 2.64
+Sensor 3: 0.26
+Time: 15748
+Sensor 0: -0.07
+Sensor 1: 0.18
+Sensor 2: 2.63
+Sensor 3: 0.27
+Time: 15748
+Sensor 0: -0.02
+Sensor 1: 0.23
+Sensor 2: 2.65
+Sensor 3: 0.18
+Time: 15748
+Sensor 0: -0.05
+Sensor 1: 0.22
+Sensor 2: 2.66
+Sensor 3: 0.26
+Time: 15748
+Sensor 0: -0.15
+Sensor 1: 0.20
+Sensor 2: 2.66
+Sensor 3: 0.16
+Time: 15798
+Sensor 0: -0.12
+Sensor 1: 0.20
+Sensor 2: 2.65
+Sensor 3: 0.18
+Time: 15898
+Sensor 0: -0.08
+Sensor 1: 0.18
+Sensor 2: 2.66
+Sensor 3: 0.13
+Time: 15998
+Sensor 0: -0.15
+Sensor 1: 0.20
+Sensor 2: 2.75
+Sensor 3: 0.21
+Time: 16099
+Sensor 0: -0.13
+Sensor 1: 0.25
+Sensor 2: 2.65
+Sensor 3: 0.21
+Time: 16199
+Sensor 0: -0.08
+Sensor 1: 0.21
+Sensor 2: 2.66
+Sensor 3: 0.21
+Time: 16299
+Sensor 0: -0.12
+Sensor 1: 0.20
+Sensor 2: 2.75
+Sensor 3: 0.18
+Time: 16399
+Sensor 0: -0.08
+Sensor 1: 0.21
+Sensor 2: 2.76
+Sensor 3: 0.40
+Time: 16450
+Sensor 0: -0.08
+Sensor 1: 0.25
+Sensor 2: 2.81
+Sensor 3: 0.21
+Time: 16550
+Sensor 0: 1.28
+Sensor 1: 0.79
+Sensor 2: 3.27
+Sensor 3: 0.21
+Time: 16650
+Sensor 0: 12.48
+Sensor 1: 32.76
+Sensor 2: 38.18
+Sensor 3: 0.40
+Time: 16750
+Sensor 0: 102.10
+Sensor 1: 178.60
+Sensor 2: 202.16
+Sensor 3: 53.27
+Time: 16850
+Sensor 0: 32.21
+Sensor 1: 908.96
+Sensor 2: 1269.58
+Sensor 3: 26.46
+Time: 16951
+Sensor 0: 4.99
+Sensor 1: 178.42
+Sensor 2: 306.78
+Sensor 3: -1.21
+Time: 17001
+Sensor 0: 3.82
+Sensor 1: -1.96
+Sensor 2: 19.77
+Sensor 3: -5.31
+Time: 17101
+Sensor 0: 2.77
+Sensor 1: -4.60
+Sensor 2: 23.38
+Sensor 3: -3.76
+Time: 17201
+Sensor 0: 3.93
+Sensor 1: -4.40
+Sensor 2: 24.34
+Sensor 3: -3.64
+Time: 17302
+Sensor 0: 27.73
+Sensor 1: -4.50
+Sensor 2: 23.23
+Sensor 3: -2.84
+Time: 17402
+Sensor 0: 4.99
+Sensor 1: -6.01
+Sensor 2: 21.55
+Sensor 3: -2.84
+Time: 17502
+Sensor 0: 4.99
+Sensor 1: -16.40
+Sensor 2: 41.01
+Sensor 3: -2.84
+Time: 17552
+Sensor 0: 27.73
+Sensor 1: -4.60
+Sensor 2: 23.38
+Sensor 3: -2.84
+Time: 17652
+Sensor 0: 316.00
+Sensor 1: -6.01
+Sensor 2: 24.34
+Sensor 3: 84.68
+Time: 17753
+Sensor 0: 1151.11
+Sensor 1: -16.40
+Sensor 2: 128.96
+Sensor 3: 1865.55
+Time: 17853
+Sensor 0: 208.89
+Sensor 1: -17.29
+Sensor 2: 54.02
+Sensor 3: 725.68
+Time: 17953
+Sensor 0: 8.13
+Sensor 1: -1.63
+Sensor 2: 12.07
+Sensor 3: 85.74
+Time: 18053
+Sensor 0: 6.84
+Sensor 1: -3.50
+Sensor 2: 9.40
+Sensor 3: -0.97
+Time: 18104
+Sensor 0: 4.39
+Sensor 1: -1.76
+Sensor 2: 9.15
+Sensor 3: 0.13
+Time: 18204
+Sensor 0: 3.12
+Sensor 1: 0.78
+Sensor 2: 13.11
+Sensor 3: 0.08
+Time: 18304
+Sensor 0: 6.33
+Sensor 1: -2.76
+Sensor 2: 13.12
+Sensor 3: -1.37
+Time: 18404
+Sensor 0: 6.14
+Sensor 1: -5.67
+Sensor 2: 16.42
+Sensor 3: 31.71
+Time: 18504
+Sensor 0: 11.06
+Sensor 1: -2.76
+Sensor 2: 13.11
+Sensor 3: 0.13
+Time: 18605
+Sensor 0: 6.33
+Sensor 1: -3.50
+Sensor 2: 13.12
+Sensor 3: 0.13
+Time: 18705
+Sensor 0: 6.33
+Sensor 1: -5.67
+Sensor 2: 16.42
+Sensor 3: 31.71
+Time: 18755
+Sensor 0: -34.31
+Sensor 1: -31.05
+Sensor 2: 120.07
+Sensor 3: 271.78
+Time: 18855
+Sensor 0: -3.36
+Sensor 1: -207.76
+Sensor 2: 2847.15
+Sensor 3: 2345.24
+Time: 18956
+Sensor 0: 58.88
+Sensor 1: -161.60
+Sensor 2: 2072.30
+Sensor 3: 1181.00
+Time: 19056
+Sensor 0: 17.96
+Sensor 1: -45.10
+Sensor 2: 791.04
+Sensor 3: 204.23
+Time: 19156
+Sensor 0: -1.96
+Sensor 1: 3.75
+Sensor 2: 83.80
+Sensor 3: 8.05
+Time: 19256
+Sensor 0: -3.22
+Sensor 1: 5.32
+Sensor 2: 19.01
+Sensor 3: 7.63
+Time: 19307
+Sensor 0: -2.54
+Sensor 1: 5.77
+Sensor 2: 19.88
+Sensor 3: 8.30
+Time: 19407
+Sensor 0: 7.52
+Sensor 1: 6.43
+Sensor 2: 20.84
+Sensor 3: 7.73
+Time: 19507
+Sensor 0: 7.52
+Sensor 1: 53.59
+Sensor 2: 26.24
+Sensor 3: -3.83
+Time: 19607
+Sensor 0: 7.52
+Sensor 1: 5.77
+Sensor 2: 59.55
+Sensor 3: -80.45
+Time: 19707
+Sensor 0: 7.52
+Sensor 1: 6.43
+Sensor 2: 26.24
+Sensor 3: 7.63
+Time: 19808
+Sensor 0: 160.88
+Sensor 1: 53.59
+Sensor 2: 52.06
+Sensor 3: -3.83
+Time: 19858
+Sensor 0: 1428.33
+Sensor 1: 1675.41
+Sensor 2: 53.50
+Sensor 3: -211.78
+Time: 19958
+Sensor 0: 410.34
+Sensor 1: 709.87
+Sensor 2: 46.63
+Sensor 3: -170.71
+Time: 20058
+Sensor 0: 18.84
+Sensor 1: 72.33
+Sensor 2: 12.90
+Sensor 3: -45.76
+Time: 20159
+Sensor 0: 3.36
+Sensor 1: -5.06
+Sensor 2: 11.56
+Sensor 3: -170.71
+Time: 20259
+Sensor 0: 2.43
+Sensor 1: -7.09
+Sensor 2: 10.61
+Sensor 3: -3.56
+Time: 20362
+Sensor 0: 2.98
+Sensor 1: -4.77
+Sensor 2: 14.94
+Sensor 3: -2.44
+Time: 20412
+Sensor 0: 15.79
+Sensor 1: 25.28
+Sensor 2: 32.85
+Sensor 3: -3.95
+Time: 20512
+Sensor 0: 99.76
+Sensor 1: 297.94
+Sensor 2: 14.94
+Sensor 3: -27.98
+Time: 20613
+Sensor 0: 15.79
+Sensor 1: 25.28
+Sensor 2: 14.94
+Sensor 3: -4.01
+Time: 20713
+Sensor 0: 15.79
+Sensor 1: 25.28
+Sensor 2: 32.85
+Sensor 3: -4.01
+Time: 20813
+Sensor 0: 159.91
+Sensor 1: 1710.58
+Sensor 2: 1713.59
+Sensor 3: -64.31
+Time: 20913
+Sensor 0: 28.96
+Sensor 1: 776.91
+Sensor 2: 763.90
+Sensor 3: -16.35
+Time: 20963
+Sensor 0: -0.31
+Sensor 1: 96.16
+Sensor 2: 100.29
+Sensor 3: -0.27
+Time: 21064
+Sensor 0: -1.95
+Sensor 1: -1.44
+Sensor 2: 17.24
+Sensor 3: 0.75
+Time: 21164
+Sensor 0: -1.30
+Sensor 1: -1.46
+Sensor 2: 20.10
+Sensor 3: 1.75
+Time: 21264
+Sensor 0: -0.54
+Sensor 1: -1.63
+Sensor 2: 22.36
+Sensor 3: 0.97
+Time: 21364
+Sensor 0: 8.59
+Sensor 1: 6.98
+Sensor 2: 119.53
+Sensor 3: -3.04
+Time: 21465
+Sensor 0: -0.31
+Sensor 1: 119.95
+Sensor 2: 483.73
+Sensor 3: -0.27
+Time: 21565
+Sensor 0: -0.31
+Sensor 1: 6.98
+Sensor 2: 100.29
+Sensor 3: -0.27
+Time: 21615
+Sensor 0: 8.59
+Sensor 1: 6.98
+Sensor 2: 119.53
+Sensor 3: -19.94
+Time: 21715
+Sensor 0: 84.76
+Sensor 1: 119.95
+Sensor 2: 2085.51
+Sensor 3: -15.81
+Time: 21815
+Sensor 0: 43.47
+Sensor 1: 1655.27
+Sensor 2: 1002.12
+Sensor 3: -17.45
+Time: 21916
+Sensor 0: 2.68
+Sensor 1: 46.21
+Sensor 2: 123.09
+Sensor 3: -10.21
+Time: 22016
+Sensor 0: -2.19
+Sensor 1: -1.46
+Sensor 2: 17.15
+Sensor 3: -17.10
+Time: 22116
+Sensor 0: -3.14
+Sensor 1: 0.39
+Sensor 2: 18.66
+Sensor 3: -15.81
+Time: 22166
+Sensor 0: -3.28
+Sensor 1: -0.09
+Sensor 2: 20.68
+Sensor 3: 2.92
+Time: 22267
+Sensor 0: -2.78
+Sensor 1: -0.06
+Sensor 2: 24.23
+Sensor 3: 3.40
+Time: 22367
+Sensor 0: -3.30
+Sensor 1: 0.31
+Sensor 2: 24.69
+Sensor 3: 2.77
+Time: 22467
+Sensor 0: -2.75
+Sensor 1: 0.49
+Sensor 2: 24.99
+Sensor 3: 3.33
+Time: 22567
+Sensor 0: -2.78
+Sensor 1: -0.93
+Sensor 2: 26.66
+Sensor 3: 2.92
+Time: 22667
+Sensor 0: -2.78
+Sensor 1: -0.06
+Sensor 2: 29.06
+Sensor 3: 3.33
+Time: 22718
+Sensor 0: -2.75
+Sensor 1: -0.09
+Sensor 2: 24.99
+Sensor 3: 3.40
+Time: 22818
+Sensor 0: 38.97
+Sensor 1: -0.93
+Sensor 2: 26.66
+Sensor 3: 53.45
+Time: 22918
+Sensor 0: 264.27
+Sensor 1: -10.00
+Sensor 2: 29.06
+Sensor 3: 284.47
+Time: 23018
+Sensor 0: 1380.42
+Sensor 1: -82.67
+Sensor 2: 49.08
+Sensor 3: 1544.58
+Time: 23119
+Sensor 0: 309.42
+Sensor 1: -46.27
+Sensor 2: 169.61
+Sensor 3: 397.74
+Time: 23219
+Sensor 0: 14.28
+Sensor 1: -8.24
+Sensor 2: 41.64
+Sensor 3: 13.48
+Time: 23269
+Sensor 0: 5.86
+Sensor 1: -4.76
+Sensor 2: 18.86
+Sensor 3: -2.25
+Time: 23369
+Sensor 0: 28.98
+Sensor 1: -3.90
+Sensor 2: 16.27
+Sensor 3: 7.67
+Time: 23470
+Sensor 0: 281.23
+Sensor 1: -6.09
+Sensor 2: 39.64
+Sensor 3: 130.88
+Time: 23570
+Sensor 0: 1076.60
+Sensor 1: -22.06
+Sensor 2: 138.27
+Sensor 3: 655.52
+Time: 23670
+Sensor 0: 281.23
+Sensor 1: -21.56
+Sensor 2: 41.64
+Sensor 3: 130.88
+Time: 23770
+Sensor 0: 921.33
+Sensor 1: -23.11
+Sensor 2: 142.49
+Sensor 3: 1352.92
+Time: 23870
+Sensor 0: 102.11
+Sensor 1: -22.65
+Sensor 2: 36.82
+Sensor 3: 307.19
+Time: 23921
+Sensor 0: 5.36
+Sensor 1: -7.18
+Sensor 2: 16.84
+Sensor 3: 2.27
+Time: 24021
+Sensor 0: 3.15
+Sensor 1: -21.56
+Sensor 2: 12.25
+Sensor 3: -1.04
+Time: 24121
+Sensor 0: 3.80
+Sensor 1: -21.56
+Sensor 2: 27.99
+Sensor 3: 6.78
+Time: 24221
+Sensor 0: 24.24
+Sensor 1: -0.69
+Sensor 2: 155.51
+Sensor 3: 73.87
+Time: 24322
+Sensor 0: 90.63
+Sensor 1: -28.42
+Sensor 2: 36.82
+Sensor 3: 328.06
+Time: 24422
+Sensor 0: 24.24
+Sensor 1: -7.18
+Sensor 2: 36.82
+Sensor 3: 73.87
+Time: 24472
+Sensor 0: 24.24
+Sensor 1: -7.18
+Sensor 2: 155.51
+Sensor 3: 73.87
+Time: 24572
+Sensor 0: 254.93
+Sensor 1: -28.42
+Sensor 2: 2936.77
+Sensor 3: 328.06
+Time: 24672
+Sensor 0: 135.04
+Sensor 1: -142.41
+Sensor 2: 1988.72
+Sensor 3: 1986.73
+Time: 24773
+Sensor 0: 18.67
+Sensor 1: -51.56
+Sensor 2: 445.36
+Sensor 3: 56.07
+Time: 24873
+Sensor 0: -1.36
+Sensor 1: -2.71
+Sensor 2: 21.60
+Sensor 3: 4.65
+Time: 24973
+Sensor 0: -2.98
+Sensor 1: 4.50
+Sensor 2: 10.83
+Sensor 3: 19.19
+Time: 25023
+Sensor 0: 12.41
+Sensor 1: 0.26
+Sensor 2: 75.15
+Sensor 3: 246.72
+Time: 25124
+Sensor 0: 57.70
+Sensor 1: -38.13
+Sensor 2: 610.88
+Sensor 3: 947.37
+Time: 25224
+Sensor 0: 101.94
+Sensor 1: -129.16
+Sensor 2: 1695.03
+Sensor 3: 1715.50
+Time: 25324
+Sensor 0: 18.67
+Sensor 1: -38.13
+Sensor 2: 445.36
+Sensor 3: 246.72
+Time: 25426
+Sensor 0: 87.65
+Sensor 1: -216.54
+Sensor 2: 2285.37
+Sensor 3: 1111.40
+Time: 25527
+Sensor 0: 15.84
+Sensor 1: -91.39
+Sensor 2: 853.26
+Sensor 3: 183.14
+Time: 25627
+Sensor 0: -0.62
+Sensor 1: -7.19
+Sensor 2: 76.45
+Sensor 3: 5.18
+Time: 25677
+Sensor 0: -4.65
+Sensor 1: 3.63
+Sensor 2: 13.83
+Sensor 3: 6.56
+Time: 25778
+Sensor 0: -3.34
+Sensor 1: 4.74
+Sensor 2: 13.22
+Sensor 3: 7.91
+Time: 25878
+Sensor 0: -2.96
+Sensor 1: 6.12
+Sensor 2: 13.75
+Sensor 3: 6.86
+Time: 25980
+Sensor 0: 44.59
+Sensor 1: 43.41
+Sensor 2: 19.30
+Sensor 3: 5.95
+Time: 26080
+Sensor 0: -0.62
+Sensor 1: 4.74
+Sensor 2: 45.22
+Sensor 3: -23.96
+Time: 26181
+Sensor 0: -0.62
+Sensor 1: 6.12
+Sensor 2: 19.30
+Sensor 3: 5.95
+Time: 26231
+Sensor 0: 44.59
+Sensor 1: 43.41
+Sensor 2: 19.30
+Sensor 3: 5.95
+Time: 26331
+Sensor 0: 347.14
+Sensor 1: 245.73
+Sensor 2: 178.83
+Sensor 3: -228.72
+Time: 26432
+Sensor 0: 1631.82
+Sensor 1: 1429.36
+Sensor 2: 168.84
+Sensor 3: -216.10
+Time: 26532
+Sensor 0: 687.97
+Sensor 1: 564.32
+Sensor 2: 123.18
+Sensor 3: -199.09
+Time: 26632
+Sensor 0: 85.40
+Sensor 1: 62.49
+Sensor 2: 27.86
+Sensor 3: -91.52
+Time: 26733
+Sensor 0: 27.50
+Sensor 1: 16.64
+Sensor 2: 144.19
+Sensor 3: -199.09
+Time: 26783
+Sensor 0: 100.67
+Sensor 1: 62.67
+Sensor 2: 8.09
+Sensor 3: -199.09
+Time: 26883
+Sensor 0: 473.48
+Sensor 1: 261.95
+Sensor 2: 34.35
+Sensor 3: -106.42
+Time: 26984
+Sensor 0: 937.39
+Sensor 1: 585.06
+Sensor 2: 150.84
+Sensor 3: -208.12
+Time: 27084
+Sensor 0: 671.70
+Sensor 1: 526.79
+Sensor 2: 34.35
+Sensor 3: -139.30
+Time: 27185
+Sensor 0: 138.53
+Sensor 1: 151.77
+Sensor 2: 90.52
+Sensor 3: -22.65
+Time: 27285
+Sensor 0: 9.67
+Sensor 1: 5.88
+Sensor 2: 8.48
+Sensor 3: -0.44
+Time: 27335
+Sensor 0: 8.11
+Sensor 1: -4.36
+Sensor 2: 4.65
+Sensor 3: -1.92
+Time: 27435
+Sensor 0: 8.68
+Sensor 1: -4.70
+Sensor 2: 2.72
+Sensor 3: 1.13
+Time: 27536
+Sensor 0: 13.57
+Sensor 1: 3.59
+Sensor 2: 12.57
+Sensor 3: 16.69
+Time: 27636
+Sensor 0: 9.05
+Sensor 1: 4.83
+Sensor 2: 28.49
+Sensor 3: 24.10
+Time: 27737
+Sensor 0: 5.84
+Sensor 1: 1.07
+Sensor 2: 27.50
+Sensor 3: 16.76
+Time: 27837
+Sensor 0: 5.17
+Sensor 1: -1.15
+Sensor 2: 11.64
+Sensor 3: 5.09
+Time: 27887
+Sensor 0: 5.55
+Sensor 1: -1.46
+Sensor 2: 10.83
+Sensor 3: 1.79
+Time: 27988
+Sensor 0: 8.68
+Sensor 1: -0.41
+Sensor 2: 21.94
+Sensor 3: 4.20
+Time: 28088
+Sensor 0: 9.05
+Sensor 1: 1.07
+Sensor 2: 21.94
+Sensor 3: 16.69
+Time: 28188
+Sensor 0: 9.05
+Sensor 1: 1.07
+Sensor 2: 65.84
+Sensor 3: 16.76
+Time: 28289
+Sensor 0: 51.95
+Sensor 1: 10.14
+Sensor 2: 50.23
+Sensor 3: 84.16
+Time: 28389
+Sensor 0: 41.56
+Sensor 1: 5.23
+Sensor 2: 52.68
+Sensor 3: 63.99
+Time: 28439
+Sensor 0: 40.34
+Sensor 1: 4.75
+Sensor 2: 60.42
+Sensor 3: 66.48
+Time: 28540
+Sensor 0: 41.73
+Sensor 1: 5.84
+Sensor 2: 50.83
+Sensor 3: 60.33
+Time: 28640
+Sensor 0: 41.97
+Sensor 1: 6.13
+Sensor 2: 49.52
+Sensor 3: 57.24
+Time: 28740
+Sensor 0: 42.92
+Sensor 1: 5.79
+Sensor 2: 50.36
+Sensor 3: 57.00
+Time: 28841
+Sensor 0: 41.97
+Sensor 1: 7.49
+Sensor 2: 53.96
+Sensor 3: 59.80
+Time: 28941
+Sensor 0: 40.58
+Sensor 1: 5.84
+Sensor 2: 51.33
+Sensor 3: 60.33
+Time: 29041
+Sensor 0: 41.73
+Sensor 1: 0.46
+Sensor 2: 50.83
+Sensor 3: 59.80
+Time: 29092
+Sensor 0: 41.73
+Sensor 1: 5.84
+Sensor 2: 50.36
+Sensor 3: 57.24
+Time: 29192
+Sensor 0: 25.78
+Sensor 1: -5.38
+Sensor 2: 49.52
+Sensor 3: 1.29
+Time: 29293
+Sensor 0: 41.67
+Sensor 1: 4.54
+Sensor 2: 13.31
+Sensor 3: 26.71
+Time: 29393
+Sensor 0: 46.51
+Sensor 1: 16.64
+Sensor 2: 41.42
+Sensor 3: 35.80
+Time: 29493
+Sensor 0: 46.45
+Sensor 1: 19.21
+Sensor 2: 41.84
+Sensor 3: 35.18
+Time: 29594
+Sensor 0: 48.98
+Sensor 1: 18.72
+Sensor 2: 40.57
+Sensor 3: 36.56
+Time: 29644
+Sensor 0: 64.79
+Sensor 1: 21.68
+Sensor 2: 43.07
+Sensor 3: 50.03
+Time: 29744
+Sensor 0: 68.57
+Sensor 1: 31.26
+Sensor 2: 50.65
+Sensor 3: 58.40
+Time: 29845
+Sensor 0: 50.91
+Sensor 1: 24.34
+Sensor 2: 51.50
+Sensor 3: 49.22
+Time: 29945
+Sensor 0: 44.43
+Sensor 1: 11.02
+Sensor 2: 42.47
+Sensor 3: 51.62
+Time: 30045
+Sensor 0: 44.77
+Sensor 1: 19.21
+Sensor 2: 40.40
+Sensor 3: 57.55
+Time: 30146
+Sensor 0: 44.91
+Sensor 1: -3.06
+Sensor 2: 38.41
+Sensor 3: 64.20
+Time: 30246
+Sensor 0: 45.34
+Sensor 1: -7.32
+Sensor 2: 34.60
+Sensor 3: 70.86
+Time: 30296
+Sensor 0: 49.85
+Sensor 1: -11.57
+Sensor 2: 38.22
+Sensor 3: 58.40
+Time: 30397
+Sensor 0: 45.34
+Sensor 1: -12.98
+Sensor 2: 40.37
+Sensor 3: 64.20
+Time: 30500
+Sensor 0: 47.75
+Sensor 1: -11.42
+Sensor 2: 38.07
+Sensor 3: 103.69
+Time: 30600
+Sensor 0: 45.34
+Sensor 1: -7.94
+Sensor 2: 38.22
+Sensor 3: 69.85
+Time: 30701
+Sensor 0: 45.34
+Sensor 1: -5.98
+Sensor 2: 38.07
+Sensor 3: 70.86
+Time: 30801
+Sensor 0: 45.34
+Sensor 1: -5.89
+Sensor 2: 34.60
+Sensor 3: -2.86
+Time: 30852
+Sensor 0: 12.53
+Sensor 1: -6.47
+Sensor 2: 10.41
+Sensor 3: -4.03
+Time: 30952
+Sensor 0: 29.08
+Sensor 1: -5.82
+Sensor 2: 11.73
+Sensor 3: 1.22
+Time: 31052
+Sensor 0: 60.19
+Sensor 1: -5.98
+Sensor 2: 27.06
+Sensor 3: 34.82
+Time: 31153
+Sensor 0: 67.13
+Sensor 1: -5.89
+Sensor 2: 12.98
+Sensor 3: 12.92
+Time: 31253
+Sensor 0: 45.44
+Sensor 1: 7.23
+Sensor 2: 12.98
+Sensor 3: 12.92
+Time: 31353
+Sensor 0: 38.67
+Sensor 1: 4.86
+Sensor 2: 58.75
+Sensor 3: 47.76
+Time: 31404
+Sensor 0: 38.13
+Sensor 1: 6.02
+Sensor 2: 58.33
+Sensor 3: 47.83
+Time: 31504
+Sensor 0: 38.58
+Sensor 1: 6.19
+Sensor 2: 57.56
+Sensor 3: 47.63
+Time: 31604
+Sensor 0: 38.83
+Sensor 1: 6.17
+Sensor 2: 58.35
+Sensor 3: 47.82
+Time: 31705
+Sensor 0: 39.89
+Sensor 1: 6.11
+Sensor 2: 58.28
+Sensor 3: 50.54
+Time: 31805
+Sensor 0: 38.83
+Sensor 1: 7.72
+Sensor 2: 59.08
+Sensor 3: 65.46
+Time: 31905
+Sensor 0: 47.08
+Sensor 1: 6.17
+Sensor 2: 58.35
+Sensor 3: 47.83
+Time: 31956
+Sensor 0: 38.83
+Sensor 1: 3.32
+Sensor 2: 57.24
+Sensor 3: 17.95
+Time: 32056
+Sensor 0: 38.83
+Sensor 1: 6.17
+Sensor 2: 58.28
+Sensor 3: 47.82
+Time: 32156
+Sensor 0: 12.20
+Sensor 1: 6.11
+Sensor 2: 58.28
+Sensor 3: -4.53
+Time: 32257
+Sensor 0: 11.86
+Sensor 1: -7.26
+Sensor 2: 12.45
+Sensor 3: -5.37
+Time: 32357
+Sensor 0: 11.94
+Sensor 1: -6.90
+Sensor 2: 13.11
+Sensor 3: -5.20
+Time: 32458
+Sensor 0: 11.90
+Sensor 1: -7.07
+Sensor 2: 13.12
+Sensor 3: -5.36
+Time: 32508
+Sensor 0: 11.86
+Sensor 1: -6.99
+Sensor 2: 13.35
+Sensor 3: -5.12
+Time: 32608
+Sensor 0: 12.34
+Sensor 1: -6.84
+Sensor 2: 13.33
+Sensor 3: -5.14
+Time: 32708
+Sensor 0: 11.94
+Sensor 1: -5.94
+Sensor 2: 13.12
+Sensor 3: -5.29
+Time: 32809
+Sensor 0: 11.94
+Sensor 1: -6.90
+Sensor 2: 13.11
+Sensor 3: -5.03
+Time: 32909
+Sensor 0: 12.34
+Sensor 1: -6.84
+Sensor 2: 13.11
+Sensor 3: -5.14
+Time: 33010
+Sensor 0: 28.78
+Sensor 1: -5.94
+Sensor 2: -1.16
+Sensor 3: -5.12
+Time: 33060
+Sensor 0: 25.93
+Sensor 1: 5.91
+Sensor 2: -0.51
+Sensor 3: -5.03
+Time: 33160
+Sensor 0: 22.48
+Sensor 1: 3.77
+Sensor 2: 0.30
+Sensor 3: 1.56
+Time: 33260
+Sensor 0: 19.26
+Sensor 1: 1.25
+Sensor 2: 1.99
+Sensor 3: 3.35
+Time: 33361
+Sensor 0: 17.78
+Sensor 1: -0.07
+Sensor 2: -0.51
+Sensor 3: 2.61
+Time: 33411
+Sensor 0: 17.98
+Sensor 1: 2.25
+Sensor 2: 5.03
+Sensor 3: -3.03
+Time: 33512
+Sensor 0: 18.89
+Sensor 1: 5.64
+Sensor 2: 4.36
+Sensor 3: -4.83
+Time: 33612
+Sensor 0: 19.10
+Sensor 1: 6.94
+Sensor 2: 2.68
+Sensor 3: -5.69
+Time: 33662
+Sensor 0: 18.95
+Sensor 1: 4.39
+Sensor 2: 0.79
+Sensor 3: -5.22
+Time: 33763
+Sensor 0: 18.89
+Sensor 1: 0.50
+Sensor 2: -0.63
+Sensor 3: -4.40
+Time: 33863
+Sensor 0: 17.98
+Sensor 1: -4.07
+Sensor 2: -1.47
+Sensor 3: -5.44
+Time: 33963
+Sensor 0: 17.98
+Sensor 1: -7.28
+Sensor 2: -1.46
+Sensor 3: -6.05
+Time: 34064
+Sensor 0: 12.84
+Sensor 1: -7.71
+Sensor 2: -1.37
+Sensor 3: -5.74
+Time: 34164
+Sensor 0: 15.37
+Sensor 1: -6.52
+Sensor 2: -1.15
+Sensor 3: -5.44
+Time: 34214
+Sensor 0: 17.78
+Sensor 1: -5.74
+Sensor 2: -1.48
+Sensor 3: -5.22
+Time: 34315
+Sensor 0: 20.45
+Sensor 1: -4.84
+Sensor 2: -0.87
+Sensor 3: -4.40
+Time: 34415
+Sensor 0: 15.37
+Sensor 1: -2.82
+Sensor 2: -1.37
+Sensor 3: 2.53
+Time: 34515
+Sensor 0: 26.29
+Sensor 1: -5.74
+Sensor 2: -0.26
+Sensor 3: 1.45
+Time: 34616
+Sensor 0: 25.12
+Sensor 1: -4.84
+Sensor 2: -0.87
+Sensor 3: 2.14
+Time: 34716
+Sensor 0: 17.71
+Sensor 1: 5.39
+Sensor 2: -0.26
+Sensor 3: 1.45
+Time: 34766
+Sensor 0: 14.62
+Sensor 1: 4.26
+Sensor 2: -0.20
+Sensor 3: 2.14
+Time: 34867
+Sensor 0: 20.45
+Sensor 1: 2.24
+Sensor 2: 61.07
+Sensor 3: 2.53
+Time: 34967
+Sensor 0: 8.30
+Sensor 1: -1.58
+Sensor 2: 32.38
+Sensor 3: 18.29
+Time: 35068
+Sensor 0: 9.32
+Sensor 1: 2.24
+Sensor 2: 5.60
+Sensor 3: -0.25
+Time: 35168
+Sensor 0: 10.22
+Sensor 1: -5.01
+Sensor 2: 4.28
+Sensor 3: 16.69
+Time: 35268
+Sensor 0: 14.67
+Sensor 1: 0.82
+Sensor 2: 4.34
+Sensor 3: -4.46
+Time: 35319
+Sensor 0: 16.41
+Sensor 1: 5.53
+Sensor 2: 5.00
+Sensor 3: -6.31
+Time: 35419
+Sensor 0: 12.21
+Sensor 1: 0.82
+Sensor 2: 42.42
+Sensor 3: 1.03
+Time: 35521
+Sensor 0: 10.52
+Sensor 1: 0.82
+Sensor 2: 5.60
+Sensor 3: -0.25
+Time: 35622
+Sensor 0: 11.98
+Sensor 1: 18.47
+Sensor 2: 5.60
+Sensor 3: 26.16
+Time: 35722
+Sensor 0: 12.42
+Sensor 1: 16.99
+Sensor 2: 74.00
+Sensor 3: 24.52
+Time: 35823
+Sensor 0: 12.39
+Sensor 1: 16.84
+Sensor 2: 72.73
+Sensor 3: 24.79
+Time: 35873
+Sensor 0: 12.34
+Sensor 1: 17.15
+Sensor 2: 72.72
+Sensor 3: 24.73
+Time: 35973
+Sensor 0: 12.42
+Sensor 1: 16.77
+Sensor 2: 72.52
+Sensor 3: 24.51
+Time: 36074
+Sensor 0: 12.18
+Sensor 1: 16.97
+Sensor 2: 72.67
+Sensor 3: 24.65
+Time: 36174
+Sensor 0: 12.26
+Sensor 1: 16.87
+Sensor 2: 72.34
+Sensor 3: 24.60
+Time: 36274
+Sensor 0: 12.36
+Sensor 1: 16.94
+Sensor 2: 72.45
+Sensor 3: 24.66
+Time: 36375
+Sensor 0: 12.26
+Sensor 1: 16.91
+Sensor 2: 72.21
+Sensor 3: 24.81
+Time: 36475
+Sensor 0: 12.36
+Sensor 1: 16.95
+Sensor 2: 72.40
+Sensor 3: 24.62
+Time: 36525
+Sensor 0: 12.34
+Sensor 1: 16.94
+Sensor 2: 72.13
+Sensor 3: 24.65
+Time: 36626
+Sensor 0: 12.35
+Sensor 1: 17.02
+Sensor 2: 72.22
+Sensor 3: 24.80
+Time: 36726
+Sensor 0: 12.34
+Sensor 1: 17.04
+Sensor 2: 72.17
+Sensor 3: 24.71
+Time: 36826
+Sensor 0: 12.34
+Sensor 1: 17.02
+Sensor 2: 72.07
+Sensor 3: 24.70
+Time: 36927
+Sensor 0: 12.29
+Sensor 1: 17.11
+Sensor 2: 72.26
+Sensor 3: 24.66
+Time: 37027
+Sensor 0: 12.41
+Sensor 1: 16.96
+Sensor 2: 72.22
+Sensor 3: 24.60
+Time: 37077
+Sensor 0: 12.31
+Sensor 1: 16.99
+Sensor 2: 72.13
+Sensor 3: 24.72
+Time: 37178
+Sensor 0: 12.37
+Sensor 1: 16.96
+Sensor 2: 72.19
+Sensor 3: 24.72
+Time: 37278
+Sensor 0: 12.31
+Sensor 1: 16.99
+Sensor 2: 72.19
+Sensor 3: 24.74
+Time: 37378
+Sensor 0: 12.32
+Sensor 1: 17.06
+Sensor 2: 72.12
+Sensor 3: 24.79
+Time: 37479
+Sensor 0: 12.35
+Sensor 1: 17.06
+Sensor 2: 72.28
+Sensor 3: 24.77
+Time: 37579
+Sensor 0: 12.32
+Sensor 1: 16.99
+Sensor 2: 72.20
+Sensor 3: 24.76
+Time: 37629
+Sensor 0: 12.24
+Sensor 1: 17.15
+Sensor 2: 72.24
+Sensor 3: 24.79
+Time: 37730
+Sensor 0: 12.24
+Sensor 1: 17.17
+Sensor 2: 72.31
+Sensor 3: 24.79
+Time: 37830
+Sensor 0: 12.14
+Sensor 1: 17.14
+Sensor 2: 72.26
+Sensor 3: 24.79
+Time: 37931
+Sensor 0: 12.17
+Sensor 1: 17.22
+Sensor 2: 72.28
+Sensor 3: 24.79
+Time: 38031
+Sensor 0: 12.34
+Sensor 1: 17.13
+Sensor 2: 72.29
+Sensor 3: 24.89
+Time: 38131
+Sensor 0: 12.42
+Sensor 1: 17.13
+Sensor 2: 72.28
+Sensor 3: 24.81
+Time: 38232
+Sensor 0: 12.34
+Sensor 1: 17.21
+Sensor 2: 72.44
+Sensor 3: 24.80
+Time: 38282
+Sensor 0: 12.32
+Sensor 1: 17.20
+Sensor 2: 72.45
+Sensor 3: 24.84
+Time: 38382
+Sensor 0: 12.27
+Sensor 1: 17.15
+Sensor 2: 72.58
+Sensor 3: 24.80
+Time: 38483
+Sensor 0: 12.26
+Sensor 1: 17.17
+Sensor 2: 72.50
+Sensor 3: 24.79
+Time: 38583
+Sensor 0: 12.32
+Sensor 1: 17.23
+Sensor 2: 72.47
+Sensor 3: 24.83
+Time: 38683
+Sensor 0: 12.03
+Sensor 1: 17.20
+Sensor 2: 72.39
+Sensor 3: 24.81
+Time: 38784
+Sensor 0: 12.26
+Sensor 1: 17.21
+Sensor 2: 72.45
+Sensor 3: 24.83
+Time: 38834
+Sensor 0: 12.12
+Sensor 1: 17.23
+Sensor 2: 72.45
+Sensor 3: 24.84
+Time: 38934
+Sensor 0: 12.03
+Sensor 1: 17.34
+Sensor 2: 72.39
+Sensor 3: 24.97
+Time: 39035
+Sensor 0: 12.00
+Sensor 1: 17.55
+Sensor 2: 58.77
+Sensor 3: 25.09
+Time: 39135
+Sensor 0: 10.43
+Sensor 1: 18.91
+Sensor 2: 58.94
+Sensor 3: 25.16
+Time: 39236
+Sensor 0: 10.55
+Sensor 1: 18.83
+Sensor 2: 58.91
+Sensor 3: 26.61
+Time: 39336
+Sensor 0: 10.74
+Sensor 1: 18.74
+Sensor 2: 59.14
+Sensor 3: 26.41
+Time: 39386
+Sensor 0: 10.69
+Sensor 1: 18.74
+Sensor 2: 59.01
+Sensor 3: 26.34
+Time: 39487
+Sensor 0: 10.53
+Sensor 1: 18.76
+Sensor 2: 59.11
+Sensor 3: 26.42
+Time: 39587
+Sensor 0: 10.46
+Sensor 1: 18.79
+Sensor 2: 59.24
+Sensor 3: 26.46
+Time: 39687
+Sensor 0: 10.71
+Sensor 1: 18.82
+Sensor 2: 59.26
+Sensor 3: 26.57
+Time: 39788
+Sensor 0: 10.60
+Sensor 1: 18.83
+Sensor 2: 59.41
+Sensor 3: 26.55
+Time: 39888
+Sensor 0: 10.51
+Sensor 1: 18.79
+Sensor 2: 59.42
+Sensor 3: 26.48
+Time: 39939
+Sensor 0: 10.53
+Sensor 1: 18.86
+Sensor 2: 59.53
+Sensor 3: 26.55
+Time: 40039
+Sensor 0: 10.52
+Sensor 1: 18.88
+Sensor 2: 59.57
+Sensor 3: 26.46
+Time: 40139
+Sensor 0: 10.43
+Sensor 1: 18.83
+Sensor 2: 59.56
+Sensor 3: 26.47
+Time: 40240
+Sensor 0: 10.43
+Sensor 1: 18.77
+Sensor 2: 59.59
+Sensor 3: 26.50
+Time: 40340
+Sensor 0: 10.50
+Sensor 1: 18.81
+Sensor 2: 59.72
+Sensor 3: 26.56
+Time: 40440
+Sensor 0: 10.56
+Sensor 1: 18.88
+Sensor 2: 59.70
+Sensor 3: 26.50
+Time: 40495
+Sensor 0: 10.62
+Sensor 1: 18.96
+Sensor 2: 59.70
+Sensor 3: 26.62
+Time: 40595
+Sensor 0: 10.42
+Sensor 1: 18.95
+Sensor 2: 59.76
+Sensor 3: 26.59
+Time: 40696
+Sensor 0: 10.36
+Sensor 1: 18.88
+Sensor 2: 59.84
+Sensor 3: 26.55
+Time: 40796
+Sensor 0: 10.45
+Sensor 1: 18.90
+Sensor 2: 59.81
+Sensor 3: 26.50
+Time: 40896
+Sensor 0: 10.52
+Sensor 1: 18.99
+Sensor 2: 59.86
+Sensor 3: 26.56
+Time: 40997
+Sensor 0: 10.50
+Sensor 1: 18.90
+Sensor 2: 59.97
+Sensor 3: 26.61
+Time: 41047
+Sensor 0: 10.45
+Sensor 1: 18.94
+Sensor 2: 59.99
+Sensor 3: 26.58
+Time: 41147
+Sensor 0: 10.50
+Sensor 1: 18.88
+Sensor 2: 59.99
+Sensor 3: 26.52
+Time: 41248
+Sensor 0: 10.42
+Sensor 1: 18.81
+Sensor 2: 59.99
+Sensor 3: 26.65
+Time: 41348
+Sensor 0: 10.50
+Sensor 1: 18.92
+Sensor 2: 60.01
+Sensor 3: 26.58
+Time: 41448
+Sensor 0: 10.50
+Sensor 1: 18.79
+Sensor 2: 59.99
+Sensor 3: 26.61
+Time: 41549
+Sensor 0: 10.50
+Sensor 1: 18.88
+Sensor 2: 59.99
+Sensor 3: 26.65
+Time: 41649
+Sensor 0: 30.96
+Sensor 1: 20.62
+Sensor 2: 60.01
+Sensor 3: 26.73
+Time: 41699
+Sensor 0: 24.85
+Sensor 1: 18.88
+Sensor 2: 63.82
+Sensor 3: 76.68
+Time: 41800
+Sensor 0: 26.11
+Sensor 1: 25.03
+Sensor 2: 94.21
+Sensor 3: 64.81
+Time: 41900
+Sensor 0: 33.87
+Sensor 1: 23.74
+Sensor 2: 113.93
+Sensor 3: 88.78
+Time: 42000
+Sensor 0: 25.75
+Sensor 1: 28.44
+Sensor 2: 94.21
+Sensor 3: 112.89
+Time: 42101
+Sensor 0: 24.45
+Sensor 1: 31.49
+Sensor 2: 96.63
+Sensor 3: 93.52
+Time: 42201
+Sensor 0: 26.11
+Sensor 1: 25.91
+Sensor 2: 150.75
+Sensor 3: 122.17
+Time: 42251
+Sensor 0: 26.11
+Sensor 1: 28.44
+Sensor 2: 183.09
+Sensor 3: 143.43
+Time: 42352
+Sensor 0: 47.16
+Sensor 1: 41.96
+Sensor 2: 195.40
+Sensor 3: 135.92
+Time: 42452
+Sensor 0: 48.84
+Sensor 1: 37.15
+Sensor 2: 187.02
+Sensor 3: 141.72
+Time: 42552
+Sensor 0: 56.44
+Sensor 1: 31.88
+Sensor 2: 186.38
+Sensor 3: 153.31
+Time: 42653
+Sensor 0: 70.31
+Sensor 1: 29.92
+Sensor 2: 180.84
+Sensor 3: 169.00
+Time: 42753
+Sensor 0: 48.84
+Sensor 1: 30.75
+Sensor 2: 169.14
+Sensor 3: 143.43
+Time: 42804
+Sensor 0: 56.44
+Sensor 1: 42.14
+Sensor 2: 186.38
+Sensor 3: 153.31
+Time: 42904
+Sensor 0: 70.31
+Sensor 1: 37.15
+Sensor 2: 187.02
+Sensor 3: 169.00
+Time: 43004
+Sensor 0: 155.67
+Sensor 1: 57.33
+Sensor 2: 600.96
+Sensor 3: 491.27
+Time: 43105
+Sensor 0: 162.63
+Sensor 1: 46.81
+Sensor 2: 487.47
+Sensor 3: 414.91
+Time: 43205
+Sensor 0: 184.06
+Sensor 1: 36.76
+Sensor 2: 287.98
+Sensor 3: 370.26
+Time: 43305
+Sensor 0: 183.82
+Sensor 1: 26.05
+Sensor 2: 148.95
+Sensor 3: 321.61
+Time: 43406
+Sensor 0: 185.27
+Sensor 1: 29.17
+Sensor 2: 117.21
+Sensor 3: 298.92
+Time: 43456
+Sensor 0: 158.99
+Sensor 1: 33.56
+Sensor 2: 104.71
+Sensor 3: 297.21
+Time: 43556
+Sensor 0: 162.63
+Sensor 1: 28.06
+Sensor 2: 80.21
+Sensor 3: 208.76
+Time: 43657
+Sensor 0: 162.63
+Sensor 1: 18.85
+Sensor 2: 68.10
+Sensor 3: 135.41
+Time: 43757
+Sensor 0: 86.10
+Sensor 1: 16.53
+Sensor 2: 62.50
+Sensor 3: 297.21
+Time: 43857
+Sensor 0: 95.71
+Sensor 1: 18.82
+Sensor 2: 62.01
+Sensor 3: 107.18
+Time: 43958
+Sensor 0: 112.92
+Sensor 1: 18.46
+Sensor 2: 64.86
+Sensor 3: 124.79
+Time: 44008
+Sensor 0: 131.45
+Sensor 1: 16.74
+Sensor 2: 71.07
+Sensor 3: 160.08
+Time: 44108
+Sensor 0: 127.80
+Sensor 1: 14.71
+Sensor 2: 75.92
+Sensor 3: 197.21
+Time: 44209
+Sensor 0: 108.09
+Sensor 1: 13.71
+Sensor 2: 72.62
+Sensor 3: 182.29
+Time: 44309
+Sensor 0: 83.60
+Sensor 1: 18.42
+Sensor 2: 65.96
+Sensor 3: 141.03
+Time: 44410
+Sensor 0: 108.09
+Sensor 1: 19.68
+Sensor 2: 52.80
+Sensor 3: 67.29
+Time: 44510
+Sensor 0: 108.09
+Sensor 1: 13.60
+Sensor 2: 65.96
+Sensor 3: 40.59
+Time: 44560
+Sensor 0: 20.22
+Sensor 1: 14.71
+Sensor 2: 65.96
+Sensor 3: 20.30
+Time: 44661
+Sensor 0: 26.78
+Sensor 1: 3.66
+Sensor 2: 14.93
+Sensor 3: 24.62
+Time: 44761
+Sensor 0: 47.02
+Sensor 1: 10.97
+Sensor 2: 18.23
+Sensor 3: 46.77
+Time: 44861
+Sensor 0: 61.18
+Sensor 1: 18.14
+Sensor 2: 23.71
+Sensor 3: 66.16
+Time: 44962
+Sensor 0: 65.09
+Sensor 1: 18.24
+Sensor 2: 24.10
+Sensor 3: 72.63
+Time: 45062
+Sensor 0: 71.82
+Sensor 1: 19.17
+Sensor 2: 37.72
+Sensor 3: 77.61
+Time: 45112
+Sensor 0: 109.02
+Sensor 1: 24.52
+Sensor 2: 23.71
+Sensor 3: 116.13
+Time: 45213
+Sensor 0: 65.09
+Sensor 1: 18.24
+Sensor 2: 24.10
+Sensor 3: 72.63
+Time: 45313
+Sensor 0: 71.82
+Sensor 1: 19.17
+Sensor 2: 37.72
+Sensor 3: 77.61
+Time: 45413
+Sensor 0: 109.02
+Sensor 1: 24.52
+Sensor 2: 51.62
+Sensor 3: 116.13
+CHOP: 45486
+Time: 45519
+Sensor 0: 329.14
+Sensor 1: 40.31
+Sensor 2: 79.05
+Sensor 3: 392.34
+Time: 45620
+Sensor 0: 439.51
+Sensor 1: 141.42
+Sensor 2: 121.72
+Sensor 3: 468.88
+Time: 45720
+Sensor 0: 273.32
+Sensor 1: 86.89
+Sensor 2: 169.26
+Sensor 3: 318.53
+Time: 45770
+Sensor 0: 329.14
+Sensor 1: 115.58
+Sensor 2: 216.23
+Sensor 3: 392.34
+Time: 45871
+Sensor 0: 439.51
+Sensor 1: 141.42
+Sensor 2: 298.19
+Sensor 3: 468.88
+Time: 45971
+Sensor 0: 1484.98
+Sensor 1: 228.20
+Sensor 2: 1343.89
+Sensor 3: 1230.84
+Time: 46072
+Sensor 0: 1027.87
+Sensor 1: 978.11
+Sensor 2: 1569.32
+Sensor 3: 1403.41
+Time: 46172
+Sensor 0: 702.82
+Sensor 1: 548.71
+Sensor 2: 865.82
+Sensor 3: 1153.17
+Time: 46273
+Sensor 0: 610.09
+Sensor 1: 227.68
+Sensor 2: 486.99
+Sensor 3: 856.04
+Time: 46323
+Sensor 0: 529.97
+Sensor 1: 108.72
+Sensor 2: 423.92
+Sensor 3: 766.32
+Time: 46423
+Sensor 0: 475.32
+Sensor 1: 80.34
+Sensor 2: 370.44
+Sensor 3: 649.63
+CHOP: 46438
+Time: 46524
+Sensor 0: 471.39
+Sensor 1: 91.37
+Sensor 2: 344.79
+Sensor 3: 563.50
+Time: 46624
+Sensor 0: 633.45
+Sensor 1: 228.19
+Sensor 2: 382.77
+Sensor 3: 718.51
+Time: 46725
+Sensor 0: 610.09
+Sensor 1: 516.92
+Sensor 2: 633.37
+Sensor 3: 1041.78
+Time: 46825
+Sensor 0: 610.09
+Sensor 1: 227.68
+Sensor 2: 423.92
+Sensor 3: 1145.13
+Time: 46875
+Sensor 0: 633.45
+Sensor 1: 228.19
+Sensor 2: 423.92
+Sensor 3: 1101.96
+CHOP: 46937
+Time: 46976
+Sensor 0: 1311.42
+Sensor 1: 830.88
+Sensor 2: 1094.03
+Sensor 3: 1295.58
+Time: 47076
+Sensor 0: 992.40
+Sensor 1: 606.77
+Sensor 2: 1493.61
+Sensor 3: 1421.14
+Time: 47177
+Sensor 0: 763.98
+Sensor 1: 319.23
+Sensor 2: 637.55
+Sensor 3: 1051.12
+Time: 47277
+Sensor 0: 695.42
+Sensor 1: 238.92
+Sensor 2: 524.46
+Sensor 3: 883.33
+Time: 47378
+Sensor 0: 643.18
+Sensor 1: 207.42
+Sensor 2: 485.92
+Sensor 3: 806.83
+CHOP: 47397
+Time: 47480
+Sensor 0: 614.83
+Sensor 1: 201.61
+Sensor 2: 471.02
+Sensor 3: 749.38
+Time: 47530
+Sensor 0: 684.58
+Sensor 1: 239.58
+Sensor 2: 535.71
+Sensor 3: 754.42
+Time: 47631
+Sensor 0: 922.36
+Sensor 1: 406.37
+Sensor 2: 763.70
+Sensor 3: 896.87
+Time: 47731
+Sensor 0: 695.42
+Sensor 1: 239.58
+Sensor 2: 535.71
+Sensor 3: 1107.82
+Time: 47831
+Sensor 0: 695.42
+Sensor 1: 239.58
+Sensor 2: 535.71
+Sensor 3: 883.33
+Time: 47931
+Sensor 0: 1116.46
+Sensor 1: 701.44
+Sensor 2: 1440.60
+Sensor 3: 896.87
+Time: 48031
+Sensor 0: 814.63
+Sensor 1: 363.78
+Sensor 2: 909.57
+Sensor 3: 1310.82
+Time: 48082
+Sensor 0: 691.83
+Sensor 1: 189.25
+Sensor 2: 530.95
+Sensor 3: 985.18
+Time: 48182
+Sensor 0: 608.07
+Sensor 1: 153.47
+Sensor 2: 462.52
+Sensor 3: 842.70
+Time: 48282
+Sensor 0: 559.04
+Sensor 1: 122.44
+Sensor 2: 421.32
+Sensor 3: 727.65
+Time: 48382
+Sensor 0: 541.54
+Sensor 1: 106.19
+Sensor 2: 413.13
+Sensor 3: 672.98
+Time: 48482
+Sensor 0: 542.33
+Sensor 1: 110.44
+Sensor 2: 412.06
+Sensor 3: 651.49
+Time: 48582
+Sensor 0: 569.19
+Sensor 1: 135.60
+Sensor 2: 432.44
+Sensor 3: 652.44
+Time: 48633
+Sensor 0: 593.74
+Sensor 1: 153.15
+Sensor 2: 457.86
+Sensor 3: 676.82
+Time: 48733
+Sensor 0: 621.82
+Sensor 1: 143.42
+Sensor 2: 462.54
+Sensor 3: 768.16
+Time: 48833
+Sensor 0: 569.19
+Sensor 1: 156.46
+Sensor 2: 480.70
+Sensor 3: 676.82
+CHOP: 48861
+Time: 48934
+Sensor 0: 593.74
+Sensor 1: 193.93
+Sensor 2: 506.22
+Sensor 3: 676.82
+Time: 49034
+Sensor 0: 621.82
+Sensor 1: 153.15
+Sensor 2: 462.54
+Sensor 3: 1003.05
+Time: 49134
+Sensor 0: 651.43
+Sensor 1: 156.46
+Sensor 2: 480.70
+Sensor 3: 810.03
+Time: 49234
+Sensor 0: 706.02
+Sensor 1: 193.93
+Sensor 2: 506.22
+Sensor 3: 1265.51
+Time: 49285
+Sensor 0: 1129.18
+Sensor 1: 278.89
+Sensor 2: 586.69
+Sensor 3: 1485.90
+Time: 49385
+Sensor 0: 771.61
+Sensor 1: 534.11
+Sensor 2: 938.10
+Sensor 3: 1230.92
+Time: 49485
+Sensor 0: 565.97
+Sensor 1: 243.43
+Sensor 2: 425.04
+Sensor 3: 775.70
+Time: 49585
+Sensor 0: 525.58
+Sensor 1: 107.71
+Sensor 2: 388.32
+Sensor 3: 671.01
+CHOP: 49669
+Time: 49686
+Sensor 0: 512.81
+Sensor 1: 80.73
+Sensor 2: 381.24
+Sensor 3: 636.88
+Time: 49736
+Sensor 0: 534.92
+Sensor 1: 87.09
+Sensor 2: 394.99
+Sensor 3: 637.92
+Time: 49836
+Sensor 0: 703.59
+Sensor 1: 125.93
+Sensor 2: 525.17
+Sensor 3: 721.15
+Time: 49936
+Sensor 0: 565.97
+Sensor 1: 282.88
+Sensor 2: 807.86
+Sensor 3: 961.64
+Time: 50036
+Sensor 0: 565.97
+Sensor 1: 125.93
+Sensor 2: 425.04
+Sensor 3: 721.15
+Time: 50137
+Sensor 0: 1026.71
+Sensor 1: 125.93
+Sensor 2: 525.17
+Sensor 3: 721.15
+Time: 50237
+Sensor 0: 728.49
+Sensor 1: 482.33
+Sensor 2: 1030.35
+Sensor 3: 1211.30
+Time: 50337
+Sensor 0: 621.37
+Sensor 1: 206.57
+Sensor 2: 520.89
+Sensor 3: 915.35
+Time: 50387
+Sensor 0: 589.72
+Sensor 1: 111.82
+Sensor 2: 430.68
+Sensor 3: 797.81
+Time: 50487
+Sensor 0: 555.92
+Sensor 1: 103.77
+Sensor 2: 417.76
+Sensor 3: 742.80
+Time: 50588
+Sensor 0: 554.37
+Sensor 1: 111.76
+Sensor 2: 407.34
+Sensor 3: 691.06
+CHOP: 50597
+Time: 50688
+Sensor 0: 626.35
+Sensor 1: 154.80
+Sensor 2: 425.55
+Sensor 3: 701.47
+Time: 50788
+Sensor 0: 621.37
+Sensor 1: 326.77
+Sensor 2: 561.13
+Sensor 3: 803.52
+Time: 50888
+Sensor 0: 621.37
+Sensor 1: 154.80
+Sensor 2: 430.68
+Sensor 3: 797.81
+Time: 50938
+Sensor 0: 626.35
+Sensor 1: 154.80
+Sensor 2: 430.68
+Sensor 3: 797.81
+Time: 51039
+Sensor 0: 882.58
+Sensor 1: 351.76
+Sensor 2: 561.13
+Sensor 3: 1320.11
+Time: 51139
+Sensor 0: 682.99
+Sensor 1: 148.71
+Sensor 2: 938.08
+Sensor 3: 975.66
+Time: 51239
+Sensor 0: 629.10
+Sensor 1: 96.55
+Sensor 2: 480.15
+Sensor 3: 864.53
+CHOP: 51325
+Time: 51339
+Sensor 0: 601.83
+Sensor 1: 82.42
+Sensor 2: 433.72
+Sensor 3: 805.09
+Time: 51440
+Sensor 0: 636.36
+Sensor 1: 112.87
+Sensor 2: 426.02
+Sensor 3: 811.64
+Time: 51490
+Sensor 0: 902.26
+Sensor 1: 251.19
+Sensor 2: 741.91
+Sensor 3: 1021.35
+Time: 51590
+Sensor 0: 682.99
+Sensor 1: 148.71
+Sensor 2: 955.89
+Sensor 3: 1295.77
+Time: 51690
+Sensor 0: 682.99
+Sensor 1: 148.71
+Sensor 2: 1113.31
+Sensor 3: 1398.95
+Time: 51790
+Sensor 0: 806.05
+Sensor 1: 273.10
+Sensor 2: 914.75
+Sensor 3: 1327.17
+Time: 51891
+Sensor 0: 613.16
+Sensor 1: 52.19
+Sensor 2: 430.09
+Sensor 3: 956.29
+CHOP: 51973
+Time: 51991
+Sensor 0: 578.69
+Sensor 1: 23.15
+Sensor 2: 350.88
+Sensor 3: 842.63
+Time: 52041
+Sensor 0: 586.22
+Sensor 1: 28.31
+Sensor 2: 360.23
+Sensor 3: 801.60
+Time: 52141
+Sensor 0: 743.89
+Sensor 1: 95.30
+Sensor 2: 477.67
+Sensor 3: 840.33
+Time: 52242
+Sensor 0: 1047.93
+Sensor 1: 252.86
+Sensor 2: 727.20
+Sensor 3: 1070.26
+Time: 52342
+Sensor 0: 1161.75
+Sensor 1: 95.30
+Sensor 2: 947.16
+Sensor 3: 1299.15
+Time: 52442
+Sensor 0: 886.73
+Sensor 1: 317.52
+Sensor 2: 477.67
+Sensor 3: 956.29
+Time: 52542
+Sensor 0: 688.63
+Sensor 1: 82.24
+Sensor 2: 578.06
+Sensor 3: 1129.56
+Time: 52642
+Sensor 0: 645.39
+Sensor 1: 20.75
+Sensor 2: 417.89
+Sensor 3: 947.42
+Time: 52693
+Sensor 0: 630.57
+Sensor 1: 13.07
+Sensor 2: 394.73
+Sensor 3: 906.22
+Time: 52793
+Sensor 0: 694.01
+Sensor 1: 24.12
+Sensor 2: 416.93
+Sensor 3: 888.38
+CHOP: 52805
+Time: 52893
+Sensor 0: 904.20
+Sensor 1: 88.18
+Sensor 2: 529.47
+Sensor 3: 979.60
+Time: 52993
+Sensor 0: 694.01
+Sensor 1: 222.95
+Sensor 2: 723.24
+Sensor 3: 1181.99
+Time: 53093
+Sensor 0: 966.02
+Sensor 1: 82.24
+Sensor 2: 529.47
+Sensor 3: 979.60
+Time: 53194
+Sensor 0: 424.70
+Sensor 1: 165.11
+Sensor 2: 650.37
+Sensor 3: 482.57
+Time: 53244
+Sensor 0: 182.38
+Sensor 1: 25.48
+Sensor 2: 238.66
+Sensor 3: 171.29
+Time: 53344
+Sensor 0: 183.64
+Sensor 1: 27.14
+Sensor 2: 141.25
+Sensor 3: 202.57
+Time: 53444
+Sensor 0: 226.06
+Sensor 1: 52.11
+Sensor 2: 153.21
+Sensor 3: 269.05
+Time: 53545
+Sensor 0: 263.06
+Sensor 1: 67.85
+Sensor 2: 186.07
+Sensor 3: 324.77
+CHOP: 53605
+Time: 53645
+Sensor 0: 296.74
+Sensor 1: 86.67
+Sensor 2: 249.68
+Sensor 3: 359.85
+Time: 53745
+Sensor 0: 429.03
+Sensor 1: 108.71
+Sensor 2: 381.26
+Sensor 3: 470.41
+Time: 53795
+Sensor 0: 263.06
+Sensor 1: 67.85
+Sensor 2: 238.66
+Sensor 3: 324.77
+Time: 53895
+Sensor 0: 296.74
+Sensor 1: 86.67
+Sensor 2: 249.68
+Sensor 3: 359.85
+Time: 53996
+Sensor 0: 695.69
+Sensor 1: 108.71
+Sensor 2: 651.30
+Sensor 3: 869.49
+Time: 54096
+Sensor 0: 487.13
+Sensor 1: 219.65
+Sensor 2: 429.52
+Sensor 3: 686.74
+Time: 54196
+Sensor 0: 453.76
+Sensor 1: 92.23
+Sensor 2: 364.34
+Sensor 3: 636.08
+CHOP: 54237
+Time: 54296
+Sensor 0: 434.89
+Sensor 1: 82.36
+Sensor 2: 348.86
+Sensor 3: 614.03
+Time: 54346
+Sensor 0: 468.09
+Sensor 1: 70.76
+Sensor 2: 360.64
+Sensor 3: 585.19
+Time: 54447
+Sensor 0: 672.01
+Sensor 1: 219.12
+Sensor 2: 503.13
+Sensor 3: 675.32
+Time: 54547
+Sensor 0: 487.13
+Sensor 1: 338.55
+Sensor 2: 429.52
+Sensor 3: 675.32
+Time: 54647
+Sensor 0: 829.39
+Sensor 1: 298.70
+Sensor 2: 429.52
+Sensor 3: 675.32
+Time: 54747
+Sensor 0: 550.32
+Sensor 1: 132.49
+Sensor 2: 863.53
+Sensor 3: 1117.95
+Time: 54848
+Sensor 0: 296.71
+Sensor 1: 53.66
+Sensor 2: 368.78
+Sensor 3: 614.66
+Time: 54898
+Sensor 0: 190.62
+Sensor 1: 43.12
+Sensor 2: 163.57
+Sensor 3: 308.35
+CHOP: 54965
+CHOP: 54965
+Time: 54998
+Sensor 0: 223.27
+Sensor 1: 51.29
+Sensor 2: 128.60
+Sensor 3: 230.34
+Time: 55098
+Sensor 0: 414.02
+Sensor 1: 124.86
+Sensor 2: 190.59
+Sensor 3: 302.79
+Time: 55198
+Sensor 0: 743.63
+Sensor 1: 296.93
+Sensor 2: 416.34
+Sensor 3: 530.64
+Time: 55299
+Sensor 0: 414.02
+Sensor 1: 124.86
+Sensor 2: 671.25
+Sensor 3: 936.20
+Time: 55399
+Sensor 0: 899.40
+Sensor 1: 473.37
+Sensor 2: 755.87
+Sensor 3: 869.14
+Time: 55499
+Sensor 0: 398.72
+Sensor 1: 199.31
+Sensor 2: 695.49
+Sensor 3: 430.17
+Time: 55549
+Sensor 0: 163.95
+Sensor 1: 49.63
+Sensor 2: 289.93
+Sensor 3: 155.71
+CHOP: 55629
+Time: 55649
+Sensor 0: 151.08
+Sensor 1: 39.77
+Sensor 2: 119.14
+Sensor 3: 150.65
+Time: 55750
+Sensor 0: 224.09
+Sensor 1: 57.94
+Sensor 2: 178.21
+Sensor 3: 221.49
+Time: 55800
+Sensor 0: 468.39
+Sensor 1: 155.39
+Sensor 2: 386.92
+Sensor 3: 430.60
+Time: 55900
+Sensor 0: 813.13
+Sensor 1: 333.90
+Sensor 2: 654.16
+Sensor 3: 756.22
+Time: 56000
+Sensor 0: 969.50
+Sensor 1: 155.39
+Sensor 2: 763.03
+Sensor 3: 916.81
+Time: 56050
+Sensor 0: 845.71
+Sensor 1: 446.93
+Sensor 2: 781.87
+Sensor 3: 940.81
+Time: 56151
+Sensor 0: 508.09
+Sensor 1: 299.79
+Sensor 2: 638.69
+Sensor 3: 787.25
+Time: 56251
+Sensor 0: 184.11
+Sensor 1: 105.52
+Sensor 2: 240.70
+Sensor 3: 349.37
+Time: 56351
+Sensor 0: 169.49
+Sensor 1: 35.67
+Sensor 2: 638.69
+Sensor 3: 756.22
+Time: 56451
+Sensor 0: 240.06
+Sensor 1: 50.32
+Sensor 2: 144.84
+Sensor 3: 243.57
+CHOP: 56469
+Time: 56552
+Sensor 0: 359.64
+Sensor 1: 86.63
+Sensor 2: 216.14
+Sensor 3: 335.96
+Time: 56602
+Sensor 0: 699.00
+Sensor 1: 205.84
+Sensor 2: 447.36
+Sensor 3: 569.15
+Time: 56702
+Sensor 0: 359.64
+Sensor 1: 105.52
+Sensor 2: 240.70
+Sensor 3: 349.37
+Time: 56802
+Sensor 0: 918.30
+Sensor 1: 105.52
+Sensor 2: 240.70
+Sensor 3: 349.37
+Time: 56902
+Sensor 0: 458.65
+Sensor 1: 331.30
+Sensor 2: 599.86
+Sensor 3: 815.67
+Time: 57003
+Sensor 0: 190.73
+Sensor 1: 109.25
+Sensor 2: 242.54
+Sensor 3: 366.26
+Time: 57103
+Sensor 0: 213.83
+Sensor 1: 41.71
+Sensor 2: 125.98
+Sensor 3: 170.72
+CHOP: 57117
+Time: 57203
+Sensor 0: 324.44
+Sensor 1: 53.55
+Sensor 2: 158.70
+Sensor 3: 242.73
+Time: 57253
+Sensor 0: 613.76
+Sensor 1: 117.58
+Sensor 2: 282.51
+Sensor 3: 406.61
+Time: 57353
+Sensor 0: 1031.11
+Sensor 1: 277.03
+Sensor 2: 552.84
+Sensor 3: 746.36
+Time: 57454
+Sensor 0: 458.65
+Sensor 1: 117.58
+Sensor 2: 282.51
+Sensor 3: 406.61
+Time: 57554
+Sensor 0: 1216.53
+Sensor 1: 117.58
+Sensor 2: 282.51
+Sensor 3: 1154.98
+CHOP: 57617
+Time: 57654
+Sensor 0: 1101.27
+Sensor 1: 500.77
+Sensor 2: 785.87
+Sensor 3: 1166.76
+Time: 57754
+Sensor 0: 846.98
+Sensor 1: 436.79
+Sensor 2: 899.39
+Sensor 3: 1284.07
+Time: 57804
+Sensor 0: 1031.11
+Sensor 1: 278.78
+Sensor 2: 1136.09
+Sensor 3: 914.09
+Time: 57905
+Sensor 0: 1031.11
+Sensor 1: 436.79
+Sensor 2: 367.75
+Sensor 3: 1154.98
+Time: 58005
+Sensor 0: 220.87
+Sensor 1: 436.79
+Sensor 2: 566.01
+Sensor 3: 1154.98
+Time: 58105
+Sensor 0: 274.16
+Sensor 1: -33.86
+Sensor 2: 999.61
+Sensor 3: 900.50
+Time: 58205
+Sensor 0: 383.46
+Sensor 1: -85.73
+Sensor 2: 1336.79
+Sensor 3: 1410.64
+Time: 58305
+Sensor 0: 466.44
+Sensor 1: -145.84
+Sensor 2: 1341.61
+Sensor 3: 1694.70
+Time: 58356
+Sensor 0: 503.78
+Sensor 1: -166.69
+Sensor 2: 1196.58
+Sensor 3: 1739.12
+Time: 58456
+Sensor 0: 530.50
+Sensor 1: -225.20
+Sensor 2: 1052.10
+Sensor 3: 1707.40
+Time: 58556
+Sensor 0: 554.41
+Sensor 1: -239.88
+Sensor 2: 950.91
+Sensor 3: 1686.75
+Time: 58656
+Sensor 0: 608.70
+Sensor 1: -246.53
+Sensor 2: 893.23
+Sensor 3: 1761.52
+Time: 58756
+Sensor 0: 660.09
+Sensor 1: -225.85
+Sensor 2: 741.88
+Sensor 3: 2033.46
+Time: 58857
+Sensor 0: 682.21
+Sensor 1: -207.60
+Sensor 2: 561.85
+Sensor 3: 1739.12
+Time: 58907
+Sensor 0: 697.88
+Sensor 1: -207.03
+Sensor 2: 524.02
+Sensor 3: 2157.86
+Time: 59007
+Sensor 0: 638.19
+Sensor 1: -207.10
+Sensor 2: 507.71
+Sensor 3: 1756.30
+Time: 59108
+Sensor 0: 556.97
+Sensor 1: -207.05
+Sensor 2: 450.70
+Sensor 3: 1307.65
+Time: 59208
+Sensor 0: 520.47
+Sensor 1: -207.02
+Sensor 2: 403.79
+Sensor 3: 1030.43
+Time: 59309
+Sensor 0: 538.57
+Sensor 1: -207.07
+Sensor 2: 399.77
+Sensor 3: 993.57
+Time: 59409
+Sensor 0: 559.41
+Sensor 1: -207.07
+Sensor 2: 420.86
+Sensor 3: 1151.64
+Time: 59459
+Sensor 0: 585.76
+Sensor 1: -207.08
+Sensor 2: 436.11
+Sensor 3: 1326.70
+Time: 59560
+Sensor 0: 559.41
+Sensor 1: -207.07
+Sensor 2: 491.02
+Sensor 3: 1518.79
+Time: 59660
+Sensor 0: 559.41
+Sensor 1: -207.10
+Sensor 2: 436.11
+Sensor 3: 1307.65
+Time: 59760
+Sensor 0: 678.51
+Sensor 1: -206.98
+Sensor 2: 436.11
+Sensor 3: 2268.48
+Time: 59861
+Sensor 0: 633.19
+Sensor 1: -206.96
+Sensor 2: 491.02
+Sensor 3: 1985.90
+Time: 59961
+Sensor 0: 514.61
+Sensor 1: -207.07
+Sensor 2: 959.97
+Sensor 3: 1214.19
+Time: 60062
+Sensor 0: 633.19
+Sensor 1: -206.98
+Sensor 2: 335.26
+Sensor 3: 437.22
+Time: 60112
+Sensor 0: 633.19
+Sensor 1: -206.96
+Sensor 2: 217.34
+Sensor 3: 155.04
+Time: 60212
+Sensor 0: 91.70
+Sensor 1: -192.76
+Sensor 2: 133.58
+Sensor 3: 88.52
+Time: 60313
+Sensor 0: 74.42
+Sensor 1: -0.21
+Sensor 2: 85.69
+Sensor 3: 66.00
+Time: 60413
+Sensor 0: 81.82
+Sensor 1: 5.45
+Sensor 2: 86.17
+Sensor 3: 83.67
+Time: 60513
+Sensor 0: 83.10
+Sensor 1: 23.17
+Sensor 2: 76.03
+Sensor 3: 109.36
+Time: 60614
+Sensor 0: 69.67
+Sensor 1: 30.25
+Sensor 2: 64.81
+Sensor 3: 101.85
+Time: 60664
+Sensor 0: 72.90
+Sensor 1: 30.22
+Sensor 2: 57.72
+Sensor 3: 93.65
+Time: 60768
+Sensor 0: 73.87
+Sensor 1: 27.34
+Sensor 2: 43.52
+Sensor 3: 84.57
+Time: 60869
+Sensor 0: 68.77
+Sensor 1: 18.74
+Sensor 2: 48.29
+Sensor 3: 88.57
+Time: 60969
+Sensor 0: 68.95
+Sensor 1: 12.83
+Sensor 2: 93.37
+Sensor 3: 109.82
+Time: 61069
+Sensor 0: 72.60
+Sensor 1: 15.22
+Sensor 2: 64.81
+Sensor 3: 101.85
+Time: 61170
+Sensor 0: 69.67
+Sensor 1: 16.35
+Sensor 2: 64.81
+Sensor 3: 101.85
+Time: 61220
+Sensor 0: 68.95
+Sensor 1: 6.66
+Sensor 2: 93.37
+Sensor 3: 109.82
+Time: 61320
+Sensor 0: 48.46
+Sensor 1: 9.58
+Sensor 2: 291.77
+Sensor 3: 221.15
+Time: 61421
+Sensor 0: 74.78
+Sensor 1: 16.39
+Sensor 2: 326.55
+Sensor 3: 248.61
+Time: 61521
+Sensor 0: 104.82
+Sensor 1: 24.45
+Sensor 2: 337.79
+Sensor 3: 273.80
+Time: 61622
+Sensor 0: 128.34
+Sensor 1: 16.35
+Sensor 2: 314.03
+Sensor 3: 285.02
+Time: 61722
+Sensor 0: 146.61
+Sensor 1: 16.39
+Sensor 2: 312.01
+Sensor 3: 301.34
+Time: 61822
+Sensor 0: 144.24
+Sensor 1: 38.87
+Sensor 2: 314.03
+Sensor 3: 384.31
+Time: 61873
+Sensor 0: 134.71
+Sensor 1: 27.60
+Sensor 2: 379.15
+Sensor 3: 246.06
+Time: 61973
+Sensor 0: 124.24
+Sensor 1: 24.79
+Sensor 2: 326.55
+Sensor 3: 172.51
+Time: 62073
+Sensor 0: 111.86
+Sensor 1: 23.88
+Sensor 2: 314.03
+Sensor 3: 147.14
+Time: 62174
+Sensor 0: 106.21
+Sensor 1: 31.73
+Sensor 2: 76.20
+Sensor 3: 131.56
+Time: 62274
+Sensor 0: 139.21
+Sensor 1: 38.07
+Sensor 2: 97.96
+Sensor 3: 177.75
+Time: 62375
+Sensor 0: 175.44
+Sensor 1: 34.65
+Sensor 2: 139.51
+Sensor 3: 262.93
+Time: 62425
+Sensor 0: 179.92
+Sensor 1: 22.10
+Sensor 2: 151.08
+Sensor 3: 291.90
+Time: 62525
+Sensor 0: 184.95
+Sensor 1: 13.82
+Sensor 2: 154.68
+Sensor 3: 291.22
+Time: 62626
+Sensor 0: 188.91
+Sensor 1: 19.92
+Sensor 2: 162.68
+Sensor 3: 270.25
+CHOP: 62629
+Time: 62726
+Sensor 0: 216.36
+Sensor 1: 19.86
+Sensor 2: 180.52
+Sensor 3: 317.50
+Time: 62826
+Sensor 0: 184.95
+Sensor 1: -0.32
+Sensor 2: 208.69
+Sensor 3: 430.62
+Time: 62927
+Sensor 0: 188.91
+Sensor 1: 19.86
+Sensor 2: 162.68
+Sensor 3: 291.90
+CHOP: 62965
+Time: 62978
+Sensor 0: 294.04
+Sensor 1: -11.97
+Sensor 2: 247.84
+Sensor 3: 317.50
+Time: 63078
+Sensor 0: 331.30
+Sensor 1: 11.07
+Sensor 2: 268.88
+Sensor 3: 581.40
+Time: 63179
+Sensor 0: 280.62
+Sensor 1: 11.07
+Sensor 2: 227.92
+Sensor 3: 694.84
+Time: 63279
+Sensor 0: 294.04
+Sensor 1: 11.07
+Sensor 2: 247.84
+Sensor 3: 579.57
+Time: 63379
+Sensor 0: 331.30
+Sensor 1: 11.07
+Sensor 2: 268.88
+Sensor 3: 581.40
+Time: 63479
+Sensor 0: 803.84
+Sensor 1: 296.20
+Sensor 2: 458.02
+Sensor 3: 694.84
+Time: 63529
+Sensor 0: 563.16
+Sensor 1: 50.78
+Sensor 2: 981.77
+Sensor 3: 1343.25
+Time: 63630
+Sensor 0: 500.87
+Sensor 1: 0.44
+Sensor 2: 517.18
+Sensor 3: 1044.95
+Time: 63730
+Sensor 0: 491.03
+Sensor 1: 1.52
+Sensor 2: 443.33
+Sensor 3: 927.91
+Time: 63830
+Sensor 0: 464.68
+Sensor 1: 8.08
+Sensor 2: 424.91
+Sensor 3: 853.43
+Time: 63931
+Sensor 0: 465.68
+Sensor 1: 18.43
+Sensor 2: 404.29
+Sensor 3: 799.52
+CHOP: 63957
+Time: 64031
+Sensor 0: 545.19
+Sensor 1: 39.08
+Sensor 2: 429.97
+Sensor 3: 908.55
+Time: 64081
+Sensor 0: 500.87
+Sensor 1: 18.43
+Sensor 2: 539.83
+Sensor 3: 1167.87
+Time: 64181
+Sensor 0: 500.87
+Sensor 1: 18.43
+Sensor 2: 443.33
+Sensor 3: 927.91
+Time: 64282
+Sensor 0: 545.19
+Sensor 1: 39.08
+Sensor 2: 443.33
+Sensor 3: 927.91
+Time: 64382
+Sensor 0: 1095.42
+Sensor 1: 457.03
+Sensor 2: 539.83
+Sensor 3: 1508.97
+Time: 64482
+Sensor 0: 765.51
+Sensor 1: 178.67
+Sensor 2: 928.57
+Sensor 3: 1483.55
+Time: 64582
+Sensor 0: 637.02
+Sensor 1: -21.14
+Sensor 2: 628.05
+Sensor 3: 1309.99
+Time: 64682
+Sensor 0: 593.26
+Sensor 1: -76.59
+Sensor 2: 540.25
+Sensor 3: 1190.36
+Time: 64733
+Sensor 0: 551.09
+Sensor 1: -78.24
+Sensor 2: 503.17
+Sensor 3: 1471.00
+Time: 64833
+Sensor 0: 515.13
+Sensor 1: -65.60
+Sensor 2: 472.32
+Sensor 3: 973.90
+Time: 64933
+Sensor 0: 501.99
+Sensor 1: -50.55
+Sensor 2: 452.79
+Sensor 3: 880.28
+CHOP: 64981
+Time: 65033
+Sensor 0: 532.19
+Sensor 1: -31.17
+Sensor 2: 463.29
+Sensor 3: 844.64
+Time: 65133
+Sensor 0: 551.09
+Sensor 1: 8.58
+Sensor 2: 581.53
+Sensor 3: 969.32
+Time: 65234
+Sensor 0: 551.09
+Sensor 1: -50.55
+Sensor 2: 503.17
+Sensor 3: 973.90
+Time: 65284
+Sensor 0: 551.09
+Sensor 1: -31.17
+Sensor 2: 503.17
+Sensor 3: 973.90
+Time: 65384
+Sensor 0: 1211.09
+Sensor 1: 8.58
+Sensor 2: 952.53
+Sensor 3: 1526.70
+Time: 65484
+Sensor 0: 926.32
+Sensor 1: 344.78
+Sensor 2: 873.06
+Sensor 3: 1481.58
+Time: 65584
+Sensor 0: 705.42
+Sensor 1: 93.26
+Sensor 2: 704.40
+Sensor 3: 1379.78
+Time: 65685
+Sensor 0: 627.03
+Sensor 1: -26.38
+Sensor 2: 549.28
+Sensor 3: 1201.23
+Time: 65785
+Sensor 0: 587.03
+Sensor 1: -41.52
+Sensor 2: 499.57
+Sensor 3: 1105.70
+Time: 65835
+Sensor 0: 558.85
+Sensor 1: -39.02
+Sensor 2: 472.23
+Sensor 3: 1042.02
+Time: 65935
+Sensor 0: 562.20
+Sensor 1: -32.78
+Sensor 2: 458.22
+Sensor 3: 983.19
+CHOP: 66013
+Time: 66035
+Sensor 0: 659.85
+Sensor 1: -10.71
+Sensor 2: 481.41
+Sensor 3: 960.39
+Time: 66136
+Sensor 0: 627.03
+Sensor 1: 59.53
+Sensor 2: 626.32
+Sensor 3: 1072.92
+Time: 66236
+Sensor 0: 627.03
+Sensor 1: -26.38
+Sensor 2: 499.57
+Sensor 3: 1072.92
+Time: 66336
+Sensor 0: 659.85
+Sensor 1: -10.71
+Sensor 2: 499.57
+Sensor 3: 1072.92
+Time: 66436
+Sensor 0: 1076.56
+Sensor 1: 363.73
+Sensor 2: 1033.78
+Sensor 3: 1430.38
+Time: 66487
+Sensor 0: 786.04
+Sensor 1: 305.52
+Sensor 2: 816.95
+Sensor 3: 1251.49
+Time: 66587
+Sensor 0: 528.85
+Sensor 1: 141.30
+Sensor 2: 480.01
+Sensor 3: 905.81
+Time: 66687
+Sensor 0: 467.68
+Sensor 1: -73.74
+Sensor 2: 403.41
+Sensor 3: 852.04
+Time: 66787
+Sensor 0: 442.14
+Sensor 1: -93.35
+Sensor 2: 387.36
+Sensor 3: 876.93
+Time: 66887
+Sensor 0: 427.93
+Sensor 1: -97.87
+Sensor 2: 374.67
+Sensor 3: 838.18
+Time: 66988
+Sensor 0: 432.39
+Sensor 1: -84.92
+Sensor 2: 373.23
+Sensor 3: 812.86
+CHOP: 67021
+Time: 67038
+Sensor 0: 464.12
+Sensor 1: -44.72
+Sensor 2: 385.34
+Sensor 3: 807.53
+Time: 67138
+Sensor 0: 464.12
+Sensor 1: 49.43
+Sensor 2: 387.36
+Sensor 3: 909.59
+Time: 67238
+Sensor 0: 464.12
+Sensor 1: -73.74
+Sensor 2: 387.36
+Sensor 3: 852.04
+Time: 67338
+Sensor 0: 464.12
+Sensor 1: -44.72
+Sensor 2: 387.36
+Sensor 3: 876.93
+Time: 67439
+Sensor 0: 1095.78
+Sensor 1: 356.93
+Sensor 2: 1005.86
+Sensor 3: 1432.00
+Time: 67539
+Sensor 0: 702.82
+Sensor 1: 197.70
+Sensor 2: 883.17
+Sensor 3: 1282.69
+Time: 67589
+Sensor 0: 343.91
+Sensor 1: 23.79
+Sensor 2: 385.36
+Sensor 3: 723.21
+Time: 67689
+Sensor 0: 208.56
+Sensor 1: -35.62
+Sensor 2: 801.71
+Sensor 3: 1233.22
+Time: 67789
+Sensor 0: 130.29
+Sensor 1: -9.48
+Sensor 2: 135.57
+Sensor 3: 1233.22
+Time: 67890
+Sensor 0: 129.85
+Sensor 1: 5.35
+Sensor 2: 83.16
+Sensor 3: 141.90
+Time: 67990
+Sensor 0: 278.21
+Sensor 1: -80.21
+Sensor 2: 131.02
+Sensor 3: 273.89
+Time: 68090
+Sensor 0: 438.11
+Sensor 1: -187.14
+Sensor 2: 316.96
+Sensor 3: 797.82
+Time: 68140
+Sensor 0: 496.77
+Sensor 1: -189.38
+Sensor 2: 418.91
+Sensor 3: 418.74
+Time: 68240
+Sensor 0: 564.21
+Sensor 1: -200.97
+Sensor 2: 457.17
+Sensor 3: 418.74
+Time: 68341
+Sensor 0: 609.14
+Sensor 1: -226.54
+Sensor 2: 509.60
+Sensor 3: 1794.36
+Time: 68441
+Sensor 0: 589.12
+Sensor 1: -220.37
+Sensor 2: 540.70
+Sensor 3: 2034.96
+Time: 68542
+Sensor 0: 561.34
+Sensor 1: -207.70
+Sensor 2: 519.86
+Sensor 3: 1860.96
+Time: 68642
+Sensor 0: 533.52
+Sensor 1: -207.18
+Sensor 2: 476.76
+Sensor 3: 1521.79
+Time: 68692
+Sensor 0: 483.93
+Sensor 1: -207.11
+Sensor 2: 428.50
+Sensor 3: 1197.14
+Time: 68792
+Sensor 0: 561.34
+Sensor 1: -207.04
+Sensor 2: 378.63
+Sensor 3: 969.70
+Time: 68893
+Sensor 0: 399.91
+Sensor 1: -207.03
+Sensor 2: 352.66
+Sensor 3: 811.85
+Time: 68993
+Sensor 0: 402.71
+Sensor 1: -205.52
+Sensor 2: 354.40
+Sensor 3: 756.40
+Time: 69094
+Sensor 0: 385.05
+Sensor 1: -207.04
+Sensor 2: 346.80
+Sensor 3: 711.91
+Time: 69194
+Sensor 0: 370.42
+Sensor 1: -206.10
+Sensor 2: 334.57
+Sensor 3: 654.34
+Time: 69244
+Sensor 0: 399.72
+Sensor 1: -205.28
+Sensor 2: 352.91
+Sensor 3: 735.80
+Time: 69345
+Sensor 0: 428.53
+Sensor 1: -205.52
+Sensor 2: 381.63
+Sensor 3: 901.44
+Time: 69445
+Sensor 0: 433.90
+Sensor 1: -203.61
+Sensor 2: 384.73
+Sensor 3: 756.40
+Time: 69545
+Sensor 0: 450.88
+Sensor 1: -207.06
+Sensor 2: 354.40
+Sensor 3: 756.40
+Time: 69646
+Sensor 0: 427.21
+Sensor 1: -207.06
+Sensor 2: 397.49
+Sensor 3: 1255.85
+Time: 69746
+Sensor 0: 397.48
+Sensor 1: -207.13
+Sensor 2: 370.31
+Sensor 3: 1206.55
+Time: 69846
+Sensor 0: 398.59
+Sensor 1: -207.15
+Sensor 2: 340.90
+Sensor 3: 1032.60
+Time: 69897
+Sensor 0: 421.48
+Sensor 1: -207.15
+Sensor 2: 332.07
+Sensor 3: 965.57
+Time: 69997
+Sensor 0: 409.51
+Sensor 1: -207.15
+Sensor 2: 336.69
+Sensor 3: 1014.46
+Time: 70097
+Sensor 0: 392.13
+Sensor 1: -207.09
+Sensor 2: 333.35
+Sensor 3: 963.06
+Time: 70198
+Sensor 0: 384.13
+Sensor 1: -207.06
+Sensor 2: 325.17
+Sensor 3: 792.88
+Time: 70298
+Sensor 0: 373.83
+Sensor 1: -207.13
+Sensor 2: 318.84
+Sensor 3: 659.59
+Time: 70398
+Sensor 0: 363.67
+Sensor 1: -207.09
+Sensor 2: 332.07
+Sensor 3: 963.06
+Time: 70449
+Sensor 0: 352.82
+Sensor 1: -207.06
+Sensor 2: 308.66
+Sensor 3: 591.14
+Time: 70549
+Sensor 0: 373.83
+Sensor 1: -206.92
+Sensor 2: 307.07
+Sensor 3: 407.40
+Time: 70649
+Sensor 0: 363.67
+Sensor 1: -205.21
+Sensor 2: 310.86
+Sensor 3: 176.59
+Time: 70750
+Sensor 0: 352.82
+Sensor 1: -205.19
+Sensor 2: 308.66
+Sensor 3: 160.57
+Time: 70850
+Sensor 0: 168.99
+Sensor 1: -203.58
+Sensor 2: 307.07
+Sensor 3: 318.55
+Time: 70955
+Sensor 0: 181.46
+Sensor 1: -53.94
+Sensor 2: 121.89
+Sensor 3: 337.22
+Time: 71005
+Sensor 0: 194.00
+Sensor 1: -9.93
+Sensor 2: 69.88
+Sensor 3: 252.89
+Time: 71106
+Sensor 0: 202.50
+Sensor 1: 2.62
+Sensor 2: 38.49
+Sensor 3: 223.55
+Time: 71206
+Sensor 0: 181.46
+Sensor 1: -11.52
+Sensor 2: 47.29
+Sensor 3: 259.51
+Time: 71307
+Sensor 0: 250.57
+Sensor 1: -7.36
+Sensor 2: 58.92
+Sensor 3: 282.87
+Time: 71407
+Sensor 0: 251.89
+Sensor 1: -1.78
+Sensor 2: 61.40
+Sensor 3: 299.26
+Time: 71507
+Sensor 0: 244.41
+Sensor 1: -9.05
+Sensor 2: 65.24
+Sensor 3: 261.26
+Time: 71558
+Sensor 0: 233.75
+Sensor 1: 3.40
+Sensor 2: 70.77
+Sensor 3: 226.88
+Time: 71658
+Sensor 0: 258.56
+Sensor 1: -1.78
+Sensor 2: 78.87
+Sensor 3: 273.19
+Time: 71758
+Sensor 0: 266.74
+Sensor 1: 9.69
+Sensor 2: 65.24
+Sensor 3: 323.93
+Time: 71859
+Sensor 0: 257.81
+Sensor 1: -7.57
+Sensor 2: 70.77
+Sensor 3: 333.76
+Time: 71959
+Sensor 0: 254.60
+Sensor 1: -1.78
+Sensor 2: 78.87
+Sensor 3: 299.26
+Time: 72059
+Sensor 0: 277.47
+Sensor 1: -7.57
+Sensor 2: 94.06
+Sensor 3: 323.93
+Time: 72160
+Sensor 0: 258.56
+Sensor 1: -7.57
+Sensor 2: 111.76
+Sensor 3: 333.76
+Time: 72210
+Sensor 0: 266.74
+Sensor 1: -90.66
+Sensor 2: 241.59
+Sensor 3: 577.42
+Time: 72310
+Sensor 0: 326.41
+Sensor 1: -80.92
+Sensor 2: 239.69
+Sensor 3: 557.19
+Time: 72411
+Sensor 0: 339.74
+Sensor 1: -108.77
+Sensor 2: 261.86
+Sensor 3: 659.10
+Time: 72511
+Sensor 0: 276.77
+Sensor 1: -107.34
+Sensor 2: 282.32
+Sensor 3: 727.83
+Time: 72612
+Sensor 0: 307.19
+Sensor 1: -101.18
+Sensor 2: 213.06
+Sensor 3: 459.87
+Time: 72712
+Sensor 0: 307.19
+Sensor 1: -90.66
+Sensor 2: 239.69
+Sensor 3: 568.88
+Time: 72762
+Sensor 0: 18.86
+Sensor 1: 15.58
+Sensor 2: 239.69
+Sensor 3: 557.19
+Time: 72863
+Sensor 0: 18.63
+Sensor 1: 16.00
+Sensor 2: 21.79
+Sensor 3: 16.41
+Time: 72963
+Sensor 0: 18.00
+Sensor 1: 17.03
+Sensor 2: 24.73
+Sensor 3: 16.21
+Time: 73063
+Sensor 0: 17.29
+Sensor 1: 17.40
+Sensor 2: 25.11
+Sensor 3: 18.39
+Time: 73164
+Sensor 0: 17.30
+Sensor 1: 18.21
+Sensor 2: 25.98
+Sensor 3: 18.35
+Time: 73264
+Sensor 0: 19.15
+Sensor 1: 18.05
+Sensor 2: 27.10
+Sensor 3: 20.07
+Time: 73315
+Sensor 0: 18.63
+Sensor 1: 14.53
+Sensor 2: 25.83
+Sensor 3: 18.35
+Time: 73415
+Sensor 0: 18.63
+Sensor 1: 17.03
+Sensor 2: 25.98
+Sensor 3: 18.39
+Time: 73515
+Sensor 0: 19.15
+Sensor 1: 17.03
+Sensor 2: 27.10
+Sensor 3: 20.07
+Time: 73616
+Sensor 0: 97.67
+Sensor 1: -17.90
+Sensor 2: 119.35
+Sensor 3: 196.35
+Time: 73716
+Sensor 0: 131.71
+Sensor 1: -16.11
+Sensor 2: 141.21
+Sensor 3: 247.68
+Time: 73816
+Sensor 0: 156.06
+Sensor 1: -24.49
+Sensor 2: 196.01
+Sensor 3: 357.82
+Time: 73917
+Sensor 0: 161.13
+Sensor 1: -38.84
+Sensor 2: 121.46
+Sensor 3: 415.01
+Time: 73967
+Sensor 0: 186.46
+Sensor 1: -24.49
+Sensor 2: 141.21
+Sensor 3: 247.68
+Time: 74067
+Sensor 0: 252.70
+Sensor 1: -27.26
+Sensor 2: 196.01
+Sensor 3: 632.29
+Time: 74168
+Sensor 0: 161.13
+Sensor 1: -38.84
+Sensor 2: 247.27
+Sensor 3: 415.01
+Time: 74268
+Sensor 0: 318.96
+Sensor 1: -110.03
+Sensor 2: 629.76
+Sensor 3: 470.25
+Time: 74368
+Sensor 0: 266.78
+Sensor 1: -90.69
+Sensor 2: 545.85
+Sensor 3: 842.44
+Time: 74469
+Sensor 0: 270.50
+Sensor 1: -66.29
+Sensor 2: 458.34
+Sensor 3: 668.48
+Time: 74519
+Sensor 0: 295.62
+Sensor 1: -70.00
+Sensor 2: 532.58
+Sensor 3: 791.16
+Time: 74619
+Sensor 0: 240.42
+Sensor 1: -73.86
+Sensor 2: 527.20
+Sensor 3: 816.86
+Time: 74720
+Sensor 0: 197.26
+Sensor 1: -59.18
+Sensor 2: 412.12
+Sensor 3: 618.38
+Time: 74820
+Sensor 0: 193.00
+Sensor 1: -66.50
+Sensor 2: 527.20
+Sensor 3: 791.16
+Time: 74921
+Sensor 0: 218.16
+Sensor 1: -60.15
+Sensor 2: 351.54
+Sensor 3: 583.89
+Time: 75021
+Sensor 0: 256.76
+Sensor 1: -61.92
+Sensor 2: 402.05
+Sensor 3: 702.55
+Time: 75071
+Sensor 0: 267.92
+Sensor 1: -68.52
+Sensor 2: 457.93
+Sensor 3: 681.39
+Time: 75172
+Sensor 0: 270.37
+Sensor 1: -67.74
+Sensor 2: 448.18
+Sensor 3: 653.97
+Time: 75272
+Sensor 0: 302.25
+Sensor 1: -65.49
+Sensor 2: 504.15
+Sensor 3: 762.14
+Time: 75372
+Sensor 0: 352.40
+Sensor 1: -62.13
+Sensor 2: 591.86
+Sensor 3: 927.68
+Time: 75473
+Sensor 0: 270.37
+Sensor 1: -57.03
+Sensor 2: 457.93
+Sensor 3: 702.55
+Time: 75573
+Sensor 0: 414.66
+Sensor 1: -56.66
+Sensor 2: 702.72
+Sensor 3: 762.14
+Time: 75623
+Sensor 0: 403.54
+Sensor 1: -53.68
+Sensor 2: 665.68
+Sensor 3: 1053.97
+Time: 75724
+Sensor 0: 433.60
+Sensor 1: -55.81
+Sensor 2: 702.48
+Sensor 3: 1110.54
+Time: 75824
+Sensor 0: 485.90
+Sensor 1: -61.51
+Sensor 2: 804.95
+Sensor 3: 1301.20
+Time: 75925
+Sensor 0: 519.23
+Sensor 1: -57.03
+Sensor 2: 874.59
+Sensor 3: 1407.46
+Time: 76028
+Sensor 0: 505.49
+Sensor 1: -62.11
+Sensor 2: 863.10
+Sensor 3: 1378.18
+Time: 76128
+Sensor 0: 380.33
+Sensor 1: -56.66
+Sensor 2: 674.26
+Sensor 3: 1116.68
+Time: 76178
+Sensor 0: 433.60
+Sensor 1: -55.81
+Sensor 2: 702.48
+Sensor 3: 1116.68
+Time: 76279
+Sensor 0: 433.60
+Sensor 1: -55.81
+Sensor 2: 702.48
+Sensor 3: 1116.68
+Time: 76379
+Sensor 0: 23.49
+Sensor 1: 13.66
+Sensor 2: 30.86
+Sensor 3: 27.97
+Time: 76479
+Sensor 0: 21.91
+Sensor 1: 16.69
+Sensor 2: 24.40
+Sensor 3: 32.99
+Time: 76580
+Sensor 0: 88.86
+Sensor 1: 0.43
+Sensor 2: 37.37
+Sensor 3: 59.68
+Time: 76680
+Sensor 0: 223.60
+Sensor 1: -0.46
+Sensor 2: 123.39
+Sensor 3: 319.62
+Time: 76781
+Sensor 0: 88.86
+Sensor 1: -0.46
+Sensor 2: 220.23
+Sensor 3: 119.42
+Time: 76831
+Sensor 0: 88.86
+Sensor 1: -0.46
+Sensor 2: 88.84
+Sensor 3: 119.42
+Time: 76931
+Sensor 0: 681.21
+Sensor 1: -181.08
+Sensor 2: 358.56
+Sensor 3: 319.62
+Time: 77032
+Sensor 0: 690.86
+Sensor 1: -220.63
+Sensor 2: 454.00
+Sensor 3: 1491.28
+Time: 77132
+Sensor 0: 652.65
+Sensor 1: -201.86
+Sensor 2: 446.39
+Sensor 3: 1393.41
+Time: 77232
+Sensor 0: 705.71
+Sensor 1: -200.91
+Sensor 2: 418.08
+Sensor 3: 1516.52
+Time: 77333
+Sensor 0: 790.44
+Sensor 1: -229.90
+Sensor 2: 485.50
+Sensor 3: 1733.76
+Time: 77383
+Sensor 0: 919.56
+Sensor 1: -244.87
+Sensor 2: 563.93
+Sensor 3: 2211.14
+Time: 77484
+Sensor 0: 904.08
+Sensor 1: -221.91
+Sensor 2: 549.69
+Sensor 3: 2172.07
+Time: 77584
+Sensor 0: 804.38
+Sensor 1: -207.34
+Sensor 2: 499.17
+Sensor 3: 1787.77
+Time: 77684
+Sensor 0: 756.71
+Sensor 1: -207.15
+Sensor 2: 468.78
+Sensor 3: 1597.54
+Time: 77785
+Sensor 0: 763.69
+Sensor 1: -207.04
+Sensor 2: 463.74
+Sensor 3: 1602.10
+Time: 77885
+Sensor 0: 774.25
+Sensor 1: -207.09
+Sensor 2: 460.78
+Sensor 3: 1636.19
+Time: 77935
+Sensor 0: 779.40
+Sensor 1: -207.03
+Sensor 2: 456.47
+Sensor 3: 1649.76
+Time: 78036
+Sensor 0: 777.98
+Sensor 1: -206.99
+Sensor 2: 449.80
+Sensor 3: 1667.21
+Time: 78136
+Sensor 0: 787.17
+Sensor 1: -207.09
+Sensor 2: 442.02
+Sensor 3: 1716.51
+Time: 78236
+Sensor 0: 765.87
+Sensor 1: -207.05
+Sensor 2: 435.96
+Sensor 3: 1753.58
+Time: 78337
+Sensor 0: 774.25
+Sensor 1: -207.11
+Sensor 2: 449.80
+Sensor 3: 1563.69
+Time: 78437
+Sensor 0: 774.25
+Sensor 1: -207.13
+Sensor 2: 442.02
+Sensor 3: 1649.76
+Time: 78537
+Sensor 0: 667.08
+Sensor 1: -207.16
+Sensor 2: 394.63
+Sensor 3: 1649.76
+Time: 78588
+Sensor 0: 686.55
+Sensor 1: -207.08
+Sensor 2: 416.88
+Sensor 3: 1281.20
+Time: 78688
+Sensor 0: 721.87
+Sensor 1: -207.03
+Sensor 2: 446.54
+Sensor 3: 1305.23
+Time: 78788
+Sensor 0: 762.34
+Sensor 1: -207.13
+Sensor 2: 416.91
+Sensor 3: 1417.72
+Time: 78889
+Sensor 0: 736.46
+Sensor 1: -207.02
+Sensor 2: 473.29
+Sensor 3: 1497.82
+Time: 78989
+Sensor 0: 660.00
+Sensor 1: -207.06
+Sensor 2: 447.18
+Sensor 3: 1334.75
+Time: 79090
+Sensor 0: 659.24
+Sensor 1: -207.08
+Sensor 2: 417.44
+Sensor 3: 1139.57
+Time: 79140
+Sensor 0: 708.42
+Sensor 1: -206.99
+Sensor 2: 421.35
+Sensor 3: 1171.56
+Time: 79240
+Sensor 0: 742.30
+Sensor 1: -207.07
+Sensor 2: 440.18
+Sensor 3: 1317.83
+Time: 79341
+Sensor 0: 683.22
+Sensor 1: -207.06
+Sensor 2: 452.42
+Sensor 3: 1136.71
+Time: 79391
+Sensor 0: 683.22
+Sensor 1: -207.02
+Sensor 2: 440.18
+Sensor 3: 824.36
+Time: 79491
+Sensor 0: 509.05
+Sensor 1: -204.35
+Sensor 2: 375.68
+Sensor 3: 766.48
+Time: 79592
+Sensor 0: 659.24
+Sensor 1: -206.38
+Sensor 2: 351.51
+Sensor 3: 1136.71
+Time: 79642
+Sensor 0: 446.52
+Sensor 1: -206.06
+Sensor 2: 364.36
+Sensor 3: 608.28
+Time: 79742
+Sensor 0: 456.20
+Sensor 1: -205.87
+Sensor 2: 425.18
+Sensor 3: 680.56
+Time: 79843
+Sensor 0: 421.84
+Sensor 1: -205.87
+Sensor 2: 383.13
+Sensor 3: 571.37
+Time: 79943
+Sensor 0: 395.30
+Sensor 1: -204.35
+Sensor 2: 375.68
+Sensor 3: 472.46
+Time: 80043
+Sensor 0: 421.10
+Sensor 1: -204.35
+Sensor 2: 276.21
+Sensor 3: 560.57
+Time: 80144
+Sensor 0: 431.49
+Sensor 1: -146.38
+Sensor 2: 295.75
+Sensor 3: 631.71
+Time: 80194
+Sensor 0: 421.84
+Sensor 1: -126.96
+Sensor 2: 272.46
+Sensor 3: 538.69
+Time: 80294
+Sensor 0: 421.10
+Sensor 1: -87.02
+Sensor 2: 223.06
+Sensor 3: 410.60
+Time: 80395
+Sensor 0: 395.30
+Sensor 1: -67.08
+Sensor 2: 192.99
+Sensor 3: 538.69
+Time: 80495
+Sensor 0: 213.49
+Sensor 1: -62.17
+Sensor 2: 272.46
+Sensor 3: 265.41
+Time: 80596
+Sensor 0: 218.26
+Sensor 1: -61.30
+Sensor 2: 165.91
+Sensor 3: 258.28
+CHOP: 80661
+Time: 80696
+Sensor 0: 219.42
+Sensor 1: -61.91
+Sensor 2: 168.18
+Sensor 3: 307.18
+Time: 80747
+Sensor 0: 172.52
+Sensor 1: -48.14
+Sensor 2: 155.47
+Sensor 3: 272.56
+Time: 80847
+Sensor 0: 145.88
+Sensor 1: -34.56
+Sensor 2: 127.41
+Sensor 3: 202.66
+Time: 80947
+Sensor 0: 213.49
+Sensor 1: -61.30
+Sensor 2: 115.87
+Sensor 3: 176.18
+Time: 81054
+Sensor 0: 58.29
+Sensor 1: -48.14
+Sensor 2: 155.47
+Sensor 3: 258.28
+Time: 81155
+Sensor 0: 32.53
+Sensor 1: 11.60
+Sensor 2: 51.71
+Sensor 3: 80.18
+Time: 81255
+Sensor 0: 33.71
+Sensor 1: 17.53
+Sensor 2: 37.16
+Sensor 3: 60.74
+Time: 81305
+Sensor 0: 30.67
+Sensor 1: 19.26
+Sensor 2: 38.75
+Sensor 3: 67.45
+Time: 81406
+Sensor 0: 41.36
+Sensor 1: 21.17
+Sensor 2: 36.65
+Sensor 3: 50.67
+Time: 81506
+Sensor 0: 41.36
+Sensor 1: 12.74
+Sensor 2: 108.15
+Sensor 3: 80.18
+Time: 81607
+Sensor 0: 41.36
+Sensor 1: 12.74
+Sensor 2: 51.71
+Sensor 3: 80.18
+Time: 81707
+Sensor 0: 41.36
+Sensor 1: 12.74
+Sensor 2: 51.71
+Sensor 3: 80.18
+Time: 81807
+Sensor 0: 355.74
+Sensor 1: -21.15
+Sensor 2: 267.10
+Sensor 3: 562.79
+Time: 81908
+Sensor 0: 388.62
+Sensor 1: 28.44
+Sensor 2: 281.29
+Sensor 3: 537.37
+Time: 81958
+Sensor 0: 394.90
+Sensor 1: 74.53
+Sensor 2: 294.22
+Sensor 3: 461.77
+Time: 82059
+Sensor 0: 405.93
+Sensor 1: 112.51
+Sensor 2: 297.51
+Sensor 3: 426.22
+Time: 82159
+Sensor 0: 417.66
+Sensor 1: 129.59
+Sensor 2: 308.07
+Sensor 3: 446.08
+Time: 82259
+Sensor 0: 403.33
+Sensor 1: 141.59
+Sensor 2: 307.74
+Sensor 3: 435.96
+Time: 82360
+Sensor 0: 444.14
+Sensor 1: 136.70
+Sensor 2: 332.63
+Sensor 3: 546.89
+Time: 82460
+Sensor 0: 405.93
+Sensor 1: 89.94
+Sensor 2: 307.74
+Sensor 3: 461.77
+Time: 82510
+Sensor 0: 417.66
+Sensor 1: 49.44
+Sensor 2: 308.07
+Sensor 3: 461.77
+Time: 82611
+Sensor 0: 444.14
+Sensor 1: 112.51
+Sensor 2: 332.63
+Sensor 3: 546.89
+Time: 82711
+Sensor 0: 661.71
+Sensor 1: 4.70
+Sensor 2: 571.81
+Sensor 3: 1175.08
+CHOP: 82733
+Time: 82811
+Sensor 0: 753.81
+Sensor 1: 28.58
+Sensor 2: 585.65
+Sensor 3: 1043.25
+Time: 82912
+Sensor 0: 650.15
+Sensor 1: 49.44
+Sensor 2: 767.92
+Sensor 3: 1150.78
+Time: 83012
+Sensor 0: 661.71
+Sensor 1: 49.44
+Sensor 2: 571.81
+Sensor 3: 1489.93
+Time: 83063
+Sensor 0: 1342.36
+Sensor 1: 501.82
+Sensor 2: 585.65
+Sensor 3: 1163.25
+Time: 83163
+Sensor 0: 1057.50
+Sensor 1: 237.61
+Sensor 2: 1238.85
+Sensor 3: 1175.08
+Time: 83263
+Sensor 0: 917.09
+Sensor 1: 133.40
+Sensor 2: 866.27
+Sensor 3: 1507.22
+Time: 83364
+Sensor 0: 874.26
+Sensor 1: 118.90
+Sensor 2: 707.49
+Sensor 3: 1397.76
+Time: 83464
+Sensor 0: 822.38
+Sensor 1: 116.58
+Sensor 2: 675.75
+Sensor 3: 1318.05
+Time: 83564
+Sensor 0: 796.55
+Sensor 1: 127.93
+Sensor 2: 639.52
+Sensor 3: 1205.99
+Time: 83665
+Sensor 0: 848.10
+Sensor 1: 169.45
+Sensor 2: 625.28
+Sensor 3: 1215.58
+CHOP: 83669
+Time: 83715
+Sensor 0: 874.26
+Sensor 1: 133.40
+Sensor 2: 904.64
+Sensor 3: 1469.08
+Time: 83816
+Sensor 0: 874.26
+Sensor 1: 133.40
+Sensor 2: 707.49
+Sensor 3: 1397.76
+Time: 83916
+Sensor 0: 874.26
+Sensor 1: 169.45
+Sensor 2: 707.49
+Sensor 3: 1397.76
+Time: 84016
+Sensor 0: 1682.38
+Sensor 1: 699.61
+Sensor 2: 1228.07
+Sensor 3: 1856.10
+Time: 84117
+Sensor 0: 1601.12
+Sensor 1: 684.22
+Sensor 2: 1224.13
+Sensor 3: 1805.63
+Time: 84217
+Sensor 0: 1512.50
+Sensor 1: 633.86
+Sensor 2: 1260.85
+Sensor 3: 1869.70
+Time: 84268
+Sensor 0: 1148.71
+Sensor 1: 383.15
+Sensor 2: 1206.97
+Sensor 3: 1819.70
+Time: 84368
+Sensor 0: 1512.50
+Sensor 1: 633.86
+Sensor 2: 1224.13
+Sensor 3: 1819.70
+Time: 84468
+Sensor 0: 1512.50
+Sensor 1: 633.86
+Sensor 2: 1224.13
+Sensor 3: 1819.70
+Time: 84569
+Sensor 0: 776.68
+Sensor 1: 61.63
+Sensor 2: 1206.97
+Sensor 3: 1805.63
+Time: 84669
+Sensor 0: 744.08
+Sensor 1: 69.11
+Sensor 2: 571.47
+Sensor 3: 1104.72
+Time: 84769
+Sensor 0: 732.29
+Sensor 1: 92.51
+Sensor 2: 544.77
+Sensor 3: 1003.24
+Time: 84820
+Sensor 0: 910.71
+Sensor 1: 171.09
+Sensor 2: 609.19
+Sensor 3: 1006.89
+CHOP: 84821
+Time: 84920
+Sensor 0: 807.61
+Sensor 1: 92.51
+Sensor 2: 609.19
+Sensor 3: 1281.22
+Time: 85021
+Sensor 0: 807.61
+Sensor 1: 92.51
+Sensor 2: 609.19
+Sensor 3: 1223.47
+Time: 85121
+Sensor 0: 1661.51
+Sensor 1: 171.09
+Sensor 2: 609.19
+Sensor 3: 1723.03
+Time: 85221
+Sensor 0: 1346.51
+Sensor 1: 645.31
+Sensor 2: 1245.67
+Sensor 3: 1709.57
+Time: 85322
+Sensor 0: 940.09
+Sensor 1: 358.01
+Sensor 2: 962.93
+Sensor 3: 1405.61
+Time: 85372
+Sensor 0: 866.08
+Sensor 1: 162.54
+Sensor 2: 626.98
+Sensor 3: 1169.61
+Time: 85472
+Sensor 0: 825.58
+Sensor 1: 130.62
+Sensor 2: 611.83
+Sensor 3: 1200.36
+CHOP: 85557
+Time: 85573
+Sensor 0: 815.66
+Sensor 1: 130.94
+Sensor 2: 578.53
+Sensor 3: 1116.13
+Time: 85673
+Sensor 0: 981.38
+Sensor 1: 162.75
+Sensor 2: 601.98
+Sensor 3: 1068.60
+Time: 85774
+Sensor 0: 1312.73
+Sensor 1: 311.78
+Sensor 2: 762.07
+Sensor 3: 1212.57
+Time: 85874
+Sensor 0: 940.09
+Sensor 1: 162.75
+Sensor 2: 626.98
+Sensor 3: 1200.36
+Time: 85925
+Sensor 0: 1464.54
+Sensor 1: 162.75
+Sensor 2: 626.98
+Sensor 3: 1701.00
+Time: 86025
+Sensor 0: 1110.73
+Sensor 1: 497.10
+Sensor 2: 1062.67
+Sensor 3: 1464.16
+Time: 86569
+Sensor 0: 746.64
+Sensor 1: 277.67
+Sensor 2: 600.43
+Sensor 3: 960.69
+Time: 86569
+Sensor 0: 666.16
+Sensor 1: 98.25
+Sensor 2: 463.56
+Sensor 3: 827.71
+Time: 86569
+Sensor 0: 655.86
+Sensor 1: 70.87
+Sensor 2: 456.62
+Sensor 3: 811.64
+Time: 86569
+Sensor 0: 657.18
+Sensor 1: 84.73
+Sensor 2: 457.86
+Sensor 3: 781.42
+Time: 86569
+Sensor 0: 693.09
+Sensor 1: 96.59
+Sensor 2: 485.34
+Sensor 3: 810.91
+Time: 86570
+Sensor 0: 741.35
+Sensor 1: 106.79
+Sensor 2: 521.59
+Sensor 3: 912.49
+Time: 86670
+Sensor 0: 693.09
+Sensor 1: 117.16
+Sensor 2: 576.37
+Sensor 3: 827.71
+CHOP: 86701
+Time: 86770
+Sensor 0: 693.09
+Sensor 1: 98.25
+Sensor 2: 485.34
+Sensor 3: 827.71
+Time: 86871
+Sensor 0: 741.35
+Sensor 1: 106.79
+Sensor 2: 521.59
+Sensor 3: 912.49
+Time: 86971
+Sensor 0: 828.19
+Sensor 1: 117.16
+Sensor 2: 576.37
+Sensor 3: 1020.44
+Time: 87071
+Sensor 0: 1562.32
+Sensor 1: 539.99
+Sensor 2: 1196.86
+Sensor 3: 1831.40
+Time: 87122
+Sensor 0: 1312.51
+Sensor 1: 399.22
+Sensor 2: 1285.30
+Sensor 3: 1818.26
+Time: 87222
+Sensor 0: 803.47
+Sensor 1: 178.52
+Sensor 2: 1036.19
+Sensor 3: 1409.99
+Time: 87322
+Sensor 0: 619.80
+Sensor 1: 78.35
+Sensor 2: 1036.19
+Sensor 3: 1533.91
+Time: 87423
+Sensor 0: 620.60
+Sensor 1: 82.20
+Sensor 2: 428.28
+Sensor 3: 703.18
+Time: 87523
+Sensor 0: 614.34
+Sensor 1: 103.03
+Sensor 2: 421.65
+Sensor 3: 684.35
+CHOP: 87573
+Time: 87624
+Sensor 0: 725.49
+Sensor 1: 129.70
+Sensor 2: 441.92
+Sensor 3: 681.21
+Time: 87674
+Sensor 0: 1114.68
+Sensor 1: 273.61
+Sensor 2: 587.91
+Sensor 3: 850.45
+Time: 87774
+Sensor 0: 725.49
+Sensor 1: 129.70
+Sensor 2: 896.43
+Sensor 3: 1285.81
+Time: 87874
+Sensor 0: 725.49
+Sensor 1: 129.70
+Sensor 2: 499.38
+Sensor 3: 782.20
+Time: 87974
+Sensor 0: 1290.75
+Sensor 1: 473.79
+Sensor 2: 587.91
+Sensor 3: 850.45
+Time: 88075
+Sensor 0: 751.40
+Sensor 1: 200.53
+Sensor 2: 654.24
+Sensor 3: 897.17
+Time: 88175
+Sensor 0: 574.67
+Sensor 1: 67.91
+Sensor 2: 399.47
+Sensor 3: 694.09
+Time: 88225
+Sensor 0: 611.10
+Sensor 1: 70.38
+Sensor 2: 426.39
+Sensor 3: 732.36
+Time: 88326
+Sensor 0: 632.47
+Sensor 1: 105.66
+Sensor 2: 434.21
+Sensor 3: 723.49
+Time: 88426
+Sensor 0: 671.86
+Sensor 1: 117.85
+Sensor 2: 464.48
+Sensor 3: 785.89
+CHOP: 88485
+CHOP: 88485
+Time: 88526
+Sensor 0: 783.35
+Sensor 1: 133.34
+Sensor 2: 540.28
+Sensor 3: 934.86
+Time: 88626
+Sensor 0: 671.86
+Sensor 1: 235.02
+Sensor 2: 464.48
+Sensor 3: 785.89
+Time: 88727
+Sensor 0: 671.86
+Sensor 1: 117.85
+Sensor 2: 464.48
+Sensor 3: 785.89
+Time: 88827
+Sensor 0: 783.35
+Sensor 1: 133.34
+Sensor 2: 540.28
+Sensor 3: 1659.48
+Time: 88877
+Sensor 0: 1669.39
+Sensor 1: 692.94
+Sensor 2: 1372.15
+Sensor 3: 1871.70
+Time: 88977
+Sensor 0: 1062.26
+Sensor 1: 509.97
+Sensor 2: 1293.31
+Sensor 3: 1612.48
+Time: 89077
+Sensor 0: 559.28
+Sensor 1: 210.35
+Sensor 2: 529.24
+Sensor 3: 1551.05
+Time: 89178
+Sensor 0: 539.62
+Sensor 1: 93.67
+Sensor 2: 368.65
+Sensor 3: 1551.05
+Time: 89278
+Sensor 0: 551.38
+Sensor 1: 96.54
+Sensor 2: 392.62
+Sensor 3: 718.46
+Time: 89328
+Sensor 0: 572.92
+Sensor 1: 99.42
+Sensor 2: 403.70
+Sensor 3: 686.56
+Time: 89428
+Sensor 0: 628.20
+Sensor 1: 99.35
+Sensor 2: 433.26
+Sensor 3: 722.20
+CHOP: 89445
+Time: 89528
+Sensor 0: 772.17
+Sensor 1: 132.57
+Sensor 2: 486.74
+Sensor 3: 839.62
+Time: 89629
+Sensor 0: 572.92
+Sensor 1: 99.42
+Sensor 2: 433.26
+Sensor 3: 722.20
+Time: 89729
+Sensor 0: 628.20
+Sensor 1: 99.42
+Sensor 2: 433.26
+Sensor 3: 722.20
+Time: 89829
+Sensor 0: 772.17
+Sensor 1: 132.57
+Sensor 2: 486.74
+Sensor 3: 839.62
+Time: 89929
+Sensor 0: 1569.91
+Sensor 1: 634.25
+Sensor 2: 657.63
+Sensor 3: 2025.41
+Time: 89980
+Sensor 0: 800.24
+Sensor 1: 413.04
+Sensor 2: 1322.45
+Sensor 3: 1789.40
+Time: 90080
+Sensor 0: 450.78
+Sensor 1: 160.77
+Sensor 2: 525.36
+Sensor 3: 789.63
+Time: 90180
+Sensor 0: 484.22
+Sensor 1: 86.54
+Sensor 2: 337.90
+Sensor 3: 572.81
+Time: 90280
+Sensor 0: 507.40
+Sensor 1: 86.35
+Sensor 2: 355.57
+Sensor 3: 678.66
+Time: 90380
+Sensor 0: 566.64
+Sensor 1: 96.16
+Sensor 2: 408.75
+Sensor 3: 769.57
+Time: 90480
+Sensor 0: 689.30
+Sensor 1: 113.41
+Sensor 2: 502.63
+Sensor 3: 955.47
+CHOP: 90517
+Time: 90531
+Sensor 0: 839.40
+Sensor 1: 130.21
+Sensor 2: 597.97
+Sensor 3: 1113.43
+Time: 90631
+Sensor 0: 566.64
+Sensor 1: 113.41
+Sensor 2: 502.63
+Sensor 3: 789.63
+Time: 90731
+Sensor 0: 689.30
+Sensor 1: 113.41
+Sensor 2: 502.63
+Sensor 3: 1665.52
+Time: 90831
+Sensor 0: 1396.03
+Sensor 1: 130.21
+Sensor 2: 1139.35
+Sensor 3: 1685.02
+Time: 90932
+Sensor 0: 702.66
+Sensor 1: 445.27
+Sensor 2: 1077.32
+Sensor 3: 1291.10
+Time: 91032
+Sensor 0: 257.09
+Sensor 1: 145.41
+Sensor 2: 397.59
+Sensor 3: 1291.10
+Time: 91132
+Sensor 0: 274.68
+Sensor 1: -3.05
+Sensor 2: 191.72
+Sensor 3: 375.93
+Time: 91182
+Sensor 0: 349.57
+Sensor 1: -30.83
+Sensor 2: 250.98
+Sensor 3: 550.31
+Time: 91282
+Sensor 0: 401.36
+Sensor 1: -45.25
+Sensor 2: 303.22
+Sensor 3: 672.22
+CHOP: 91357
+Time: 91383
+Sensor 0: 456.08
+Sensor 1: -30.05
+Sensor 2: 339.70
+Sensor 3: 739.49
+Time: 91483
+Sensor 0: 683.60
+Sensor 1: 59.92
+Sensor 2: 408.70
+Sensor 3: 819.64
+Time: 91583
+Sensor 0: 401.36
+Sensor 1: -3.05
+Sensor 2: 339.70
+Sensor 3: 672.22
+Time: 91683
+Sensor 0: 456.08
+Sensor 1: -3.05
+Sensor 2: 339.70
+Sensor 3: 739.49
+Time: 91734
+Sensor 0: 1665.76
+Sensor 1: 59.92
+Sensor 2: 408.70
+Sensor 3: 819.64
+Time: 91834
+Sensor 0: 1201.31
+Sensor 1: 414.52
+Sensor 2: 1009.77
+Sensor 3: 1675.78
+CHOP: 91857
+Time: 91934
+Sensor 0: 609.01
+Sensor 1: 122.48
+Sensor 2: 1116.98
+Sensor 3: 1569.90
+Time: 92034
+Sensor 0: 313.15
+Sensor 1: -17.79
+Sensor 2: 638.83
+Sensor 3: 1569.90
+Time: 92134
+Sensor 0: 312.93
+Sensor 1: -40.46
+Sensor 2: 983.96
+Sensor 3: 1569.90
+Time: 92235
+Sensor 0: 354.98
+Sensor 1: -36.64
+Sensor 2: 983.96
+Sensor 3: 537.47
+Time: 92285
+Sensor 0: 386.18
+Sensor 1: -18.34
+Sensor 2: 311.02
+Sensor 3: 605.30
+Time: 92385
+Sensor 0: 458.24
+Sensor 1: 7.76
+Sensor 2: 355.92
+Sensor 3: 718.78
+CHOP: 92437
+Time: 92485
+Sensor 0: 617.80
+Sensor 1: 67.73
+Sensor 2: 453.19
+Sensor 3: 876.41
+Time: 92585
+Sensor 0: 386.18
+Sensor 1: -17.79
+Sensor 2: 355.92
+Sensor 3: 718.78
+Time: 92686
+Sensor 0: 458.24
+Sensor 1: 7.76
+Sensor 2: 355.92
+Sensor 3: 718.78
+Time: 92786
+Sensor 0: 617.80
+Sensor 1: 67.73
+Sensor 2: 453.19
+Sensor 3: 876.41
+Time: 92836
+Sensor 0: 1487.14
+Sensor 1: 482.31
+Sensor 2: 1400.13
+Sensor 3: 2172.41
+Time: 92936
+Sensor 0: 942.56
+Sensor 1: 204.96
+Sensor 2: 1078.32
+Sensor 3: 1667.05
+Time: 93037
+Sensor 0: 701.91
+Sensor 1: 31.95
+Sensor 2: 580.24
+Sensor 3: 1211.04
+Time: 93137
+Sensor 0: 665.69
+Sensor 1: 0.33
+Sensor 2: 532.23
+Sensor 3: 1147.52
+Time: 93237
+Sensor 0: 600.38
+Sensor 1: 15.51
+Sensor 2: 479.47
+Sensor 3: 955.66
+Time: 93337
+Sensor 0: 566.96
+Sensor 1: 20.89
+Sensor 2: 448.96
+Sensor 3: 867.23
+Time: 93387
+Sensor 0: 592.29
+Sensor 1: 2.88
+Sensor 2: 476.21
+Sensor 3: 943.87
+Time: 93487
+Sensor 0: 702.26
+Sensor 1: 18.94
+Sensor 2: 522.44
+Sensor 3: 998.19
+CHOP: 93501
+Time: 93588
+Sensor 0: 665.69
+Sensor 1: 18.94
+Sensor 2: 651.60
+Sensor 3: 1153.04
+Time: 93688
+Sensor 0: 665.69
+Sensor 1: 18.94
+Sensor 2: 522.44
+Sensor 3: 998.19
+Time: 93788
+Sensor 0: 702.26
+Sensor 1: 20.89
+Sensor 2: 522.44
+Sensor 3: 998.19
+Time: 93889
+Sensor 0: 1415.93
+Sensor 1: 475.68
+Sensor 2: 1140.99
+Sensor 3: 1879.45
+Time: 93939
+Sensor 0: 911.69
+Sensor 1: 266.27
+Sensor 2: 1182.32
+Sensor 3: 1765.32
+Time: 94039
+Sensor 0: 623.15
+Sensor 1: 23.28
+Sensor 2: 675.68
+Sensor 3: 1162.81
+Time: 94139
+Sensor 0: 591.47
+Sensor 1: -37.53
+Sensor 2: 493.08
+Sensor 3: 979.00
+Time: 94239
+Sensor 0: 577.62
+Sensor 1: -27.75
+Sensor 2: 477.15
+Sensor 3: 936.11
+Time: 94339
+Sensor 0: 642.18
+Sensor 1: -12.25
+Sensor 2: 464.36
+Sensor 3: 895.40
+CHOP: 94349
+Time: 94440
+Sensor 0: 945.48
+Sensor 1: 44.12
+Sensor 2: 517.84
+Sensor 3: 963.13
+Time: 94540
+Sensor 0: 642.18
+Sensor 1: 186.74
+Sensor 2: 953.27
+Sensor 3: 1321.48
+Time: 94590
+Sensor 0: 642.18
+Sensor 1: 23.28
+Sensor 2: 517.84
+Sensor 3: 979.00
+Time: 94690
+Sensor 0: 1764.27
+Sensor 1: 44.12
+Sensor 2: 517.84
+Sensor 3: 979.00
+Time: 94791
+Sensor 0: 1267.16
+Sensor 1: 432.66
+Sensor 2: 1105.98
+Sensor 3: 1811.06
+Time: 94891
+Sensor 0: 706.41
+Sensor 1: 184.54
+Sensor 2: 571.51
+Sensor 3: 1194.68
+Time: 94991
+Sensor 0: 558.22
+Sensor 1: -78.69
+Sensor 2: 469.74
+Sensor 3: 1143.73
+Time: 95091
+Sensor 0: 519.45
+Sensor 1: -162.08
+Sensor 2: 447.21
+Sensor 3: 1107.94
+Time: 95141
+Sensor 0: 528.65
+Sensor 1: -136.83
+Sensor 2: 431.70
+Sensor 3: 996.26
+Time: 95241
+Sensor 0: 694.42
+Sensor 1: -39.43
+Sensor 2: 493.48
+Sensor 3: 1057.95
+CHOP: 95277
+Time: 95342
+Sensor 0: 1098.32
+Sensor 1: 153.40
+Sensor 2: 682.02
+Sensor 3: 1403.13
+Time: 95442
+Sensor 0: 694.42
+Sensor 1: -39.43
+Sensor 2: 493.48
+Sensor 3: 1143.73
+Time: 95542
+Sensor 0: 694.42
+Sensor 1: -39.43
+Sensor 2: 493.48
+Sensor 3: 1143.73
+Time: 95642
+Sensor 0: 1418.80
+Sensor 1: 360.50
+Sensor 2: 1085.38
+Sensor 3: 1994.91
+Time: 95693
+Sensor 0: 785.35
+Sensor 1: 42.73
+Sensor 2: 818.61
+Sensor 3: 1456.34
+Time: 95793
+Sensor 0: 571.19
+Sensor 1: -121.64
+Sensor 2: 481.09
+Sensor 3: 1123.68
+Time: 95893
+Sensor 0: 579.45
+Sensor 1: -142.28
+Sensor 2: 464.72
+Sensor 3: 1183.08
+Time: 95993
+Sensor 0: 593.60
+Sensor 1: -148.01
+Sensor 2: 471.40
+Sensor 3: 1209.69
+Time: 96093
+Sensor 0: 604.02
+Sensor 1: -151.95
+Sensor 2: 484.62
+Sensor 3: 1243.48
+CHOP: 96181
+Time: 96194
+Sensor 0: 657.65
+Sensor 1: -140.85
+Sensor 2: 492.80
+Sensor 3: 1263.29
+Time: 96294
+Sensor 0: 604.02
+Sensor 1: -60.81
+Sensor 2: 545.07
+Sensor 3: 1372.22
+Time: 96344
+Sensor 0: 604.02
+Sensor 1: -140.85
+Sensor 2: 484.62
+Sensor 3: 1243.48
+Time: 96444
+Sensor 0: 657.65
+Sensor 1: -140.85
+Sensor 2: 492.80
+Sensor 3: 1263.29
+Time: 96544
+Sensor 0: 1893.96
+Sensor 1: -60.81
+Sensor 2: 545.07
+Sensor 3: 1372.22
+Time: 96645
+Sensor 0: 1824.99
+Sensor 1: 465.34
+Sensor 2: 1068.69
+Sensor 3: 2312.24
+Time: 96745
+Sensor 0: 1347.84
+Sensor 1: 296.26
+Sensor 2: 1018.88
+Sensor 3: 2196.76
+Time: 96845
+Sensor 0: 811.33
+Sensor 1: 6.02
+Sensor 2: 638.63
+Sensor 3: 2166.96
+Time: 96895
+Sensor 0: 638.37
+Sensor 1: 292.04
+Sensor 2: 924.11
+Sensor 3: 2166.96
+Time: 96995
+Sensor 0: 623.20
+Sensor 1: -105.07
+Sensor 2: 480.90
+Sensor 3: 1164.48
+Time: 97096
+Sensor 0: 626.13
+Sensor 1: -122.39
+Sensor 2: 489.84
+Sensor 3: 1171.23
+Time: 97196
+Sensor 0: 613.09
+Sensor 1: -132.24
+Sensor 2: 486.60
+Sensor 3: 1194.11
+Time: 97296
+Sensor 0: 615.74
+Sensor 1: -122.37
+Sensor 2: 482.35
+Sensor 3: 1211.31
+Time: 97396
+Sensor 0: 654.61
+Sensor 1: -122.15
+Sensor 2: 498.68
+Sensor 3: 1225.00
+CHOP: 97413
+Time: 97447
+Sensor 0: 626.13
+Sensor 1: -103.75
+Sensor 2: 489.84
+Sensor 3: 1194.11
+CHOP: 97541
+Time: 97547
+Sensor 0: 626.13
+Sensor 1: -122.15
+Sensor 2: 489.84
+Sensor 3: 1211.31
+Time: 97647
+Sensor 0: 654.61
+Sensor 1: -122.15
+Sensor 2: 498.68
+Sensor 3: 1225.00
+Time: 97747
+Sensor 0: 744.40
+Sensor 1: -103.75
+Sensor 2: 539.83
+Sensor 3: 1315.07
+Time: 97848
+Sensor 0: 859.32
+Sensor 1: -44.32
+Sensor 2: 754.90
+Sensor 3: 1736.63
+Time: 97948
+Sensor 0: 1450.89
+Sensor 1: 303.08
+Sensor 2: 933.52
+Sensor 3: 1938.81
+Time: 97998
+Sensor 0: 999.40
+Sensor 1: 114.33
+Sensor 2: 1073.73
+Sensor 3: 1980.37
+Time: 98098
+Sensor 0: 526.93
+Sensor 1: -109.78
+Sensor 2: 593.32
+Sensor 3: 1302.68
+Time: 98198
+Sensor 0: 356.60
+Sensor 1: -155.69
+Sensor 2: 340.27
+Sensor 3: 1704.39
+Time: 98299
+Sensor 0: 349.33
+Sensor 1: -171.24
+Sensor 2: 322.72
+Sensor 3: 1704.39
+Time: 98399
+Sensor 0: 338.43
+Sensor 1: -169.20
+Sensor 2: 336.05
+Sensor 3: 748.36
+Time: 98499
+Sensor 0: 293.74
+Sensor 1: -161.18
+Sensor 2: 322.71
+Sensor 3: 705.88
+Time: 98549
+Sensor 0: 225.99
+Sensor 1: -146.90
+Sensor 2: 287.32
+Sensor 3: 560.00
+Time: 98649
+Sensor 0: 106.71
+Sensor 1: -155.69
+Sensor 2: 217.34
+Sensor 3: 322.64
+Time: 98750
+Sensor 0: 293.74
+Sensor 1: -155.69
+Sensor 2: 322.71
+Sensor 3: 705.88
+Time: 98850
+Sensor 0: 47.75
+Sensor 1: -146.90
+Sensor 2: 287.32
+Sensor 3: 42.32
+Time: 98950
+Sensor 0: 56.92
+Sensor 1: 32.72
+Sensor 2: 60.10
+Sensor 3: 47.19
+Time: 99051
+Sensor 0: 78.03
+Sensor 1: 43.53
+Sensor 2: 69.52
+Sensor 3: 63.49
+Time: 99101
+Sensor 0: 80.91
+Sensor 1: 59.94
+Sensor 2: 78.84
+Sensor 3: 65.50
+Time: 99201
+Sensor 0: 78.35
+Sensor 1: 70.80
+Sensor 2: 78.59
+Sensor 3: 60.49
+Time: 99302
+Sensor 0: 77.22
+Sensor 1: 65.79
+Sensor 2: 72.85
+Sensor 3: 57.60
+Time: 99402
+Sensor 0: 71.10
+Sensor 1: 50.30
+Sensor 2: 62.73
+Sensor 3: 54.83
+Time: 99502
+Sensor 0: 60.48
+Sensor 1: 37.29
+Sensor 2: 57.09
+Sensor 3: 51.49
+Time: 99603
+Sensor 0: 77.22
+Sensor 1: 36.01
+Sensor 2: 53.91
+Sensor 3: 47.71
+Time: 99703
+Sensor 0: 81.62
+Sensor 1: 45.41
+Sensor 2: 53.33
+Sensor 3: 60.53
+Time: 99753
+Sensor 0: 95.13
+Sensor 1: 53.42
+Sensor 2: 56.03
+Sensor 3: 57.60
+Time: 99854
+Sensor 0: 76.37
+Sensor 1: 46.58
+Sensor 2: 55.84
+Sensor 3: 64.75
+Time: 99954
+Sensor 0: 64.06
+Sensor 1: 33.82
+Sensor 2: 55.84
+Sensor 3: 50.28
+Time: 100055
+Sensor 0: 60.27
+Sensor 1: 32.70
+Sensor 2: 44.64
+Sensor 3: 54.61
+Time: 100155
+Sensor 0: 66.30
+Sensor 1: 32.20
+Sensor 2: 53.33
+Sensor 3: 57.83
+Time: 100255
+Sensor 0: 67.96
+Sensor 1: 32.68
+Sensor 2: 43.63
+Sensor 3: 60.53
+Time: 100306
+Sensor 0: 56.17
+Sensor 1: 36.74
+Sensor 2: 37.44
+Sensor 3: 60.83
+Time: 100406
+Sensor 0: 71.97
+Sensor 1: 33.82
+Sensor 2: 43.63
+Sensor 3: 38.32
+Time: 100506
+Sensor 0: 66.30
+Sensor 1: 33.82
+Sensor 2: 35.52
+Sensor 3: 40.86
+Time: 100607
+Sensor 0: 60.86
+Sensor 1: 51.81
+Sensor 2: 42.61
+Sensor 3: 32.61
+Time: 100707
+Sensor 0: 49.09
+Sensor 1: 34.06
+Sensor 2: 37.15
+Sensor 3: 31.91
+Time: 100807
+Sensor 0: 47.40
+Sensor 1: 31.89
+Sensor 2: 35.73
+Sensor 3: 33.88
+Time: 100858
+Sensor 0: 50.73
+Sensor 1: 34.11
+Sensor 2: 35.95
+Sensor 3: 33.66
+Time: 100958
+Sensor 0: 69.78
+Sensor 1: 44.81
+Sensor 2: 35.95
+Sensor 3: 38.33
+Time: 101058
+Sensor 0: 68.87
+Sensor 1: 51.33
+Sensor 2: 48.23
+Sensor 3: 33.88
+Time: 101159
+Sensor 0: 56.69
+Sensor 1: 37.76
+Sensor 2: 43.53
+Sensor 3: 44.72
+Time: 101259
+Sensor 0: 58.36
+Sensor 1: 38.41
+Sensor 2: 46.57
+Sensor 3: 46.31
+Time: 101364
+Sensor 0: 57.10
+Sensor 1: 40.54
+Sensor 2: 47.18
+Sensor 3: 48.06
+Time: 101415
+Sensor 0: 66.78
+Sensor 1: 37.14
+Sensor 2: 48.62
+Sensor 3: 54.79
+Time: 101515
+Sensor 0: 75.13
+Sensor 1: 40.54
+Sensor 2: 48.23
+Sensor 3: 48.06
+Time: 101615
+Sensor 0: 60.17
+Sensor 1: 52.60
+Sensor 2: 48.23
+Sensor 3: 57.48
+Time: 101716
+Sensor 0: 69.48
+Sensor 1: 43.60
+Sensor 2: 55.40
+Sensor 3: 55.90
+Time: 101816
+Sensor 0: 82.21
+Sensor 1: 53.58
+Sensor 2: 64.04
+Sensor 3: 72.55
+Time: 101917
+Sensor 0: 85.88
+Sensor 1: 63.08
+Sensor 2: 70.80
+Sensor 3: 57.48
+Time: 101967
+Sensor 0: 88.31
+Sensor 1: 63.35
+Sensor 2: 60.15
+Sensor 3: 58.05
+Time: 102067
+Sensor 0: 90.36
+Sensor 1: 53.99
+Sensor 2: 48.71
+Sensor 3: 56.86
+Time: 102167
+Sensor 0: 86.90
+Sensor 1: 42.96
+Sensor 2: 47.02
+Sensor 3: 65.90
+Time: 102268
+Sensor 0: 85.42
+Sensor 1: 48.83
+Sensor 2: 53.50
+Sensor 3: 78.26
+Time: 102368
+Sensor 0: 85.88
+Sensor 1: 53.31
+Sensor 2: 58.79
+Sensor 3: 70.22
+Time: 102469
+Sensor 0: 85.88
+Sensor 1: 46.08
+Sensor 2: 51.75
+Sensor 3: 52.13
+Time: 102569
+Sensor 0: 85.42
+Sensor 1: 41.35
+Sensor 2: 47.32
+Sensor 3: 48.67
+Time: 102619
+Sensor 0: 96.76
+Sensor 1: 46.08
+Sensor 2: 53.53
+Sensor 3: 77.08
+Time: 102720
+Sensor 0: 93.58
+Sensor 1: 42.96
+Sensor 2: 53.50
+Sensor 3: 70.22
+Time: 102820
+Sensor 0: 62.28
+Sensor 1: 19.86
+Sensor 2: 66.76
+Sensor 3: 67.76
+Time: 102920
+Sensor 0: 57.18
+Sensor 1: 31.86
+Sensor 2: 42.66
+Sensor 3: 44.06
+Time: 103021
+Sensor 0: 59.69
+Sensor 1: 31.50
+Sensor 2: 32.11
+Sensor 3: 41.21
+Time: 103121
+Sensor 0: 50.64
+Sensor 1: 30.62
+Sensor 2: 34.26
+Sensor 3: 42.43
+Time: 103171
+Sensor 0: 50.26
+Sensor 1: 29.72
+Sensor 2: 33.53
+Sensor 3: 39.33
+Time: 103272
+Sensor 0: 50.75
+Sensor 1: 28.24
+Sensor 2: 34.87
+Sensor 3: 39.38
+Time: 103372
+Sensor 0: 49.64
+Sensor 1: 29.20
+Sensor 2: 35.79
+Sensor 3: 42.19
+Time: 103473
+Sensor 0: 48.75
+Sensor 1: 29.95
+Sensor 2: 34.87
+Sensor 3: 45.37
+Time: 103573
+Sensor 0: 49.39
+Sensor 1: 29.95
+Sensor 2: 34.87
+Sensor 3: 46.12
+Time: 103673
+Sensor 0: 50.50
+Sensor 1: 30.74
+Sensor 2: 41.44
+Sensor 3: 44.90
+Time: 103724
+Sensor 0: 51.24
+Sensor 1: 30.62
+Sensor 2: 40.49
+Sensor 3: 43.43
+Time: 103824
+Sensor 0: 51.62
+Sensor 1: 30.63
+Sensor 2: 40.18
+Sensor 3: 43.82
+Time: 103924
+Sensor 0: 50.50
+Sensor 1: 31.17
+Sensor 2: 40.75
+Sensor 3: 47.69
+Time: 104025
+Sensor 0: 51.24
+Sensor 1: 30.62
+Sensor 2: 41.44
+Sensor 3: 45.37
+Time: 104125
+Sensor 0: 51.62
+Sensor 1: 30.62
+Sensor 2: 41.44
+Sensor 3: 46.12
+Time: 104225
+Sensor 0: 58.57
+Sensor 1: 25.03
+Sensor 2: 59.47
+Sensor 3: 55.90
+Time: 104276
+Sensor 0: 53.11
+Sensor 1: 31.60
+Sensor 2: 42.45
+Sensor 3: 41.00
+Time: 104376
+Sensor 0: 52.71
+Sensor 1: 30.95
+Sensor 2: 37.27
+Sensor 3: 39.75
+Time: 104477
+Sensor 0: 53.37
+Sensor 1: 31.76
+Sensor 2: 40.03
+Sensor 3: 43.89
+Time: 104577
+Sensor 0: 52.66
+Sensor 1: 31.10
+Sensor 2: 39.80
+Sensor 3: 43.37
+Time: 104677
+Sensor 0: 52.90
+Sensor 1: 31.94
+Sensor 2: 39.70
+Sensor 3: 44.79
+Time: 104778
+Sensor 0: 53.05
+Sensor 1: 31.31
+Sensor 2: 40.78
+Sensor 3: 45.88
+Time: 104878
+Sensor 0: 52.82
+Sensor 1: 31.54
+Sensor 2: 40.34
+Sensor 3: 45.90
+Time: 104928
+Sensor 0: 52.81
+Sensor 1: 32.03
+Sensor 2: 41.00
+Sensor 3: 47.20
+Time: 105029
+Sensor 0: 52.99
+Sensor 1: 31.52
+Sensor 2: 40.68
+Sensor 3: 46.95
+Time: 105129
+Sensor 0: 52.73
+Sensor 1: 31.88
+Sensor 2: 41.46
+Sensor 3: 47.79
+Time: 105229
+Sensor 0: 52.75
+Sensor 1: 31.71
+Sensor 2: 41.18
+Sensor 3: 47.66
+Time: 105330
+Sensor 0: 53.01
+Sensor 1: 31.82
+Sensor 2: 41.98
+Sensor 3: 48.10
+Time: 105430
+Sensor 0: 52.75
+Sensor 1: 31.96
+Sensor 2: 41.55
+Sensor 3: 48.28
+Time: 105480
+Sensor 0: 52.87
+Sensor 1: 32.05
+Sensor 2: 42.23
+Sensor 3: 48.28
+Time: 105581
+Sensor 0: 52.97
+Sensor 1: 31.81
+Sensor 2: 42.11
+Sensor 3: 48.82
+Time: 105681
+Sensor 0: 52.82
+Sensor 1: 31.94
+Sensor 2: 42.32
+Sensor 3: 49.27
+Time: 105781
+Sensor 0: 52.92
+Sensor 1: 32.12
+Sensor 2: 42.64
+Sensor 3: 49.48
+Time: 105882
+Sensor 0: 52.80
+Sensor 1: 31.96
+Sensor 2: 42.63
+Sensor 3: 49.62
+Time: 105982
+Sensor 0: 52.87
+Sensor 1: 31.96
+Sensor 2: 42.32
+Sensor 3: 50.65
+Time: 106033
+Sensor 0: 52.92
+Sensor 1: 32.05
+Sensor 2: 42.63
+Sensor 3: 49.48
+Time: 106133
+Sensor 0: 52.97
+Sensor 1: 32.12
+Sensor 2: 42.64
+Sensor 3: 49.62
+Time: 106233
+Sensor 0: 63.16
+Sensor 1: 32.33
+Sensor 2: 43.59
+Sensor 3: 55.12
+Time: 106334
+Sensor 0: 58.36
+Sensor 1: 53.42
+Sensor 2: 56.71
+Sensor 3: 51.11
+Time: 106437
+Sensor 0: 55.23
+Sensor 1: 40.98
+Sensor 2: 47.05
+Sensor 3: 46.73
+Time: 106538
+Sensor 0: 60.24
+Sensor 1: 41.13
+Sensor 2: 47.62
+Sensor 3: 48.17
+Time: 106588
+Sensor 0: 57.54
+Sensor 1: 47.32
+Sensor 2: 48.71
+Sensor 3: 49.22
+Time: 106688
+Sensor 0: 51.75
+Sensor 1: 38.39
+Sensor 2: 50.10
+Sensor 3: 48.69
+Time: 106789
+Sensor 0: 52.77
+Sensor 1: 32.95
+Sensor 2: 50.00
+Sensor 3: 48.26
+Time: 106889
+Sensor 0: 55.37
+Sensor 1: 34.21
+Sensor 2: 45.59
+Sensor 3: 47.12
+Time: 106990
+Sensor 0: 58.12
+Sensor 1: 44.54
+Sensor 2: 50.48
+Sensor 3: 48.71
+Time: 107090
+Sensor 0: 55.05
+Sensor 1: 50.88
+Sensor 2: 52.79
+Sensor 3: 49.00
+Time: 107140
+Sensor 0: 53.46
+Sensor 1: 40.56
+Sensor 2: 46.70
+Sensor 3: 47.48
+Time: 107241
+Sensor 0: 53.85
+Sensor 1: 34.22
+Sensor 2: 44.92
+Sensor 3: 47.58
+Time: 107341
+Sensor 0: 55.17
+Sensor 1: 34.07
+Sensor 2: 45.62
+Sensor 3: 47.80
+Time: 107442
+Sensor 0: 56.25
+Sensor 1: 45.56
+Sensor 2: 49.56
+Sensor 3: 48.31
+Time: 107542
+Sensor 0: 54.77
+Sensor 1: 38.27
+Sensor 2: 47.10
+Sensor 3: 48.86
+Time: 107642
+Sensor 0: 54.10
+Sensor 1: 35.69
+Sensor 2: 46.52
+Sensor 3: 48.63
+Time: 107743
+Sensor 0: 53.90
+Sensor 1: 33.86
+Sensor 2: 45.94
+Sensor 3: 48.84
+Time: 107793
+Sensor 0: 54.50
+Sensor 1: 37.26
+Sensor 2: 47.80
+Sensor 3: 49.29
+Time: 107893
+Sensor 0: 54.98
+Sensor 1: 46.75
+Sensor 2: 47.10
+Sensor 3: 48.84
+Time: 107994
+Sensor 0: 53.59
+Sensor 1: 41.25
+Sensor 2: 57.66
+Sensor 3: 50.02
+Time: 108094
+Sensor 0: 54.04
+Sensor 1: 38.10
+Sensor 2: 50.22
+Sensor 3: 49.04
+Time: 108194
+Sensor 0: 55.07
+Sensor 1: 39.61
+Sensor 2: 49.74
+Sensor 3: 49.60
+Time: 108295
+Sensor 0: 54.11
+Sensor 1: 36.43
+Sensor 2: 49.17
+Sensor 3: 49.56
+Time: 108345
+Sensor 0: 54.18
+Sensor 1: 36.68
+Sensor 2: 48.86
+Sensor 3: 49.94
+Time: 108445
+Sensor 0: 54.18
+Sensor 1: 39.61
+Sensor 2: 53.66
+Sensor 3: 50.44
+Time: 108546
+Sensor 0: 54.18
+Sensor 1: 39.61
+Sensor 2: 50.22
+Sensor 3: 51.20
+Time: 108646
+Sensor 0: 62.16
+Sensor 1: 39.61
+Sensor 2: 50.22
+Sensor 3: 50.76
+Time: 108746
+Sensor 0: 61.12
+Sensor 1: 71.21
+Sensor 2: 67.09
+Sensor 3: 51.00
+Time: 108797
+Sensor 0: 58.18
+Sensor 1: 56.94
+Sensor 2: 64.24
+Sensor 3: 50.51
+Time: 108847
+Sensor 0: 62.88
+Sensor 1: 67.13
+Sensor 2: 63.02
+Sensor 3: 49.88
+Time: 108947
+Sensor 0: 62.16
+Sensor 1: 71.21
+Sensor 2: 66.89
+Sensor 3: 51.30
+Time: 109048
+Sensor 0: 62.88
+Sensor 1: 76.58
+Sensor 2: 67.09
+Sensor 3: 51.00
+Time: 109148
+Sensor 0: 62.88
+Sensor 1: 76.58
+Sensor 2: 69.29
+Sensor 3: 51.00
+Time: 109249
+Sensor 0: 74.17
+Sensor 1: 159.76
+Sensor 2: 179.05
+Sensor 3: 54.57
+Time: 109349
+Sensor 0: 67.02
+Sensor 1: 125.78
+Sensor 2: 159.36
+Sensor 3: 53.02
+Time: 109449
+Sensor 0: 61.19
+Sensor 1: 88.01
+Sensor 2: 122.34
+Sensor 3: 50.86
+Time: 109499
+Sensor 0: 55.89
+Sensor 1: 57.40
+Sensor 2: 40.77
+Sensor 3: 53.02
+Time: 109600
+Sensor 0: 52.80
+Sensor 1: 37.58
+Sensor 2: 32.73
+Sensor 3: 53.02
+Time: 109700
+Sensor 0: 52.91
+Sensor 1: 34.35
+Sensor 2: 34.25
+Sensor 3: 33.84
+Time: 109800
+Sensor 0: 54.17
+Sensor 1: 36.29
+Sensor 2: 41.50
+Sensor 3: 34.86
+Time: 109901
+Sensor 0: 55.97
+Sensor 1: 48.13
+Sensor 2: 55.00
+Sensor 3: 38.84
+Time: 110001
+Sensor 0: 55.04
+Sensor 1: 48.62
+Sensor 2: 49.25
+Sensor 3: 38.55
+Time: 110051
+Sensor 0: 54.19
+Sensor 1: 41.06
+Sensor 2: 42.99
+Sensor 3: 38.43
+Time: 110152
+Sensor 0: 53.68
+Sensor 1: 37.21
+Sensor 2: 41.60
+Sensor 3: 39.05
+Time: 110252
+Sensor 0: 54.94
+Sensor 1: 37.20
+Sensor 2: 42.72
+Sensor 3: 39.11
+Time: 110353
+Sensor 0: 54.52
+Sensor 1: 41.33
+Sensor 2: 43.11
+Sensor 3: 39.30
+Time: 110453
+Sensor 0: 53.77
+Sensor 1: 38.85
+Sensor 2: 42.17
+Sensor 3: 39.47
+Time: 110553
+Sensor 0: 55.23
+Sensor 1: 35.60
+Sensor 2: 42.57
+Sensor 3: 39.80
+Time: 110604
+Sensor 0: 54.52
+Sensor 1: 41.27
+Sensor 2: 42.72
+Sensor 3: 39.30
+Time: 110704
+Sensor 0: 58.27
+Sensor 1: 38.85
+Sensor 2: 42.72
+Sensor 3: 40.78
+Time: 110804
+Sensor 0: 55.23
+Sensor 1: 48.42
+Sensor 2: 43.11
+Sensor 3: 40.92
+Time: 110905
+Sensor 0: 56.45
+Sensor 1: 41.33
+Sensor 2: 45.26
+Sensor 3: 40.23
+Time: 111005
+Sensor 0: 54.44
+Sensor 1: 41.96
+Sensor 2: 47.49
+Sensor 3: 39.23
+Time: 111106
+Sensor 0: 55.44
+Sensor 1: 36.61
+Sensor 2: 44.34
+Sensor 3: 38.94
+Time: 111156
+Sensor 0: 56.42
+Sensor 1: 42.07
+Sensor 2: 45.96
+Sensor 3: 39.28
+Time: 111256
+Sensor 0: 56.54
+Sensor 1: 44.97
+Sensor 2: 46.28
+Sensor 3: 39.44
+Time: 111357
+Sensor 0: 54.99
+Sensor 1: 44.52
+Sensor 2: 46.09
+Sensor 3: 39.71
+Time: 111460
+Sensor 0: 55.45
+Sensor 1: 41.12
+Sensor 2: 44.42
+Sensor 3: 39.51
+Time: 111560
+Sensor 0: 55.45
+Sensor 1: 42.07
+Sensor 2: 45.94
+Sensor 3: 40.15
+Time: 111661
+Sensor 0: 56.42
+Sensor 1: 57.47
+Sensor 2: 45.96
+Sensor 3: 39.51
+Time: 111711
+Sensor 0: 57.69
+Sensor 1: 47.95
+Sensor 2: 48.32
+Sensor 3: 40.78
+Time: 111811
+Sensor 0: 55.61
+Sensor 1: 43.39
+Sensor 2: 47.17
+Sensor 3: 39.34
+Time: 111912
+Sensor 0: 56.35
+Sensor 1: 46.81
+Sensor 2: 48.15
+Sensor 3: 38.66
+Time: 112012
+Sensor 0: 60.28
+Sensor 1: 57.88
+Sensor 2: 50.99
+Sensor 3: 38.93
+Time: 112113
+Sensor 0: 62.37
+Sensor 1: 64.97
+Sensor 2: 48.32
+Sensor 3: 40.05
+Time: 112213
+Sensor 0: 60.03
+Sensor 1: 56.17
+Sensor 2: 51.32
+Sensor 3: 39.90
+Time: 112313
+Sensor 0: 60.61
+Sensor 1: 59.21
+Sensor 2: 52.79
+Sensor 3: 40.34
+Time: 112364
+Sensor 0: 60.17
+Sensor 1: 72.05
+Sensor 2: 51.32
+Sensor 3: 39.90
+Time: 112464
+Sensor 0: 59.68
+Sensor 1: 59.21
+Sensor 2: 52.79
+Sensor 3: 40.05
+Time: 112565
+Sensor 0: 60.17
+Sensor 1: 86.09
+Sensor 2: 53.12
+Sensor 3: 40.34
+Time: 112665
+Sensor 0: 60.03
+Sensor 1: 78.72
+Sensor 2: 74.78
+Sensor 3: 45.88
+Time: 112765
+Sensor 0: 59.68
+Sensor 1: 67.70
+Sensor 2: 217.69
+Sensor 3: 86.58
+Time: 112866
+Sensor 0: 44.31
+Sensor 1: 59.60
+Sensor 2: 185.76
+Sensor 3: 80.71
+Time: 112916
+Sensor 0: 53.74
+Sensor 1: 53.87
+Sensor 2: 114.20
+Sensor 3: 65.82
+Time: 113016
+Sensor 0: 61.18
+Sensor 1: 54.42
+Sensor 2: 64.27
+Sensor 3: 54.36
+Time: 113117
+Sensor 0: 65.57
+Sensor 1: 64.78
+Sensor 2: 56.84
+Sensor 3: 52.05
+Time: 113217
+Sensor 0: 63.61
+Sensor 1: 65.70
+Sensor 2: 58.90
+Sensor 3: 51.26
+Time: 113318
+Sensor 0: 57.58
+Sensor 1: 50.77
+Sensor 2: 55.68
+Sensor 3: 49.19
+Time: 113418
+Sensor 0: 55.30
+Sensor 1: 39.85
+Sensor 2: 50.73
+Sensor 3: 47.58
+Time: 113468
+Sensor 0: 58.46
+Sensor 1: 42.45
+Sensor 2: 50.35
+Sensor 3: 48.71
+Time: 113569
+Sensor 0: 61.78
+Sensor 1: 52.47
+Sensor 2: 53.43
+Sensor 3: 49.25
+Time: 113669
+Sensor 0: 68.01
+Sensor 1: 66.02
+Sensor 2: 56.25
+Sensor 3: 49.29
+Time: 113769
+Sensor 0: 61.78
+Sensor 1: 52.47
+Sensor 2: 62.36
+Sensor 3: 50.22
+Time: 113870
+Sensor 0: 74.31
+Sensor 1: 52.47
+Sensor 2: 67.04
+Sensor 3: 50.90
+Time: 113970
+Sensor 0: 68.00
+Sensor 1: 84.84
+Sensor 2: 60.52
+Sensor 3: 50.27
+Time: 114070
+Sensor 0: 66.58
+Sensor 1: 70.76
+Sensor 2: 59.43
+Sensor 3: 48.76
+Time: 114121
+Sensor 0: 72.64
+Sensor 1: 77.12
+Sensor 2: 67.05
+Sensor 3: 48.68
+Time: 114221
+Sensor 0: 72.64
+Sensor 1: 114.08
+Sensor 2: 62.36
+Sensor 3: 49.33
+Time: 114321
+Sensor 0: 73.99
+Sensor 1: 86.01
+Sensor 2: 67.04
+Sensor 3: 50.22
+Time: 114422
+Sensor 0: 74.31
+Sensor 1: 96.13
+Sensor 2: 67.05
+Sensor 3: 50.27
+Time: 114522
+Sensor 0: 195.43
+Sensor 1: 114.08
+Sensor 2: 117.91
+Sensor 3: 56.59
+Time: 114622
+Sensor 0: 206.13
+Sensor 1: 455.80
+Sensor 2: 420.68
+Sensor 3: 56.24
+Time: 114673
+Sensor 0: 248.09
+Sensor 1: 527.26
+Sensor 2: 517.05
+Sensor 3: 59.69
+Time: 114773
+Sensor 0: 266.46
+Sensor 1: 623.49
+Sensor 2: 591.85
+Sensor 3: 55.59
+Time: 114874
+Sensor 0: 261.24
+Sensor 1: 643.76
+Sensor 2: 596.72
+Sensor 3: 56.94
+CHOP: 114957
+Time: 114974
+Sensor 0: 279.06
+Sensor 1: 658.37
+Sensor 2: 625.69
+Sensor 3: 56.94
+Time: 115075
+Sensor 0: 326.87
+Sensor 1: 739.53
+Sensor 2: 736.09
+Sensor 3: 56.94
+Time: 115175
+Sensor 0: 266.46
+Sensor 1: 903.79
+Sensor 2: 596.72
+Sensor 3: 69.32
+Time: 115225
+Sensor 0: 279.06
+Sensor 1: 658.37
+Sensor 2: 625.69
+Sensor 3: 59.69
+Time: 115326
+Sensor 0: 326.87
+Sensor 1: 739.53
+Sensor 2: 736.09
+Sensor 3: 56.94
+Time: 115426
+Sensor 0: 658.21
+Sensor 1: 1604.57
+Sensor 2: 1612.48
+Sensor 3: -1.39
+Time: 115527
+Sensor 0: 410.26
+Sensor 1: 1435.45
+Sensor 2: 1874.00
+Sensor 3: 180.00
+Time: 115627
+Sensor 0: 178.34
+Sensor 1: 973.30
+Sensor 2: 2186.61
+Sensor 3: 69.32
+Time: 115727
+Sensor 0: 46.41
+Sensor 1: 731.99
+Sensor 2: 1855.17
+Sensor 3: 375.77
+Time: 115778
+Sensor 0: 78.57
+Sensor 1: 997.71
+Sensor 2: 2145.27
+Sensor 3: 482.97
+Time: 115878
+Sensor 0: 162.21
+Sensor 1: 1085.41
+Sensor 2: 1874.00
+Sensor 3: 515.88
+Time: 115979
+Sensor 0: 136.67
+Sensor 1: 748.40
+Sensor 2: 1144.66
+Sensor 3: 385.19
+Time: 116079
+Sensor 0: 57.88
+Sensor 1: 973.30
+Sensor 2: 1874.00
+Sensor 3: 241.60
+Time: 116179
+Sensor 0: 47.73
+Sensor 1: 61.05
+Sensor 2: 1855.17
+Sensor 3: 375.77
+Time: 116280
+Sensor 0: 53.04
+Sensor 1: 35.56
+Sensor 2: 47.82
+Sensor 3: 47.43
+Time: 116330
+Sensor 0: 54.88
+Sensor 1: 32.95
+Sensor 2: 53.17
+Sensor 3: 34.83
+Time: 116430
+Sensor 0: 55.37
+Sensor 1: 33.25
+Sensor 2: 54.09
+Sensor 3: 38.87
+Time: 116536
+Sensor 0: 54.79
+Sensor 1: 33.20
+Sensor 2: 55.08
+Sensor 3: 38.86
+Time: 116636
+Sensor 0: 55.80
+Sensor 1: 32.93
+Sensor 2: 57.52
+Sensor 3: 40.31
+Time: 116737
+Sensor 0: 56.07
+Sensor 1: 32.43
+Sensor 2: 58.42
+Sensor 3: 40.48
+Time: 116837
+Sensor 0: 56.40
+Sensor 1: 33.36
+Sensor 2: 59.54
+Sensor 3: 41.50
+Time: 116937
+Sensor 0: 55.80
+Sensor 1: 33.20
+Sensor 2: 61.47
+Sensor 3: 42.46
+Time: 116988
+Sensor 0: 56.07
+Sensor 1: 33.25
+Sensor 2: 58.42
+Sensor 3: 40.48
+Time: 117088
+Sensor 0: 61.50
+Sensor 1: 33.36
+Sensor 2: 59.54
+Sensor 3: 44.83
+Time: 117188
+Sensor 0: 57.89
+Sensor 1: 36.21
+Sensor 2: 66.06
+Sensor 3: 42.63
+Time: 117289
+Sensor 0: 58.02
+Sensor 1: 32.78
+Sensor 2: 62.30
+Sensor 3: 41.78
+Time: 117389
+Sensor 0: 61.75
+Sensor 1: 37.57
+Sensor 2: 62.32
+Sensor 3: 42.15
+Time: 117490
+Sensor 0: 64.57
+Sensor 1: 43.65
+Sensor 2: 64.27
+Sensor 3: 42.42
+Time: 117540
+Sensor 0: 67.74
+Sensor 1: 47.25
+Sensor 2: 65.99
+Sensor 3: 42.95
+Time: 117640
+Sensor 0: 61.75
+Sensor 1: 52.90
+Sensor 2: 69.06
+Sensor 3: 42.63
+Time: 117741
+Sensor 0: 66.85
+Sensor 1: 52.48
+Sensor 2: 72.20
+Sensor 3: 42.63
+Time: 117841
+Sensor 0: 59.46
+Sensor 1: 41.34
+Sensor 2: 71.50
+Sensor 3: 45.11
+Time: 117942
+Sensor 0: 57.42
+Sensor 1: 32.75
+Sensor 2: 64.34
+Sensor 3: 42.05
+Time: 118042
+Sensor 0: 59.06
+Sensor 1: 32.23
+Sensor 2: 60.94
+Sensor 3: 41.69
+Time: 118092
+Sensor 0: 64.36
+Sensor 1: 39.53
+Sensor 2: 62.81
+Sensor 3: 42.66
+Time: 118193
+Sensor 0: 69.10
+Sensor 1: 51.62
+Sensor 2: 72.91
+Sensor 3: 44.77
+Time: 118293
+Sensor 0: 70.07
+Sensor 1: 58.95
+Sensor 2: 73.27
+Sensor 3: 46.67
+Time: 118393
+Sensor 0: 68.05
+Sensor 1: 56.67
+Sensor 2: 74.14
+Sensor 3: 46.29
+Time: 118494
+Sensor 0: 66.26
+Sensor 1: 60.85
+Sensor 2: 72.91
+Sensor 3: 48.70
+Time: 118594
+Sensor 0: 64.43
+Sensor 1: 91.09
+Sensor 2: 73.27
+Sensor 3: 46.29
+Time: 118694
+Sensor 0: 67.36
+Sensor 1: 58.95
+Sensor 2: 74.14
+Sensor 3: 46.67
+Time: 118745
+Sensor 0: 67.36
+Sensor 1: 60.85
+Sensor 2: 509.27
+Sensor 3: 48.70
+Time: 118845
+Sensor 0: 66.26
+Sensor 1: 170.55
+Sensor 2: 486.56
+Sensor 3: 165.98
+Time: 118946
+Sensor 0: 64.43
+Sensor 1: 161.82
+Sensor 2: 450.93
+Sensor 3: 161.03
+Time: 119046
+Sensor 0: 49.92
+Sensor 1: 141.93
+Sensor 2: 484.86
+Sensor 3: 163.34
+Time: 119146
+Sensor 0: 53.11
+Sensor 1: 133.31
+Sensor 2: 403.55
+Sensor 3: 135.09
+Time: 119247
+Sensor 0: 53.06
+Sensor 1: 118.59
+Sensor 2: 450.93
+Sensor 3: 161.03
+Time: 119297
+Sensor 0: 57.80
+Sensor 1: 96.07
+Sensor 2: 450.93
+Sensor 3: 161.03
+Time: 119398
+Sensor 0: 53.11
+Sensor 1: 77.48
+Sensor 2: 403.55
+Sensor 3: 67.42
+Time: 119498
+Sensor 0: 53.11
+Sensor 1: 65.89
+Sensor 2: 94.39
+Sensor 3: 62.45
+Time: 119598
+Sensor 0: 65.18
+Sensor 1: 70.33
+Sensor 2: 98.58
+Sensor 3: 63.48
+Time: 119699
+Sensor 0: 67.38
+Sensor 1: 73.64
+Sensor 2: 103.35
+Sensor 3: 63.59
+Time: 119799
+Sensor 0: 72.30
+Sensor 1: 84.37
+Sensor 2: 107.87
+Sensor 3: 63.82
+Time: 119849
+Sensor 0: 76.18
+Sensor 1: 93.55
+Sensor 2: 113.27
+Sensor 3: 65.16
+Time: 119950
+Sensor 0: 78.43
+Sensor 1: 100.32
+Sensor 2: 121.63
+Sensor 3: 67.42
+Time: 120050
+Sensor 0: 72.30
+Sensor 1: 84.37
+Sensor 2: 107.87
+Sensor 3: 63.82
+CHOP: 120077
+Time: 120150
+Sensor 0: 76.18
+Sensor 1: 93.55
+Sensor 2: 113.27
+Sensor 3: 65.16
+Time: 120251
+Sensor 0: 78.43
+Sensor 1: 100.32
+Sensor 2: 121.63
+Sensor 3: 67.42
+Time: 120351
+Sensor 0: 94.53
+Sensor 1: 149.11
+Sensor 2: 138.10
+Sensor 3: 75.07
+Time: 120402
+Sensor 0: 136.93
+Sensor 1: 283.07
+Sensor 2: 240.91
+Sensor 3: 113.52
+Time: 120502
+Sensor 0: 438.30
+Sensor 1: 1219.40
+Sensor 2: 487.76
+Sensor 3: 474.56
+Time: 120603
+Sensor 0: 258.24
+Sensor 1: 872.26
+Sensor 2: 1668.72
+Sensor 3: 615.87
+Time: 120703
+Sensor 0: 106.41
+Sensor 1: 312.49
+Sensor 2: 484.61
+Sensor 3: 415.46
+Time: 120803
+Sensor 0: 59.07
+Sensor 1: 872.26
+Sensor 2: 79.71
+Sensor 3: 124.85
+Time: 120904
+Sensor 0: 57.55
+Sensor 1: 32.15
+Sensor 2: 52.08
+Sensor 3: 37.61
+Time: 120954
+Sensor 0: 54.31
+Sensor 1: 32.07
+Sensor 2: 53.41
+Sensor 3: 35.50
+Time: 121054
+Sensor 0: 55.39
+Sensor 1: 33.48
+Sensor 2: 55.13
+Sensor 3: 40.16
+Time: 121155
+Sensor 0: 56.28
+Sensor 1: 32.30
+Sensor 2: 54.58
+Sensor 3: 39.83
+Time: 121255
+Sensor 0: 57.51
+Sensor 1: 32.23
+Sensor 2: 56.84
+Sensor 3: 41.20
+Time: 121356
+Sensor 0: 57.51
+Sensor 1: 41.98
+Sensor 2: 62.08
+Sensor 3: 44.93
+Time: 121456
+Sensor 0: 57.51
+Sensor 1: 32.30
+Sensor 2: 55.13
+Sensor 3: 46.16
+Time: 121993
+Sensor 0: 63.93
+Sensor 1: 47.30
+Sensor 2: 67.23
+Sensor 3: 44.89
+Time: 121993
+Sensor 0: 62.65
+Sensor 1: 36.93
+Sensor 2: 64.20
+Sensor 3: 43.14
+Time: 121993
+Sensor 0: 67.69
+Sensor 1: 42.82
+Sensor 2: 65.87
+Sensor 3: 44.99
+Time: 121994
+Sensor 0: 64.59
+Sensor 1: 43.00
+Sensor 2: 67.54
+Sensor 3: 44.46
+Time: 121994
+Sensor 0: 62.51
+Sensor 1: 39.14
+Sensor 2: 65.82
+Sensor 3: 43.40
+Time: 121994
+Sensor 0: 59.38
+Sensor 1: 37.21
+Sensor 2: 64.49
+Sensor 3: 44.46
+Time: 122094
+Sensor 0: 59.17
+Sensor 1: 35.74
+Sensor 2: 65.82
+Sensor 3: 40.59
+Time: 122144
+Sensor 0: 60.67
+Sensor 1: 37.17
+Sensor 2: 62.19
+Sensor 3: 40.96
+Time: 122245
+Sensor 0: 61.76
+Sensor 1: 40.24
+Sensor 2: 64.70
+Sensor 3: 42.30
+Time: 122345
+Sensor 0: 59.80
+Sensor 1: 40.03
+Sensor 2: 66.69
+Sensor 3: 42.47
+Time: 122446
+Sensor 0: 60.11
+Sensor 1: 37.48
+Sensor 2: 66.29
+Sensor 3: 41.96
+Time: 122546
+Sensor 0: 60.11
+Sensor 1: 39.84
+Sensor 2: 68.89
+Sensor 3: 42.50
+Time: 122646
+Sensor 0: 63.82
+Sensor 1: 44.69
+Sensor 2: 69.62
+Sensor 3: 43.86
+Time: 122697
+Sensor 0: 63.84
+Sensor 1: 43.18
+Sensor 2: 71.51
+Sensor 3: 44.12
+Time: 122797
+Sensor 0: 63.54
+Sensor 1: 43.35
+Sensor 2: 71.86
+Sensor 3: 42.50
+Time: 122897
+Sensor 0: 61.76
+Sensor 1: 41.62
+Sensor 2: 70.82
+Sensor 3: 44.84
+Time: 122998
+Sensor 0: 61.21
+Sensor 1: 39.74
+Sensor 2: 70.23
+Sensor 3: 44.44
+Time: 123098
+Sensor 0: 62.34
+Sensor 1: 40.53
+Sensor 2: 71.43
+Sensor 3: 44.85
+Time: 123198
+Sensor 0: 61.09
+Sensor 1: 41.61
+Sensor 2: 72.02
+Sensor 3: 44.72
+Time: 123249
+Sensor 0: 58.79
+Sensor 1: 40.06
+Sensor 2: 70.39
+Sensor 3: 44.72
+Time: 123349
+Sensor 0: 58.46
+Sensor 1: 40.53
+Sensor 2: 70.82
+Sensor 3: 44.72
+Time: 123449
+Sensor 0: 61.21
+Sensor 1: 37.61
+Sensor 2: 71.56
+Sensor 3: 44.73
+Time: 123550
+Sensor 0: 61.21
+Sensor 1: 40.06
+Sensor 2: 71.43
+Sensor 3: 44.72
+Time: 123650
+Sensor 0: 62.34
+Sensor 1: 40.53
+Sensor 2: 71.56
+Sensor 3: 44.73
+Time: 123750
+Sensor 0: 65.87
+Sensor 1: 41.61
+Sensor 2: 72.02
+Sensor 3: 44.73
+Time: 123851
+Sensor 0: 123.13
+Sensor 1: 55.46
+Sensor 2: 84.51
+Sensor 3: 51.93
+Time: 123901
+Sensor 0: 123.71
+Sensor 1: 179.16
+Sensor 2: 238.65
+Sensor 3: 103.58
+Time: 124002
+Sensor 0: 115.60
+Sensor 1: 155.07
+Sensor 2: 232.88
+Sensor 3: 98.28
+Time: 124102
+Sensor 0: 108.44
+Sensor 1: 136.12
+Sensor 2: 218.73
+Sensor 3: 92.01
+Time: 124202
+Sensor 0: 100.87
+Sensor 1: 122.46
+Sensor 2: 200.50
+Sensor 3: 87.22
+Time: 124303
+Sensor 0: 103.16
+Sensor 1: 126.04
+Sensor 2: 183.95
+Sensor 3: 84.67
+CHOP: 124309
+Time: 124403
+Sensor 0: 131.23
+Sensor 1: 181.89
+Sensor 2: 185.19
+Sensor 3: 87.88
+Time: 124454
+Sensor 0: 115.60
+Sensor 1: 155.07
+Sensor 2: 273.03
+Sensor 3: 92.01
+Time: 124554
+Sensor 0: 115.60
+Sensor 1: 155.07
+Sensor 2: 218.73
+Sensor 3: 92.01
+Time: 124654
+Sensor 0: 131.23
+Sensor 1: 181.89
+Sensor 2: 218.73
+Sensor 3: 92.01
+Time: 124755
+Sensor 0: 477.04
+Sensor 1: 1005.47
+Sensor 2: 273.03
+Sensor 3: 130.30
+Time: 124855
+Sensor 0: 289.16
+Sensor 1: 702.00
+Sensor 2: 1152.12
+Sensor 3: 502.65
+Time: 124956
+Sensor 0: 125.67
+Sensor 1: 283.80
+Sensor 2: 394.23
+Sensor 3: 331.32
+Time: 125006
+Sensor 0: 61.84
+Sensor 1: 73.40
+Sensor 2: 83.88
+Sensor 3: 114.59
+Time: 125106
+Sensor 0: 56.20
+Sensor 1: 34.92
+Sensor 2: 51.28
+Sensor 3: 50.18
+Time: 125207
+Sensor 0: 56.42
+Sensor 1: 30.68
+Sensor 2: 53.61
+Sensor 3: 39.64
+Time: 125307
+Sensor 0: 58.97
+Sensor 1: 31.52
+Sensor 2: 56.84
+Sensor 3: 42.31
+Time: 125408
+Sensor 0: 67.91
+Sensor 1: 40.50
+Sensor 2: 56.53
+Sensor 3: 41.45
+Time: 125508
+Sensor 0: 67.79
+Sensor 1: 44.74
+Sensor 2: 58.19
+Sensor 3: 42.18
+Time: 125558
+Sensor 0: 71.02
+Sensor 1: 45.18
+Sensor 2: 61.54
+Sensor 3: 42.78
+Time: 125659
+Sensor 0: 75.64
+Sensor 1: 48.05
+Sensor 2: 62.96
+Sensor 3: 42.63
+Time: 125759
+Sensor 0: 67.91
+Sensor 1: 60.52
+Sensor 2: 58.19
+Sensor 3: 44.80
+Time: 125859
+Sensor 0: 71.02
+Sensor 1: 45.18
+Sensor 2: 71.14
+Sensor 3: 43.36
+Time: 125960
+Sensor 0: 75.64
+Sensor 1: 48.05
+Sensor 2: 73.91
+Sensor 3: 41.10
+Time: 126060
+Sensor 0: 90.51
+Sensor 1: 88.19
+Sensor 2: 74.43
+Sensor 3: 42.63
+Time: 126110
+Sensor 0: 62.06
+Sensor 1: 45.58
+Sensor 2: 66.66
+Sensor 3: 42.63
+Time: 126211
+Sensor 0: 57.93
+Sensor 1: 29.91
+Sensor 2: 67.46
+Sensor 3: 41.10
+Time: 126311
+Sensor 0: 56.36
+Sensor 1: 27.78
+Sensor 2: 67.46
+Sensor 3: 30.14
+Time: 126411
+Sensor 0: 56.06
+Sensor 1: 26.19
+Sensor 2: 44.91
+Sensor 3: 30.27
+Time: 126512
+Sensor 0: 58.93
+Sensor 1: 27.66
+Sensor 2: 46.79
+Sensor 3: 31.73
+Time: 126615
+Sensor 0: 62.13
+Sensor 1: 34.80
+Sensor 2: 53.43
+Sensor 3: 36.16
+Time: 126716
+Sensor 0: 59.50
+Sensor 1: 35.17
+Sensor 2: 53.45
+Sensor 3: 34.84
+Time: 126766
+Sensor 0: 62.76
+Sensor 1: 32.53
+Sensor 2: 50.27
+Sensor 3: 33.36
+Time: 126866
+Sensor 0: 59.50
+Sensor 1: 38.01
+Sensor 2: 56.63
+Sensor 3: 35.52
+Time: 126967
+Sensor 0: 62.13
+Sensor 1: 46.82
+Sensor 2: 53.43
+Sensor 3: 34.84
+Time: 127067
+Sensor 0: 62.76
+Sensor 1: 35.17
+Sensor 2: 53.45
+Sensor 3: 35.52
+Time: 127168
+Sensor 0: 78.82
+Sensor 1: 58.60
+Sensor 2: 56.63
+Sensor 3: 36.16
+Time: 127268
+Sensor 0: 76.10
+Sensor 1: 67.92
+Sensor 2: 73.83
+Sensor 3: 55.45
+CHOP: 127293
+Time: 127319
+Sensor 0: 77.20
+Sensor 1: 58.60
+Sensor 2: 80.27
+Sensor 3: 51.30
+Time: 127419
+Sensor 0: 78.82
+Sensor 1: 58.98
+Sensor 2: 82.57
+Sensor 3: 52.66
+Time: 127519
+Sensor 0: 104.84
+Sensor 1: 67.92
+Sensor 2: 125.13
+Sensor 3: 55.45
+Time: 127619
+Sensor 0: 159.92
+Sensor 1: 130.19
+Sensor 2: 261.77
+Sensor 3: 84.26
+Time: 127720
+Sensor 0: 537.96
+Sensor 1: 241.71
+Sensor 2: 1372.97
+Sensor 3: 567.27
+Time: 127820
+Sensor 0: 373.07
+Sensor 1: 658.10
+Sensor 2: 1580.20
+Sensor 3: 642.52
+Time: 127920
+Sensor 0: 170.18
+Sensor 1: 268.65
+Sensor 2: 1187.24
+Sensor 3: 387.20
+Time: 127970
+Sensor 0: 68.84
+Sensor 1: 62.46
+Sensor 2: 322.65
+Sensor 3: 97.09
+Time: 128070
+Sensor 0: 54.13
+Sensor 1: 31.23
+Sensor 2: 1126.54
+Sensor 3: 44.52
+Time: 128170
+Sensor 0: 56.24
+Sensor 1: 27.95
+Sensor 2: 52.80
+Sensor 3: 39.40
+Time: 128271
+Sensor 0: 55.98
+Sensor 1: 27.97
+Sensor 2: 55.48
+Sensor 3: 38.78
+Time: 128371
+Sensor 0: 56.10
+Sensor 1: 29.38
+Sensor 2: 57.46
+Sensor 3: 41.19
+Time: 128421
+Sensor 0: 56.22
+Sensor 1: 28.00
+Sensor 2: 55.80
+Sensor 3: 39.24
+Time: 128522
+Sensor 0: 56.65
+Sensor 1: 28.57
+Sensor 2: 58.04
+Sensor 3: 41.16
+Time: 128622
+Sensor 0: 56.22
+Sensor 1: 29.64
+Sensor 2: 60.19
+Sensor 3: 41.69
+Time: 128722
+Sensor 0: 56.24
+Sensor 1: 28.57
+Sensor 2: 60.72
+Sensor 3: 44.52
+Time: 128823
+Sensor 0: 56.65
+Sensor 1: 29.38
+Sensor 2: 58.04
+Sensor 3: 41.19
+Time: 128923
+Sensor 0: 95.85
+Sensor 1: 29.64
+Sensor 2: 68.22
+Sensor 3: 41.69
+Time: 129023
+Sensor 0: 60.89
+Sensor 1: 33.62
+Sensor 2: 61.02
+Sensor 3: 48.59
+Time: 129074
+Sensor 0: 53.36
+Sensor 1: 26.39
+Sensor 2: 58.22
+Sensor 3: 35.59
+Time: 129174
+Sensor 0: 53.07
+Sensor 1: 27.01
+Sensor 2: 58.10
+Sensor 3: 35.65
+Time: 129274
+Sensor 0: 54.93
+Sensor 1: 26.60
+Sensor 2: 56.52
+Sensor 3: 36.25
+Time: 129375
+Sensor 0: 59.64
+Sensor 1: 26.30
+Sensor 2: 58.22
+Sensor 3: 39.18
+Time: 129475
+Sensor 0: 63.22
+Sensor 1: 26.74
+Sensor 2: 58.10
+Sensor 3: 38.49
+Time: 129575
+Sensor 0: 70.01
+Sensor 1: 29.20
+Sensor 2: 35.98
+Sensor 3: 41.49
+Time: 129626
+Sensor 0: 73.98
+Sensor 1: 26.74
+Sensor 2: 38.96
+Sensor 3: 43.50
+Time: 129726
+Sensor 0: 72.29
+Sensor 1: 27.01
+Sensor 2: 42.41
+Sensor 3: 39.18
+Time: 129827
+Sensor 0: 67.10
+Sensor 1: 32.85
+Sensor 2: 44.08
+Sensor 3: 49.71
+Time: 129927
+Sensor 0: 69.01
+Sensor 1: 32.34
+Sensor 2: 44.17
+Sensor 3: 52.04
+Time: 130027
+Sensor 0: 68.39
+Sensor 1: 30.77
+Sensor 2: 44.48
+Sensor 3: 49.72
+Time: 130128
+Sensor 0: 72.13
+Sensor 1: 29.32
+Sensor 2: 45.25
+Sensor 3: 58.52
+Time: 130178
+Sensor 0: 72.13
+Sensor 1: 32.34
+Sensor 2: 49.73
+Sensor 3: 49.72
+Time: 130278
+Sensor 0: 72.13
+Sensor 1: 30.77
+Sensor 2: 44.48
+Sensor 3: 52.04
+Time: 130379
+Sensor 0: 72.13
+Sensor 1: 29.32
+Sensor 2: 45.25
+Sensor 3: 58.52
+Time: 130479
+Sensor 0: 125.42
+Sensor 1: 18.86
+Sensor 2: 49.73
+Sensor 3: 243.27
+CHOP: 130541
+Time: 130580
+Sensor 0: 141.98
+Sensor 1: 17.70
+Sensor 2: 83.15
+Sensor 3: 275.71
+Time: 130680
+Sensor 0: 120.71
+Sensor 1: 13.60
+Sensor 2: 104.45
+Sensor 3: 364.15
+Time: 130731
+Sensor 0: 125.42
+Sensor 1: 18.86
+Sensor 2: 79.10
+Sensor 3: 243.27
+Time: 130831
+Sensor 0: 141.98
+Sensor 1: 18.86
+Sensor 2: 83.15
+Sensor 3: 275.71
+Time: 130932
+Sensor 0: 722.94
+Sensor 1: 105.30
+Sensor 2: 104.45
+Sensor 3: 364.15
+Time: 131032
+Sensor 0: 354.04
+Sensor 1: -39.03
+Sensor 2: 1059.67
+Sensor 3: 1280.09
+Time: 131132
+Sensor 0: 140.58
+Sensor 1: -59.94
+Sensor 2: 162.11
+Sensor 3: 500.85
+Time: 131233
+Sensor 0: 81.69
+Sensor 1: -32.14
+Sensor 2: 95.95
+Sensor 3: 206.29
+Time: 131333
+Sensor 0: 57.99
+Sensor 1: 0.35
+Sensor 2: 64.41
+Sensor 3: 75.84
+Time: 131384
+Sensor 0: 50.73
+Sensor 1: 25.55
+Sensor 2: 54.72
+Sensor 3: 35.85
+Time: 131484
+Sensor 0: 50.30
+Sensor 1: 31.84
+Sensor 2: 54.93
+Sensor 3: 35.45
+Time: 131584
+Sensor 0: 50.79
+Sensor 1: 31.49
+Sensor 2: 57.82
+Sensor 3: 36.67
+Time: 131637
+Sensor 0: 52.23
+Sensor 1: 32.08
+Sensor 2: 58.93
+Sensor 3: 35.66
+Time: 131738
+Sensor 0: 58.53
+Sensor 1: 29.32
+Sensor 2: 64.89
+Sensor 3: 78.19
+Time: 131838
+Sensor 0: 52.23
+Sensor 1: 32.06
+Sensor 2: 58.93
+Sensor 3: 36.67
+Time: 131888
+Sensor 0: 52.23
+Sensor 1: 31.84
+Sensor 2: 58.93
+Sensor 3: 36.67
+CHOP: 131925
+Time: 131989
+Sensor 0: 58.53
+Sensor 1: 32.06
+Sensor 2: 64.89
+Sensor 3: 78.19
+Time: 132090
+Sensor 0: 70.53
+Sensor 1: 32.08
+Sensor 2: 75.43
+Sensor 3: 103.50
+Time: 132190
+Sensor 0: 108.90
+Sensor 1: 53.46
+Sensor 2: 115.13
+Sensor 3: 189.38
+Time: 132290
+Sensor 0: 738.96
+Sensor 1: 259.13
+Sensor 2: 319.70
+Sensor 3: 456.53
+Time: 132391
+Sensor 0: 584.90
+Sensor 1: 146.58
+Sensor 2: 2197.49
+Sensor 3: 1639.16
+Time: 132441
+Sensor 0: 260.22
+Sensor 1: 85.23
+Sensor 2: 1239.51
+Sensor 3: 714.03
+Time: 132542
+Sensor 0: 83.28
+Sensor 1: 26.52
+Sensor 2: 313.28
+Sensor 3: 193.51
+Time: 132642
+Sensor 0: 53.96
+Sensor 1: 6.80
+Sensor 2: 116.97
+Sensor 3: 136.91
+Time: 132742
+Sensor 0: 45.61
+Sensor 1: 21.66
+Sensor 2: 92.72
+Sensor 3: 122.65
+Time: 132843
+Sensor 0: 42.61
+Sensor 1: 29.81
+Sensor 2: 73.42
+Sensor 3: 89.35
+Time: 132943
+Sensor 0: 51.50
+Sensor 1: 25.77
+Sensor 2: 59.68
+Sensor 3: 97.13
+Time: 132994
+Sensor 0: 108.04
+Sensor 1: 8.37
+Sensor 2: 67.97
+Sensor 3: 176.04
+Time: 133094
+Sensor 0: 53.96
+Sensor 1: 21.06
+Sensor 2: 142.69
+Sensor 3: 136.91
+Time: 133194
+Sensor 0: 53.96
+Sensor 1: 21.66
+Sensor 2: 92.72
+Sensor 3: 136.91
+Time: 133295
+Sensor 0: 280.53
+Sensor 1: 21.66
+Sensor 2: 92.72
+Sensor 3: 176.04
+Time: 133395
+Sensor 0: 280.85
+Sensor 1: 21.06
+Sensor 2: 486.99
+Sensor 3: 796.80
+Time: 133495
+Sensor 0: 295.61
+Sensor 1: -91.92
+Sensor 2: 492.08
+Sensor 3: 809.25
+Time: 133596
+Sensor 0: 334.95
+Sensor 1: -55.57
+Sensor 2: 499.03
+Sensor 3: 813.73
+Time: 133646
+Sensor 0: 384.92
+Sensor 1: 7.81
+Sensor 2: 523.37
+Sensor 3: 784.37
+CHOP: 133709
+Time: 133746
+Sensor 0: 295.61
+Sensor 1: 59.84
+Sensor 2: 587.58
+Sensor 3: 806.08
+Time: 133847
+Sensor 0: 334.95
+Sensor 1: 131.40
+Sensor 2: 499.03
+Sensor 3: 916.46
+Time: 133947
+Sensor 0: 384.92
+Sensor 1: 7.81
+Sensor 2: 523.37
+Sensor 3: 809.25
+Time: 134048
+Sensor 0: 456.52
+Sensor 1: 59.84
+Sensor 2: 587.58
+Sensor 3: 813.73
+Time: 134148
+Sensor 0: 1193.05
+Sensor 1: 581.63
+Sensor 2: 1489.50
+Sensor 3: 1578.60
+Time: 134199
+Sensor 0: 822.96
+Sensor 1: 429.68
+Sensor 2: 1318.47
+Sensor 3: 1352.20
+Time: 134299
+Sensor 0: 447.73
+Sensor 1: 132.86
+Sensor 2: 1147.21
+Sensor 3: 1077.85
+Time: 134399
+Sensor 0: 233.52
+Sensor 1: -43.60
+Sensor 2: 757.78
+Sensor 3: 651.70
+Time: 134500
+Sensor 0: 133.10
+Sensor 1: -72.28
+Sensor 2: 1240.06
+Sensor 3: 1352.20
+Time: 134600
+Sensor 0: 102.17
+Sensor 1: -59.94
+Sensor 2: 204.22
+Sensor 3: 239.46
+Time: 134701
+Sensor 0: 58.81
+Sensor 1: -24.32
+Sensor 2: 136.04
+Sensor 3: 114.63
+Time: 134751
+Sensor 0: 39.43
+Sensor 1: 27.61
+Sensor 2: 59.47
+Sensor 3: 47.46
+Time: 134851
+Sensor 0: 38.61
+Sensor 1: 38.08
+Sensor 2: 49.05
+Sensor 3: 43.84
+Time: 134951
+Sensor 0: 60.48
+Sensor 1: 40.49
+Sensor 2: 52.05
+Sensor 3: 45.96
+Time: 135052
+Sensor 0: 84.11
+Sensor 1: 55.03
+Sensor 2: 50.63
+Sensor 3: 50.83
+Time: 135152
+Sensor 0: 62.70
+Sensor 1: 60.01
+Sensor 2: 49.33
+Sensor 3: 45.20
+Time: 135252
+Sensor 0: 60.03
+Sensor 1: 46.12
+Sensor 2: 50.61
+Sensor 3: 40.85
+Time: 135303
+Sensor 0: 94.76
+Sensor 1: 44.86
+Sensor 2: 55.82
+Sensor 3: 46.54
+Time: 135403
+Sensor 0: 87.84
+Sensor 1: 59.19
+Sensor 2: 50.63
+Sensor 3: 53.66
+Time: 135503
+Sensor 0: 62.46
+Sensor 1: 53.47
+Sensor 2: 56.85
+Sensor 3: 51.58
+Time: 135604
+Sensor 0: 61.77
+Sensor 1: 43.48
+Sensor 2: 52.90
+Sensor 3: 46.10
+Time: 135704
+Sensor 0: 67.10
+Sensor 1: 46.75
+Sensor 2: 52.90
+Sensor 3: 43.98
+Time: 135805
+Sensor 0: 41.56
+Sensor 1: 35.06
+Sensor 2: 52.90
+Sensor 3: 39.83
+Time: 135905
+Sensor 0: 35.99
+Sensor 1: 33.85
+Sensor 2: 40.59
+Sensor 3: 35.26
+Time: 135955
+Sensor 0: 37.22
+Sensor 1: 33.74
+Sensor 2: 41.26
+Sensor 3: 35.95
+Time: 136056
+Sensor 0: 44.99
+Sensor 1: 32.22
+Sensor 2: 35.68
+Sensor 3: 40.33
+Time: 136156
+Sensor 0: 48.30
+Sensor 1: 32.55
+Sensor 2: 30.91
+Sensor 3: 40.33
+Time: 136256
+Sensor 0: 45.82
+Sensor 1: 34.57
+Sensor 2: 31.32
+Sensor 3: 44.60
+Time: 136357
+Sensor 0: 46.49
+Sensor 1: 35.35
+Sensor 2: 33.18
+Sensor 3: 45.80
+Time: 136457
+Sensor 0: 59.12
+Sensor 1: 33.58
+Sensor 2: 40.02
+Sensor 3: 44.60
+Time: 136507
+Sensor 0: 58.68
+Sensor 1: 33.43
+Sensor 2: 35.68
+Sensor 3: 75.71
+Time: 136608
+Sensor 0: 48.30
+Sensor 1: 33.43
+Sensor 2: 45.85
+Sensor 3: 54.33
+Time: 136713
+Sensor 0: 84.18
+Sensor 1: 33.43
+Sensor 2: 53.71
+Sensor 3: 75.36
+Time: 136813
+Sensor 0: 59.12
+Sensor 1: 33.43
+Sensor 2: 45.85
+Sensor 3: 75.71
+Time: 136913
+Sensor 0: 68.59
+Sensor 1: 18.77
+Sensor 2: 47.85
+Sensor 3: 117.44
+Time: 137014
+Sensor 0: 84.18
+Sensor 1: -73.09
+Sensor 2: 53.71
+Sensor 3: 476.33
+Time: 137064
+Sensor 0: 97.89
+Sensor 1: -78.24
+Sensor 2: 71.95
+Sensor 3: 605.42
+CHOP: 137085
+Time: 137164
+Sensor 0: 120.76
+Sensor 1: -68.70
+Sensor 2: 101.96
+Sensor 3: 806.43
+Time: 137265
+Sensor 0: 174.03
+Sensor 1: -37.77
+Sensor 2: 133.52
+Sensor 3: 476.33
+Time: 137365
+Sensor 0: 273.95
+Sensor 1: -58.59
+Sensor 2: 177.04
+Sensor 3: 605.42
+Time: 137465
+Sensor 0: 1240.13
+Sensor 1: -124.04
+Sensor 2: 252.84
+Sensor 3: 806.43
+Time: 137565
+Sensor 0: 828.50
+Sensor 1: -73.09
+Sensor 2: 982.71
+Sensor 3: 2367.30
+Time: 137615
+Sensor 0: 411.24
+Sensor 1: -196.09
+Sensor 2: 444.28
+Sensor 3: 1403.82
+Time: 137716
+Sensor 0: 194.52
+Sensor 1: -150.52
+Sensor 2: 228.84
+Sensor 3: 746.81
+Time: 137816
+Sensor 0: 75.98
+Sensor 1: -45.98
+Sensor 2: 91.95
+Sensor 3: 299.26
+Time: 137916
+Sensor 0: 37.89
+Sensor 1: 31.19
+Sensor 2: 49.57
+Sensor 3: 60.22
+Time: 138016
+Sensor 0: 33.27
+Sensor 1: 40.80
+Sensor 2: 47.52
+Sensor 3: 41.68
+Time: 138117
+Sensor 0: 40.40
+Sensor 1: 43.16
+Sensor 2: 49.76
+Sensor 3: 45.91
+Time: 138167
+Sensor 0: 66.96
+Sensor 1: 57.29
+Sensor 2: 45.82
+Sensor 3: 48.20
+Time: 138267
+Sensor 0: 44.99
+Sensor 1: 60.19
+Sensor 2: 36.36
+Sensor 3: 40.33
+Time: 138368
+Sensor 0: 27.14
+Sensor 1: 39.45
+Sensor 2: 34.30
+Sensor 3: 40.20
+Time: 138468
+Sensor 0: 28.17
+Sensor 1: 35.12
+Sensor 2: 35.62
+Sensor 3: 44.04
+Time: 138568
+Sensor 0: 32.51
+Sensor 1: 35.04
+Sensor 2: 30.40
+Sensor 3: 49.18
+Time: 138669
+Sensor 0: 40.65
+Sensor 1: 35.30
+Sensor 2: 25.50
+Sensor 3: 45.91
+Time: 138719
+Sensor 0: 53.07
+Sensor 1: 38.47
+Sensor 2: 30.21
+Sensor 3: 48.20
+Time: 138819
+Sensor 0: 53.14
+Sensor 1: 41.02
+Sensor 2: 33.12
+Sensor 3: 74.28
+Time: 138920
+Sensor 0: 52.06
+Sensor 1: 41.00
+Sensor 2: 32.79
+Sensor 3: 75.87
+Time: 139020
+Sensor 0: 52.04
+Sensor 1: 38.75
+Sensor 2: 32.11
+Sensor 3: 79.31
+Time: 139120
+Sensor 0: 66.14
+Sensor 1: 38.47
+Sensor 2: 34.24
+Sensor 3: 103.65
+Time: 139221
+Sensor 0: 53.07
+Sensor 1: 38.47
+Sensor 2: 38.68
+Sensor 3: 75.87
+Time: 139321
+Sensor 0: 53.14
+Sensor 1: 38.20
+Sensor 2: 33.12
+Sensor 3: 79.31
+Time: 139371
+Sensor 0: 66.14
+Sensor 1: 41.52
+Sensor 2: 34.24
+Sensor 3: 103.65
+CHOP: 139453
+Time: 139472
+Sensor 0: 98.09
+Sensor 1: 39.30
+Sensor 2: 38.68
+Sensor 3: 131.81
+Time: 139572
+Sensor 0: 146.04
+Sensor 1: 42.30
+Sensor 2: 48.06
+Sensor 3: 190.90
+Time: 139673
+Sensor 0: 198.79
+Sensor 1: 39.30
+Sensor 2: 70.84
+Sensor 3: 280.78
+Time: 139773
+Sensor 0: 1238.17
+Sensor 1: 41.52
+Sensor 2: 112.77
+Sensor 3: 400.95
+Time: 139874
+Sensor 0: 750.34
+Sensor 1: 41.52
+Sensor 2: 220.96
+Sensor 3: 2284.46
+Time: 139924
+Sensor 0: 340.40
+Sensor 1: -178.55
+Sensor 2: 542.04
+Sensor 3: 1655.14
+Time: 140024
+Sensor 0: 185.75
+Sensor 1: -150.41
+Sensor 2: 267.57
+Sensor 3: 811.57
+Time: 140125
+Sensor 0: 161.16
+Sensor 1: -136.43
+Sensor 2: 233.25
+Sensor 3: 570.52
+Time: 140225
+Sensor 0: 127.42
+Sensor 1: -73.63
+Sensor 2: 179.48
+Sensor 3: 440.55
+Time: 140325
+Sensor 0: 85.57
+Sensor 1: -0.78
+Sensor 2: 102.66
+Sensor 3: 275.17
+Time: 140426
+Sensor 0: 78.61
+Sensor 1: 16.21
+Sensor 2: 74.64
+Sensor 3: 137.40
+Time: 140476
+Sensor 0: 72.42
+Sensor 1: 22.15
+Sensor 2: 74.80
+Sensor 3: 101.64
+Time: 140576
+Sensor 0: 67.80
+Sensor 1: 29.70
+Sensor 2: 65.73
+Sensor 3: 105.94
+Time: 140677
+Sensor 0: 64.76
+Sensor 1: 30.69
+Sensor 2: 63.92
+Sensor 3: 101.17
+Time: 140777
+Sensor 0: 47.82
+Sensor 1: 35.50
+Sensor 2: 60.59
+Sensor 3: 79.27
+Time: 140877
+Sensor 0: 41.13
+Sensor 1: 33.87
+Sensor 2: 57.73
+Sensor 3: 88.68
+Time: 140978
+Sensor 0: 47.52
+Sensor 1: 34.67
+Sensor 2: 56.09
+Sensor 3: 86.56
+Time: 141078
+Sensor 0: 64.93
+Sensor 1: 22.37
+Sensor 2: 55.38
+Sensor 3: 101.17
+Time: 141128
+Sensor 0: 91.85
+Sensor 1: 30.69
+Sensor 2: 66.73
+Sensor 3: 101.17
+Time: 141229
+Sensor 0: 64.76
+Sensor 1: 30.69
+Sensor 2: 60.59
+Sensor 3: 101.17
+Time: 141329
+Sensor 0: 64.93
+Sensor 1: 22.37
+Sensor 2: 60.59
+Sensor 3: 144.79
+Time: 141429
+Sensor 0: 91.85
+Sensor 1: -34.79
+Sensor 2: 66.73
+Sensor 3: 536.94
+Time: 141530
+Sensor 0: 309.53
+Sensor 1: -34.66
+Sensor 2: 82.42
+Sensor 3: 598.52
+Time: 141630
+Sensor 0: 206.05
+Sensor 1: -16.94
+Sensor 2: 228.05
+Sensor 3: 725.88
+Time: 141684
+Sensor 0: 251.87
+Sensor 1: -16.94
+Sensor 2: 331.90
+Sensor 3: 1012.07
+Time: 141784
+Sensor 0: 309.53
+Sensor 1: -16.94
+Sensor 2: 185.36
+Sensor 3: 598.52
+Time: 141884
+Sensor 0: 1263.68
+Sensor 1: -16.94
+Sensor 2: 228.05
+Sensor 3: 725.88
+Time: 141985
+Sensor 0: 956.65
+Sensor 1: -42.63
+Sensor 2: 331.90
+Sensor 3: 2171.11
+Time: 142085
+Sensor 0: 503.81
+Sensor 1: -165.08
+Sensor 2: 603.57
+Sensor 3: 1662.63
+Time: 142186
+Sensor 0: 232.01
+Sensor 1: -152.90
+Sensor 2: 258.03
+Sensor 3: 777.44
+Time: 142236
+Sensor 0: 185.59
+Sensor 1: -141.94
+Sensor 2: 214.61
+Sensor 3: 500.65
+Time: 142336
+Sensor 0: 183.21
+Sensor 1: -142.15
+Sensor 2: 211.04
+Sensor 3: 420.44
+Time: 142437
+Sensor 0: 182.05
+Sensor 1: -131.10
+Sensor 2: 207.59
+Sensor 3: 413.03
+Time: 142537
+Sensor 0: 203.68
+Sensor 1: -132.94
+Sensor 2: 216.02
+Sensor 3: 459.97
+Time: 142637
+Sensor 0: 232.11
+Sensor 1: -145.65
+Sensor 2: 235.47
+Sensor 3: 524.92
+Time: 142738
+Sensor 0: 249.90
+Sensor 1: -152.10
+Sensor 2: 216.02
+Sensor 3: 663.77
+Time: 142838
+Sensor 0: 257.28
+Sensor 1: -142.15
+Sensor 2: 216.02
+Sensor 3: 500.65
+CHOP: 142885
+CHOP: 142885
+Time: 142888
+Sensor 0: 271.42
+Sensor 1: -145.65
+Sensor 2: 286.00
+Sensor 3: 709.57
+Time: 142988
+Sensor 0: 249.90
+Sensor 1: -131.23
+Sensor 2: 314.42
+Sensor 3: 699.41
+Time: 143089
+Sensor 0: 257.28
+Sensor 1: -145.65
+Sensor 2: 274.54
+Sensor 3: 858.85
+Time: 143189
+Sensor 0: 271.42
+Sensor 1: -145.65
+Sensor 2: 286.00
+Sensor 3: 709.57
+Time: 143289
+Sensor 0: 947.91
+Sensor 1: -131.23
+Sensor 2: 314.42
+Sensor 3: 744.99
+Time: 143390
+Sensor 0: 863.24
+Sensor 1: 526.34
+Sensor 2: 484.20
+Sensor 3: 858.85
+Time: 143440
+Sensor 0: 633.65
+Sensor 1: 433.24
+Sensor 2: 1845.56
+Sensor 3: 1486.80
+Time: 143541
+Sensor 0: 321.66
+Sensor 1: 179.59
+Sensor 2: 940.10
+Sensor 3: 798.08
+Time: 143641
+Sensor 0: 171.85
+Sensor 1: -33.21
+Sensor 2: 363.09
+Sensor 3: 356.96
+Time: 143741
+Sensor 0: 176.82
+Sensor 1: -98.44
+Sensor 2: 192.38
+Sensor 3: 369.99
+Time: 143842
+Sensor 0: 200.58
+Sensor 1: -131.98
+Sensor 2: 204.86
+Sensor 3: 528.11
+Time: 143942
+Sensor 0: 216.03
+Sensor 1: -150.15
+Sensor 2: 226.42
+Sensor 3: 602.80
+Time: 143992
+Sensor 0: 224.08
+Sensor 1: -158.34
+Sensor 2: 255.56
+Sensor 3: 583.64
+Time: 144093
+Sensor 0: 230.60
+Sensor 1: -158.33
+Sensor 2: 259.35
+Sensor 3: 546.59
+Time: 144193
+Sensor 0: 256.64
+Sensor 1: -155.76
+Sensor 2: 292.36
+Sensor 3: 575.86
+CHOP: 144269
+Time: 144293
+Sensor 0: 224.08
+Sensor 1: -150.15
+Sensor 2: 255.56
+Sensor 3: 655.80
+Time: 144394
+Sensor 0: 230.60
+Sensor 1: -150.15
+Sensor 2: 259.35
+Sensor 3: 583.64
+Time: 144494
+Sensor 0: 256.64
+Sensor 1: -150.15
+Sensor 2: 292.36
+Sensor 3: 602.80
+Time: 144545
+Sensor 0: 351.69
+Sensor 1: -73.93
+Sensor 2: 430.48
+Sensor 3: 655.80
+Time: 144645
+Sensor 0: 787.86
+Sensor 1: 498.51
+Sensor 2: 808.25
+Sensor 3: 816.72
+Time: 144746
+Sensor 0: 737.12
+Sensor 1: 455.83
+Sensor 2: 2526.20
+Sensor 3: 1963.62
+Time: 144846
+Sensor 0: 899.47
+Sensor 1: 615.99
+Sensor 2: 2320.38
+Sensor 3: 1699.52
+Time: 144947
+Sensor 0: 767.18
+Sensor 1: 578.98
+Sensor 2: 2120.41
+Sensor 3: 1380.00
+Time: 145047
+Sensor 0: 787.86
+Sensor 1: 498.51
+Sensor 2: 1319.15
+Sensor 3: 1483.81
+Time: 145097
+Sensor 0: 767.18
+Sensor 1: 498.51
+Sensor 2: 2120.41
+Sensor 3: 1483.81
+Time: 145197
+Sensor 0: 737.12
+Sensor 1: 31.26
+Sensor 2: 2120.41
+Sensor 3: 40.19
+Time: 145298
+Sensor 0: 37.06
+Sensor 1: 31.19
+Sensor 2: 54.04
+Sensor 3: 38.91
+Time: 145398
+Sensor 0: 38.24
+Sensor 1: 32.72
+Sensor 2: 53.44
+Sensor 3: 40.64
+Time: 145498
+Sensor 0: 39.07
+Sensor 1: 30.63
+Sensor 2: 55.87
+Sensor 3: 42.70
+Time: 145599
+Sensor 0: 37.73
+Sensor 1: 32.00
+Sensor 2: 58.59
+Sensor 3: 41.72
+Time: 145699
+Sensor 0: 38.03
+Sensor 1: 32.69
+Sensor 2: 56.97
+Sensor 3: 41.96
+Time: 145749
+Sensor 0: 38.52
+Sensor 1: 31.54
+Sensor 2: 57.45
+Sensor 3: 43.16
+Time: 145850
+Sensor 0: 37.92
+Sensor 1: 32.53
+Sensor 2: 60.17
+Sensor 3: 42.52
+Time: 145950
+Sensor 0: 38.15
+Sensor 1: 32.77
+Sensor 2: 59.94
+Sensor 3: 42.78
+Time: 146050
+Sensor 0: 38.90
+Sensor 1: 32.62
+Sensor 2: 58.40
+Sensor 3: 41.67
+Time: 146151
+Sensor 0: 38.42
+Sensor 1: 32.52
+Sensor 2: 58.40
+Sensor 3: 41.96
+Time: 146251
+Sensor 0: 38.46
+Sensor 1: 32.73
+Sensor 2: 46.73
+Sensor 3: 37.72
+Time: 146302
+Sensor 0: 38.91
+Sensor 1: 32.66
+Sensor 2: 49.39
+Sensor 3: 39.94
+Time: 146402
+Sensor 0: 38.73
+Sensor 1: 32.46
+Sensor 2: 50.99
+Sensor 3: 41.23
+Time: 146502
+Sensor 0: 38.49
+Sensor 1: 32.86
+Sensor 2: 52.29
+Sensor 3: 42.64
+Time: 146603
+Sensor 0: 38.61
+Sensor 1: 32.82
+Sensor 2: 53.75
+Sensor 3: 43.53
+Time: 146703
+Sensor 0: 38.49
+Sensor 1: 32.77
+Sensor 2: 54.56
+Sensor 3: 43.82
+Time: 146807
+Sensor 0: 38.51
+Sensor 1: 33.04
+Sensor 2: 55.42
+Sensor 3: 44.50
+Time: 146857
+Sensor 0: 38.65
+Sensor 1: 33.06
+Sensor 2: 56.43
+Sensor 3: 44.85
+Time: 146958
+Sensor 0: 38.35
+Sensor 1: 33.21
+Sensor 2: 56.75
+Sensor 3: 44.48
+Time: 147058
+Sensor 0: 38.51
+Sensor 1: 33.38
+Sensor 2: 57.50
+Sensor 3: 46.37
+Time: 147158
+Sensor 0: 38.61
+Sensor 1: 32.93
+Sensor 2: 58.61
+Sensor 3: 44.50
+Time: 147259
+Sensor 0: 38.65
+Sensor 1: 32.64
+Sensor 2: 59.87
+Sensor 3: 44.85
+Time: 147359
+Sensor 0: 45.49
+Sensor 1: 33.06
+Sensor 2: 56.47
+Sensor 3: 42.26
+Time: 147409
+Sensor 0: 48.36
+Sensor 1: 33.21
+Sensor 2: 53.72
+Sensor 3: 39.03
+Time: 147510
+Sensor 0: 56.00
+Sensor 1: 33.38
+Sensor 2: 53.58
+Sensor 3: 42.15
+Time: 147610
+Sensor 0: 57.71
+Sensor 1: 54.27
+Sensor 2: 54.25
+Sensor 3: 44.46
+Time: 147710
+Sensor 0: 48.62
+Sensor 1: 46.65
+Sensor 2: 50.16
+Sensor 3: 43.12
+Time: 147811
+Sensor 0: 43.24
+Sensor 1: 31.82
+Sensor 2: 47.80
+Sensor 3: 43.36
+Time: 147911
+Sensor 0: 50.93
+Sensor 1: 29.53
+Sensor 2: 53.58
+Sensor 3: 46.19
+Time: 147962
+Sensor 0: 60.02
+Sensor 1: 31.82
+Sensor 2: 47.02
+Sensor 3: 43.36
+Time: 148062
+Sensor 0: 46.25
+Sensor 1: 33.44
+Sensor 2: 49.08
+Sensor 3: 52.26
+Time: 148162
+Sensor 0: 43.21
+Sensor 1: 30.60
+Sensor 2: 47.67
+Sensor 3: 43.90
+Time: 148263
+Sensor 0: 45.33
+Sensor 1: 33.19
+Sensor 2: 47.67
+Sensor 3: 41.08
+Time: 148363
+Sensor 0: 44.60
+Sensor 1: 34.08
+Sensor 2: 47.02
+Sensor 3: 38.84
+Time: 148464
+Sensor 0: 56.14
+Sensor 1: 33.19
+Sensor 2: 47.02
+Sensor 3: 45.66
+Time: 148564
+Sensor 0: 46.25
+Sensor 1: 33.44
+Sensor 2: 47.67
+Sensor 3: 45.66
+Time: 148614
+Sensor 0: 53.05
+Sensor 1: 60.61
+Sensor 2: 96.95
+Sensor 3: 45.66
+Time: 148715
+Sensor 0: 52.67
+Sensor 1: 59.68
+Sensor 2: 89.74
+Sensor 3: 61.41
+Time: 148815
+Sensor 0: 66.79
+Sensor 1: 59.68
+Sensor 2: 89.97
+Sensor 3: 58.91
+Time: 148915
+Sensor 0: 56.14
+Sensor 1: 60.61
+Sensor 2: 96.95
+Sensor 3: 56.39
+Time: 149016
+Sensor 0: 61.11
+Sensor 1: 70.51
+Sensor 2: 121.78
+Sensor 3: 66.45
+Time: 149116
+Sensor 0: 66.79
+Sensor 1: 170.86
+Sensor 2: 215.68
+Sensor 3: 61.41
+Time: 149166
+Sensor 0: 128.60
+Sensor 1: 1106.03
+Sensor 2: 1415.21
+Sensor 3: 58.91
+Time: 149267
+Sensor 0: 59.01
+Sensor 1: 281.28
+Sensor 2: 420.69
+Sensor 3: 51.35
+Time: 149367
+Sensor 0: 50.28
+Sensor 1: 66.07
+Sensor 2: 120.25
+Sensor 3: 62.30
+Time: 149468
+Sensor 0: 49.86
+Sensor 1: 59.32
+Sensor 2: 110.47
+Sensor 3: 59.67
+Time: 149568
+Sensor 0: 155.48
+Sensor 1: 58.59
+Sensor 2: 113.28
+Sensor 3: 59.67
+Time: 149668
+Sensor 0: 128.60
+Sensor 1: 63.54
+Sensor 2: 116.55
+Sensor 3: 59.67
+Time: 149719
+Sensor 0: 128.60
+Sensor 1: 81.90
+Sensor 2: 153.33
+Sensor 3: 62.30
+Time: 149819
+Sensor 0: 155.48
+Sensor 1: 75.91
+Sensor 2: 193.61
+Sensor 3: 123.15
+Time: 149919
+Sensor 0: 1779.49
+Sensor 1: 42.34
+Sensor 2: 120.25
+Sensor 3: 1737.14
+Time: 150020
+Sensor 0: 542.73
+Sensor 1: 30.78
+Sensor 2: 166.94
+Sensor 3: 649.00
+Time: 150120
+Sensor 0: 87.48
+Sensor 1: 39.72
+Sensor 2: 125.72
+Sensor 3: 97.42
+Time: 150220
+Sensor 0: 60.27
+Sensor 1: 54.83
+Sensor 2: 112.07
+Sensor 3: 64.69
+Time: 150321
+Sensor 0: 56.61
+Sensor 1: 61.52
+Sensor 2: 110.19
+Sensor 3: 68.53
+Time: 150371
+Sensor 0: 56.88
+Sensor 1: 63.03
+Sensor 2: 108.31
+Sensor 3: 69.47
+Time: 150471
+Sensor 0: 59.17
+Sensor 1: 62.26
+Sensor 2: 110.36
+Sensor 3: 70.78
+Time: 150572
+Sensor 0: 58.11
+Sensor 1: 61.23
+Sensor 2: 111.26
+Sensor 3: 69.79
+Time: 150672
+Sensor 0: 58.12
+Sensor 1: 62.92
+Sensor 2: 111.93
+Sensor 3: 69.50
+Time: 150772
+Sensor 0: 59.02
+Sensor 1: 62.22
+Sensor 2: 111.68
+Sensor 3: 70.06
+Time: 150823
+Sensor 0: 58.12
+Sensor 1: 61.82
+Sensor 2: 113.25
+Sensor 3: 69.72
+Time: 150873
+Sensor 0: 59.02
+Sensor 1: 63.22
+Sensor 2: 115.11
+Sensor 3: 69.79
+Time: 150973
+Sensor 0: 59.17
+Sensor 1: 62.26
+Sensor 2: 111.93
+Sensor 3: 70.06
+Time: 151074
+Sensor 0: 63.57
+Sensor 1: 62.92
+Sensor 2: 113.25
+Sensor 3: 70.06
+Time: 151174
+Sensor 0: 1458.53
+Sensor 1: 63.22
+Sensor 2: 115.11
+Sensor 3: 83.83
+Time: 151275
+Sensor 0: 498.00
+Sensor 1: 79.16
+Sensor 2: 159.27
+Sensor 3: 1058.63
+Time: 151375
+Sensor 0: 78.97
+Sensor 1: 47.02
+Sensor 2: 110.38
+Sensor 3: 80.78
+Time: 151425
+Sensor 0: 59.53
+Sensor 1: 61.69
+Sensor 2: 100.95
+Sensor 3: 70.53
+Time: 151525
+Sensor 0: 58.58
+Sensor 1: 59.52
+Sensor 2: 94.74
+Sensor 3: 69.98
+Time: 151626
+Sensor 0: 57.37
+Sensor 1: 59.50
+Sensor 2: 97.50
+Sensor 3: 71.93
+Time: 151726
+Sensor 0: 58.18
+Sensor 1: 63.56
+Sensor 2: 99.05
+Sensor 3: 69.59
+Time: 151830
+Sensor 0: 58.86
+Sensor 1: 60.58
+Sensor 2: 96.98
+Sensor 3: 70.64
+Time: 151930
+Sensor 0: 58.45
+Sensor 1: 61.39
+Sensor 2: 100.77
+Sensor 3: 70.73
+Time: 151981
+Sensor 0: 58.29
+Sensor 1: 62.17
+Sensor 2: 99.42
+Sensor 3: 69.97
+Time: 152081
+Sensor 0: 58.90
+Sensor 1: 62.77
+Sensor 2: 100.04
+Sensor 3: 72.41
+Time: 152181
+Sensor 0: 58.45
+Sensor 1: 62.17
+Sensor 2: 99.42
+Sensor 3: 69.61
+Time: 152282
+Sensor 0: 58.86
+Sensor 1: 62.77
+Sensor 2: 100.04
+Sensor 3: 69.97
+Time: 152382
+Sensor 0: 58.90
+Sensor 1: 62.77
+Sensor 2: 100.77
+Sensor 3: 76.24
+Time: 152483
+Sensor 0: 69.67
+Sensor 1: 142.67
+Sensor 2: 106.60
+Sensor 3: 70.73
+Time: 152533
+Sensor 0: 145.95
+Sensor 1: 940.80
+Sensor 2: 1002.39
+Sensor 3: 76.43
+Time: 152633
+Sensor 0: 69.59
+Sensor 1: 222.89
+Sensor 2: 236.53
+Sensor 3: 60.32
+Time: 152734
+Sensor 0: 60.07
+Sensor 1: 60.14
+Sensor 2: 110.53
+Sensor 3: 61.25
+Time: 152834
+Sensor 0: 58.75
+Sensor 1: 61.47
+Sensor 2: 106.14
+Sensor 3: 63.42
+Time: 152934
+Sensor 0: 59.63
+Sensor 1: 57.97
+Sensor 2: 107.81
+Sensor 3: 59.44
+Time: 153035
+Sensor 0: 60.16
+Sensor 1: 59.21
+Sensor 2: 113.64
+Sensor 3: 61.54
+Time: 153135
+Sensor 0: 57.78
+Sensor 1: 60.47
+Sensor 2: 112.84
+Sensor 3: 63.42
+Time: 153185
+Sensor 0: 58.30
+Sensor 1: 61.01
+Sensor 2: 114.22
+Sensor 3: 62.10
+Time: 153286
+Sensor 0: 59.63
+Sensor 1: 60.47
+Sensor 2: 116.37
+Sensor 3: 63.70
+Time: 153386
+Sensor 0: 59.63
+Sensor 1: 61.01
+Sensor 2: 113.64
+Sensor 3: 62.10
+Time: 153486
+Sensor 0: 60.16
+Sensor 1: 61.01
+Sensor 2: 114.22
+Sensor 3: 61.54
+Time: 153587
+Sensor 0: 135.63
+Sensor 1: 80.67
+Sensor 2: 116.37
+Sensor 3: 61.54
+Time: 153687
+Sensor 0: 1449.71
+Sensor 1: 271.36
+Sensor 2: 204.85
+Sensor 3: -219.30
+Time: 153737
+Sensor 0: 693.50
+Sensor 1: 649.11
+Sensor 2: 190.27
+Sensor 3: -79.41
+Time: 153838
+Sensor 0: 125.68
+Sensor 1: 183.40
+Sensor 2: 146.08
+Sensor 3: 57.82
+Time: 153938
+Sensor 0: 47.63
+Sensor 1: 69.23
+Sensor 2: 190.27
+Sensor 3: 71.35
+Time: 154039
+Sensor 0: 49.67
+Sensor 1: 66.98
+Sensor 2: 99.70
+Sensor 3: 71.95
+Time: 154139
+Sensor 0: 47.84
+Sensor 1: 66.81
+Sensor 2: 102.83
+Sensor 3: 67.67
+Time: 154240
+Sensor 0: 41.07
+Sensor 1: 45.54
+Sensor 2: 69.00
+Sensor 3: 48.05
+Time: 154290
+Sensor 0: 39.76
+Sensor 1: 32.39
+Sensor 2: 39.66
+Sensor 3: 43.54
+Time: 154390
+Sensor 0: 42.56
+Sensor 1: 34.32
+Sensor 2: 37.98
+Sensor 3: 43.46
+Time: 154491
+Sensor 0: 44.33
+Sensor 1: 37.14
+Sensor 2: 28.82
+Sensor 3: 42.40
+Time: 154591
+Sensor 0: 46.32
+Sensor 1: 40.79
+Sensor 2: 24.72
+Sensor 3: 41.77
+Time: 154691
+Sensor 0: 46.85
+Sensor 1: 43.01
+Sensor 2: 59.44
+Sensor 3: 43.24
+Time: 154792
+Sensor 0: 48.03
+Sensor 1: 40.79
+Sensor 2: 39.66
+Sensor 3: 43.46
+Time: 154892
+Sensor 0: 48.85
+Sensor 1: 40.79
+Sensor 2: 93.23
+Sensor 3: 43.46
+Time: 154942
+Sensor 0: 48.98
+Sensor 1: 61.86
+Sensor 2: 94.12
+Sensor 3: 54.94
+Time: 155043
+Sensor 0: 48.76
+Sensor 1: 62.02
+Sensor 2: 94.37
+Sensor 3: 55.07
+Time: 155143
+Sensor 0: 48.66
+Sensor 1: 62.27
+Sensor 2: 94.34
+Sensor 3: 55.12
+Time: 155243
+Sensor 0: 49.01
+Sensor 1: 62.35
+Sensor 2: 95.39
+Sensor 3: 55.18
+Time: 155344
+Sensor 0: 48.85
+Sensor 1: 63.88
+Sensor 2: 94.34
+Sensor 3: 56.14
+Time: 155444
+Sensor 0: 48.98
+Sensor 1: 62.35
+Sensor 2: 94.37
+Sensor 3: 55.18
+Time: 155495
+Sensor 0: 48.98
+Sensor 1: 70.43
+Sensor 2: 78.63
+Sensor 3: 62.14
+Time: 155595
+Sensor 0: 48.76
+Sensor 1: 62.35
+Sensor 2: 94.37
+Sensor 3: 45.42
+Time: 155695
+Sensor 0: 42.67
+Sensor 1: 62.35
+Sensor 2: 43.32
+Sensor 3: 42.69
+Time: 155796
+Sensor 0: 42.83
+Sensor 1: 29.02
+Sensor 2: 44.05
+Sensor 3: 42.68
+Time: 155896
+Sensor 0: 45.11
+Sensor 1: 29.02
+Sensor 2: 44.87
+Sensor 3: 45.80
+Time: 155996
+Sensor 0: 44.70
+Sensor 1: 31.24
+Sensor 2: 47.81
+Sensor 3: 54.56
+Time: 156047
+Sensor 0: 44.70
+Sensor 1: 46.18
+Sensor 2: 53.07
+Sensor 3: 45.80
+Time: 156147
+Sensor 0: 45.11
+Sensor 1: 31.24
+Sensor 2: 44.87
+Sensor 3: 45.80
+Time: 156247
+Sensor 0: 60.68
+Sensor 1: 44.77
+Sensor 2: 47.81
+Sensor 3: 66.59
+Time: 156348
+Sensor 0: 65.94
+Sensor 1: 44.17
+Sensor 2: 61.89
+Sensor 3: 68.64
+Time: 156448
+Sensor 0: 80.83
+Sensor 1: 60.22
+Sensor 2: 71.59
+Sensor 3: 84.19
+Time: 156548
+Sensor 0: 58.53
+Sensor 1: 44.65
+Sensor 2: 75.94
+Sensor 3: 65.35
+Time: 156598
+Sensor 0: 44.54
+Sensor 1: 31.48
+Sensor 2: 70.92
+Sensor 3: 66.85
+Time: 156699
+Sensor 0: 44.07
+Sensor 1: 30.93
+Sensor 2: 70.92
+Sensor 3: 38.41
+Time: 156799
+Sensor 0: 43.60
+Sensor 1: 31.39
+Sensor 2: 38.95
+Sensor 3: 38.69
+Time: 156900
+Sensor 0: 43.99
+Sensor 1: 31.48
+Sensor 2: 39.31
+Sensor 3: 38.84
+Time: 157000
+Sensor 0: 46.33
+Sensor 1: 34.17
+Sensor 2: 36.48
+Sensor 3: 38.26
+Time: 157100
+Sensor 0: 49.13
+Sensor 1: 39.43
+Sensor 2: 34.04
+Sensor 3: 35.35
+Time: 157151
+Sensor 0: 44.54
+Sensor 1: 31.48
+Sensor 2: 38.95
+Sensor 3: 37.13
+Time: 157251
+Sensor 0: 48.81
+Sensor 1: 34.17
+Sensor 2: 38.95
+Sensor 3: 38.41
+Time: 157351
+Sensor 0: 49.64
+Sensor 1: 69.69
+Sensor 2: 39.31
+Sensor 3: 46.70
+Time: 157452
+Sensor 0: 49.78
+Sensor 1: 69.10
+Sensor 2: 91.39
+Sensor 3: 45.76
+Time: 157552
+Sensor 0: 49.48
+Sensor 1: 69.34
+Sensor 2: 91.29
+Sensor 3: 45.79
+Time: 157652
+Sensor 0: 49.41
+Sensor 1: 69.77
+Sensor 2: 91.19
+Sensor 3: 46.09
+Time: 157753
+Sensor 0: 49.47
+Sensor 1: 69.68
+Sensor 2: 91.41
+Sensor 3: 46.23
+Time: 157803
+Sensor 0: 49.48
+Sensor 1: 70.08
+Sensor 2: 91.61
+Sensor 3: 46.32
+Time: 157904
+Sensor 0: 49.64
+Sensor 1: 69.69
+Sensor 2: 91.41
+Sensor 3: 46.13
+Time: 158004
+Sensor 0: 49.78
+Sensor 1: 69.77
+Sensor 2: 91.41
+Sensor 3: 46.09
+Time: 158104
+Sensor 0: 50.82
+Sensor 1: 70.08
+Sensor 2: 91.61
+Sensor 3: 46.13
+Time: 158205
+Sensor 0: 88.26
+Sensor 1: 103.77
+Sensor 2: 96.14
+Sensor 3: 46.23
+Time: 158305
+Sensor 0: 80.91
+Sensor 1: 83.90
+Sensor 2: 138.66
+Sensor 3: 46.32
+Time: 158355
+Sensor 0: 61.27
+Sensor 1: 65.61
+Sensor 2: 130.00
+Sensor 3: 57.60
+Time: 158456
+Sensor 0: 50.43
+Sensor 1: 57.78
+Sensor 2: 115.01
+Sensor 3: 61.11
+Time: 158556
+Sensor 0: 49.08
+Sensor 1: 61.48
+Sensor 2: 100.38
+Sensor 3: 61.98
+Time: 158657
+Sensor 0: 50.07
+Sensor 1: 60.99
+Sensor 2: 96.13
+Sensor 3: 61.26
+Time: 158757
+Sensor 0: 50.13
+Sensor 1: 60.33
+Sensor 2: 96.42
+Sensor 3: 61.37
+Time: 158857
+Sensor 0: 49.74
+Sensor 1: 60.72
+Sensor 2: 97.34
+Sensor 3: 62.01
+Time: 158908
+Sensor 0: 51.10
+Sensor 1: 59.84
+Sensor 2: 98.10
+Sensor 3: 61.37
+Time: 159008
+Sensor 0: 50.13
+Sensor 1: 57.96
+Sensor 2: 98.10
+Sensor 3: 61.98
+Time: 159108
+Sensor 0: 50.13
+Sensor 1: 59.86
+Sensor 2: 98.10
+Sensor 3: 62.01
+Time: 159209
+Sensor 0: 51.10
+Sensor 1: 60.33
+Sensor 2: 98.10
+Sensor 3: 73.68
+Time: 159309
+Sensor 0: 55.73
+Sensor 1: 60.33
+Sensor 2: 155.28
+Sensor 3: 153.04
+Time: 159409
+Sensor 0: 70.44
+Sensor 1: 60.72
+Sensor 2: 125.44
+Sensor 3: 126.45
+Time: 159510
+Sensor 0: 61.95
+Sensor 1: 66.72
+Sensor 2: 96.16
+Sensor 3: 71.40
+Time: 159560
+Sensor 0: 60.99
+Sensor 1: 63.64
+Sensor 2: 93.33
+Sensor 3: 57.64
+Time: 159660
+Sensor 0: 62.09
+Sensor 1: 64.33
+Sensor 2: 93.79
+Sensor 3: 58.51
+Time: 159761
+Sensor 0: 67.14
+Sensor 1: 63.33
+Sensor 2: 93.90
+Sensor 3: 58.80
+Time: 159861
+Sensor 0: 67.14
+Sensor 1: 63.91
+Sensor 2: 95.53
+Sensor 3: 72.57
+Time: 159962
+Sensor 0: 67.14
+Sensor 1: 69.34
+Sensor 2: 99.18
+Sensor 3: 102.99
+Time: 160062
+Sensor 0: 67.14
+Sensor 1: 64.33
+Sensor 2: 95.53
+Sensor 3: 71.40
+Time: 160112
+Sensor 0: 104.16
+Sensor 1: 64.33
+Sensor 2: 95.53
+Sensor 3: 91.99
+Time: 160213
+Sensor 0: 79.62
+Sensor 1: 84.35
+Sensor 2: 104.18
+Sensor 3: 64.44
+Time: 160313
+Sensor 0: 60.03
+Sensor 1: 76.63
+Sensor 2: 101.13
+Sensor 3: 45.36
+Time: 160413
+Sensor 0: 57.70
+Sensor 1: 72.50
+Sensor 2: 98.10
+Sensor 3: 40.09
+Time: 160514
+Sensor 0: 57.79
+Sensor 1: 72.20
+Sensor 2: 97.08
+Sensor 3: 40.00
+Time: 160614
+Sensor 0: 57.33
+Sensor 1: 73.68
+Sensor 2: 97.60
+Sensor 3: 40.79
+Time: 160664
+Sensor 0: 74.36
+Sensor 1: 82.37
+Sensor 2: 97.63
+Sensor 3: 40.98
+Time: 160765
+Sensor 0: 60.03
+Sensor 1: 76.63
+Sensor 2: 97.15
+Sensor 3: 43.36
+Time: 160865
+Sensor 0: 60.03
+Sensor 1: 76.63
+Sensor 2: 96.60
+Sensor 3: 40.98
+Time: 160965
+Sensor 0: 103.36
+Sensor 1: 108.93
+Sensor 2: 97.15
+Sensor 3: 40.98
+Time: 161066
+Sensor 0: 64.30
+Sensor 1: 82.96
+Sensor 2: 97.08
+Sensor 3: 49.28
+Time: 161166
+Sensor 0: 52.39
+Sensor 1: 72.30
+Sensor 2: 99.06
+Sensor 3: 46.77
+Time: 161216
+Sensor 0: 59.47
+Sensor 1: 73.52
+Sensor 2: 98.71
+Sensor 3: 45.30
+Time: 161317
+Sensor 0: 90.89
+Sensor 1: 94.10
+Sensor 2: 100.15
+Sensor 3: 42.62
+Time: 161417
+Sensor 0: 112.99
+Sensor 1: 111.21
+Sensor 2: 99.18
+Sensor 3: 41.07
+Time: 161517
+Sensor 0: 103.54
+Sensor 1: 102.94
+Sensor 2: 99.84
+Sensor 3: 45.17
+Time: 161618
+Sensor 0: 72.60
+Sensor 1: 82.06
+Sensor 2: 99.44
+Sensor 3: 50.24
+Time: 161718
+Sensor 0: 54.67
+Sensor 1: 66.75
+Sensor 2: 99.32
+Sensor 3: 48.27
+Time: 161768
+Sensor 0: 53.19
+Sensor 1: 66.22
+Sensor 2: 100.44
+Sensor 3: 47.10
+Time: 161869
+Sensor 0: 70.68
+Sensor 1: 71.31
+Sensor 2: 99.84
+Sensor 3: 46.76
+Time: 161972
+Sensor 0: 107.54
+Sensor 1: 102.28
+Sensor 2: 99.84
+Sensor 3: 49.57
+Time: 162073
+Sensor 0: 97.50
+Sensor 1: 101.10
+Sensor 2: 100.44
+Sensor 3: 48.27
+Time: 162173
+Sensor 0: 69.08
+Sensor 1: 80.89
+Sensor 2: 101.23
+Sensor 3: 49.57
+Time: 162273
+Sensor 0: 47.87
+Sensor 1: 56.73
+Sensor 2: 125.52
+Sensor 3: 49.57
+Time: 162374
+Sensor 0: 45.21
+Sensor 1: 54.69
+Sensor 2: 122.75
+Sensor 3: 61.06
+Time: 162424
+Sensor 0: 51.98
+Sensor 1: 55.15
+Sensor 2: 119.93
+Sensor 3: 64.27
+Time: 162524
+Sensor 0: 76.68
+Sensor 1: 57.88
+Sensor 2: 120.01
+Sensor 3: 79.86
+Time: 162625
+Sensor 0: 58.56
+Sensor 1: 57.59
+Sensor 2: 119.98
+Sensor 3: 71.85
+Time: 162725
+Sensor 0: 48.88
+Sensor 1: 54.15
+Sensor 2: 119.88
+Sensor 3: 65.05
+Time: 162826
+Sensor 0: 62.54
+Sensor 1: 55.31
+Sensor 2: 120.90
+Sensor 3: 75.85
+Time: 162926
+Sensor 0: 51.48
+Sensor 1: 53.70
+Sensor 2: 118.90
+Sensor 3: 70.86
+Time: 162976
+Sensor 0: 50.44
+Sensor 1: 53.24
+Sensor 2: 119.84
+Sensor 3: 66.70
+Time: 163077
+Sensor 0: 62.14
+Sensor 1: 57.41
+Sensor 2: 119.98
+Sensor 3: 79.44
+Time: 163177
+Sensor 0: 50.82
+Sensor 1: 55.87
+Sensor 2: 119.98
+Sensor 3: 79.22
+Time: 163278
+Sensor 0: 60.63
+Sensor 1: 54.15
+Sensor 2: 121.65
+Sensor 3: 75.85
+Time: 163378
+Sensor 0: 60.70
+Sensor 1: 53.70
+Sensor 2: 121.24
+Sensor 3: 79.22
+Time: 163478
+Sensor 0: 52.22
+Sensor 1: 32.50
+Sensor 2: 120.25
+Sensor 3: 101.00
+Time: 163528
+Sensor 0: 42.39
+Sensor 1: 44.53
+Sensor 2: 120.33
+Sensor 3: 67.60
+Time: 163629
+Sensor 0: 37.25
+Sensor 1: 63.43
+Sensor 2: 121.65
+Sensor 3: 37.98
+Time: 163729
+Sensor 0: 37.55
+Sensor 1: 44.53
+Sensor 2: 121.65
+Sensor 3: 59.26
+Time: 163830
+Sensor 0: 43.58
+Sensor 1: 85.98
+Sensor 2: 108.46
+Sensor 3: 88.07
+Time: 163930
+Sensor 0: 48.42
+Sensor 1: 33.22
+Sensor 2: 66.38
+Sensor 3: 103.64
+Time: 164030
+Sensor 0: 41.75
+Sensor 1: 14.90
+Sensor 2: 51.91
+Sensor 3: 75.09
+Time: 164131
+Sensor 0: 37.96
+Sensor 1: 20.03
+Sensor 2: 47.11
+Sensor 3: 54.73
+Time: 164181
+Sensor 0: 37.79
+Sensor 1: 17.27
+Sensor 2: 46.26
+Sensor 3: 54.08
+Time: 164281
+Sensor 0: 37.33
+Sensor 1: 15.98
+Sensor 2: 46.91
+Sensor 3: 53.32
+Time: 164382
+Sensor 0: 36.96
+Sensor 1: 15.26
+Sensor 2: 46.61
+Sensor 3: 53.90
+Time: 164482
+Sensor 0: 37.34
+Sensor 1: 15.17
+Sensor 2: 46.05
+Sensor 3: 53.34
+Time: 164583
+Sensor 0: 37.37
+Sensor 1: 15.12
+Sensor 2: 47.31
+Sensor 3: 53.63
+Time: 164683
+Sensor 0: 37.17
+Sensor 1: 15.27
+Sensor 2: 47.12
+Sensor 3: 53.77
+Time: 164733
+Sensor 0: 37.21
+Sensor 1: 15.31
+Sensor 2: 47.33
+Sensor 3: 53.91
+Time: 164834
+Sensor 0: 37.21
+Sensor 1: 14.97
+Sensor 2: 47.59
+Sensor 3: 53.70
+Time: 164934
+Sensor 0: 37.06
+Sensor 1: 15.50
+Sensor 2: 47.66
+Sensor 3: 54.13
+Time: 165034
+Sensor 0: 37.21
+Sensor 1: 15.27
+Sensor 2: 47.57
+Sensor 3: 54.14
+Time: 165135
+Sensor 0: 37.21
+Sensor 1: 15.76
+Sensor 2: 47.33
+Sensor 3: 53.36
+Time: 165235
+Sensor 0: 37.21
+Sensor 1: 14.65
+Sensor 2: 47.33
+Sensor 3: 53.77
+Time: 165285
+Sensor 0: 37.99
+Sensor 1: 14.38
+Sensor 2: 47.33
+Sensor 3: 52.67
+Time: 165386
+Sensor 0: 38.16
+Sensor 1: 14.75
+Sensor 2: 34.04
+Sensor 3: 53.05
+Time: 165486
+Sensor 0: 38.23
+Sensor 1: 14.20
+Sensor 2: 33.28
+Sensor 3: 53.23
+Time: 165586
+Sensor 0: 38.20
+Sensor 1: 14.05
+Sensor 2: 33.43
+Sensor 3: 53.31
+Time: 165687
+Sensor 0: 37.93
+Sensor 1: 14.17
+Sensor 2: 33.49
+Sensor 3: 53.27
+Time: 165787
+Sensor 0: 38.03
+Sensor 1: 14.28
+Sensor 2: 33.77
+Sensor 3: 53.31
+Time: 165838
+Sensor 0: 38.19
+Sensor 1: 14.02
+Sensor 2: 33.88
+Sensor 3: 53.35
+Time: 165938
+Sensor 0: 38.13
+Sensor 1: 14.14
+Sensor 2: 33.98
+Sensor 3: 53.36
+Time: 166038
+Sensor 0: 38.06
+Sensor 1: 14.20
+Sensor 2: 34.17
+Sensor 3: 53.41
+Time: 166139
+Sensor 0: 38.29
+Sensor 1: 14.31
+Sensor 2: 34.26
+Sensor 3: 53.43
+Time: 166239
+Sensor 0: 38.13
+Sensor 1: 14.20
+Sensor 2: 33.98
+Sensor 3: 53.36
+Time: 166339
+Sensor 0: 38.19
+Sensor 1: 14.28
+Sensor 2: 34.17
+Sensor 3: 53.41
+Time: 166390
+Sensor 0: 38.29
+Sensor 1: 14.31
+Sensor 2: 34.26
+Sensor 3: 53.43
+Time: 166490
+Sensor 0: 39.84
+Sensor 1: 17.74
+Sensor 2: 42.41
+Sensor 3: 53.66
+Time: 166590
+Sensor 0: 47.20
+Sensor 1: 62.52
+Sensor 2: 127.20
+Sensor 3: 82.27
+Time: 166691
+Sensor 0: 46.71
+Sensor 1: 51.39
+Sensor 2: 111.83
+Sensor 3: 73.26
+Time: 166791
+Sensor 0: 46.57
+Sensor 1: 49.11
+Sensor 2: 109.34
+Sensor 3: 72.44
+Time: 166892
+Sensor 0: 46.45
+Sensor 1: 49.17
+Sensor 2: 108.58
+Sensor 3: 72.41
+Time: 167429
+Sensor 0: 46.67
+Sensor 1: 49.24
+Sensor 2: 108.63
+Sensor 3: 72.48
+Time: 167429
+Sensor 0: 46.58
+Sensor 1: 48.96
+Sensor 2: 108.81
+Sensor 3: 72.25
+Time: 167430
+Sensor 0: 46.41
+Sensor 1: 49.13
+Sensor 2: 108.45
+Sensor 3: 72.45
+Time: 167430
+Sensor 0: 46.64
+Sensor 1: 49.15
+Sensor 2: 108.49
+Sensor 3: 72.36
+Time: 167430
+Sensor 0: 46.44
+Sensor 1: 48.95
+Sensor 2: 108.56
+Sensor 3: 72.33
+Time: 167430
+Sensor 0: 46.32
+Sensor 1: 49.11
+Sensor 2: 108.27
+Sensor 3: 72.38
+Time: 167530
+Sensor 0: 46.55
+Sensor 1: 49.01
+Sensor 2: 108.30
+Sensor 3: 72.40
+Time: 167581
+Sensor 0: 46.39
+Sensor 1: 49.07
+Sensor 2: 108.16
+Sensor 3: 72.40
+Time: 167681
+Sensor 0: 46.40
+Sensor 1: 49.22
+Sensor 2: 108.26
+Sensor 3: 72.40
+Time: 167781
+Sensor 0: 46.48
+Sensor 1: 49.25
+Sensor 2: 108.23
+Sensor 3: 72.41
+Time: 167882
+Sensor 0: 46.41
+Sensor 1: 49.24
+Sensor 2: 108.13
+Sensor 3: 72.43
+Time: 167982
+Sensor 0: 46.45
+Sensor 1: 49.20
+Sensor 2: 108.32
+Sensor 3: 72.39
+Time: 168082
+Sensor 0: 46.39
+Sensor 1: 49.11
+Sensor 2: 108.27
+Sensor 3: 72.40
+Time: 168133
+Sensor 0: 46.39
+Sensor 1: 49.18
+Sensor 2: 108.10
+Sensor 3: 72.45
+Time: 168233
+Sensor 0: 46.46
+Sensor 1: 49.16
+Sensor 2: 108.20
+Sensor 3: 72.41
+Time: 168333
+Sensor 0: 46.39
+Sensor 1: 49.30
+Sensor 2: 108.21
+Sensor 3: 72.43
+Time: 168433
+Sensor 0: 46.39
+Sensor 1: 49.29
+Sensor 2: 108.08
+Sensor 3: 72.55
+Time: 168534
+Sensor 0: 46.39
+Sensor 1: 49.19
+Sensor 2: 108.12
+Sensor 3: 72.47
+Time: 168634
+Sensor 0: 46.39
+Sensor 1: 49.24
+Sensor 2: 108.30
+Sensor 3: 72.54
+Time: 168735
+Sensor 0: 46.48
+Sensor 1: 49.04
+Sensor 2: 108.21
+Sensor 3: 72.65
+Time: 168785
+Sensor 0: 46.47
+Sensor 1: 49.22
+Sensor 2: 108.13
+Sensor 3: 72.42
+Time: 168885
+Sensor 0: 46.50
+Sensor 1: 49.12
+Sensor 2: 108.07
+Sensor 3: 72.54
+Time: 168986
+Sensor 0: 46.50
+Sensor 1: 49.22
+Sensor 2: 108.13
+Sensor 3: 72.47
+Time: 169086
+Sensor 0: 46.51
+Sensor 1: 49.22
+Sensor 2: 108.21
+Sensor 3: 72.42
+Time: 169186
+Sensor 0: 46.61
+Sensor 1: 49.24
+Sensor 2: 108.30
+Sensor 3: 71.70
+Time: 169287
+Sensor 0: 78.05
+Sensor 1: 321.21
+Sensor 2: 109.99
+Sensor 3: 68.68
+Time: 169337
+Sensor 0: 47.87
+Sensor 1: 85.43
+Sensor 2: 214.82
+Sensor 3: 70.96
+Time: 169437
+Sensor 0: 47.31
+Sensor 1: 48.56
+Sensor 2: 110.27
+Sensor 3: 70.09
+Time: 169538
+Sensor 0: 45.79
+Sensor 1: 49.70
+Sensor 2: 110.96
+Sensor 3: 70.95
+Time: 169638
+Sensor 0: 45.40
+Sensor 1: 50.64
+Sensor 2: 111.59
+Sensor 3: 71.19
+Time: 169738
+Sensor 0: 46.21
+Sensor 1: 49.84
+Sensor 2: 111.13
+Sensor 3: 70.93
+Time: 169839
+Sensor 0: 45.71
+Sensor 1: 50.16
+Sensor 2: 112.71
+Sensor 3: 71.11
+Time: 169889
+Sensor 0: 45.55
+Sensor 1: 50.57
+Sensor 2: 112.59
+Sensor 3: 71.22
+Time: 169989
+Sensor 0: 45.79
+Sensor 1: 50.16
+Sensor 2: 111.59
+Sensor 3: 70.67
+Time: 170089
+Sensor 0: 45.79
+Sensor 1: 50.57
+Sensor 2: 112.59
+Sensor 3: 70.95
+Time: 170190
+Sensor 0: 46.21
+Sensor 1: 50.64
+Sensor 2: 117.32
+Sensor 3: 70.93
+Time: 170290
+Sensor 0: 60.71
+Sensor 1: 84.75
+Sensor 2: 115.87
+Sensor 3: 62.10
+Time: 170391
+Sensor 0: 55.63
+Sensor 1: 85.18
+Sensor 2: 114.42
+Sensor 3: 63.11
+Time: 170441
+Sensor 0: 56.85
+Sensor 1: 75.81
+Sensor 2: 113.53
+Sensor 3: 65.08
+Time: 170541
+Sensor 0: 54.03
+Sensor 1: 84.46
+Sensor 2: 115.74
+Sensor 3: 63.99
+Time: 170642
+Sensor 0: 49.18
+Sensor 1: 84.46
+Sensor 2: 105.89
+Sensor 3: 66.37
+Time: 170742
+Sensor 0: 48.43
+Sensor 1: 84.46
+Sensor 2: 114.42
+Sensor 3: 68.63
+Time: 170842
+Sensor 0: 48.57
+Sensor 1: 47.40
+Sensor 2: 113.53
+Sensor 3: 70.12
+Time: 170943
+Sensor 0: 48.13
+Sensor 1: 47.38
+Sensor 2: 95.70
+Sensor 3: 69.96
+Time: 170993
+Sensor 0: 47.90
+Sensor 1: 47.67
+Sensor 2: 95.71
+Sensor 3: 69.85
+Time: 171093
+Sensor 0: 47.98
+Sensor 1: 47.78
+Sensor 2: 96.21
+Sensor 3: 69.89
+Time: 171194
+Sensor 0: 47.91
+Sensor 1: 47.63
+Sensor 2: 96.27
+Sensor 3: 70.10
+Time: 171294
+Sensor 0: 47.84
+Sensor 1: 48.03
+Sensor 2: 96.33
+Sensor 3: 70.01
+Time: 171394
+Sensor 0: 47.99
+Sensor 1: 47.83
+Sensor 2: 96.47
+Sensor 3: 70.06
+Time: 171495
+Sensor 0: 47.79
+Sensor 1: 47.94
+Sensor 2: 96.66
+Sensor 3: 70.06
+Time: 171595
+Sensor 0: 47.77
+Sensor 1: 47.95
+Sensor 2: 96.46
+Sensor 3: 70.07
+Time: 171645
+Sensor 0: 47.86
+Sensor 1: 47.98
+Sensor 2: 96.90
+Sensor 3: 70.19
+Time: 171746
+Sensor 0: 47.68
+Sensor 1: 48.06
+Sensor 2: 96.85
+Sensor 3: 70.11
+Time: 171846
+Sensor 0: 47.75
+Sensor 1: 48.09
+Sensor 2: 96.81
+Sensor 3: 70.07
+Time: 171946
+Sensor 0: 47.70
+Sensor 1: 48.09
+Sensor 2: 96.89
+Sensor 3: 70.20
+Time: 172049
+Sensor 0: 47.68
+Sensor 1: 48.07
+Sensor 2: 97.10
+Sensor 3: 70.24
+Time: 172149
+Sensor 0: 47.77
+Sensor 1: 48.15
+Sensor 2: 97.16
+Sensor 3: 70.33
+Time: 172199
+Sensor 0: 47.66
+Sensor 1: 48.11
+Sensor 2: 96.98
+Sensor 3: 70.24
+Time: 172300
+Sensor 0: 47.68
+Sensor 1: 48.14
+Sensor 2: 97.13
+Sensor 3: 70.31
+Time: 172400
+Sensor 0: 47.70
+Sensor 1: 48.15
+Sensor 2: 97.24
+Sensor 3: 70.31
+Time: 172501
+Sensor 0: 47.69
+Sensor 1: 48.11
+Sensor 2: 97.25
+Sensor 3: 70.32
+Time: 172601
+Sensor 0: 47.69
+Sensor 1: 48.16
+Sensor 2: 97.40
+Sensor 3: 70.36
+Time: 172701
+Sensor 0: 47.61
+Sensor 1: 48.19
+Sensor 2: 97.37
+Sensor 3: 70.42
+Time: 172752
+Sensor 0: 47.53
+Sensor 1: 48.15
+Sensor 2: 97.32
+Sensor 3: 70.42
+Time: 172852
+Sensor 0: 47.62
+Sensor 1: 48.28
+Sensor 2: 97.45
+Sensor 3: 70.42
+Time: 172953
+Sensor 0: 47.59
+Sensor 1: 48.32
+Sensor 2: 97.42
+Sensor 3: 70.46
+Time: 173053
+Sensor 0: 47.60
+Sensor 1: 48.30
+Sensor 2: 97.52
+Sensor 3: 70.43
+Time: 173153
+Sensor 0: 47.61
+Sensor 1: 48.29
+Sensor 2: 97.42
+Sensor 3: 70.46
+Time: 173254
+Sensor 0: 47.61
+Sensor 1: 48.30
+Sensor 2: 97.45
+Sensor 3: 70.42
+Time: 173355
+Sensor 0: 47.62
+Sensor 1: 48.32
+Sensor 2: 97.52
+Sensor 3: 70.42
+Time: 173405
+Sensor 0: 50.62
+Sensor 1: 55.39
+Sensor 2: 98.04
+Sensor 3: 70.42
+Time: 173505
+Sensor 0: 177.93
+Sensor 1: 491.95
+Sensor 2: 118.61
+Sensor 3: 0.04
+Time: 173606
+Sensor 0: 147.95
+Sensor 1: 419.54
+Sensor 2: 352.93
+Sensor 3: 13.50
+Time: 173706
+Sensor 0: 118.02
+Sensor 1: 317.89
+Sensor 2: 312.52
+Sensor 3: 29.56
+Time: 173806
+Sensor 0: 105.84
+Sensor 1: 268.60
+Sensor 2: 267.35
+Sensor 3: 36.07
+Time: 173857
+Sensor 0: 77.76
+Sensor 1: 202.15
+Sensor 2: 239.74
+Sensor 3: 47.37
+Time: 173957
+Sensor 0: 52.39
+Sensor 1: 74.00
+Sensor 2: 290.31
+Sensor 3: 62.16
+Time: 174057
+Sensor 0: 50.65
+Sensor 1: 45.54
+Sensor 2: 116.55
+Sensor 3: 64.42
+Time: 174158
+Sensor 0: 49.76
+Sensor 1: 45.98
+Sensor 2: 117.28
+Sensor 3: 64.87
+Time: 174258
+Sensor 0: 49.52
+Sensor 1: 47.07
+Sensor 2: 117.42
+Sensor 3: 65.25
+Time: 174359
+Sensor 0: 51.66
+Sensor 1: 54.71
+Sensor 2: 115.73
+Sensor 3: 64.54
+Time: 174459
+Sensor 0: 49.87
+Sensor 1: 58.59
+Sensor 2: 104.42
+Sensor 3: 65.97
+Time: 174509
+Sensor 0: 49.05
+Sensor 1: 48.25
+Sensor 2: 100.73
+Sensor 3: 64.87
+Time: 174610
+Sensor 0: 49.56
+Sensor 1: 46.59
+Sensor 2: 101.73
+Sensor 3: 65.25
+Time: 174710
+Sensor 0: 49.38
+Sensor 1: 46.48
+Sensor 2: 102.36
+Sensor 3: 69.07
+Time: 174810
+Sensor 0: 49.07
+Sensor 1: 46.72
+Sensor 2: 102.16
+Sensor 3: 69.03
+Time: 174911
+Sensor 0: 49.31
+Sensor 1: 46.91
+Sensor 2: 102.72
+Sensor 3: 69.24
+Time: 175011
+Sensor 0: 49.27
+Sensor 1: 46.84
+Sensor 2: 102.98
+Sensor 3: 69.18
+Time: 175062
+Sensor 0: 49.31
+Sensor 1: 47.39
+Sensor 2: 103.87
+Sensor 3: 69.06
+Time: 175162
+Sensor 0: 49.38
+Sensor 1: 46.84
+Sensor 2: 102.72
+Sensor 3: 69.06
+Time: 175262
+Sensor 0: 49.38
+Sensor 1: 46.91
+Sensor 2: 102.98
+Sensor 3: 69.06
+Time: 175363
+Sensor 0: 50.90
+Sensor 1: 47.39
+Sensor 2: 103.87
+Sensor 3: 69.03
+Time: 175463
+Sensor 0: 70.76
+Sensor 1: 170.12
+Sensor 2: 182.44
+Sensor 3: 54.94
+Time: 175564
+Sensor 0: 64.85
+Sensor 1: 167.80
+Sensor 2: 181.19
+Sensor 3: 58.12
+Time: 175614
+Sensor 0: 57.27
+Sensor 1: 168.87
+Sensor 2: 174.74
+Sensor 3: 61.14
+Time: 175714
+Sensor 0: 51.68
+Sensor 1: 116.66
+Sensor 2: 134.39
+Sensor 3: 65.46
+Time: 175815
+Sensor 0: 51.42
+Sensor 1: 167.80
+Sensor 2: 176.14
+Sensor 3: 66.32
+Time: 175915
+Sensor 0: 49.88
+Sensor 1: 167.80
+Sensor 2: 174.74
+Sensor 3: 67.07
+Time: 175965
+Sensor 0: 49.77
+Sensor 1: 46.20
+Sensor 2: 101.83
+Sensor 3: 67.43
+Time: 176066
+Sensor 0: 50.15
+Sensor 1: 46.02
+Sensor 2: 101.88
+Sensor 3: 67.16
+Time: 176166
+Sensor 0: 49.85
+Sensor 1: 45.84
+Sensor 2: 102.50
+Sensor 3: 67.38
+Time: 176216
+Sensor 0: 49.55
+Sensor 1: 46.46
+Sensor 2: 102.51
+Sensor 3: 67.45
+Time: 176317
+Sensor 0: 49.90
+Sensor 1: 46.20
+Sensor 2: 101.88
+Sensor 3: 67.35
+Time: 176417
+Sensor 0: 49.79
+Sensor 1: 46.28
+Sensor 2: 103.22
+Sensor 3: 67.44
+Time: 176518
+Sensor 0: 49.58
+Sensor 1: 46.42
+Sensor 2: 102.99
+Sensor 3: 67.45
+Time: 176618
+Sensor 0: 49.62
+Sensor 1: 46.42
+Sensor 2: 103.46
+Sensor 3: 67.49
+Time: 176718
+Sensor 0: 49.28
+Sensor 1: 46.52
+Sensor 2: 103.29
+Sensor 3: 67.45
+Time: 176769
+Sensor 0: 49.30
+Sensor 1: 46.71
+Sensor 2: 103.42
+Sensor 3: 67.50
+Stopping SensorReader
+Stopping DataProcessor
+Stopping ChoptopServer
+Goodbye!

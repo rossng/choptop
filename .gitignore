@@ -13,3 +13,5 @@ choptop-backend-2/\.vs/
 choptop-backend-2/CMakeSettings\.json
 
 choptop-backend-2/Debug/
+
+tools/model
