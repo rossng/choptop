@@ -77,16 +77,27 @@ void printValues(const vector<int> &print_sensors, bool print_weight, bool print
             data_processor->press_events_.consume_all([](PressEvent e) {
                 switch (e.location) {
                     case PressLocation::TOP:
-                        printf("Pressed Top\n");
+                        printf("Top: ");
                         break;
                     case PressLocation::BOTTOM:
-                        printf("Pressed Bottom\n");
+                        printf("Bottom: ");
                         break;
                     case PressLocation::LEFT:
-                        printf("Pressed Left\n");
+                        printf("Left: ");
                         break;
                     case PressLocation::RIGHT:
-                        printf("Pressed Right\n");
+                        printf("Right: ");
+                        break;
+                }
+                switch (e.stage) {
+                    case PressStage::PRESS_STARTED:
+                        printf("started\n");
+                        break;
+                    case PressStage::PRESS_SUCCESS:
+                        printf("finished\n");
+                        break;
+                    case PressStage::PRESS_CANCELLED:
+                        printf("cancelled\n");
                         break;
                 }
             });
@@ -209,6 +220,7 @@ int main(int argc, char **argv) {
     cout << "Start sensors" << endl;
 
     startSensors(device);
+
     if (app.got_subcommand("serve")) {
         cout << "Serve over WebSocket" << endl;
 

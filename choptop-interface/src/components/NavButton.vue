@@ -1,12 +1,14 @@
 <template>
-  <div :class="getClass()" v-on:click="doAction()"></div>
+  <div :class="getClass()" v-on:click="doAction()">
+    <audio ref="audioElm" src="/src/assets/tap-mellow.wav"></audio>
+  </div>
 </template>
 
 <script>
   export default {
     name: 'nav-button',
     props: ['direction', 'eventBus'],
-    created(){
+    created() {
       this.eventBus.$on("pressed", this.handlePressed);
       this.eventBus.$on("pressStart", this.handlePressStart);
       this.eventBus.$on("pressCancel", this.handlePressCancel);
@@ -28,24 +30,25 @@
       doAction() {
         this.eventBus.$emit("pressed", this.direction)
       },
-      handlePressed(dir){
-        if(dir != this.direction) return;
-        this.pressState = "success"
+      handlePressed(dir) {
+        if (dir !== this.direction) return;
+        this.pressState = "success";
+        this.$refs.audioElm.play();
         console.log("pressed " + dir)
       },
-      handlePressStart(dir){
-        if(dir != this.direction) return;
-        this.pressState = "start"
+      handlePressStart(dir) {
+        if (dir !== this.direction) return;
+        this.pressState = "start";
         console.log("press start " + dir)
 
       },
-      handlePressNone(dir){
-        if(dir != this.direction) return;
+      handlePressNone(dir) {
+        if (dir !== this.direction) return;
         this.pressState = "none"
       },
-      handlePressCancel(dir){
-        if(dir != this.direction) return;
-        this.pressState = "cancel"
+      handlePressCancel(dir) {
+        if (dir !== this.direction) return;
+        this.pressState = "cancel";
         console.log("press cancel")
       }
     },
@@ -92,11 +95,11 @@
     animation-duration: 1s;
   }
 
-  .nav-button{
-    background:lightgreen;
+  .nav-button {
+    background: lightgreen;
   }
 
-  .pressed-cancel{
+  .pressed-cancel {
     transition: 0s;
     animation-name: pressCancel;
     animation-duration: 1s;
