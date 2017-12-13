@@ -58,6 +58,7 @@ private:
     float stage_1_y_ = 0;
     float stage_2_x_ = 0;
     float stage_2_y_ = 0;
+    int stage_2_num_readings_ = 0;
     int stage_3_num_readings_ = 0;
     PressLocation stage_2_location_ = PressLocation::TOP;
 

@@ -98,9 +98,9 @@ float DataProcessor::expAvg(float sample, float avg, float w) {
  * All these steps must happen in order.
  * 0. -50 < diff < 10. At least 1000ms since 'trigger'.
  * 1. diff > 15
- * 2. diff > 250. Determine which 'edge' is being pressed. Distance from that edge changed no more than 0.1 since
+ * 2. within 2 readings, diff > 250. Determine which 'edge' is being pressed. Distance from that edge changed no more than 0.1 since
  *    step 2. => TRIGGER
- * 3. within 3 readings, value < -50. All readings must be within 0.1 of determined edge. => SUCCEED
+ * 3. within 3 readings, diff < -50. All readings must be within 0.1 of determined edge. => SUCCEED
  *    else => FAIL
  */
 void DataProcessor::detectPress(float sample, float x, float y) {
@@ -110,9 +110,11 @@ void DataProcessor::detectPress(float sample, float x, float y) {
 
     switch (stage) {
         case 0:
-            if (time_since_last_trigger >= 1000 && diff < 10 && diff > -50) {
-                cout << "0 -> 1" << endl;
+            if (time_since_last_trigger >= 1000 && diff < 15 && diff > -50) {
+                //cout << "0 -> 1" << endl;
                 stage = 1;
+            } else {
+                cout << diff << endl;
             }
             break;
         case 1:
@@ -121,6 +123,9 @@ void DataProcessor::detectPress(float sample, float x, float y) {
             if (diff > 15) {
                 cout << "1 -> 2" << endl;
                 stage = 2;
+                stage_2_num_readings_ = 0;
+            } else if (diff < 15 && diff > -50) {
+                stage = 1;
             } else {
                 cout << "1 -> 0" << endl;
                 stage = 0;
@@ -130,57 +135,76 @@ void DataProcessor::detectPress(float sample, float x, float y) {
             stage_2_x_ = x;
             stage_2_y_ = y;
             if (diff > 250) {
-                if (y > 0.9 && x > 0.2 && x < 0.8) {
+                if ((y > 0.9 && x > 0.1 && x < 0.9) ||
+                    (x <= 0.1 && y > (1 - x)) || (x >= 0.9 && y > x)) {
                     if (abs(y - stage_1_y_) > 0.1) {
-                        cout << "2 -> 0 (y axis movement > 0.1)" << endl;
+                        cout << "2 -> 0 (y axis movement " << abs(y - stage_1_y_) << " > 0.1)" << endl;
                         stage = 0;
                         break;
                     }
                     stage_2_location_ = PressLocation::TOP;
-                } else if (y < 0.1 && x > 0.2 && x < 0.8) {
+                } else if (y < 0.1 && x > 0.1 && x < 0.9 ||
+                           (x <= 0.1 && y < x) || (x >= 0.9 && (1 - y) > x)) {
                     if (abs(y - stage_1_y_) > 0.1) {
-                        cout << "2 -> 0 (y axis movement > 0.1)" << endl;
+                        cout << "2 -> 0 (y axis movement " << abs(y - stage_1_y_) << " > 0.1)" << endl;
                         stage = 0;
                         break;
                     }
                     stage_2_location_ = PressLocation::BOTTOM;
-                } else if (x < 0.1 && y > 0.2 && y < 0.8) {
-                    if (abs(x - stage_1_x_) > 0.1) {
-                        cout << "2 -> 0 (x axis movement > 0.1)" << endl;
+                } else if (x < 0.2) {
+                    if (abs(x - stage_1_x_) > 0.2) {
+                        cout << "2 -> 0 (x axis movement " << abs(x - stage_1_x_) << " > 0.2)" << endl;
                         stage = 0;
                         break;
                     }
                     stage_2_location_ = PressLocation::LEFT;
-                } else if (x > 0.9 && y > 0.2 && y < 0.8) {
-                    if (abs(x - stage_1_x_) > 0.1) {
-                        cout << "2 -> 0 (x axis movement > 0.1)" << endl;
+                } else if (x > 0.8) {
+                    if (abs(x - stage_1_x_) > 0.25) {
+                        cout << "2 -> 0 (x axis movement " << abs(x - stage_1_x_) << " > 0.25)" << endl;
                         stage = 0;
                         break;
                     }
                     stage_2_location_ = PressLocation::RIGHT;
                 } else {
-                    cout << "2 -> 0 (not in edge region)" << endl;
+                    cout << "2 -> 0 (not in edge region - (" << setprecision(3) << x << "," << y << "))" << endl;
                     stage = 0;
                     break;
                 }
+                cout << "TRIGGERED (" << setprecision(3) << x << "," << y << ")" << endl;
+                cout << "2 -> 3" << endl;
+                time_of_last_trigger_ = chrono::steady_clock::now();
+                press_events_.push({x, y, stage_2_location_, PressStage::PRESS_STARTED});
+                stage = 3;
+                stage_3_num_readings_ = 0;
+            } else if (stage_2_num_readings_ >= 2) {
+                cout << "2 -> 0 (both diffs " << diff << " below 250)" << endl;
+                stage = 0;
+            } else {
+                stage_2_num_readings_++;
             }
-            cout << "TRIGGERED" << endl;
-            cout << "2 -> 3" << endl;
-            time_of_last_trigger_ = chrono::steady_clock::now();
-            press_events_.push({ x, y, stage_2_location_, PressStage::PRESS_STARTED });
-            stage = 3;
-            stage_3_num_readings_ = 0;
             break;
         case 3:
-            if (abs(x - stage_2_x_) > 0.1 || abs(y - stage_2_y_) > 0.1 || stage_3_num_readings_ > 3) {
+            if (abs(x - stage_2_x_) > 0.2 &&
+                (stage_2_location_ == PressLocation::LEFT || stage_2_location_ == PressLocation::RIGHT)) {
                 cout << "CANCELLED" << endl;
+                cout << "3 -> 0 (movement " << abs(x - stage_2_x_) << " > 0.2 in x axis)" << endl;
+                stage = 0;
+                press_events_.push({x, y, stage_2_location_, PressStage::PRESS_CANCELLED});
+            } else if (abs(y - stage_2_y_) > 0.1 &&
+                       (stage_2_location_ == PressLocation::TOP || stage_2_location_ == PressLocation::BOTTOM)) {
+                cout << "CANCELLED" << endl;
+                cout << "3 -> 0 (movement " << abs(y - stage_2_y_) << " > 0.1 in y axis)" << endl;
+                stage = 0;
+                press_events_.push({x, y, stage_2_location_, PressStage::PRESS_CANCELLED});
+            } else if (stage_3_num_readings_ > 3) {
+                cout << "CANCELLED (no reading < -50)" << endl;
                 cout << "3 -> 0" << endl;
                 stage = 0;
-                press_events_.push({ x, y, stage_2_location_, PressStage::PRESS_CANCELLED });
+                press_events_.push({x, y, stage_2_location_, PressStage::PRESS_CANCELLED});
             } else if (diff < -50) {
                 cout << "SUCCESS" << endl;
                 stage = 0;
-                press_events_.push({ x, y, stage_2_location_, PressStage::PRESS_SUCCESS });
+                press_events_.push({x, y, stage_2_location_, PressStage::PRESS_SUCCESS});
             } else {
                 stage_3_num_readings_++;
             }
