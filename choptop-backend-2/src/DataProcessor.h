@@ -22,6 +22,11 @@ struct PressEvent {
     PressStage stage;
 };
 
+struct TimedWeight {
+    float weight;
+    std::chrono::time_point<std::chrono::steady_clock> timeStamp;
+}
+
 class DataProcessor {
 public:
     explicit DataProcessor(boost::lockfree::spsc_queue<SensorData> &sensor_data);
@@ -36,7 +41,7 @@ public:
     boost::lockfree::spsc_queue<float> weight_;
     boost::lockfree::spsc_queue<PressEvent> press_events_;
     boost::lockfree::spsc_queue<SensorData> sensor_data_despiked_;
-
+    std::vector<TimedWeight> timedMeasurements;
 private:
     boost::lockfree::spsc_queue<SensorData> &sensor_data_;
     std::atomic<bool> running_;
@@ -69,4 +74,6 @@ private:
     void detectPress(float sample, float x, float y);
 
     float hampel(float reading, std::vector<float> &window1, std::vector<float> &window2, int &current_idx);
+
+    bool predictChop(float weight);
 };

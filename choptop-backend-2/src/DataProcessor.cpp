@@ -11,7 +11,7 @@
 #include <vector>
 #include <numeric>
 #include <cmath>
-
+#include "ChopDetector.hpp"
 using namespace std;
 
 DataProcessor::DataProcessor(boost::lockfree::spsc_queue<SensorData> &sensor_data) :
@@ -232,4 +232,34 @@ float DataProcessor::hampel(float reading, std::vector<float> &window1, std::vec
     float stdev = std::sqrt(sq_sum / 7);
 
     return std::abs(reading - median) > (2 * stdev) ? median : reading;
+}
+//Sorry about this
+bool DataProcessor::predictChop(float weight){
+    auto now = chrono::steady_clock::now();
+    timedMeasurements.push_back({weight, now});
+    auto segment_start = timedMeasurements.front().timeStamp;
+    auto diff = chrono::duration_cast<chrono::milliseconds>(now - segment_start);
+    //Max, duration, impulse, peak, kurtosis, containsChop
+    if(diff > 1000){
+        float max_val = 0.0f;
+        int max_pos = 0;
+        float impulse = 0.0f;
+        auto previous = timedMeasurements.front();
+        int i=0;
+        for(auto m : timedMeasurements){
+            if(m.weight > max_val){
+                max_val = m.weight;
+                max_pos = i;
+            }
+            i++;
+            auto x = chrono::duration_cast<chrono::milliseconds>(m.timeStamp - previous.timeStamp);
+            impulse += (x.count())*(m.weight - previous.weight);
+            previous = m;
+        }
+        float peak_pos = (float)max_pos / timedMeasurements.size();
+        auto kurtosis = impulse/(diff.count()*max_val);
+        double features[5] = {(double)max_val, (double)diff.count(), (double) impulse, (double) peak_pos, (double) kurtosis};
+        return ChopDetector.predict(features);
+    }
+    return false;
 }
